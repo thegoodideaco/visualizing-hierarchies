@@ -49,7 +49,7 @@ export default {
   inheritAttrs: false,
   props:        {
     /**
-     * Groups
+     * A collection of nest methods to be passed to d3.Nest
      * @type {Vue.PropOptions<{name: string, key: (item) => any}[]>}
      */
     groups: {
@@ -139,7 +139,12 @@ export default {
       const nester = nest()
 
       this.pickedGroups.forEach(group => {
-        nester.key(group.key).sortKeys(ascending)
+        nester.key(group.key)
+
+        if(group.sortKeys) {
+          console.log('sorting ' + group.key)
+          nester.sortKeys(group.sortKeys)
+        }
       })
 
       return nester
@@ -148,7 +153,7 @@ export default {
   watch: {
 
     /**
-     * Emit a new hierarchy whenever the nest function changes
+     * Emits a new hierarchy whenever the nest function changes
      */
     nest: {
       /** @param {d3.Nest} val */
@@ -161,7 +166,8 @@ export default {
         }else{
           this.$emit('change', null)
         }
-      }
+      },
+      immediate: true
     }
   },
   methods: {
@@ -184,7 +190,7 @@ export default {
      * @param {{name: string}} item
      */
     unselectGroup(item) {
-      if(this.pickedGroups.includes(item)) return
+      if(!this.pickedGroups.includes(item)) return
       this.pickedGroups.splice(this.pickedGroups.indexOf(item), 1)
     }
   }
