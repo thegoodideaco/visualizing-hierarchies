@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "target": "es2015",
+    "module": "esnext",
+    "baseUrl": ".",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "jsx": "preserve",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    },
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "strict": true
+  },
+  "include": [
+    "types/*.d.ts",
+    "src/**/*.js",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "src/**/*.scss",
+    "src/**/*.md"
+  ]
+}

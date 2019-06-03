@@ -1,0 +1,13 @@
+select {
+  transition: opacity 300ms ease;
+  @apply .py-2 .px-4 .rounded-sm .bg-gray-100 .text-gray-800 .cursor-pointer;
+
+  &:disabled {
+    opacity: 0.5;
+    @apply .cursor-not-allowed;
+  }
+
+  option {
+    @apply .bg-gray-300 .text-gray-800;
+  }
+}

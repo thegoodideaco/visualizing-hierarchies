@@ -1,0 +1,29 @@
+@tailwind base;
+
+h1 {
+  @apply text-6xl font-title font-bold;
+}
+h2 {
+  @apply text-5xl font-title font-bold;
+}
+h3 {
+  @apply text-4xl font-title font-bold;
+}
+h4 {
+  @apply text-3xl  font-title font-bold;
+}
+h5 {
+  @apply text-2xl  font-title font-bold;
+}
+
+
+@tailwind components;
+@tailwind utilities;
+
+a {
+  @apply text-blue-600;
+
+  &:hover {
+    @apply .underline;
+  }
+}
