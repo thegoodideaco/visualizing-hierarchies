@@ -41,7 +41,7 @@
 <script>
 import draggable from 'vuedraggable'
 import * as _ from 'lodash'
-import { nest, ascending, hierarchy } from 'd3'
+import { nest, ascending, hierarchy, timeFormat } from 'd3'
 export default {
   components: {
     draggable
@@ -87,6 +87,18 @@ export default {
           {
             name: 'Installs',
             key:  item => item.Installs
+          },
+          {
+            name: 'Year last updated',
+            key:  item => timeFormat('%Y')(Date.parse(item['Last Updated']))
+          },
+          {
+            name: 'Month last updated',
+            key:  item => timeFormat('%B')(Date.parse(item['Last Updated']))
+          },
+          {
+            name: 'Day last updated',
+            key:  item => timeFormat('%A')(Date.parse(item['Last Updated']))
           }
         ]
       }
@@ -135,9 +147,10 @@ export default {
   },
   watch: {
 
-
+    /**
+     * Emit a new hierarchy whenever the nest function changes
+     */
     nest: {
-
       /** @param {d3.Nest} val */
       handler(val) {
         if(val) {
@@ -158,12 +171,10 @@ export default {
     onGroupChange(event) {
       const defaultValue = event.target.options[0].value
       const val = event.target.value
+      const valueObj = this.groups.find(g => g.name === val)
+
       event.preventDefault()
       event.target.value = defaultValue
-
-      // debugger
-
-      const valueObj = this.groups.find(g => g.name === val)
 
       this.pickedGroups = [...(this.pickedGroups || []), valueObj]
     },
@@ -173,6 +184,7 @@ export default {
      * @param {{name: string}} item
      */
     unselectGroup(item) {
+      if(this.pickedGroups.includes(item)) return
       this.pickedGroups.splice(this.pickedGroups.indexOf(item), 1)
     }
   }

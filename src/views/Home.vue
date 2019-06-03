@@ -27,6 +27,7 @@
 <script>
 // @ is an alias to /src
 import { csvParse, nest } from 'd3'
+import * as _ from 'lodash'
 import HierarchyGeneratorVue from '../components/HierarchyGenerator.vue'
 
 export default {
@@ -79,7 +80,7 @@ export default {
        * @type {import('axios').AxiosResponse<{}[]>}
        */
       const { data } = await this.$http.get('/datasets/googleplaystore.csv')
-      this.dataset = Object.freeze(csvParse(data).splice(0, 1000))
+      this.dataset = Object.freeze(_.sampleSize(csvParse(data), 1000))
     },
 
     /**
