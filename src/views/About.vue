@@ -1,29 +1,33 @@
 <template>
-  <div class="about">
-    <div>
-      <h2>This is an about page</h2>
-      <generator
-        :data="dataset"
-        :groups="groupKeys"
-        @change="updateHierarchy" />
-    </div>
+  <sidenav-layout>
+    <div class="about h-full">
+      <div class="h-full overflow-auto">
+        <h2>This is an about page</h2>
+        <generator
+          :data="dataset"
+          :groups="groupKeys"
+          @change="updateHierarchy" />
+      </div>
 
-    <div>
-      <tree-layout v-if="hierarchy"
-                   class="w-full h-full"
-                   :hierarchy="hierarchy" />
+      <div>
+        <tree-layout v-if="hierarchy"
+                     class="w-full h-full"
+                     :hierarchy="hierarchy" />
+      </div>
     </div>
-  </div>
+  </sidenav-layout>
 </template>
 
 <script>
 import HierarchyGeneratorVue from '../components/HierarchyGenerator.vue'
 import { extent, scaleOrdinal, csvParse } from 'd3'
 import TreeLayoutVue from '../components/TreeLayout.vue'
+import SidenavLayoutVue from '../layouts/SidenavLayout.vue'
 export default {
   components: {
-    Generator:  HierarchyGeneratorVue,
-    TreeLayout: TreeLayoutVue
+    Generator:     HierarchyGeneratorVue,
+    TreeLayout:    TreeLayoutVue,
+    SidenavLayout: SidenavLayoutVue
   },
   data() {
     return {
@@ -86,15 +90,17 @@ export default {
 
 <style lang="scss" scoped>
 .about {
+
   display: grid;
-  height: 100%;
-  grid: 100% / minmax(300px, max-content) 1fr;
+  grid: 100% / minmax(260px, min-content) 1fr;
+
 
   > * {
     position: relative;
+    padding: 10px;
 
     &:first-child {
-      padding: 10px;
+
       display: grid;
       grid: auto 1fr / 100%;
     }

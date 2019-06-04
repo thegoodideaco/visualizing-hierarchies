@@ -24,5 +24,15 @@ module.exports = {
         to:     'datasets'
       }])
     )
+  },
+
+  /** @param {import('webpack-chain')} config*/
+  chainWebpack: config => {
+    config.module.rule('markdown')
+      .test(/\.md$/)
+      .use('raw-loader')
+      .loader('raw-loader')
+      .end()
+
   }
 }

@@ -1,10 +1,8 @@
 <template>
-  <div v-bar
-       class="md-viewer">
-    <div class="gpu">
-      <div class="hljs dark"
-           v-html="markdown" />
-    </div>
+  <div class="md-viewer">
+    <div
+      class="hljs dark h-full"
+      v-html="markdown" />
   </div>
 </template>
 
@@ -43,64 +41,24 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
-@import '@/assets/scss/_markdown.scss';
+<style  lang="scss">
 .md-viewer {
-  display: inline-block;
-  background-color: #18242b;
-  color: darken(#fff, 2);
 
-  /deep/ a {
-    color: #00f185;
-    text-decoration: none;
+background-color: #18242b;
 
-    &:hover,
-    &:active {
-      color: darken(#00f185, 10);
+  &::-webkit-scrollbar {
+     background: #1b1f22;
+  width: 8px;
+
+    &-thumb {
+      background: rgba(247, 250, 252, 0.69);
     }
-  }
-
-  /deep/ pre {
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 10px;
-    overflow-x: auto;
-    margin-bottom: 35px;
-
-    &::-webkit-scrollbar {
-      background: none;
-      height: 7px;
-      width: 7px;
-      padding: 5px;
-    }
-
-    &::-webkit-scrollbar-track-piece {
-      width: 3px;
-      height: 3px;
-    }
-
-    &::-webkit-scrollbar-button {
-      width: 3px;
-      height: 3px;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background-color: rgba(#fff, 0.5);
-      width: 3px;
-      height: 3px;
-      margin: 5px;
-      transition: background-color 300ms ease;
-
-      &:hover,
-      &:active {
-        background-color: #fff;
-      }
-    }
-
-
   }
 }
+
 .hljs {
-  font-size: 0.9rem;
+  @import '@/assets/scss/highlightjs/obsidian.scss';
+  font-size: 1em;
   line-height: normal;
   padding: 1.25em;
   position: relative;
@@ -108,6 +66,10 @@ export default {
   will-change: scroll-position;
   // display: inline-block;
 
-  background-color: #18242b;
+
+
+  pre {
+    margin-top: 1.25em;
+  }
 }
 </style>
