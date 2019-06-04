@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 331.04 313.79">
+    <defs>
+        <style>
+            .cls-1{fill:url(#linear-gradient);}
+        </style>
+        <linearGradient id="linear-gradient" x2="331.04" y1="156.9" y2="156.9" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#f26d58"/>
+            <stop offset="1" stop-color="#f9a03c"/>
+        </linearGradient>
+    </defs>
+    <title>
+        d3-logo
+    </title>
+    <g id="Layer_2" data-name="Layer 2">
+        <g id="Layer_1-2" data-name="Layer 1">
+            <path d="M0,0H26.72a156.9,156.9,0,1,1,0,313.79H0v-69H26.72A87.93,87.93,0,1,0,26.72,69H0ZM125,0H235.35A95.69,95.69,0,0,1,308.9,156.9a95.68,95.68,0,0,1-73.55,156.89H125a185.08,185.08,0,0,0,64.65-69h45.69a26.73,26.73,0,1,0,0-53.45H208.62a185.14,185.14,0,0,0,0-69h26.72a26.72,26.72,0,1,0,0-53.44H189.65A185.1,185.1,0,0,0,125,0Z" class="cls-1"/>
+        </g>
+    </g>
+</svg>

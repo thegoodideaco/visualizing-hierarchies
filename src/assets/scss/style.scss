@@ -10,7 +10,7 @@ html {
   background-image: radial-gradient(farthest-corner at top left, #292f35 46%, #161a1c);
   background-repeat: no-repeat;
 
-  @apply .font-sans .text-gray-200;
+  @apply .font-sans .font-light .text-gray-400;
 }
 
 body {

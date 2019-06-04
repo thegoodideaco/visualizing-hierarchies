@@ -1,4 +1,4 @@
-# h1 Heading 8-) 😍
+# h1 Heading 8-)
 
 ## h2 Heading
 
@@ -52,7 +52,7 @@ _This is italic text_
 
 ## Lists
 
-Unordered
+### Unordered
 
 - Create a list by starting a line with `+`, `-`, or `*`
 - Sub-lists are made by indenting 2 spaces:
@@ -62,23 +62,21 @@ Unordered
     - Nulla volutpat aliquam velit
 - Very easy!
 
-Ordered
+### Ordered
 
 1. Lorem ipsum dolor sit amet
 2. Consectetur adipiscing elit
 3. Integer molestie lorem at massa
 
-1) You can use sequential numbers...
-1) ...or keep all the numbers as `1.`
-
-Start numbering with offset:
-
-57. foo
-1. bar
+4. You can use sequential numbers...
+5. ...or keep all the numbers as `1.`
 
 ## Code
 
 Inline `code`
+
+    <!-- Some Code here -->
+    var test = 'hey'
 
 Indented code
 
@@ -90,6 +88,9 @@ Indented code
 Block code "fences"
 
 ```
+var test = Math.random() * 5
+let test
+const test
 Sample text here...
 ```
 
@@ -115,9 +116,9 @@ Right aligned columns
 
 | Option |                                                               Description |
 | -----: | ------------------------------------------------------------------------: |
-|   data | path to data files to supply the data that will be passed into templates. |
+| data   | path to data files to supply the data that will be passed into templates. |
 | engine |    engine to be used for processing templates. Handlebars is the default. |
-|    ext |                                      extension to be used for dest files. |
+| ext    |                                      extension to be used for dest files. |
 
 ## Links
 

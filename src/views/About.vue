@@ -10,9 +10,10 @@
       </div>
 
       <div>
-        <tree-layout v-if="hierarchy"
-                     class="w-full h-full"
-                     :hierarchy="hierarchy" />
+        <tree-layout
+          v-if="hierarchy"
+          :hierarchy="hierarchy"
+          class="w-full h-full" />
       </div>
     </div>
   </sidenav-layout>
@@ -37,7 +38,7 @@ export default {
   },
   computed: {
     populationScale() {
-      if(this.dataset)
+      if (this.dataset)
         return scaleOrdinal()
           .range(['small', 'medium', 'large'])
           .domain(extent(this.dataset, item => +item.value))
@@ -64,7 +65,6 @@ export default {
             name: 'Year',
             key:  item => item.year
           }
-
         ]
       }
     }
@@ -90,16 +90,14 @@ export default {
 
 <style lang="scss" scoped>
 .about {
-
   display: grid;
   grid: 100% / minmax(260px, min-content) 1fr;
 
-
   > * {
     position: relative;
-    padding: 10px;
 
     &:first-child {
+      padding: 10px;
 
       display: grid;
       grid: auto 1fr / 100%;

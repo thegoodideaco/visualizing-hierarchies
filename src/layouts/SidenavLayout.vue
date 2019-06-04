@@ -1,13 +1,11 @@
 <template>
-  <div class="side-layout">
+  <div class="side-layout select-none">
     <!-- Side menu -->
-    <aside class="side-nav">
-      Logo Here
-    </aside>
+    <side-nav />
 
     <!-- Markdown -->
     <markdown-viewer style="max-width: 28vw"
-                     class="overflow-auto"
+                     class="overflow-auto select-text"
                      :value="readme" />
 
     <!-- Content Entry -->
@@ -20,9 +18,11 @@
 <script>
 import readme from './readmetest.md'
 import MarkdownDisplayVue from '../components/MarkdownDisplay.vue'
+import SideNavVue from '../components/SideNav.vue'
 export default {
   components: {
-    MarkdownViewer: MarkdownDisplayVue
+    MarkdownViewer: MarkdownDisplayVue,
+    SideNav:        SideNavVue
   },
   data() {
     return {
@@ -34,9 +34,10 @@ export default {
 
 <style scoped lang="scss">
 .side-layout {
+
   display: grid;
   height: 100%;
-  grid: 100%/minmax(300px, max-content) minmax(400px, max-content) 1fr
+  grid: 100%/minmax(350px, max-content) minmax(400px, max-content) 1fr
 }
 
 .grid {
