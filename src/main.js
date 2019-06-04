@@ -8,6 +8,15 @@ import store from './store'
 import VueAxios from 'vue-axios'
 import Axios from 'axios'
 
+
+const WebFont = require('webfontloader')
+
+WebFont.load({
+  google: {
+    families: ['Roboto', 'Segoe UI', 'Segoe UI Emoji', 'Amatica SC']
+  }
+})
+
 Vue.use(VueAxios, Axios)
 
 const g = []
@@ -27,12 +36,3 @@ if(process.env.NODE_ENV === 'development') {
     _:  require('lodash')
   })
 }
-
-
-const WebFont = require('webfontloader')
-
-WebFont.load({
-  google: {
-    families: ['Roboto', 'Segoe UI']
-  }
-})

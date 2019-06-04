@@ -89,7 +89,7 @@ export default {
     h#{$i} {
       // set the background-color to cornflowerblue and
       // each time lighten the color slightly
-      color: darken(#61f582, ($i * 2.5));
+      color: darken(#54eda9, ($i * 2.5));
       line-height: 1.5rem + (5- ($i + 1)) * 2;
     }
   }

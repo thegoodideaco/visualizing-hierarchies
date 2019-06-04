@@ -3,10 +3,11 @@
 @import './_form-inputs';
 
 html {
-  // @apply .bg-gray-900 .text-gray-100 ;
-  @apply .font-sans;
+  font-display: block;
+@apply .font-sans .font-light .text-gray-400;
+font-family: 'Roboto';
   height: 100%;
-
+  
   background-color: #292f35;
   background-image: radial-gradient(
     farthest-corner at top left,
@@ -21,4 +22,29 @@ body {
   height: 100%;
   overflow: auto;
   
+}
+
+
+h1 {
+  @apply text-6xl font-title font-bold;
+}
+h2 {
+  @apply text-5xl font-title font-bold;
+}
+h3 {
+  @apply text-4xl font-title font-bold;
+}
+h4 {
+  @apply text-3xl  font-title font-bold;
+}
+h5 {
+  @apply text-2xl  font-title font-bold;
+}
+
+a {
+  @apply text-blue-600;
+
+  &:hover {
+    @apply .underline;
+  }
 }
