@@ -5,7 +5,9 @@
       :key="index"
       :style="treeStyle(item)"
       class="p-1">
-      {{ item.data.key }} - {{ item.value | formatted }}
+      <slot v-bind="item">
+        {{ item.data.key }} - {{ item.value | formatted }}
+      </slot>
     </div>
   </div>
 </template>
@@ -23,6 +25,14 @@ export default {
     hierarchy: {
       type:     Object,
       required: true
+    },
+
+    /**
+     * @type {Vue.PropOptions<boolean>}
+     */
+    showLeafs: {
+      type:    Boolean,
+      default: true
     }
   },
   data() {
@@ -33,16 +43,27 @@ export default {
       localDescendants: null,
       size:             [100, 100],
       padding:          6,
-      paddingTop:       30
+      paddingTop:       30,
+      rounding:         true
     }
   },
   computed: {
-    /** @returns {d3.TreemapLayout} */
+    /**
+     * Constructs a treemap object.
+     * Because treemap mutates an object directly
+     * We clone the hierarchy prop to a local one.
+     *
+     * Then, we provide local nodes to display,
+     * allowing us to filter out unwanted nodes
+     *
+     * @returns {d3.TreemapLayout}
+     */
     treemap() {
       if (this.hierarchy) {
         const t = treemap()
           .padding(this.padding)
           .paddingTop(this.paddingTop)
+          .round(this.rounding)
           .size(this.size)
           .tile(treemapSquarify)
 
@@ -51,11 +72,20 @@ export default {
           .sum(v => v.value || 0)
           .count()
           .sort((a, b) => a.value - b.value)
+
+
         t(this.localHierarchy)
 
         const nodes = []
         this.localHierarchy.each(v => {
-          nodes.push(v)
+          if(!this.showLeafs) {
+            if(v.children) {
+              nodes.push(v)
+            }
+          }else{
+
+            nodes.push(v)
+          }
         })
 
         this.localDescendants = nodes
@@ -65,6 +95,10 @@ export default {
     }
   },
   watch: {
+    /**
+     * Watches for change in hierarchy.
+     * Creates a clone before applying layout
+     */
     hierarchy: {
       /** @param {d3.HierarchyNode} val */
       handler(val) {
@@ -76,6 +110,22 @@ export default {
             this.localHierarchy.count().sort((a, b) => a.value - b.value)
             this.treemap.size(this.size)
             this.treemap(this.localHierarchy)
+
+
+            const nodes = []
+            this.localHierarchy.each(v => {
+              if(!this.showLeafs) {
+                if(v.children) {
+                  nodes.push(v)
+                }
+              }else{
+
+                nodes.push(v)
+              }
+            })
+            this.localDescendants = nodes
+
+
           }
         })
       },
@@ -121,9 +171,10 @@ export default {
     },
 
     /**
+     * TODO: Remove
      * Updates the size
      */
-    updateSize() {
+    __updateSize() {
       if (!this.$el) return
       const { width, height } = this.$el.parentElement
         ? this.$el.parentElement.getBoundingClientRect()
@@ -132,7 +183,9 @@ export default {
 
       this.size = [width, height]
       this.treemap.size(this.size)
-      this.localDescendants = this.localHierarchy.descendants().filter(v => v.children)
+      this.localDescendants = this.localHierarchy
+        .descendants()
+        .filter(v => v.children)
     },
 
     onResize() {

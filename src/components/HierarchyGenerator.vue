@@ -103,6 +103,11 @@ export default {
           }
         ]
       }
+    },
+
+    data: {
+      type:     Array,
+      required: true
     }
   },
   data() {
@@ -172,7 +177,7 @@ export default {
             hierarchy(
               {
                 key:    'all',
-                values: val.entries(this.$attrs.data)
+                values: val.entries(this.data)
               },
               n => n.values
             )
@@ -182,6 +187,21 @@ export default {
         }
       },
       immediate: true
+    },
+
+    data(val) {
+      if(val) {
+        this.$emit(
+          'change',
+          hierarchy(
+            {
+              key:    'all',
+              values: val
+            },
+            n => n.values
+          )
+        )
+      }
     }
   },
   methods: {

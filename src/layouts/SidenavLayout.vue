@@ -1,12 +1,13 @@
 <template>
-  <div class="side-layout select-none">
+  <div class="side-layout select-none"
+       :class="{'focus-text': $attrs.focusedOnText}">
     <!-- Side menu -->
     <side-nav />
 
     <!-- Markdown -->
-    <markdown-viewer style="max-width: 28vw"
-                     class="overflow-auto select-text"
-                     :value="readme()" />
+    <markdown-viewer
+      class="text-container overflow-auto select-text"
+      :value="readme()" />
 
     <!-- Content Entry -->
     <div class="grid">
@@ -42,8 +43,19 @@ export default {
 
   display: grid;
   height: 100%;
-  grid: 100%/minmax(350px, max-content) minmax(400px, max-content) 1fr
+  grid: 100%/max-content auto 1fr;
+
+
 }
+
+.text-container {
+  transition: all 400ms ease;
+  width: 400px;
+    .focus-text & {
+      width: 50vw;
+      font-size: 2em;
+    }
+  }
 
 .grid {
   display: grid;

@@ -8,19 +8,11 @@ import store from './store'
 import VueAxios from 'vue-axios'
 import Axios from 'axios'
 
+import './utils/webFonts'
 
-const WebFont = require('webfontloader')
 
-WebFont.load({
-  google: {
-    families: ['Roboto', 'Segoe UI', 'Segoe UI Emoji', 'Amatica SC']
-  }
-})
 
 Vue.use(VueAxios, Axios)
-
-const g = []
-g.fl
 
 Vue.config.productionTip = false
 

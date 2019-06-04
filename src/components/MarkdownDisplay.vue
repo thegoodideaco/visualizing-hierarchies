@@ -2,7 +2,7 @@
   <div class="md-viewer">
     <div
       class="hljs dark h-full overflow-auto"
-      v-html="markdown" />
+      v-html="markdown()" />
   </div>
 </template>
 
@@ -24,7 +24,7 @@ export default {
   },
   computed: {
     markdown() {
-      return marked(this.value, {
+      return () => marked(this.value, {
         langPrefix:  'javascript',
         smartypants: true,
         pedantic:    false,
