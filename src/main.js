@@ -27,3 +27,12 @@ if(process.env.NODE_ENV === 'development') {
     _:  require('lodash')
   })
 }
+
+
+const WebFont = require('webfontloader')
+
+WebFont.load({
+  google: {
+    families: ['Roboto', 'Segoe UI']
+  }
+})

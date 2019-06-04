@@ -47,8 +47,6 @@ export default {
   max-height: 100%;
   overflow: hidden;
 
- padding: 5px;
-
  > div {
 
    touch-action: pan-y;

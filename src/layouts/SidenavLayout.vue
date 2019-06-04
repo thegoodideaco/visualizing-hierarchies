@@ -6,7 +6,7 @@
     <!-- Markdown -->
     <markdown-viewer style="max-width: 28vw"
                      class="overflow-auto select-text"
-                     :value="readme" />
+                     :value="readme()" />
 
     <!-- Content Entry -->
     <div class="grid">
@@ -24,9 +24,14 @@ export default {
     MarkdownViewer: MarkdownDisplayVue,
     SideNav:        SideNavVue
   },
-  data() {
-    return {
-      readme
+  props: {
+
+    /**
+     * @type {function}
+     */
+    readme: {
+      type:    [Function],
+      default: () => readme
     }
   }
 }

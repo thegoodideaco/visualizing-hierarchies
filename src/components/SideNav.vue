@@ -23,6 +23,9 @@ export default {}
 <style scoped lang="scss">
 .side-nav {
   background-color: #171a1d;
+  display: grid;
+  grid: max-content 1fr / 100%;
+  row-gap: 30px;
 }
 
 .logos {

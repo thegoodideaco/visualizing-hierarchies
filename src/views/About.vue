@@ -1,5 +1,5 @@
 <template>
-  <sidenav-layout>
+  <sidenav-layout :readme="readme">
     <div class="about h-full">
       <div class="h-full overflow-auto">
         <h2>This is an about page</h2>
@@ -24,6 +24,7 @@ import HierarchyGeneratorVue from '../components/HierarchyGenerator.vue'
 import { extent, scaleOrdinal, csvParse } from 'd3'
 import TreeLayoutVue from '../components/TreeLayout.vue'
 import SidenavLayoutVue from '../layouts/SidenavLayout.vue'
+import readme from './about.md'
 export default {
   components: {
     Generator:     HierarchyGeneratorVue,
@@ -33,7 +34,8 @@ export default {
   data() {
     return {
       dataset:   null,
-      hierarchy: null
+      hierarchy: null,
+      readme:    () => readme
     }
   },
   computed: {

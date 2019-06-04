@@ -492,6 +492,8 @@ module.exports = {
     wordBreak:            ['responsive'],
     zIndex:               ['responsive']
   },
-  corePlugins: {},
-  plugins:     []
+  corePlugins: {
+    // fontFamily: false
+  },
+  plugins: []
 }
