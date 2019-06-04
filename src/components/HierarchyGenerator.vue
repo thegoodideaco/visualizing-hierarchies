@@ -1,12 +1,11 @@
 <template>
   <div class="hierarchy-generator">
-    <div
-      class="tools"
-      @input="onGroupChange">
+    <div class="tools">
       <select
         :disabled="selectGroups.length === 0"
         :value="'Select a Group'"
-        class="block">
+        class="block w-full"
+        @input="onAddGroup">
         <option disabled>
           Select a Group
         </option>
@@ -18,15 +17,17 @@
       </select>
     </div>
 
-    <div class="list">
+    <div class="list select-none">
       <!-- Show enabled groups -->
-      <draggable v-model="pickedGroups">
+      <draggable v-model="pickedGroups"
+                 v-bind="dragOptions"
+                 handle=".handle">
         <div
           v-for="(item, index) in pickedGroups"
           :key="index"
           class="border border-dashed">
           <div>
-            <span>{{ item.name }}</span>
+            <span class="handle">{{ item.name }}</span>
 
             <button @click="unselectGroup(item)">
               x
@@ -41,7 +42,7 @@
 <script>
 import draggable from 'vuedraggable'
 import * as _ from 'lodash'
-import { nest, ascending, hierarchy, timeFormat } from 'd3'
+import { nest, hierarchy, timeFormat } from 'd3'
 export default {
   components: {
     draggable
@@ -135,35 +136,48 @@ export default {
      * @returns {d3.Nest}
      */
     nest() {
-      if(!this.pickedGroups || !this.pickedGroups.length) return
+      if (!this.pickedGroups || !this.pickedGroups.length) return
       const nester = nest()
 
       this.pickedGroups.forEach(group => {
         nester.key(group.key)
 
-        if(group.sortKeys) {
-          console.log('sorting ' + group.key)
+        if (group.sortKeys) {
           nester.sortKeys(group.sortKeys)
         }
       })
 
       return nester
+    },
+
+    /** @returns {draggable.} */
+    dragOptions() {
+      return {
+        animation:  200,
+        disabled:   false,
+        ghostClass: 'bg-blue-500'
+      }
     }
   },
   watch: {
-
     /**
      * Emits a new hierarchy whenever the nest function changes
      */
     nest: {
       /** @param {d3.Nest} val */
       handler(val) {
-        if(val) {
-          this.$emit('change', hierarchy({
-            key:    'all',
-            values: val.entries(this.$attrs.data)
-          }, n => n.values) )
-        }else{
+        if (val) {
+          this.$emit(
+            'change',
+            hierarchy(
+              {
+                key:    'all',
+                values: val.entries(this.$attrs.data)
+              },
+              n => n.values
+            )
+          )
+        } else {
           this.$emit('change', null)
         }
       },
@@ -174,7 +188,7 @@ export default {
     /**
      * @param {Event} event
      */
-    onGroupChange(event) {
+    onAddGroup(event) {
       const defaultValue = event.target.options[0].value
       const val = event.target.value
       const valueObj = this.groups.find(g => g.name === val)
@@ -190,7 +204,7 @@ export default {
      * @param {{name: string}} item
      */
     unselectGroup(item) {
-      if(!this.pickedGroups.includes(item)) return
+      if (!this.pickedGroups.includes(item)) return
       this.pickedGroups.splice(this.pickedGroups.indexOf(item), 1)
     }
   }
@@ -220,9 +234,18 @@ export default {
           }
 
           button {
-            background: green;
+            background: transparent;
             height: 100%;
             width: 40px;
+
+            &:hover {
+              outline: none;
+              color: rgb(112, 255, 155)
+            }
+
+            &:focus {
+              outline: none;
+            }
           }
         }
       }

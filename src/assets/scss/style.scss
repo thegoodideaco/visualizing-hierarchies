@@ -4,11 +4,16 @@
 
 html {
   // @apply .bg-gray-900 .text-gray-100 ;
-  min-height: 100%;
+  height: 100%;
 
   background-color: #292f35;
   background-image: radial-gradient(farthest-corner at top left, #292f35 46%, #161a1c);
   background-repeat: no-repeat;
 
   @apply .font-sans .text-gray-200;
+}
+
+body {
+  height: 100%;
+  overflow: auto;
 }
