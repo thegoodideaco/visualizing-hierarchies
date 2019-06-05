@@ -11,7 +11,9 @@
 
     <!-- Content Entry -->
     <div class="grid">
-      <slot class="h-full" />
+      <slot class="h-full">
+        <router-view/>
+      </slot>
     </div>
   </div>
 </template>

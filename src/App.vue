@@ -23,6 +23,8 @@ export default {
 }
 
 #app {
+  display: grid;
+  grid: 100% / 100%;
   animation-name: fadeIn;
   animation-duration: 1s;
   animation-fill-mode: both;
