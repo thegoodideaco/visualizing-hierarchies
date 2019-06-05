@@ -1,6 +1,7 @@
 <template>
   <aside class="side-nav p-4">
-    <div class="text-center">
+    <div class="text-center cursor-pointer"
+         @click.once="$router.push('/')">
       <h3>Visualizing Hierarchies</h3>
       <h5>With Vue.js and D3.js</h5>
 

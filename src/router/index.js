@@ -13,9 +13,34 @@ export default new Router({
       component: Home
     },
     {
+      path:      '/intro',
+      name:      'introduction',
+      component: () => import(/* webpackChunkName: "intro" */ '@/views/intro.vue'),
+      meta:      {
+        title: 'Introductions'
+      }
+    },
+    {
+      path:      '/definition',
+      name:      'definition',
+      component: About,
+      meta:      {
+        title: 'Defining a Hierarchy'
+      }
+    },
+    {
+      path:      '/examples',
+      name:      'examples',
+      component: About,
+      meta:      {
+        title: 'Examples'
+      }
+    },
+    {
       path:      '/about',
       name:      'about',
       component: About
     }
+
   ]
 })

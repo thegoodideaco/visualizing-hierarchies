@@ -2,7 +2,7 @@
   <div
     v-once
     class="fill"
-    @contextmenu.prevent=""
+    @contextmenu.prevent="false"
     @mousewheel="test"
     @mousedown="dragged"
     @touchstart="dragged"
@@ -29,11 +29,8 @@ import {
   scaleSequential,
   rgb,
   // interpolateWarm,
-  interpolateRgb,
   color,
-  interpolateHsl,
-  interpolateHcl,
-  interpolateHclLong
+  interpolateHcl
 } from 'd3'
 export default {
   data() {
@@ -82,7 +79,7 @@ export default {
       })
     }
   },
-  beforeDestroy() {
+  destroyed() {
     this.simulation.stop()
     this.simulation = null
 
@@ -222,8 +219,8 @@ export default {
     })
 
     this.simulation = forceSimulation(this.nodes)
-      .force('charge', forceManyBody().strength(-300))
-      .force('link', forceLink(this.links).distance(this.zoom).strength(1))
+      .force('charge', forceManyBody().strength(n => this.roots.includes(n.index) ? -10 : -300))
+      .force('link', forceLink(this.links).distance(this.zoom).strength(.7))
       .force(
         'radial',
         forceRadial(height / 1.5, width / 2, height / 2).strength(.7)

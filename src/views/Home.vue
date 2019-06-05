@@ -2,7 +2,7 @@
   <layout class="home">
     <force-demo class="demo absolute w-full h-full" />
     <div class="content select-none text-center pointer-events-none">
-      <div class="text-center text-4xl ">
+      <div class="text-center text-4xl">
         <h3>Visualizing Hierarchies</h3>
         <h5>With Vue.js and D3.js</h5>
 
@@ -11,8 +11,9 @@
           <img src="@/assets/d3-logo.svg">
         </div>
 
-        <router-link to="/about"
-                     class="text-white p-5 bg-transparent border-2 border-white rounded-lg pointer-events-auto">
+        <router-link
+          class="text-white p-5 bg-transparent border-2 border-white rounded-lg pointer-events-auto"
+          to="/intro">
           Start
         </router-link>
       </div>
@@ -45,7 +46,7 @@ export default {
 
 .logos {
   display: grid;
-  height:170px;
+  height: 170px;
   padding: 10px;
 
   grid: 100% / auto auto;
