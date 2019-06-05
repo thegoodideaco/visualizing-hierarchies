@@ -88,8 +88,6 @@ export default {
 
     this.pixiRender.destroy(true)
 
-    this.$delete(window, 'app')
-
     window.removeEventListener('resize', this.onResize)
     window.removeEventListener('mousemove', this.updateMouse)
   },
