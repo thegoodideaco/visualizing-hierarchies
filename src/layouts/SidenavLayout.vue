@@ -12,7 +12,7 @@
     <!-- Content Entry -->
     <div class="grid">
       <slot class="h-full">
-        <router-view/>
+        <router-view />
       </slot>
     </div>
   </div>
@@ -45,14 +45,14 @@ export default {
 
   display: grid;
   height: 100%;
-  grid: 100%/max-content auto 1fr;
+  grid: 100%/minmax(auto, 260px) minmax(400px, 1fr) 2fr;
 
 
 }
 
 .text-container {
   transition: all 400ms ease;
-  width: 400px;
+  // width: 400px;
     .focus-text & {
       width: 50vw;
       font-size: 2em;

@@ -11,14 +11,17 @@
       </div>
     </div>
 
-    <div class="px-8 uppercase text-2xl">
-      Menu Items Here
-    </div>
+    <router-navigator class="px-8 uppercase text-2xl" />
   </aside>
 </template>
 
 <script>
-export default {}
+import RouterNavigatorVue from './RouterNavigator.vue'
+export default {
+  components: {
+    RouterNavigator: RouterNavigatorVue
+  }
+}
 </script>
 
 <style scoped lang="scss">

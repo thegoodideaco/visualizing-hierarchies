@@ -95,7 +95,7 @@ export default {
   }
 
   a {
-    color: rgb(51, 185, 80);
+    color: #19ff17;
 
     &:hover {
       color: #fff;
@@ -169,8 +169,8 @@ export default {
   }
 
   p {
-    line-height: 1.5em;
-    font-size: 1.5em;
+    line-height: 1.25em;
+    font-size: 1.3em;
   }
 
   > {
