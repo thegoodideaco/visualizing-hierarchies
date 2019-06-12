@@ -1,17 +1,21 @@
-# Hello!
+# Hello Everyone
 
-My name is _Jon Snyder_ and I work at ONE Discovery. We specialize in eDiscovery software.
+My name is `Jon Snyder`
+
+I work at [ONE Discovery](http://onediscovery.com). We specialize in eDiscovery software.
 
 My main focus is the front end architecture and design. We utilize Vue for our main interface, and we absolutely love it.
 
-## Visualizing Data 🌴
+## About this workshop
 
-My other obsession is Data Visualization. A big part of eDiscovery is navigating thru data.
+### Main Focus
 
-Being able to see the information thru different lenses is crucial to our application. Aside from it looking cool, it has some very useful attributes.
+The contents will focus on visualizing hierarchical structures, however the approach to each lesson will work with a wide range of data visualization techniques.
 
-### Holistic Displays 🗺
+### Vue
 
-When you have a large amount of data, it's very useful to get the big picture.
+Working with a reactive state allows for a dynamic approach to rendering. We will utilize Vue's observable features, as well as the template rendering syntax.
 
-Presenting information in certain ways can have a huge impact.
+### D3
+
+If you use lodash, chances are you are used to alot of what D3 offers. D3 is a collection of useful utilities that provide some amazing formulas to help ith making visuals

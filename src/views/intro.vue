@@ -1,24 +1,27 @@
 <template>
   <sidenav-layout :readme="readme">
     <div class="about h-full">
-      <ul>
-        <li v-for="item in $store.getters.wordScores"
-            :key="item.word">
-          {{ item.word }}: {{ item.value }}
-        </li>
-      </ul>
+      <!-- TODO: Turn this into a layout -->
+
+
+      <word-node v-for="item in words"
+                 :key="item.word"
+                 :node="item" />
     </div>
   </sidenav-layout>
-</template>
+</template>î
 
 <script>
 import { extent, scaleOrdinal, csvParse } from 'd3'
 import SidenavLayoutVue from '../layouts/SidenavLayout.vue'
 import readme from './intro.md'
 import { copyToClipboard } from '@/utils/System'
+import * as d3 from 'd3'
+import WordNodeVue from '../components/demos/WordNode.vue'
 export default {
   components: {
-    SidenavLayout: SidenavLayoutVue
+    SidenavLayout: SidenavLayoutVue,
+    WordNode:      WordNodeVue
   },
   data() {
     return {
@@ -26,92 +29,25 @@ export default {
       /** @type {*[]} */
       dataset:   null,
       hierarchy: null,
-      readme:    () => readme
+      readme:    () => readme,
+      words:     []
     }
   },
-  computed: {
-    populationScale() {
-      if (this.dataset)
-        return scaleOrdinal()
-          .range(['small', 'medium', 'large'])
-          .domain(extent(this.dataset, item => +item.value))
-    },
-    groupKeys() {
-      if (this.dataset) {
-        return [
-          {
-            name: 'Make',
-            key:  item => item.name.split(' ')[0]
-          },
+  watch: {
+    '$store.getters.wordScores': {
 
-          {
-            name: 'Model',
-            key:  item => item.name.split(' ')[1]
-          },
+      handler(val) {
+        this.words = JSON.parse(JSON.stringify(val)).map(w => ({
+          ...w,
 
-          {
-            name: 'Cylinders',
-            key:  item => item.cylinders
-          },
-
-          {
-            name: 'Year',
-            key:  item => +item.year
-          },
-          {
-            name: 'Before 1980',
-            key:  item => {
-              const y = +item.year
-
-              if(y < 80) {
-                return 'Before'
-              }else{
-                return 'After'
-              }
-            }
-          }
-        ]
-      }
-    },
-    words() {
-      return this.$store.getters.wordScores
-    }
-  },
-  mounted() {
-    this.init()
-  },
-  methods: {
-    updateHierarchy(h) {
-      this.hierarchy = h
-    },
-
-    async init() {
-      const { data } = await this.$http.get('/datasets/cars.csv')
-
-      this.dataset = csvParse(data)
-
-      return data
-    },
-
-    /**
-     * Copies the data items from a node
-     * @param {d3.HierarchyRectangularNode} node
-     */
-    copyLeafs(node) {
-      const rawData = node.leaves().map(leafNode => leafNode.data)
-
-
-
-      this.dataset = this.dataset.filter(d => !rawData.includes(d))
-
-
-
-      // debugger
-
-      copyToClipboard(
-        // csvFormat(rawData)
-        JSON.stringify(rawData, null, ' ')
-      )
+          // Coord plots
+          x: 0,
+          y: 0,
+          w: 0,
+          h: 0
+        }))
+      },
+      immediate: true
     }
   }
 }

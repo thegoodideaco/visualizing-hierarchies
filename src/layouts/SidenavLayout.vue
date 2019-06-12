@@ -62,8 +62,6 @@ export default {
         innerText: text
       } = this.$refs.readme.$el
 
-      console.log('hey', this.$refs)
-
       this.$store.commit('setReadme', text)
     }
   }

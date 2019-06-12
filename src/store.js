@@ -21,6 +21,7 @@ export default new Vuex.Store({
   },
   getters: {
     wordScores(state) {
+      if(!state.readme) return []
       return _.words(state.readme.toLowerCase()).reduce((prev, cur) => {
         const match = prev.find(v => v.word === cur)
 
