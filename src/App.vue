@@ -3,7 +3,7 @@
        class="h-full font-sans">
     <transition mode="out-in"
                 name="fade">
-      <router-view :key="$route.fullPath" />
+      <router-view />
     </transition>
   </div>
 </template>
@@ -26,7 +26,7 @@ export default {
 }
 
 .fade-enter-active, .fade-leave-active {
-  transition: opacity .5s;
+  transition: opacity .25s;
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;

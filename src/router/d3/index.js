@@ -9,14 +9,14 @@ export const config = {
   },
   children: [
     {
-      path:      'create',
+      path:      '/d3/create',
       component: () => import('@/views/Home.vue'),
       meta:      {
         title: 'Creating the Dataset'
       }
     },
     {
-      path:      'add',
+      path:      '/d3/add',
       component: () => import('@/views/MainView.vue'),
       meta:      {
         title: 'Adding D3.Hierarchy'

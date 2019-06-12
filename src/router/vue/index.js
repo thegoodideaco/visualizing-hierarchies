@@ -7,16 +7,17 @@ export const config = {
   meta:      {
     title: 'Combining Vue'
   },
+  props:    true,
   children: [
     {
-      path:      'reactivity',
+      path:      '/vue/reactivity',
       component: () => import('@/views/Home.vue'),
       meta:      {
         title: 'Reactivity'
       }
     },
     {
-      path:      'generators',
+      path:      '/vue/generators',
       component: () => import('@/views/MainView.vue'),
       meta:      {
         title: 'Generators'

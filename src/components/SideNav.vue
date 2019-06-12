@@ -11,7 +11,7 @@
       </div>
     </div>
 
-    <router-navigator class="px-8 uppercase text-2xl" />
+    <router-navigator class="uppercase text-2xl" />
   </aside>
 </template>
 

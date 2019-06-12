@@ -41,19 +41,25 @@ export default {
 }
 </script>
 
-<style  lang="scss">
+<style lang="scss">
 .md-viewer {
   background-color: rgba(27, 31, 34, 0.69);
   max-height: 100%;
   overflow: hidden;
 
+  user-select: none;
+
  > div {
 
    touch-action: pan-y;
 
+   position: relative;
+   transform: translateZ(0);
+
     &::-webkit-scrollbar {
     background: #1b1f22;
     width: 3px;
+    height: 3px;
 
     &-thumb {
       background: rgba(247, 250, 252, 0.69);
@@ -171,6 +177,7 @@ export default {
   p {
     line-height: 1.25em;
     font-size: 1.3em;
+    margin-bottom: 1em;
   }
 
   > {

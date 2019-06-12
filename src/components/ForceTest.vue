@@ -2,7 +2,7 @@
   <div
     v-once
     class="fill"
-    @contextmenu.prevent="false"
+    @contextmenu.prevent="() => false"
     @mousewheel="test"
     @mousedown="dragged"
     @touchstart="dragged"
@@ -30,7 +30,9 @@ import {
   rgb,
   // interpolateWarm,
   color,
-  interpolateHcl
+  // interpolateHcl,
+  // interpolateHsl,
+  interpolateRgb
 } from 'd3'
 export default {
   data() {
@@ -118,17 +120,6 @@ export default {
       ...options
     })
 
-    // Object.assign(this.pixiRender.renderer.options, options)
-
-    /** @type {PIXI.Sprite} */
-    // const bg = new pixi.Sprite.fromImage('/bg.png')
-
-    // bg.width = width
-    // bg.height = height
-    // this.pixiRender.stage.addChild(bg)
-
-    // window.app = this.pixiRender
-
     Object.assign(this.$data, {
       width,
       height
@@ -151,13 +142,12 @@ export default {
 
     container.interactive = false
     container.interactiveChildren = false
-    // container.blendMode = pixi.BLEND_MODES.OVERLAY
 
     const particleAmount = pixi.utils.isMobile.phone
       ? 500
       : pixi.utils.isMobile.tablet
         ? 700
-        : 1500
+        : 500
 
     this.roots = range(~~Math.sqrt(particleAmount))
 
@@ -167,10 +157,9 @@ export default {
 
 
     this.pixiRender.stage.addChild(this.linkRender)
-
     this.pixiRender.stage.addChild(container)
 
-    this.colorScale = scaleSequential(interpolateHcl(color('#41b883'), color('#f78043'))).domain([
+    this.colorScale = scaleSequential(interpolateRgb(color('#08fb8f'), color('#ff6414'))).domain([
       0,
       particleAmount
     ])

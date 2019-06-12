@@ -1,6 +1,9 @@
 <template>
   <layout class="home">
+    <!-- Force Graph -->
     <force-demo class="demo absolute w-full h-full" />
+
+    <!-- Middle Content -->
     <div class="content select-none text-center pointer-events-none">
       <div class="text-center text-4xl">
         <h3>Visualizing Hierarchies</h3>
@@ -41,12 +44,14 @@ export default {
 
 .content {
   color: #fff;
+  position: relative;
   z-index: 2;
 }
 
 .logos {
   display: grid;
   height: 170px;
+  width: 100%;
   padding: 10px;
 
   grid: 100% / auto auto;
