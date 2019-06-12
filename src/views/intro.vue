@@ -1,7 +1,12 @@
 <template>
   <sidenav-layout :readme="readme">
     <div class="about h-full">
-      hey
+      <ul>
+        <li v-for="item in $store.getters.wordScores"
+            :key="item.word">
+          {{ item.word }}: {{ item.value }}
+        </li>
+      </ul>
     </div>
   </sidenav-layout>
 </template>
@@ -67,6 +72,9 @@ export default {
           }
         ]
       }
+    },
+    words() {
+      return this.$store.getters.wordScores
     }
   },
   mounted() {

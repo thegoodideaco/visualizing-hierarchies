@@ -6,8 +6,10 @@
 
     <!-- Markdown -->
     <markdown-viewer
+      ref="readme"
       class="text-container overflow-auto select-text"
-      :value="readme()" />
+      :value="readme()"
+      @hook:mounted="updateReadme" />
 
     <!-- Content Entry -->
     <div class="grid">
@@ -30,11 +32,39 @@ export default {
   props: {
 
     /**
-     * @type {function}
+     * @type {Vue.PropOptions<function>}
      */
     readme: {
       type:    [Function],
       default: () => readme
+    }
+  },
+  watch: {
+
+    /**
+     * @type {Vue.WatchHandler}
+     */
+    readme: {
+      handler() {
+        // this.$store.commit('setReadme', this.readme())
+      },
+      immediate: true
+    }
+  },
+  methods: {
+    async updateReadme() {
+      await this.$nextTick()
+
+      /**
+       * @type {HTMLElement}
+       */
+      const {
+        innerText: text
+      } = this.$refs.readme.$el
+
+      console.log('hey', this.$refs)
+
+      this.$store.commit('setReadme', text)
     }
   }
 }
@@ -61,5 +91,6 @@ export default {
 
 .grid {
   display: grid;
+  overflow: auto;
 }
 </style>

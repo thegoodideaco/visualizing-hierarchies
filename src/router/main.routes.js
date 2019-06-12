@@ -16,7 +16,7 @@ const routes = [
     name:      'introduction',
     component: () => import(/* webpackChunkName: "intro" */ '@/views/intro.vue'),
     meta:      {
-      title: 'Introductions'
+      title: 'Introduction'
     }
   },
   {
