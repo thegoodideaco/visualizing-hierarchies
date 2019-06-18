@@ -60,7 +60,7 @@ export default {
 
   img {
     height: 100%;
-    width: auto;
+    width: 100%;
   }
 }
 </style>

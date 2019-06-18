@@ -1,6 +1,6 @@
 <template>
   <div class="word-node">
-    {{ node.word }}
+    {{ node.word }} - {{ node.value }}
   </div>
 </template>
 

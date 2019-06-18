@@ -70,7 +70,7 @@ export default {
         this.localHierarchy = this.hierarchy.copy()
         this.localHierarchy
           .sum(v => v.value || 0)
-          .count()
+          // .count()
           .sort((a, b) => b.value - a.value)
 
 
