@@ -35,8 +35,14 @@ export default {
      * @type {Vue.PropOptions<function>}
      */
     readme: {
-      type:    [Function],
-      default: () => readme
+      type: [Function],
+      default() {
+
+        /**
+         * If available, load as async
+         */
+        return this.$route.meta.readme || readme
+      }
     }
   },
   watch: {
@@ -54,6 +60,8 @@ export default {
   methods: {
     async updateReadme() {
       await this.$nextTick()
+
+      // debugger
 
       /**
        * @type {HTMLElement}
@@ -90,5 +98,6 @@ export default {
 .grid {
   display: grid;
   overflow: auto;
+  position: relative;
 }
 </style>

@@ -30,7 +30,7 @@ const routes = [
   {
     path:      '/examples',
     name:      'examples',
-    component: About,
+    component: () => import(/* webpackChunkName: "examples" */ '@/views/Examples.vue'),
     meta:      {
       title: 'Examples'
     }

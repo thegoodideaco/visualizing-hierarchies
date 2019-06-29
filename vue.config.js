@@ -3,6 +3,15 @@ function resolve(dir) {
   return path.join(__dirname, dir)
 }
 
+/**
+ * @typedef { import("@vue/cli-service").ProjectOptions } Options
+ * @typedef { import("webpack-chain") } ChainWebpack
+ */
+
+
+/**
+ * @type { Options }
+ */
 module.exports = {
 
   css: {
@@ -28,7 +37,9 @@ module.exports = {
     )
   },
 
-  /** @param {import('webpack-chain')} config*/
+  /**
+   * @type {ChainWebpack}
+   */
   chainWebpack: config => {
     /**
      * Markdown File Configuration
@@ -39,5 +50,7 @@ module.exports = {
       .use('raw-loader')
       .loader('raw-loader')
       .end()
-  }
+  },
+
+  parallel: 16
 }

@@ -1,7 +1,7 @@
 <template>
   <div class="tree-view">
     <div
-      v-for="(item, index) in localDescendants"
+      v-for="(item, index) in filteredNodes"
       :key="index"
       :style="treeStyle(item)"
       class="p-1">
@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import { treemap, treemapSquarify, format, scalePow } from 'd3'
+import { treemap, format, treemapBinary, scaleSqrt, scaleLinear } from 'd3'
 export default {
   filters: {
     formatted: val => format(',d')(+val)
@@ -42,8 +42,8 @@ export default {
       /** @type {d3.HierarchyRectangularNode[]} */
       localDescendants: null,
       size:             [100, 100],
-      padding:          6,
-      paddingTop:       30,
+      padding:          0,
+      paddingTop:       0,
       rounding:         true
     }
   },
@@ -65,25 +65,23 @@ export default {
           .paddingTop(this.paddingTop)
           .round(this.rounding)
           .size(this.size)
-          .tile(treemapSquarify)
+          .tile(treemapBinary)
 
         this.localHierarchy = this.hierarchy.copy()
         this.localHierarchy
           .sum(v => v.value || 0)
           // .count()
-          .sort((a, b) => b.value - a.value)
-
+          .sort((a, b) => a.value - b.value)
 
         t(this.localHierarchy)
 
         const nodes = []
         this.localHierarchy.each(v => {
-          if(!this.showLeafs) {
-            if(v.children) {
+          if (!this.showLeafs) {
+            if (v.children) {
               nodes.push(v)
             }
-          }else{
-
+          } else {
             nodes.push(v)
           }
         })
@@ -92,6 +90,22 @@ export default {
 
         return t
       }
+    },
+
+    /**
+     * Filters unwanted nodes to be displayed
+     */
+    filteredNodes() {
+      if (!this.localDescendants) return []
+
+      const filtered = this.localDescendants.filter(i => {
+        return i.parent != null && i.children == null
+      })
+
+      /**
+       * @param  item
+       */
+      return filtered
     }
   },
   watch: {
@@ -111,21 +125,17 @@ export default {
             this.treemap.size(this.size)
             this.treemap(this.localHierarchy)
 
-
             const nodes = []
             this.localHierarchy.each(v => {
-              if(!this.showLeafs) {
-                if(v.children) {
+              if (!this.showLeafs) {
+                if (v.children) {
                   nodes.push(v)
                 }
-              }else{
-
+              } else {
                 nodes.push(v)
               }
             })
             this.localDescendants = nodes
-
-
           }
         })
       },
@@ -141,7 +151,7 @@ export default {
   },
 
   methods: {
-    /**
+    /** Generates styles for a particular item
      * @param {import('d3').HierarchyRectangularNode} treeNode
      */
     treeStyle(treeNode) {
@@ -149,10 +159,13 @@ export default {
       const v = treeNode.parent
         ? treeNode.parent.value
         : this.localHierarchy.value
-      const colorScale = scalePow()
-        .exponent(0.5)
+      const colorScale = scaleSqrt()
+        .domain([0, this.localHierarchy.value])
+        .range(['#3c4750', '#3c7986'])
+
+      const textColorScale = scaleLinear()
         .domain([0, v])
-        .range(['#161a1c', '#c3673d'])
+        .range(['green', 'yellow'])
 
       return {
         top:             '0px',
@@ -166,7 +179,8 @@ export default {
             ? colorScale(treeNode.value)
             : 'transparent',
         fontSize:        treeNode.children != null ? '16px' : '10px',
-        transitionDelay: `${treeNode.depth * 30}ms`
+        transitionDelay: `${treeNode.depth * 30}ms`,
+        color:           textColorScale(treeNode.value)
       }
     },
 
@@ -211,11 +225,18 @@ export default {
     white-space: nowrap;
     transform: translateZ(0);
     transition: all 600ms cubic-bezier(0.39, -0.29, 0.24, 1.19);
-    border: 1px solid rgba(#000, 0.25);
+    // border: 1px solid rgba(#000, 0.25);
     overflow: hidden;
     text-overflow: ellipsis;
     font-size: 12px;
     text-shadow: 0 1px 3px rgba(#000, 0.5);
+    display: grid;
+    align-items: center;
+    justify-content: center;
+
+    > span {
+      text-rendering: optimizeSpeed;
+    }
   }
 }
 </style>

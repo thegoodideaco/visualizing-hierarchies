@@ -88,7 +88,8 @@ export default {
     this.pixiRender.destroy(true)
 
     window.removeEventListener('resize', this.onResize)
-    window.removeEventListener('mousemove', this.updateMouse)
+    this.$el.removeEventListener('mousemove', this.updateMouse)
+    this.$el.removeEventListener('touchmove', this.updateTouch)
   },
   mounted() {
     const { width, height } = this.$el.getBoundingClientRect()
@@ -228,8 +229,8 @@ export default {
       .tick(10)
 
     window.addEventListener('resize', this.onResize)
-    window.addEventListener('mousemove', this.updateMouse)
-    window.addEventListener('touchmove', this.updateTouch)
+    this.$el.addEventListener('mousemove', this.updateMouse)
+    this.$el.addEventListener('touchmove', this.updateTouch)
   },
 
   methods: {
@@ -336,14 +337,19 @@ export default {
 
     onResize() {
       console.log('resize')
-      this.width = innerWidth
-      this.height = innerHeight
-      this.pixiRender.renderer.resize(innerWidth, innerHeight)
+      const {
+        width,
+        height
+      } = this.$el.getBoundingClientRect()
+
+      this.width = width
+      this.height = height
+      this.pixiRender.renderer.resize(width, height)
 
       /** @type {d3.ForceCenter} */
       const centerSim = this.simulation.force('center')
-      const w = innerWidth * .5
-      const h = innerHeight * .5
+      const w = width * .5
+      const h = height * .5
       centerSim.x(w).y(h)
 
       /** @type {d3.ForceRadial} */
@@ -353,7 +359,7 @@ export default {
 
     /** @param {MouseEvent} e */
     updateMouse(e) {
-      const { x, y } = e
+      const { pageX: x, pageY: y } = e
 
       /** @type {d3.ForceRadial} */
       const force = this.simulation.force('mouse')

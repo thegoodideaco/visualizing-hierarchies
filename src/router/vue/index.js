@@ -1,26 +1,42 @@
 
+/* eslint-disable */
+
+import IntroReadme from '@/views/vue/intro.md'
+import AboutReadme from '@/views/about.md'
+import ReactivityReadme from '@/views/reactivity.md'
+import SlotsReadme from './slots.md'
+
 /** @type {import("vue-router").RouteConfig} */
 export const config = {
   name:      'vue',
   path:      '/vue',
   component: () => import('@/layouts/SidenavLayout.vue'),
   meta:      {
-    title: 'Combining Vue'
+    title: 'Vue'
   },
-  props:    true,
   children: [
     {
-      path:      '/vue/reactivity',
-      component: () => import('@/views/Home.vue'),
+      path:      '/vue/intro',
+      component: () => import('@/views/vue/Intro.vue'),
       meta:      {
-        title: 'Reactivity'
+        title:  'What is Vue?',
+        readme: IntroReadme
       }
     },
     {
-      path:      '/vue/generators',
-      component: () => import('@/views/MainView.vue'),
+      path:      '/vue/reactivity',
+      component: () => import('@/views/vue/Reactivity.vue'),
       meta:      {
-        title: 'Generators'
+        title:  'Reactivity',
+        readme: ReactivityReadme
+      }
+    },
+    {
+      path:      '/vue/slots',
+      component: () => import('@/views/vue/Slots.vue'),
+      meta:      {
+        title: 'Slots',
+        readme: SlotsReadme
       }
     }
   ]

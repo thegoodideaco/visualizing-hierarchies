@@ -11,7 +11,6 @@
     "ui": "vue ui"
   },
   "dependencies": {
-    "4": "^0.0.0",
     "axios": "^0.19.0",
     "core-js": "^2.6.5",
     "d3": "^5.9.2",
@@ -28,20 +27,20 @@
   },
   "devDependencies": {
     "@types/d3": "^5.7.2",
-    "@types/lodash": "^4.14.133",
-    "@types/pixi.js": "4",
+    "@types/lodash": "^4.14.134",
+    "@types/pixi.js": "4.8.8",
     "@vue/cli-plugin-babel": "^3.8.0",
     "@vue/cli-plugin-eslint": "^3.8.0",
-    "@vue/cli-service": "^3.8.0",
+    "@vue/cli-service": "^3.8.4",
     "@vue/eslint-config-prettier": "^4.0.1",
-    "babel-eslint": "^10.0.1",
+    "babel-eslint": "^10.0.2",
     "copy-webpack-plugin": "^5.0.3",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.2.2",
     "node-sass": "^4.12.0",
-    "raw-loader": "^2.0.0",
+    "raw-loader": "^3.0.0",
     "sass-loader": "^7.1.0",
-    "tailwindcss": "^1.0.3",
+    "tailwindcss": "^1.0.4",
     "vue-template-compiler": "^2.6.10"
   }
 }

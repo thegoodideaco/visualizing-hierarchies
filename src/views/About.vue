@@ -10,22 +10,11 @@
       </div>
 
       <div>
-        <tree-layout
-          v-if="hierarchy"
-          :show-leafs="false"
-          :hierarchy="hierarchy"
-          class="w-full h-full">
-          <template v-slot="item">
-            <!-- Hello {{ Object.keys(item) }} -->
-
-            <label>
-              {{ item.data.key }} {{ item.value }}
-            </label>
-
-            <button @click="copyLeafs(item)">
-              copy
-            </button>
-          </template>
+        <tree-layout v-if="hierarchy"
+                     :hierarchy="hierarchy"
+                     :show-leafs="false"
+                     class="w-full h-full">
+                     <!-- Replace -->
         </tree-layout>
       </div>
     </div>
@@ -47,7 +36,6 @@ export default {
   },
   data() {
     return {
-
       /** @type {*[]} */
       dataset:   null,
       hierarchy: null,
@@ -88,9 +76,9 @@ export default {
             key:  item => {
               const y = +item.year
 
-              if(y < 80) {
+              if (y < 80) {
                 return 'Before'
-              }else{
+              } else {
                 return 'After'
               }
             }
@@ -117,18 +105,12 @@ export default {
 
     /**
      * Copies the data items from a node
+     * TODO: remove this, only for testing
      * @param {d3.HierarchyRectangularNode} node
      */
     copyLeafs(node) {
       const rawData = node.leaves().map(leafNode => leafNode.data)
-
-
-
       this.dataset = this.dataset.filter(d => !rawData.includes(d))
-
-
-
-      // debugger
 
       copyToClipboard(
         // csvFormat(rawData)

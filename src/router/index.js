@@ -11,7 +11,15 @@ Vue.use(Router)
 export default new Router({
   routes: [
     ...routes,
+    vueRoute,
     d3Route,
-    vueRoute
+    {
+      path:     '/404',
+      redirect: '/'
+    },
+    {
+      path:     '*',
+      redirect: '/'
+    }
   ]
 })
