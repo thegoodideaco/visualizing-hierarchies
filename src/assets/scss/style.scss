@@ -4,10 +4,10 @@
 
 html {
   font-display: block;
-@apply .font-sans .font-light .text-gray-400;
-font-family: 'Roboto';
+  @apply .font-sans .font-light .text-gray-400;
+  font-family: 'Roboto';
   height: 100%;
-  
+
   background-color: #292f35;
   background-image: radial-gradient(
     farthest-corner at top left,
@@ -21,9 +21,30 @@ font-family: 'Roboto';
 body {
   height: 100%;
   overflow: auto;
-  
 }
 
+* {
+  &::-webkit-scrollbar {
+    background: #1b1f22;
+    width: 3px;
+    height: 3px;
+
+    &-thumb {
+      background: rgba(247, 250, 252, 0.69);
+    }
+  }
+
+  &:hover {
+    &::-webkit-scrollbar {
+      background: #1b1f22;
+      // width: 10px;
+
+      &-thumb {
+        background: rgba(247, 250, 252, 0.69);
+      }
+    }
+  }
+}
 
 h1 {
   @apply text-6xl font-title;

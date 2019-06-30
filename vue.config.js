@@ -21,6 +21,7 @@ module.exports = {
   productionSourceMap: false,
   runtimeCompiler:     true,
 
+
   configureWebpack: config => {
     /**
      * Copy datasets directory into build

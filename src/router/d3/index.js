@@ -1,4 +1,7 @@
-
+import IntroReadme from './intro.md'
+import TransformReadme from './transform.md'
+import ScaleReadme from './scales.md'
+import HierarchyReadme from './hierarchy.md'
 /** @type {import("vue-router").RouteConfig} */
 export const config = {
   name:      'd3',
@@ -9,17 +12,35 @@ export const config = {
   },
   children: [
     {
-      path:      '/d3/create',
-      component: () => import('@/views/Home.vue'),
+      path:      '/d3/intro',
+      component: () => import('@/views/vue/Reactivity.vue'),
       meta:      {
-        title: 'Creating the Dataset'
+        title:  'What is D3?',
+        readme: IntroReadme
       }
     },
     {
-      path:      '/d3/add',
-      component: () => import('@/views/MainView.vue'),
+      path:      '/d3/transforming-data',
+      component: () => import('@/views/vue/Reactivity.vue'),
       meta:      {
-        title: 'Adding D3.Hierarchy'
+        title:  'Transforming Data',
+        readme: TransformReadme
+      }
+    },
+    {
+      path:      '/d3/scales',
+      component: () => import('@/views/vue/Reactivity.vue'),
+      meta:      {
+        title:  'Scales',
+        readme: ScaleReadme
+      }
+    },
+    {
+      path:      '/d3/hierarchy',
+      component: () => import('@/views/vue/Reactivity.vue'),
+      meta:      {
+        title:  'D3.hierarchy',
+        readme: HierarchyReadme
       }
     }
   ]
