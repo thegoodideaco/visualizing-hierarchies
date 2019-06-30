@@ -1,6 +1,7 @@
 <template>
-  <div class="side-layout select-none"
-       :class="{'focus-text': $attrs.focusedOnText}">
+  <div
+    class="side-layout select-none"
+    :class="{'focus-text': $attrs.focusedOnText}">
     <!-- Side menu -->
     <side-nav />
 
@@ -13,8 +14,11 @@
 
     <!-- Content Entry -->
     <div class="grid">
-      <slot class="h-full">
-        <router-view />
+      <slot>
+        <transition name="fade"
+                    mode="out-in">
+          <router-view />
+        </transition>
       </slot>
     </div>
   </div>

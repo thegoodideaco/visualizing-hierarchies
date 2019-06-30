@@ -1,10 +1,7 @@
 <template>
   <div id="app"
        class="h-full font-sans">
-    <transition mode="out-in"
-                name="fade">
-      <router-view />
-    </transition>
+    <router-view />
   </div>
 </template>
 

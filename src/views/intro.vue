@@ -1,12 +1,6 @@
 <template>
   <sidenav-layout :readme="readme">
     <div class="about h-full">
-      <!-- TODO: Turn this into a layout -->
-
-      <!-- <word-node v-for="item in words"
-                 :key="item.word"
-      :node="item" />-->
-
       <tree-layout
         v-if="hierarchy"
         :hierarchy="hierarchy">
