@@ -20,6 +20,12 @@ export default new Vuex.Store({
     }
   },
   getters: {
+
+    /**
+     * Word Frequency in active readme
+     * @returns {{word: string, value: number}}
+     * @param {*} state
+     */
     wordScores(state) {
       if(!state.readme) return []
       return _.words(state.readme.toLowerCase()).reduce((prev, cur) => {

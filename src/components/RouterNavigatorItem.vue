@@ -1,21 +1,24 @@
 <template>
   <li class="nav__item">
     <!-- Router Link if Leaf -->
-    <router-link v-if="isLeaf"
-                 class="nav__item__title"
-                 active-class="pointer-events-none active"
-                 :to="routeItem">
+    <router-link
+      v-if="isLeaf"
+      :to="routeItem"
+      active-class="pointer-events-none active"
+      class="nav__item__title">
       {{ routeItem.meta.title }}
     </router-link>
 
     <!-- Normal Title if ancestor -->
-    <span v-else
-          class="text-orange-400 font-bold">
+    <div
+      v-else
+      class="text-orange-400 font-bold mt-5">
       {{ routeItem.meta.title }}
-    </span>
+    </div>
 
-    <ul v-if="routeItem.children"
-        class="mb-2">
+    <ul
+      v-if="routeItem.children"
+      class="mb-2">
       <!-- Recursive Component -->
       <router-navigator-item
         v-for="(item, index) in routeItem.children"
@@ -29,7 +32,6 @@
 export default {
   name:  'RouterNavigatorItem',
   props: {
-
     /**
      * @type {Vue.PropOptions<import('vue-router').RouteConfig>}
      */
@@ -54,15 +56,18 @@ export default {
 
     &.active {
       color: #fff;
-
     }
   }
 
   /deep/ .nav__item {
-    font-size: .7em;
+    font-size: 0.7em;
 
     .nav__item__title {
-      color: darken(#fff, 3);
+      color: rgba(247, 247, 247, 0.34);
+
+      &.active {
+        color: #fff;
+      }
     }
   }
 }

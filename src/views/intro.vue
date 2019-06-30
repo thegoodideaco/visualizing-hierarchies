@@ -15,10 +15,8 @@
 <script>
 import SidenavLayoutVue from '../layouts/SidenavLayout.vue'
 import readme from './intro.md'
-import * as d3 from 'd3'
-// import WordNodeVue from '../components/demos/WordNode.vue'
 import TreeLayoutVue from '../components/TreeLayout.vue'
-import { scaleLinear, extent } from 'd3'
+import { scaleLinear, extent, nest, hierarchy } from 'd3'
 export default {
   components: {
     SidenavLayout: SidenavLayoutVue,
@@ -69,14 +67,14 @@ export default {
           /**
            * @type {d3.Nest<{word: string, value: number}>}
            */
-          const n = d3.nest()
+          const n = nest()
           n.key(v => v.value)
             .key(v => v.word.toLowerCase().substr(0, 1)).sortKeys((a, b) =>
               b > a ? 1 : b < a ? -1 : 0
             )
           n.key(v => v.value)
 
-          this.hierarchy = d3.hierarchy(
+          this.hierarchy = hierarchy(
             {
               key:    'all',
               values: n.entries(val)

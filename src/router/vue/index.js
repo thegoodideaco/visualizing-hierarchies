@@ -11,6 +11,7 @@ import RenderingReadme from './rendering.md'
 export const config = {
   name:      'vue',
   path:      '/vue',
+  redirect: '/vue/intro',
   component: () => import('@/layouts/SidenavLayout.vue'),
   meta:      {
     title: 'Vue'
