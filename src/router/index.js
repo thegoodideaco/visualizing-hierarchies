@@ -10,6 +10,7 @@ import advancedRoute from './advanced'
 
 Vue.use(Router)
 
+
 export default new Router({
   routes: [
     ...routes,

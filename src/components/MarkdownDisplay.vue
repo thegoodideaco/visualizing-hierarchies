@@ -101,10 +101,11 @@ export default {
   }
 
   a {
-    color: #19ff17;
+    color: #40f7a5;
 
     &:hover {
-      color: #fff;
+      color: #ffb760;
+      text-decoration: none;
     }
   }
 

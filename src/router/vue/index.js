@@ -6,20 +6,23 @@ import AboutReadme from '@/views/about.md'
 import ReactivityReadme from '@/views/reactivity.md'
 import SlotsReadme from './slots.md'
 import RenderingReadme from './rendering.md'
+import { SideNavLayout } from '@/layouts/componentViews';
+import * as components from './asyncComponents'
+
 
 /** @type {import("vue-router").RouteConfig} */
 export const config = {
   name:      'vue',
   path:      '/vue',
   redirect: '/vue/intro',
-  component: () => import('@/layouts/SidenavLayout.vue'),
+  component: SideNavLayout,
   meta:      {
     title: 'Vue'
   },
   children: [
     {
       path:      '/vue/intro',
-      component: () => import('@/views/vue/Intro.vue'),
+      component: components.intro,
       meta:      {
         title:  'What is Vue?',
         readme: IntroReadme
@@ -27,7 +30,7 @@ export const config = {
     },
     {
       path:      '/vue/reactivity',
-      component: () => import('@/views/vue/Reactivity.vue'),
+      component: components.reactivity,
       meta:      {
         title:  'Reactivity',
         readme: ReactivityReadme
@@ -59,7 +62,7 @@ export const config = {
     },
     {
       path:      '/vue/slots',
-      component: () => import('@/views/vue/Slots.vue'),
+      component: components.slots,
       meta:      {
         title: 'Slots',
         readme: SlotsReadme

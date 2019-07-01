@@ -1,41 +1,52 @@
+const components = {
+  home: () => import(
+    /* webpackChunkName: "home" */
+    '@/views/Home.vue'
+  ),
+  intro: () => import(
+    /* webpackChunkName: "intro" */
+    '@/views/intro.vue'
+  ),
+  definition: () => import(
+    /* webpackChunkName: "definition" */
+    '@/views/About.vue'
+  ),
+  examples: () => import(
+    /* webpackChunkName: "examples" */
+    '@/views/Examples.vue'
+  )
+}
+
 /** @type {import('vue-router').RouteConfig[]} */
 const routes = [
   {
     path:      '/',
     name:      'home',
-    component: () => import(/* webpackChunkName: "home" */ '@/views/Home.vue')
+    component: components.home
   },
   {
     path:      '/intro',
     name:      'introduction',
-    component: () =>
-      import(/* webpackChunkName: "intro" */ '@/views/intro.vue'),
-    meta: {
+    component: components.intro,
+    meta:      {
       title: 'Introduction'
     }
   },
   {
     path:      '/definition',
     name:      'definition',
-    component: () =>
-      import(/* webpackChunkName: "definition" */ '@/views/About.vue'),
-    meta: {
+    component: components.definition,
+    meta:      {
       title: 'Defining a Hierarchy'
     }
   },
   {
     path:      '/examples',
     name:      'examples',
-    component: () =>
-      import(/* webpackChunkName: "examples" */ '@/views/Examples.vue'),
-    meta: {
+    component: components.examples,
+    meta:      {
       title: 'Examples'
     }
-  },
-  {
-    path:      '/about',
-    name:      'about',
-    component: () => import(/* webpackChunkName: "about" */ '@/views/About.vue')
   }
 ]
 
