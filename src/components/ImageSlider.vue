@@ -8,6 +8,7 @@
           :key="activeIndex"
           class="image-slider__inner">
           <img :src="activeItem.url"
+               :alt="activeItem.title"
 
                @load="loaded = true">
 

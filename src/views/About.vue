@@ -9,14 +9,14 @@
 
 <script>
 
-// import { extent, scaleOrdinal } from 'd3'
 import SidenavLayoutVue from '../layouts/SidenavLayout.vue'
-import ImageSliderVue from '../components/ImageSlider.vue'
 import readme from './about.md'
 export default {
   components: {
     SidenavLayout: SidenavLayoutVue,
-    ImageSlider:   ImageSliderVue
+    ImageSlider:   () => import(
+      /* webpackChunkName: "ImageSlider" */
+      '@/components/ImageSlider.vue')
   },
   data() {
     return {
@@ -33,6 +33,14 @@ export default {
         {
           url:   '/static/images/edge-bundling.jpg',
           title: 'Edge Bundling'
+        },
+        {
+          url:   '/static/images/semiology.png',
+          title: 'Semiology of Graphics'
+        },
+        {
+          url:   '/static/images/radial-tree.png',
+          title: 'Radial Tree'
         },
         {
           url:   '/static/images/vue ui starburst.jpg',
