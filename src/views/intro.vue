@@ -46,7 +46,8 @@ export default {
           url:   '/static/images/vue ui starburst.jpg',
           title: 'Testing 2'
         },
-        () => import('@/components/ForceTest.vue')
+        () => import('@/components/ForceTest.vue'),
+        () => import('@/components/demos/ReportTree.vue')
       ]
     }
   }

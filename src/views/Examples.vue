@@ -5,10 +5,7 @@
                     :items="images"
                     :active-index.sync="curIndex" />
 
-      <iframe class="cover-full gpu"
-              width="100%"
-              height="100%"
-              :src="debug ? '/static/report.html' : '/report.html'" />
+      <report-tree />
     </div>
   </sidenav-layout>
 </template>
@@ -17,18 +14,19 @@
 import SidenavLayoutVue from '../layouts/SidenavLayout.vue'
 import readme from './examples.md'
 import { csv } from 'd3'
+import ReportTreeVue from '../components/demos/ReportTree.vue'
 
 export default {
   components: {
     SidenavLayout: SidenavLayoutVue,
     ImageSlider:   () => import(
       /* webpackChunkName: "ImageSlider" */
-      '@/components/ImageSlider.vue')
+      '@/components/ImageSlider.vue'),
+    ReportTree: ReportTreeVue
   },
   data() {
     return {
       readme: () => readme,
-      debug:  process.env.NODE_ENV === 'development',
       images: [
         {
           url:   '/static/images/webpack-treemap.jpg',

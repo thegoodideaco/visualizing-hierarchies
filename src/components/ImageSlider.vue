@@ -11,6 +11,7 @@
              class="image-slider__inner">
           <img :alt="activeItem.title"
                :src="activeItem.url"
+               draggable="false"
                @load="loaded = true">
 
           <h4 v-show="loaded">
@@ -20,9 +21,9 @@
         <!-- If Component -->
         <component :is="activeItem"
                    v-else
-                   v-once
                    :key="'_'+activeIndex"
-                   class="h-full" />
+                   class="h-full"
+                   @hook:mounted="loaded = true" />
       </transition>
     </div>
   </div>
