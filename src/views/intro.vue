@@ -1,7 +1,8 @@
 <template>
   <sidenav-layout :readme="readme">
-    <div class="about h-full">
-      <!-- Content Here -->
+    <div class="intro h-full">
+      <image-slider :active-index.sync="curIndex"
+                    :items="items" />
     </div>
   </sidenav-layout>
 </template>
@@ -9,14 +10,44 @@
 <script>
 import SidenavLayoutVue from '../layouts/SidenavLayout.vue'
 import readme from './intro.md'
+import ImageSliderVue from '../components/ImageSlider.vue'
 // import { scaleLinear, extent, nest, hierarchy } from 'd3'
 export default {
   components: {
-    SidenavLayout: SidenavLayoutVue
+    SidenavLayout: SidenavLayoutVue,
+    ImageSlider:   ImageSliderVue
   },
   data() {
     return {
-      readme: () => readme
+      readme:   () => readme,
+      curIndex: 0,
+      items:    [
+        {
+          url:   '/static/images/webpack-treemap.jpg',
+          title: 'Testing'
+        },
+        {
+          url:   '/static/images/starburst.gif',
+          title: 'Testing'
+        },
+        {
+          url:   '/static/images/edge-bundling.jpg',
+          title: 'Edge Bundling'
+        },
+        {
+          url:   '/static/images/semiology.png',
+          title: 'Semiology of Graphics'
+        },
+        {
+          url:   '/static/images/radial-tree.png',
+          title: 'Radial Tree'
+        },
+        {
+          url:   '/static/images/vue ui starburst.jpg',
+          title: 'Testing 2'
+        },
+        () => import('@/components/ForceTest.vue')
+      ]
     }
   }
 
@@ -24,7 +55,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.about {
+.intro {
   display: grid;
   grid: 1fr / 100%;
 
@@ -35,7 +66,7 @@ export default {
       padding: 10px;
 
       display: grid;
-      grid: auto 1fr / 100%;
+      grid: 100%/ 100%;
     }
   }
 }

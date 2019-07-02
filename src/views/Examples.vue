@@ -16,6 +16,8 @@
 <script>
 import SidenavLayoutVue from '../layouts/SidenavLayout.vue'
 import readme from './examples.md'
+import { csv } from 'd3'
+
 export default {
   components: {
     SidenavLayout: SidenavLayoutVue,
@@ -48,6 +50,11 @@ export default {
       curIndex: 0
 
     }
+  },
+  async mounted() {
+    const data = await csv('/datasets/googleplaystore.csv')
+
+    console.log(data)
   }
 }
 </script>
