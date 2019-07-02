@@ -14,7 +14,12 @@
 </template>
 
 <script>
-import * as pixi from 'pixi.js'
+// import { Graphics} from 'pixi.js'
+import Application from 'pixi.js/lib/core/Application'
+import * as utils from 'pixi.js/lib/core/utils'
+import * as particles from 'pixi.js/lib/particles'
+import Graphics from 'pixi.js/lib/core/graphics/Graphics'
+import Sprite from 'pixi.js/lib/core/sprites/Sprite'
 import { range } from 'd3-array'
 import {
   forceSimulation,
@@ -34,6 +39,7 @@ import {
   // interpolateHsl,
   interpolateRgb
 } from 'd3'
+
 export default {
   data() {
     return {
@@ -112,9 +118,9 @@ export default {
 
     // const r = devicePixelRatio
 
-    pixi.utils.skipHello()
+    utils.skipHello()
 
-    this.pixiRender = new pixi.Application({
+    this.pixiRender = new Application({
       view: this.$refs.canvas,
       width,
       height,
@@ -126,7 +132,7 @@ export default {
       height
     })
 
-    const container = new pixi.particles.ParticleContainer(
+    const container = new particles.ParticleContainer(
       10000,
       {
         vertices: false,
@@ -144,16 +150,16 @@ export default {
     container.interactive = false
     container.interactiveChildren = false
 
-    const particleAmount = pixi.utils.isMobile.phone
+    const particleAmount = utils.isMobile.phone
       ? 500
-      : pixi.utils.isMobile.tablet
+      : utils.isMobile.tablet
         ? 700
         : 500
 
     this.roots = range(~~Math.sqrt(particleAmount))
 
 
-    this.linkRender = new pixi.Graphics()
+    this.linkRender = new Graphics()
 
 
 
@@ -168,7 +174,7 @@ export default {
     this.nodes = range(particleAmount).map((k, i) => {
 
       /** @type {PIXI.Sprite} */
-      const spr = new pixi.Sprite.fromImage('/test.png')
+      const spr = new Sprite.fromImage('/test.png')
 
 
       container.addChild(spr)

@@ -33,6 +33,11 @@ module.exports = {
           from:   resolve('datasets'),
           ignore: ['.*'],
           to:     'datasets'
+        },
+        {
+          from:   resolve('static'),
+          ignore: ['.*'],
+          to:     'static'
         }
       ])
     )

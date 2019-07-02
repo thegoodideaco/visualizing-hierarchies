@@ -26,14 +26,17 @@
 
 <script>
 import BlankLayoutVue from '@/layouts/BlankLayout.vue'
-import ForceTestVue from '@/components/ForceTest.vue'
+// import ForceTestVue from '@/components/ForceTest.vue'
 export default {
   components: {
     Layout:    BlankLayoutVue,
-    ForceDemo: ForceTestVue
+    ForceDemo: () => import(
+      /* webpackChunkName: "ForceDemo" */
+      '@/components/ForceTest.vue')
   }
 }
 </script>
+
 
 <style scoped lang="scss">
 .home {

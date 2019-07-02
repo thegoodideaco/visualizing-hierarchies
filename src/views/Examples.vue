@@ -1,7 +1,14 @@
 <template>
   <sidenav-layout :readme="readme">
     <div class="examples h-full">
-      Display Collection of examples
+      <image-slider v-if="false"
+                    :items="images"
+                    :active-index.sync="curIndex" />
+
+      <iframe class="cover-full gpu"
+              width="100%"
+              height="100%"
+              :src="debug ? '/static/report.html' : '/report.html'" />
     </div>
   </sidenav-layout>
 </template>
@@ -9,13 +16,36 @@
 <script>
 import SidenavLayoutVue from '../layouts/SidenavLayout.vue'
 import readme from './examples.md'
+import ImageSliderVue from '../components/ImageSlider.vue'
 export default {
   components: {
-    SidenavLayout: SidenavLayoutVue
+    SidenavLayout: SidenavLayoutVue,
+    ImageSlider:   ImageSliderVue
   },
   data() {
     return {
-      readme: () => readme
+      readme: () => readme,
+      debug:  process.env.NODE_ENV === 'development',
+      images: [
+        {
+          url:   '/static/images/webpack-treemap.jpg',
+          title: 'Webpack generated treemap of the final build.'
+        },
+        {
+          url:   '/static/images/starburst.gif',
+          title: 'Testing'
+        },
+        {
+          url:   '/static/images/edge-bundling.jpg',
+          title: 'Edge Bundling'
+        },
+        {
+          url:   '/static/images/vue ui starburst.jpg',
+          title: 'Starburst visualization in Vue UI'
+        }
+      ],
+      curIndex: 0
+
     }
   }
 }

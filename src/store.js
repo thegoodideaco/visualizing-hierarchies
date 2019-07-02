@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-import _ from 'lodash'
+import words from 'lodash/words'
 
 Vue.use(Vuex)
 
@@ -28,7 +28,7 @@ export default new Vuex.Store({
      */
     wordScores(state) {
       if(!state.readme) return []
-      return _.words(state.readme.toLowerCase()).reduce((prev, cur) => {
+      return words(state.readme.toLowerCase()).reduce((prev, cur) => {
         const match = prev.find(v => v.word === cur)
 
         if(match) {

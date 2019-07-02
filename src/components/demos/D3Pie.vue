@@ -1,5 +1,5 @@
 <template>
-  <svg v-if="paths">
+  <svg>
     <D3Arc v-for="(item, key) in paths"
            :key="key"
            :start-angle="item.startAngle"
@@ -27,22 +27,27 @@ export default {
     D3Arc
   },
   props: {
+    /** @type {Vue.PropOptions<number[]>} */
     inputDatum: {
       type:    Array,
       default: () => [1, 2, 3, 4, 15, 6, 7, 8, 9]
     },
+    /** @type {Vue.PropOptions<number>} */
     index: {
       type:    Number,
       default: 0
     },
+    /** @type {Vue.PropOptions<number>} */
     startAngle: {
       type:    Number,
       default: 0
     },
+    /** @type {Vue.PropOptions<number>} */
     endAngle: {
       type:    Number,
       default: Math.PI * 2
     },
+    /** @type {Vue.PropOptions<number>} */
     padAngle: {
       type:    Number,
       default: 0
@@ -53,16 +58,21 @@ export default {
       type:    Number,
       default: 200
     },
+
+
     outerRadius: {
       type:    Number,
       default: 300
     },
+    /** @type {Vue.PropOptions<number>} */
     cornerRadius: {
       type:    Number,
       default: 0
     }
   },
   computed: {
+
+    /** @returns {d3.Pie} */
     pieGenerator() {
       return pie()
         .startAngle(this.startAngle)

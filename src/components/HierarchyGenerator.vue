@@ -41,7 +41,8 @@
 
 <script>
 import draggable from 'vuedraggable'
-import * as _ from 'lodash'
+import words from 'lodash/words'
+import deburr from 'lodash/deburr'
 import { nest, hierarchy, timeFormat } from 'd3'
 export default {
   components: {
@@ -60,14 +61,14 @@ export default {
           {
             name: 'First Letter of App',
             key:  item => {
-              const [firstWord] = _.words(_.deburr(item.App))
+              const [firstWord] = words(deburr(item.App))
 
               return firstWord.substr(0, 1)
             }
           },
           {
             name: 'First Word of App',
-            key:  item => _.words(_.deburr(item.App))[0]
+            key:  item => words(deburr(item.App))[0]
           },
           {
             name: 'Category',
