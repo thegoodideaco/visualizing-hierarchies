@@ -2,19 +2,21 @@
 /* eslint-disable */
 
 import IntroReadme from '@/views/vue/intro.md'
+import { SideNavLayout } from '@/layouts/componentViews';
+import { IntroView } from '@/views/vue';
 
 /** @type {import("vue-router").RouteConfig} */
 export const config = {
   name:      'advanced',
   path:      '/advanced',
-  component: () => import('@/layouts/SidenavLayout.vue'),
+  component: SideNavLayout,
   meta:      {
     title: 'Advanced'
   },
   children: [
     {
       path:      '/advanced/generator',
-      component: () => import('@/views/vue/Intro.vue'),
+      component: IntroView,
       meta:      {
         title:  'Hierarchy Generator',
         readme: IntroReadme
@@ -22,7 +24,7 @@ export const config = {
     },
     {
       path:      '/advanced/force-graphs',
-      component: () => import('@/views/vue/Intro.vue'),
+      component: IntroView,
       meta:      {
         title:  'Force Graphs',
         readme: IntroReadme
@@ -30,7 +32,7 @@ export const config = {
     },
     {
       path:      '/advanced/brushing',
-      component: () => import('@/views/vue/Intro.vue'),
+      component: IntroView,
       meta:      {
         title:  'Selection Brushing',
         readme: IntroReadme

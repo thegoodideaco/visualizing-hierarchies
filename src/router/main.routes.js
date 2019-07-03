@@ -1,20 +1,10 @@
+import { HomeView, IntroView, AboutView, ExampleView } from '@/views/asyncComponents'
+
 const components = {
-  home: () => import(
-    /* webpackChunkName: "home" */
-    '@/views/Home.vue'
-  ),
-  intro: () => import(
-    /* webpackChunkName: "intro" */
-    '@/views/intro.vue'
-  ),
-  definition: () => import(
-    /* webpackChunkName: "definition" */
-    '@/views/About.vue'
-  ),
-  examples: () => import(
-    /* webpackChunkName: "examples" */
-    '@/views/Examples.vue'
-  )
+  home:       HomeView,
+  intro:      IntroView,
+  definition: AboutView,
+  examples:   ExampleView
 }
 
 /** @type {import('vue-router').RouteConfig[]} */

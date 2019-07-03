@@ -10,33 +10,25 @@
 <script>
 import SidenavLayoutVue from '../layouts/SidenavLayout.vue'
 import readme from './examples.md'
-import { csv } from 'd3'
+import { csv } from 'd3-fetch'
+import { ReportTree, ImageSlider } from '@/components/demos/asyncDemos'
 
 export default {
   components: {
     SidenavLayout: SidenavLayoutVue,
-    ImageSlider:   () => import(
-      /* webpackChunkName: "ImageSlider" */
-      '@/components/ImageSlider.vue')
+    ImageSlider
   },
   data() {
     return {
       readme: () => readme,
       images: [
-        () => import(
-          /* webpackChunkName: "ReportTree" */
-          '@/components/demos/ReportTree.vue'
-        ),
-        {
-          url:   '/static/images/starburst.gif',
-          title: 'Testing'
-        },
+        ReportTree,
         {
           url:   '/static/images/edge-bundling.jpg',
           title: 'Edge Bundling'
         },
         {
-          url:   '/static/images/vue ui starburst.jpg',
+          url:   '/static/images/radial-tree.png',
           title: 'Starburst visualization in Vue UI'
         }
       ],

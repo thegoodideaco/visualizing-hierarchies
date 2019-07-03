@@ -26,12 +26,14 @@
 
 <script>
 import readme from './readmetest.md'
-import MarkdownDisplayVue from '../components/MarkdownDisplay.vue'
 import SideNavVue from '../components/SideNav.vue'
 export default {
   components: {
-    MarkdownViewer: MarkdownDisplayVue,
-    SideNav:        SideNavVue
+    MarkdownViewer: () => import(
+      /* webpackChunkName: "MarkdownViewer" */
+      '../components/MarkdownDisplay.vue'
+    ),
+    SideNav: SideNavVue
   },
   props: {
 

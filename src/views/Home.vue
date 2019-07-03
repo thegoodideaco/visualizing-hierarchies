@@ -26,13 +26,11 @@
 
 <script>
 import BlankLayoutVue from '@/layouts/BlankLayout.vue'
-// import ForceTestVue from '@/components/ForceTest.vue'
+import {ForceDemo} from '@/components/demos/asyncDemos'
 export default {
   components: {
     Layout:    BlankLayoutVue,
-    ForceDemo: () => import(
-      /* webpackChunkName: "ForceDemo" */
-      '@/components/ForceTest.vue')
+    ForceDemo: ForceDemo
   }
 }
 </script>

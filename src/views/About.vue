@@ -11,12 +11,11 @@
 
 import SidenavLayoutVue from '../layouts/SidenavLayout.vue'
 import readme from './about.md'
+import { ImageSlider } from '../components/demos/asyncDemos'
 export default {
   components: {
     SidenavLayout: SidenavLayoutVue,
-    ImageSlider:   () => import(
-      /* webpackChunkName: "ImageSlider" */
-      '@/components/ImageSlider.vue')
+    ImageSlider
   },
   data() {
     return {

@@ -8,14 +8,13 @@
 </template>
 
 <script>
-import SidenavLayoutVue from '../layouts/SidenavLayout.vue'
+import SidenavLayoutVue from '@/layouts/SidenavLayout.vue'
 import readme from './intro.md'
-import ImageSliderVue from '../components/ImageSlider.vue'
-// import { scaleLinear, extent, nest, hierarchy } from 'd3'
+import { ImageSlider } from '@/components/demos/asyncDemos'
 export default {
   components: {
     SidenavLayout: SidenavLayoutVue,
-    ImageSlider:   ImageSliderVue
+    ImageSlider
   },
   data() {
     return {
@@ -45,9 +44,7 @@ export default {
         {
           url:   '/static/images/vue ui starburst.jpg',
           title: 'Testing 2'
-        },
-        () => import('@/components/ForceTest.vue'),
-        () => import('@/components/demos/ReportTree.vue')
+        }
       ]
     }
   }
