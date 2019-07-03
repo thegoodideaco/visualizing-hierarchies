@@ -23,28 +23,40 @@ export default {
       readme: () => readme,
       images: [
         {
-          url:   '/static/images/webpack-treemap.jpg',
-          title: 'Testing'
+          url:   '/static/images/graph vs tree.png',
+          title: 'A Tree (Left) compared to a graph (Right)'
         },
         {
-          url:   '/static/images/starburst.gif',
-          title: 'Testing'
+          url:   '/static/images/dom.png',
+          title: 'DOM Hierarchy Sample'
         },
         {
-          url:   '/static/images/edge-bundling.jpg',
-          title: 'Edge Bundling'
+          url:   '/static/images/decisiontree.png',
+          title: 'Decision Tree'
         },
         {
-          url:   '/static/images/semiology.png',
-          title: 'Semiology of Graphics'
+          url:   '/static/images/organogram.jpg',
+          title: 'Organogram'
         },
         {
-          url:   '/static/images/radial-tree.png',
-          title: 'Radial Tree'
+          url:   '/static/images/taxonomy.jpg',
+          title: 'Taxonomy'
         },
         {
-          url:   '/static/images/vue ui starburst.jpg',
-          title: 'Testing 2'
+          url:   '/static/images/imagenet.png',
+          title: 'More Classification Uses'
+        },
+        {
+          url: '/static/images/gestalt.png'
+        },
+        {
+          url: '/static/images/what.gif'
+        },
+        {
+          url: '/static/images/omg1.gif'
+        },
+        {
+          url: '/static/images/clap1.gif'
         }
       ],
       curIndex: 0

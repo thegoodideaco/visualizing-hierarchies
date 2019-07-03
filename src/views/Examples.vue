@@ -1,11 +1,8 @@
 <template>
   <sidenav-layout :readme="readme">
     <div class="examples h-full">
-      <image-slider v-if="false"
-                    :items="images"
+      <image-slider :items="images"
                     :active-index.sync="curIndex" />
-
-      <report-tree />
     </div>
   </sidenav-layout>
 </template>
@@ -14,24 +11,22 @@
 import SidenavLayoutVue from '../layouts/SidenavLayout.vue'
 import readme from './examples.md'
 import { csv } from 'd3'
-import ReportTreeVue from '../components/demos/ReportTree.vue'
 
 export default {
   components: {
     SidenavLayout: SidenavLayoutVue,
     ImageSlider:   () => import(
       /* webpackChunkName: "ImageSlider" */
-      '@/components/ImageSlider.vue'),
-    ReportTree: ReportTreeVue
+      '@/components/ImageSlider.vue')
   },
   data() {
     return {
       readme: () => readme,
       images: [
-        {
-          url:   '/static/images/webpack-treemap.jpg',
-          title: 'Webpack generated treemap of the final build.'
-        },
+        () => import(
+          /* webpackChunkName: "ReportTree" */
+          '@/components/demos/ReportTree.vue'
+        ),
         {
           url:   '/static/images/starburst.gif',
           title: 'Testing'
@@ -47,6 +42,7 @@ export default {
       ],
       curIndex: 0
 
+
     }
   },
   async mounted() {
@@ -60,7 +56,5 @@ export default {
 <style lang="scss" scoped>
 .examples {
   display: grid;
-  align-items: center;
-  justify-items: center;
 }
 </style>

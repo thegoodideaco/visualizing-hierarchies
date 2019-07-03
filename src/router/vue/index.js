@@ -2,7 +2,7 @@
 /* eslint-disable */
 
 import IntroReadme from '@/views/vue/intro.md'
-import AboutReadme from '@/views/about.md'
+import Sfc from '@/views/vue/sfc.md'
 import ReactivityReadme from '@/views/reactivity.md'
 import SlotsReadme from './slots.md'
 import RenderingReadme from './rendering.md'
@@ -26,6 +26,14 @@ export const config = {
       meta:      {
         title:  'What is Vue?',
         readme: IntroReadme
+      }
+    },
+    {
+      path:      '/vue/code/single-file-component',
+      component: components.sfc,
+      meta:      {
+        title:  'Making a Component',
+        readme: Sfc
       }
     },
     {

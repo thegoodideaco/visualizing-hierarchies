@@ -50,7 +50,7 @@ Properties of visual variables include:
 
 We perceive visual variables depending on the property that it represents, and some work better than others depending on what is meant to be discovered.
 
-For example, color wouldn't be helpful if our data is quantitative, whereas size would give us a much better lens to estimate the numerical differences between symbols.
+For example, color wouldn't be helpful to detect proportional quantitative values, whereas size would give us a much better lens to estimate the numerical differences between symbols.
 
 The realization that our brains can do this in lighting speed consumed me. And I have been exploring the possibilities ever since.
 

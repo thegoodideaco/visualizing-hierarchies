@@ -2,31 +2,29 @@
 
 So what can we visualize that has meaning?
 
-Let's take a look at some real world scenarios.
+Let's take a look at some of the layouts D3 provides
 
-## Webpack / Module Bundling
+## Treemaps
 
 Webpack has a nice feature to export out the [stats](https://webpack.js.org/api/stats) of your build
 
 When compiling source code with webpack, users can generate a JSON file containing statistics about modules. These statistics can be used to analyze an application's dependency graph as well as to optimize compilation speed.
 
-Visualizing this information can be seen in a `treemap` using Vue-CLI's `--report` flag, or in a `starburst` using Vue's `UI` display
+Treemaps were invented by [Ben Shneiderman](https://en.wikipedia.org/wiki/Ben_Shneiderman), and works as a great way to analyze the proportion of quantity between nodes.
+
+When the color and size dimensions are correlated in some way with the tree structure, one can often easily see patterns that would be difficult to spot in other ways, such as if a certain color is particularly relevant. A second advantage of treemaps is that, by construction, they make efficient use of space. As a result, they can legibly display thousands of items on the screen simultaneously.
 
 This can be incredibly useful for the developer to determine where optomization is needed, such as tree shaking, and bundle sizes.
 
-## Geography
+## Edge Bundling
 
-This covers a huge area of data visualization, simply because of how much it affects our everyday lives. There are plenty of ways to visualize insightful data that deals with location that isn't neccesarily hierarchical.
+Although nodes within a heierchy have a single relationship to their parent, it is still possible to visualize connections to other possible nodes.
 
-However, comparing quantitative information about countries and regions is.
+Edge bundling creates edges between nodes that aren't connected, and creates additional links by traversing up the tree until it can connect to the target node.
 
-We can utilize this in a number of ways
+This can be extremly useful to cross reference both structures, such as visualizing the dependencies of hierarchical source files.
 
-- Amount of money spent by each region of each country, and what it was spent on.
-- Distribution the earth's population
-- Comparing values of natural resources based on their origins.
-
-## Classification
+## Radial Clusters
 
 Objects can be organized in multiple levels, therefore creating a hierarchical structure of distribution.
 
