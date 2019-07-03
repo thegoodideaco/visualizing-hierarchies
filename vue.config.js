@@ -41,6 +41,20 @@ module.exports = {
         }
       ])
     )
+
+    if(process.env.NODE_ENV === 'production') {
+      const TerserPlugin = require('terser-webpack-plugin')
+      config.optimization.minimizer.push(
+        new TerserPlugin({
+          terserOptions: {
+            compress: {
+              drop_console: true,
+              dead_code:    true
+            }
+          }
+        })
+      )
+    }
   },
 
   /**

@@ -30,7 +30,7 @@ export default {
 .side-nav {
   background-color: #171a1d;
   display: grid;
-  grid: max-content 1fr / 100%;
+  grid: max-content 1fr / 1fr;
   row-gap: 30px;
 }
 

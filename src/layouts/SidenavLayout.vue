@@ -1,22 +1,23 @@
 <template>
   <div
-    class="side-layout select-none"
-    :class="{'focus-text': $attrs.focusedOnText}">
+    :class="{'focus-text': $attrs.focusedOnText}"
+    class="side-layout select-none">
     <!-- Side menu -->
-    <side-nav />
+    <side-nav class="overflow-hidden" />
 
     <!-- Markdown -->
     <markdown-viewer
       ref="readme"
-      class="text-container overflow-auto select-text"
       :value="readme()"
+      class="text-container overflow-auto select-text"
       @hook:mounted="updateReadme" />
 
     <!-- Content Entry -->
     <div class="grid">
       <slot>
-        <transition name="fade"
-                    mode="out-in">
+        <transition
+          mode="out-in"
+          name="fade">
           <router-view />
         </transition>
       </slot>
@@ -29,21 +30,18 @@ import readme from './readmetest.md'
 import SideNavVue from '../components/SideNav.vue'
 export default {
   components: {
-    MarkdownViewer: () => import(
-      /* webpackChunkName: "MarkdownViewer" */
-      '../components/MarkdownDisplay.vue'
-    ),
+    MarkdownViewer: () =>
+      import(/* webpackChunkName: "MarkdownViewer" */
+        '../components/MarkdownDisplay.vue'),
     SideNav: SideNavVue
   },
   props: {
-
     /**
      * @type {Vue.PropOptions<function>}
      */
     readme: {
       type: [Function],
       default() {
-
         /**
          * If available, load as async
          */
@@ -52,7 +50,6 @@ export default {
     }
   },
   watch: {
-
     /**
      * @type {Vue.WatchHandler}
      */
@@ -72,9 +69,7 @@ export default {
       /**
        * @type {HTMLElement}
        */
-      const {
-        innerText: text
-      } = this.$refs.readme.$el
+      const { innerText: text } = this.$refs.readme.$el
 
       this.$store.commit('setReadme', text)
     }
@@ -84,22 +79,26 @@ export default {
 
 <style scoped lang="scss">
 .side-layout {
-
   display: grid;
   height: 100%;
-  grid: 100%/minmax(auto, 260px) minmax(400px, 1fr) 2fr;
+  grid: 1fr / minmax(auto, 260px) minmax(400px, 1fr) 2fr;
+  position: relative;
+  overflow: hidden;
 
-
+  > * {
+    position: relative;
+    height: 100%;
+  }
 }
 
 .text-container {
   transition: all 400ms ease;
   // width: 400px;
-    .focus-text & {
-      width: 50vw;
-      font-size: 2em;
-    }
+  .focus-text & {
+    width: 50vw;
+    font-size: 2em;
   }
+}
 
 .grid {
   display: grid;

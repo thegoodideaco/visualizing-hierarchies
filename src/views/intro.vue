@@ -55,7 +55,7 @@ export default {
 <style lang="scss" scoped>
 .intro {
   display: grid;
-  grid: 1fr / 100%;
+  grid: 1fr / 1fr;
 
   > * {
     position: relative;
@@ -64,7 +64,7 @@ export default {
       padding: 10px;
 
       display: grid;
-      grid: 100%/ 100%;
+      grid: 1fr/ 1fr;
     }
   }
 }

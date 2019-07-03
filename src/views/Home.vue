@@ -55,7 +55,7 @@ export default {
   width: 100%;
   padding: 10px;
 
-  grid: 100% / auto auto;
+  grid: 1fr / auto auto;
   justify-content: center;
   column-gap: 10px;
 
