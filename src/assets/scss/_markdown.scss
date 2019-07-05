@@ -1,1 +1,164 @@
-@import './highlightjs/tomorrow-night-eighties.scss';
+.md-viewer {
+  background-color: rgba(27, 31, 34, 0.69);
+  max-height: 100%;
+  overflow: hidden;
+
+  user-select: none;
+
+  > div {
+    touch-action: pan-y;
+
+    position: relative;
+    transform: translateZ(0);
+
+    &::-webkit-scrollbar {
+      background: #1b1f22;
+      width: 3px;
+      height: 3px;
+
+      &-thumb {
+        background: rgba(247, 250, 252, 0.69);
+      }
+    }
+
+    &:hover {
+      &::-webkit-scrollbar {
+        background: #1b1f22;
+        // width: 10px;
+
+        &-thumb {
+          background: rgba(247, 250, 252, 0.69);
+        }
+      }
+    }
+  }
+}
+
+.hljs {
+  @import '@/assets/scss/highlightjs/obsidian.scss';
+  font-size: 1em;
+  line-height: normal;
+  padding: 1.25em;
+  position: relative;
+  transform: translateZ(0);
+  will-change: scroll-position;
+  // display: inline-block;
+
+  @for $i from 1 through 6 {
+    // for each $col_#{i}
+    h#{$i} {
+      // set the background-color to cornflowerblue and
+      // each time lighten the color slightly
+      color: darken(#54eda9, ($i * 2.5));
+      line-height: 1.5rem + (5- ($i + 1)) * 2;
+    }
+  }
+
+  a {
+    color: #40f7a5;
+
+    &:hover {
+      color: #ffb760;
+      text-decoration: none;
+    }
+  }
+
+  pre {
+    margin: 1.25em -10px;
+    background-color: rgba(0, 0, 0, 0.23);
+    padding: 10px;
+    font-size: 1.1em;
+  }
+
+  :not(pre) code {
+    @apply text-yellow-500;
+    font-size: 1em;
+    font-family: inherit;
+  }
+
+  blockquote {
+    border: 1px solid rgba(#fff, 0.1);
+    border-left: 4px solid rgb(189, 65, 178);
+    background-color: rgba(#000, 0.1);
+    padding: 10px 15px;
+    font-style: oblique;
+
+    > blockquote {
+      margin-left: 5px;
+      margin-top: 10px;
+    }
+  }
+
+  table {
+    table-layout: fixed;
+    width: 100%;
+    font-size: 0.8em;
+    margin-bottom: 1rem;
+
+    tr {
+      text-align: left;
+    }
+
+    thead {
+      tr {
+        background-color: rgba(46, 67, 82, 0.48);
+        // border: 1px solid #2e4352;
+      }
+      th {
+        padding: 10px;
+        font-size: 1.2em;
+        border: 1px solid rgba(#fff, 0.5);
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+      }
+    }
+
+    tbody {
+      > tr {
+        padding: 5px;
+
+        > td {
+          padding: 10px;
+          border: 1px dashed rgba(#fff, 0.5);
+        }
+      }
+    }
+  }
+
+  hr {
+    border: 1px dashed rgba(255, 255, 255, 0.19);
+  }
+
+  p {
+    line-height: normal;
+    font-size: 1.2em;
+    margin-bottom: 1em;
+  }
+
+  > {
+    ul,
+    ol {
+      margin-bottom: 1em;
+    }
+  }
+
+  ul {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+
+  ol {
+    list-style-type: upper-roman;
+    list-style-position: unset;
+    padding-left: 20px;
+  }
+
+  li {
+    @apply .font-light .text-xl text-teal-300;
+    line-height: 2.5rem;
+
+    &:nth-child(even) {
+      @apply .text-teal-400;
+    }
+  }
+}

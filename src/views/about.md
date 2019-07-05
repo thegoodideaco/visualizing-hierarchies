@@ -8,21 +8,26 @@ They consist of vertices (nodes) which are connected by edges (links).
 
 hierarchies are `unidirected` trees that follow specific rules:
 
-1. There must be a single root node with no parent
-2. All nodes must have an edge
-3. Must be acylic
-4. Each node can only have 1 parent
+> There Must be a single root node with no parent
+>
+> All nodes must have an edge
+>
+> Must be acylic
+>
+> Each node can only have 1 parent
+
+## Uses
 
 Hierarchies serve many purposes, and we use them on a daily basis
 
-- DOM Elements
-- Folders / Files
-- Decision Trees
-- Binary Trees
-- Family Trees
-- Geography
-- Organograms
-- Taxonomy
-- Word Trees
+1. DOM Elements
+1. Folders / Files
+1. Decision Trees
+1. Binary Trees
+1. Family Trees
+1. Geography
+1. Organograms
+1. Taxonomy
+1. Word Trees
 
 And so on...

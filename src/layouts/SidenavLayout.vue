@@ -10,7 +10,7 @@
       <markdown-viewer
         ref="readme"
         :value="readme()"
-        class="text-container select-text mb-5"
+        class="text-container select-text"
         @hook:mounted="updateReadme" />
     </div>
 
