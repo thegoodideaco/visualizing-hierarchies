@@ -57,7 +57,8 @@ module.exports = {
               drop_console:  true,
               dead_code:     true,
               drop_debugger: true,
-              unused:        true
+              unused:        true,
+              passes:        4
             }
 
           }

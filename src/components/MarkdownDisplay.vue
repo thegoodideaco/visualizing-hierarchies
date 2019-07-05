@@ -1,8 +1,10 @@
 <template>
   <div class="md-viewer">
-    <div
-      class="hljs dark h-full overflow-auto"
-      v-html="markdown()" />
+    <div class="h-full pr-2">
+      <div
+        class="hljs dark h-full overflow-auto"
+        v-html="markdown()" />
+    </div>
   </div>
 </template>
 
@@ -24,18 +26,19 @@ export default {
   },
   computed: {
     markdown() {
-      return () => marked(this.value, {
-        langPrefix:  'javascript',
-        smartypants: true,
-        pedantic:    false,
-        mangle:      true,
-        xhtml:       true,
-        smartLists:  true,
-        gfm:         true,
-        tables:      true,
-        breaks:      true,
-        highlight:   code => hl.highlightAuto(code).value
-      })
+      return () =>
+        marked(this.value, {
+          langPrefix:  'javascript',
+          smartypants: true,
+          pedantic:    false,
+          mangle:      true,
+          xhtml:       true,
+          smartLists:  true,
+          gfm:         true,
+          tables:      true,
+          breaks:      true,
+          highlight:   code => hl.highlightAuto(code).value
+        })
     }
   }
 }
@@ -49,35 +52,33 @@ export default {
 
   user-select: none;
 
- > div {
+  > div {
+    touch-action: pan-y;
 
-   touch-action: pan-y;
+    position: relative;
+    transform: translateZ(0);
 
-   position: relative;
-   transform: translateZ(0);
-
-    &::-webkit-scrollbar {
-    background: #1b1f22;
-    width: 3px;
-    height: 3px;
-
-    &-thumb {
-      background: rgba(247, 250, 252, 0.69);
-    }
-  }
-
-  &:hover {
     &::-webkit-scrollbar {
       background: #1b1f22;
-      // width: 10px;
+      width: 3px;
+      height: 3px;
 
       &-thumb {
         background: rgba(247, 250, 252, 0.69);
       }
     }
-  }
- }
 
+    &:hover {
+      &::-webkit-scrollbar {
+        background: #1b1f22;
+        // width: 10px;
+
+        &-thumb {
+          background: rgba(247, 250, 252, 0.69);
+        }
+      }
+    }
+  }
 }
 
 .hljs {
@@ -176,8 +177,8 @@ export default {
   }
 
   p {
-    line-height: 1.25em;
-    font-size: 1.3em;
+    line-height: normal;
+    font-size: 1.2em;
     margin-bottom: 1em;
   }
 

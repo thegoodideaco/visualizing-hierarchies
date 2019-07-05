@@ -29,16 +29,13 @@ import {
   forceRadial,
   forceCollide
 } from 'd3-force'
-import { event } from 'd3-selection'
 import {
-  scaleSequential,
   rgb,
-  // interpolateWarm,
-  color,
-  // interpolateHcl,
-  // interpolateHsl,
-  interpolateRgb
-} from 'd3'
+  color
+} from 'd3-color'
+
+import {interpolateRgb} from 'd3-interpolate'
+import {scaleSequential} from 'd3-scale'
 
 export default {
   data() {
@@ -100,11 +97,6 @@ export default {
   mounted() {
     const { width, height } = this.$el.getBoundingClientRect()
 
-    // const scaled = {
-    //   width:  width * 0.5,
-    //   height: height * 0.5
-    // }
-
     /** @type {PIXI.RendererOptions} */
     const options = {
       antialias:             true,
@@ -115,9 +107,6 @@ export default {
       transparent:           true,
       forceFXAA:             true
     }
-
-    // const r = devicePixelRatio
-
     utils.skipHello()
 
     this.pixiRender = new Application({
@@ -278,32 +267,19 @@ export default {
         spr1.position.set(x1 - spr1.width / 2, y1 - spr1.height / 2)
         spr2.position.set(x2 - spr2.width / 2, y2 - spr2.height / 2)
 
-        // this.updateTint(spr1, n1.index)
-        // this.updateTint(spr2, n2.index)
 
-        // spr1.tint = this.colorScale(n1.index)
-        // spr2.tint = this.colorScale(n2.index)
-
-
-        // })
-
-        // if(!rs.includes(n1.index) || !rs.includes(n2.index)){
-
-
-        // const {r, g, b} = rgb(this.colorScale(n2.index))
-        // const hexNumber = pixi.utils.rgb2hex([r, g, b])
         const isRoot = this.roots.includes(n2.index)
 
         gfx.lineStyle(isRoot ? 3 : 1, spr2.tint, isRoot ? .05 : .2)
         gfx.moveTo(n1.x, n1.y).lineTo(n2.x, n2.y)
 
-        // }
+
 
       })
 
     },
 
-    dragsubject() {
+    dragsubject(event) {
       const { width, height } = this
       return this.simulation.find(event.x - width / 2, event.y - height / 2)
     },

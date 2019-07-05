@@ -1,10 +1,11 @@
-import { HomeView, IntroView, AboutView, ExampleView } from '@/views/asyncComponents'
+import { HomeView, IntroView, AboutView, ExampleView, PerceptionView } from '@/views/asyncComponents'
 
 const components = {
   home:       HomeView,
   intro:      IntroView,
   definition: AboutView,
-  examples:   ExampleView
+  examples:   ExampleView,
+  Perception: PerceptionView
 }
 
 /** @type {import('vue-router').RouteConfig[]} */
@@ -28,14 +29,6 @@ const routes = [
     component: components.definition,
     meta:      {
       title: 'Defining a Hierarchy'
-    }
-  },
-  {
-    path:      '/examples',
-    name:      'examples',
-    component: components.examples,
-    meta:      {
-      title: 'Examples'
     }
   }
 ]

@@ -6,11 +6,13 @@
     <side-nav class="overflow-hidden" />
 
     <!-- Markdown -->
-    <markdown-viewer
-      ref="readme"
-      :value="readme()"
-      class="text-container overflow-auto select-text"
-      @hook:mounted="updateReadme" />
+    <div class="overflow-auto grid">
+      <markdown-viewer
+        ref="readme"
+        :value="readme()"
+        class="text-container select-text mb-5"
+        @hook:mounted="updateReadme" />
+    </div>
 
     <!-- Content Entry -->
     <div class="grid">

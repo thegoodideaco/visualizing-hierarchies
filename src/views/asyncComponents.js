@@ -12,6 +12,11 @@ export const AboutView = () => import(
   '@/views/About.vue'
 )
 
+export const PerceptionView = () => import(
+  /* webpackChunkName: "Perception" */
+  './PerceptualGrouping.vue'
+)
+
 export const ExampleView = () => import(
   /* webpackChunkName: "Examples" */
   '@/views/Examples.vue'

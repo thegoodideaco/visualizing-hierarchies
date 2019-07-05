@@ -5,14 +5,16 @@
       v-if="isLeaf"
       :to="routeItem"
       active-class="pointer-events-none active"
-      class="nav__item__title block">
+      class="nav__item__title block"
+      draggable="false">
       {{ routeItem.meta.title }}
     </router-link>
 
     <!-- Normal Title if ancestor -->
     <div
       v-else
-      class="text-orange-400 font-bold mt-5">
+      class="section-title text-orange-400 font-bold mt-5"
+      :class="{active: isActive}">
       {{ routeItem.meta.title }}
     </div>
 
@@ -43,6 +45,16 @@ export default {
   computed: {
     isLeaf() {
       return this.routeItem.children == null
+    },
+    isActive() {
+
+      /**
+       * @type {boolean}
+       * @param {import('vue-router').RouteConfig} value
+       */
+      const match = this.$route.matched.some(value => value.path === this.routeItem.path)
+
+      return match
     }
   }
 }
@@ -82,6 +94,14 @@ export default {
     &:focus {
       outline: none;
       color: #fff;
+    }
+  }
+
+  .section-title {
+    opacity: .5;
+
+    &.active {
+      opacity: unset;
     }
   }
 

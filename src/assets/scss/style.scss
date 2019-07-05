@@ -26,21 +26,23 @@ body {
 
 * {
   &::-webkit-scrollbar {
-    background: #1b1f22;
+    background: rgba(27, 31, 34, 0);
     width: 3px;
     height: 3px;
 
     &-thumb {
-      background: rgba(247, 250, 252, 0.69);
+      background: rgba(247, 250, 252, 0.19);
+      transition: all 500ms ease;
     }
   }
 
   &:hover {
     &::-webkit-scrollbar {
-      background: #1b1f22;
+      background: rgba(27, 31, 34, 0);
       // width: 10px;
 
       &-thumb {
+        transition: all 500ms ease;
         background: rgba(247, 250, 252, 0.69);
       }
     }
