@@ -10,3 +10,8 @@ export const ForceDemo = () => import(
 export const ImageSlider = () => import(
   /* webpackChunkName: "ImageSlider" */
   '@/components/ImageSlider.vue')
+
+export const EdgeBundling = () => import(
+  /* webpackChunkName: "EdgeBundling" */
+  '@/components/demos/enron-emails/index.vue'
+)

@@ -20,7 +20,7 @@
     "strict": true
   },
   "include": [
-    "types/*.d.ts",
+    "src/**/*.d.ts",
     "src/**/*.js",
     "src/**/*.tsx",
     "src/**/*.vue",

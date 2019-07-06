@@ -27,12 +27,13 @@ body {
 * {
   &::-webkit-scrollbar {
     background: rgba(27, 31, 34, 0);
-    width: 3px;
-    height: 3px;
+    width: 5px;
+    height: 5px;
 
     &-thumb {
       background: rgba(247, 250, 252, 0.19);
       transition: all 500ms ease;
+      border-radius: 5px;
     }
   }
 
@@ -43,7 +44,7 @@ body {
 
       &-thumb {
         transition: all 500ms ease;
-        background: rgba(247, 250, 252, 0.69);
+        background: rgba(247, 250, 252, 0.29);
       }
     }
   }

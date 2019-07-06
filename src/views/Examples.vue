@@ -10,8 +10,7 @@
 <script>
 import SidenavLayoutVue from '../layouts/SidenavLayout.vue'
 import readme from './examples.md'
-import { csv } from 'd3-fetch'
-import { ReportTree, ImageSlider } from '@/components/demos/asyncDemos'
+import { ReportTree, ImageSlider, EdgeBundling } from '@/components/demos/asyncDemos'
 
 export default {
   components: {
@@ -23,6 +22,7 @@ export default {
       readme: () => readme,
       images: [
         ReportTree,
+        EdgeBundling,
         {
           url:   '/static/images/edge-bundling.jpg',
           title: 'Edge Bundling'
@@ -36,11 +36,6 @@ export default {
 
 
     }
-  },
-  async mounted() {
-    const data = await csv('/datasets/googleplaystore.csv')
-
-    console.log(data)
   }
 }
 </script>

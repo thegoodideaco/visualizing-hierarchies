@@ -30,6 +30,14 @@ const routes = [
     meta:      {
       title: 'Defining a Hierarchy'
     }
+  },
+  {
+    path:      '/examples',
+    name:      'examples',
+    component: components.examples,
+    meta:      {
+      title: 'Examples'
+    }
   }
 ]
 

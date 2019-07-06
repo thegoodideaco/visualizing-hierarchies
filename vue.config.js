@@ -15,11 +15,13 @@ function resolve(dir) {
 module.exports = {
 
   css: {
-    sourceMap: true
+    sourceMap: true,
+    extract:   true
   },
   filenameHashing:     false,
   productionSourceMap: false,
   runtimeCompiler:     true,
+
 
 
   configureWebpack: config => {
@@ -56,10 +58,11 @@ module.exports = {
             compress: {
               drop_console:  true,
               dead_code:     true,
-              drop_debugger: true,
-              unused:        true,
-              passes:        4
-            }
+              drop_debugger: true
+              // unused:        true,
+              // passes:        4
+            },
+            sourceMap: false
 
           }
         })

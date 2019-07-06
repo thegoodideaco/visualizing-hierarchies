@@ -83,7 +83,7 @@ export default {
 .side-layout {
   display: grid;
   height: 100%;
-  grid: 1fr / minmax(auto, 260px) minmax(400px, 1fr) 2fr;
+  grid: 1fr / minmax(auto, 260px) minmax(300px, 28rem) 2fr;
   position: relative;
   overflow: hidden;
 
