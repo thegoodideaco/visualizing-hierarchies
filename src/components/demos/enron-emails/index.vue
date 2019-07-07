@@ -12,7 +12,9 @@
                @input.self="updateRotation">
       </div>
 
-      <div class="visual">
+      <div v-if="dataset.length"
+           class="visual">
+        <!-- Not showing in prod... -->
         <edge-bundler v-bind="{dataset}"
                       :rotation="angle"
                       @selected="clickedItem = $event" />
@@ -22,16 +24,18 @@
 </template>
 
 <script>
-import { csv } from 'd3'
+import { csv } from 'd3-fetch'
 import anime from 'animejs'
+
+import EdgeBundler from '@/components/demos/enron-emails/EdgeBundler.vue'
 
 export default {
   components: {
-    EdgeBundler: () => import('./EdgeBundler.vue')
+    EdgeBundler
   },
   data() {
     return {
-      dataset:     null,
+      dataset:     [],
       clickedItem: null,
       angle:       180
     }
@@ -59,7 +63,7 @@ export default {
       }
     }
   },
-  async beforeMount() {
+  async mounted() {
     const data = await csv('/datasets/enron-emails.csv')
     this.dataset = Object.freeze(data)
   },

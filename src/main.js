@@ -25,8 +25,10 @@ new Vue({
 if(process.env.NODE_ENV === 'development') {
 
   Object.assign(window, {
-    d3:         require('d3'),
-    _:          require('lodash'),
-    SuffixTree: require('./utils/suffix-tree').default
+    dev: {
+      d3:         require('d3'),
+      _:          require('lodash'),
+      SuffixTree: require('./utils/suffix-tree').default
+    }
   })
 }

@@ -12,6 +12,6 @@ export const ImageSlider = () => import(
   '@/components/ImageSlider.vue')
 
 export const EdgeBundling = () => import(
-  /* webpackChunkName: "EdgeBundling" */
+  /* webpackChunkName: "EnronEmails" */
   '@/components/demos/enron-emails/index.vue'
 )

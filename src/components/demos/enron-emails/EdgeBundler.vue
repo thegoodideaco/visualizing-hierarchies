@@ -4,9 +4,9 @@
       <g v-if="hierarchy">
         <g :transform="translateCenter">
           <path
-            v-for="(leaf, index) in hierarchy.descendants()"
+            v-for="(link, index) in filteredLinks"
             :key="`link${index}`"
-            :d="path(leaf)"
+            :d="path(link)"
             fill="none"
             stroke="white" />
         </g>
@@ -17,7 +17,7 @@
           :key="i"
           class="node-point"
           :fill="getCircleColor(item)"
-          r="4"
+          :r="4"
           v-bind="nodeProps(item)"
           @click.left="onClick(item)" />
 
@@ -65,6 +65,7 @@ const keyGroupers = {
 }
 
 export default {
+  name:  'EdgeBundler',
   props: {
     /** @type {Vue.PropType<{TO: string}[]>} */
     dataset: Array,
@@ -74,17 +75,19 @@ export default {
       default: 360
     }
   },
-  data: () => ({
-    width:  100,
-    height: 100,
-    // rotation: 360,
-    keys:   [
-      keyGroupers.byYear,
-      keyGroupers.byMonth,
-      keyGroupers.from,
-      keyGroupers.to
-    ]
-  }),
+  data() {
+    return {
+      width:  100,
+      height: 100,
+      // rotation: 360,
+      keys:   [
+        keyGroupers.byYear,
+        keyGroupers.byMonth,
+        keyGroupers.from,
+        keyGroupers.to
+      ]
+    }
+  },
   computed: {
     /** Method to pass dataset into
      * @returns {d3.Nest<{TO: string}, any>}
@@ -172,7 +175,7 @@ export default {
           }
         })
 
-        const cluster = d3
+        const cluster = d3h
           .cluster()
           .size([(Math.PI * 2) * (this.rotation / 360), this.radius])
           .separation(
@@ -183,15 +186,18 @@ export default {
       }
     },
 
-    /**
-     * @returns {d3.Line}
-     */
-    lineStyle() {
-      return d3s
-        .lineRadial()
-        .angle(n => n.x)
-        .radius(n => n.y)
-        .curve(d3s.curveLinear)
+    filteredLinks() {
+      if(this.hierarchy){
+
+        /** @type {d3.HierarchyPointLink<Enron.EnronEmail>[]} */
+        const l = this.hierarchy.links()
+
+        return l.filter(v => {
+          return v.source.parent != null && v.target.parent != null
+        })
+      }
+
+      return []
     },
 
     circleColor() {
@@ -247,17 +253,21 @@ export default {
     },
 
     /**
-     * @param {d3.HierarchyPointNode} node
+     * @param {d3.HierarchyPointLink<Enron.EnronEmail>} link
      */
-    path(node) {
+    path(link) {
       // const des = node.ancestors().reverse().slice(1).reverse()
       // const links = node.links().map(v => {
       //   return [v.source,
       //     v.target]
       // })
 
-      if(node.parent)
-        return this.lineStyle(node.ancestors().reverse())
+      // debugger
+
+
+      return d3s.linkRadial()
+        .angle(d => d.x)
+        .radius(d => d.y)(link)
     },
 
     /**
@@ -319,9 +329,12 @@ export default {
 svg {
   // background-color: rgba(96, 125, 139, 0.22);
 
+  shape-rendering: crispEdges;
+
+
   path {
-    stroke-opacity: 0.25;
-    stroke-width: 0.5px;
+    stroke-opacity: 0.5;
+    stroke-width: 0.75px;
   }
 }
 
