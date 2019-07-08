@@ -4,6 +4,20 @@ So what can we visualize that has meaning?
 
 Let's take a look at some of the layouts D3 provides
 
+## Denrograms
+
+Dendrograms are node-link diagrams that place leaf nodes of the tree at the same depth.
+
+Useful when all the leaves should be at the same level, such as for `hierarchical clustering` or `phylogenetic tree diagrams`.
+
+## Tidy Trees
+
+Produces _tidy_ node-link diagrams of trees using the `Reingold–Tilford “tidy” algorithm`, improved to run in linear time by `Buchheim et al`. Tidy trees are typically more compact than `dendrograms`.
+
+## Radial Variants
+
+In alot of cases, we can take a linear display, such as dendrograms or tidy trees, and wrap them in a circlular fashion.
+
 ## Treemaps
 
 Webpack has a nice feature to export out the [stats](https://webpack.js.org/api/stats) of your build
@@ -16,20 +30,10 @@ When the color and size dimensions are correlated in some way with the tree stru
 
 This can be incredibly useful for the developer to determine where optomization is needed, such as tree shaking, and bundle sizes.
 
-## Edge Bundling
+## Partitions
 
-Although nodes within a heierchy have a single relationship to their parent, it is still possible to visualize connections to other possible nodes.
+The partition layout produces adjacency diagrams: a space-filling variant of a node-link tree diagram. Rather than drawing a link between parent and child in the hierarchy, nodes are drawn as solid areas (either arcs or rectangles), and their placement relative to other nodes reveals their position in the hierarchy. The size of the nodes encodes a quantitative dimension that would be difficult to show in a node-link diagram.
 
-Edge bundling creates edges between nodes that aren't connected, and creates additional links by traversing up the tree until it can connect to the target node.
+## Circle Packing
 
-This can be extremly useful to cross reference both structures, such as visualizing the dependencies of hierarchical source files.
-
-## Radial Clusters
-
-Objects can be organized in multiple levels, therefore creating a hierarchical structure of distribution.
-
-Visualizing this type of data can be very insightful when looked at as a whole.
-
-- Imagenet
-- Tree of Life
-- Movies / Books
+Enclosure diagrams use containment (nesting) to represent a hierarchy. The size of the leaf circles encodes a quantitative dimension of the data. The enclosing circles show the approximate cumulative size of each subtree, but due to wasted space there is some distortion; only the leaf nodes can be compared accurately. Although circle packing does not use space as efficiently as a treemap, the “wasted” space more prominently reveals the hierarchical structure.

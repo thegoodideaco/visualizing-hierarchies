@@ -1,8 +1,10 @@
 
 
 
-import Sfc from '@/views/vue/sfc.md'
 import IntroReadme from './intro.md'
+import GestaltReadme from './gestalts.md'
+import VariableReadme from './variables.md'
+import GroupingReadme from './grouping.md'
 import { SideNavLayout } from '@/layouts/componentViews'
 import * as components from './asyncComponents'
 
@@ -26,27 +28,27 @@ export const config = {
       }
     },
     {
-      path:      '/theory/intro',
-      component: components.sfc,
+      path:      '/theory/gestalt',
+      component: components.gestalt,
       meta:      {
         title:  'Gestalt Theory',
-        readme: Sfc
+        readme: GestaltReadme
       }
     },
     {
-      path:      '/vue/reactivity',
-      component: components.reactivity,
+      path:      '/theory/grouping',
+      component: components.grouping,
       meta:      {
-        title:  'Principles of Grouping',
-        readme: IntroReadme
+        title:  'Law of Prägnanz',
+        readme: GroupingReadme
       }
     },
     {
-      path:      '/vue/rendering',
-      component: () => import('@/views/vue/Reactivity.vue'),
+      path:      '/theory/variables',
+      component: components.variables,
       meta:      {
         title:  'Visual Variables',
-        readme: IntroReadme
+        readme: VariableReadme
       }
     }
   ]

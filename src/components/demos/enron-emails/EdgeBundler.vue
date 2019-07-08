@@ -14,7 +14,7 @@
 
         <!-- Circles -->
         <circle
-          v-for="(item, i) in hierarchy.descendants()"
+          v-for="(item, i) in filteredNodes"
           :key="i"
           :fill="getCircleColor(item)"
           :r="4"
@@ -192,12 +192,19 @@ export default {
         /** @type {d3.HierarchyPointLink<Enron.EnronEmail>[]} */
         const l = this.hierarchy.links()
 
-        return l.filter(v => {
-          return v.source.parent != null && v.target.parent != null
+        return l.filter(() => {
+          // return v.source.parent != null && v.target.parent != null
+          return true
         })
       }
 
       return []
+    },
+
+    filteredNodes() {
+      if(this.hierarchy) {
+        return this.hierarchy.leaves()
+      }
     },
 
     /**
