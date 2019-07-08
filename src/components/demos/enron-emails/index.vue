@@ -1,22 +1,11 @@
 <template>
   <div>
     <div class="inner">
-      <div>
-        <h1 class="text-center">
-          Edge Bundling
-        </h1>
-
-        <input type="range"
-               min="0"
-               max="360"
-               @input.self="updateRotation">
-      </div>
-
       <div v-if="dataset.length"
            class="visual">
         <!-- Not showing in prod... -->
         <edge-bundler v-bind="{dataset}"
-                      :rotation="angle"
+                      :rotation="newAngle"
                       @selected="clickedItem = $event" />
       </div>
     </div>
@@ -43,7 +32,7 @@ export default {
   computed: {
     rotation: {
       get() {
-        return this.angle
+        return this.newAngle
       },
       set(val) {
         // this.angle = val
@@ -52,13 +41,24 @@ export default {
 
         anime({
           targets:    this,
-          angle:      val,
+          newAngle:   val,
           duration:   80,
           easing:     'easeOutCubic',
           elasticity: 200,
           autoplay:   true
 
 
+        })
+      }
+    },
+    newAngle: {
+      get() {
+        return this.$store.state.controls.edgeBundling.angle
+      },
+      set(val) {
+        this.$store.commit('controls/update', {
+          path:  'edgeBundling.angle',
+          value: val
         })
       }
     }
@@ -82,7 +82,7 @@ export default {
   width: 100%;
   height: 100%;
   display: grid;
-  grid: auto 1fr / 1fr;
+  grid: 1fr / 1fr;
 }
 
 .visual {

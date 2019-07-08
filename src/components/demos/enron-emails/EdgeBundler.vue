@@ -31,6 +31,7 @@ import { nest } from 'd3-collection'
 import * as d3h from 'd3-hierarchy'
 import * as d3s from 'd3-shape'
 import * as scales from 'd3-scale'
+// import * as d3c from 'd3-chord'
 import { ascending } from 'd3-array'
 import { timeFormat } from 'd3-time-format'
 

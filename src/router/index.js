@@ -8,6 +8,7 @@ import vueRoute from './vue'
 import vued3Route from './vue+d3'
 
 import theoryRoute from './visual-theory'
+import { EdgeBundling } from '@/components/demos/asyncDemos'
 
 Vue.use(Router)
 
@@ -34,6 +35,26 @@ export default new Router({
         title: 'Resources'
       },
       component: () => import('../views/intro.vue')
+    },
+    {
+      path: '/xp',
+      name: 'Experiments',
+      meta: {
+        title: 'Experiments'
+      },
+      component: () => import('../layouts/ExperimentLayout.vue'),
+      children:  [
+        {
+          path:       '/xp/edgebundling',
+          components: {
+            default:  EdgeBundling,
+            controls: () => import('@/components/demos/enron-emails/Controls.vue')
+          },
+          meta: {
+            title: 'Edge Bundling'
+          }
+        }
+      ]
     },
     {
       path:     '/404',

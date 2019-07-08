@@ -32,7 +32,8 @@ if(process.env.NODE_ENV === 'development') {
     dev: {
       d3:         require('d3'),
       _:          require('lodash'),
-      SuffixTree: require('./utils/suffix-tree').default
+      SuffixTree: require('./utils/suffix-tree').default,
+      store
     }
   })
 }

@@ -3,11 +3,16 @@ import Vuex from 'vuex'
 
 import words from 'lodash/words'
 
+import controls from './modules/controls'
+
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
     readme: null
+  },
+  modules: {
+    controls
   },
   mutations: {
     setReadme(state, text) {
@@ -43,5 +48,7 @@ export default new Vuex.Store({
         return prev
       }, []).sort((a, b) => b.value - a.value)
     }
-  }
+  },
+  strict: process.env.NODE_ENV === 'development'
+
 })
