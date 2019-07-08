@@ -2,6 +2,8 @@
   <div class="h-full w-full overflow-hidden">
     <svg class="w-full h-full">
       <g v-if="hierarchy">
+
+        <!-- Paths -->
         <g :transform="translateCenter">
           <path
             v-for="(link, index) in filteredLinks"
@@ -179,7 +181,7 @@ export default {
           .cluster()
           .size([(Math.PI * 2) * (this.rotation / 360), this.radius])
           .separation(
-            (a, b) => (a.parent === b.parent ? 1 : 2) * Math.sqrt(a.depth)
+            (a, b) => ((!a.children) && a.data.MasterDate === b.data.MasterDate ? 0 : 90)
           )
 
         return cluster(h)
@@ -329,12 +331,12 @@ export default {
 svg {
   // background-color: rgba(96, 125, 139, 0.22);
 
-  shape-rendering: crispEdges;
+  shape-rendering: optimizeSpeed;
 
 
   path {
     stroke-opacity: 0.5;
-    stroke-width: 0.75px;
+    stroke-width: 1.75px;
   }
 }
 

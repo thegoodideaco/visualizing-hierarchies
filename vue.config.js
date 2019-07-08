@@ -44,10 +44,10 @@ module.exports = {
 
     if(process.env.NODE_ENV === 'production') {
 
-      // const CompressionPlugin = require('compression-webpack-plugin')
-      // config.plugins.push(
-      //   new CompressionPlugin({})
-      // )
+      const CompressionPlugin = require('compression-webpack-plugin')
+      config.plugins.push(
+        new CompressionPlugin()
+      )
 
       const TerserPlugin = require('terser-webpack-plugin')
       config.optimization.minimizer.push(
@@ -55,13 +55,11 @@ module.exports = {
           terserOptions: {
             compress: {
               // drop_console:  true,
-              // dead_code:     true,
+              dead_code:     true,
               drop_debugger: true,
               unused:        true,
               passes:        4
             }
-            // sourceMap: false
-
           }
         })
       )
