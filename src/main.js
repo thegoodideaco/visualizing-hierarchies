@@ -22,8 +22,12 @@ new Vue({
   render: h => h(App)
 }).$mount('#app')
 
-if(process.env.NODE_ENV === 'development') {
 
+/**
+ * Providing some helper libs for dev only
+ * ^ Assigning to dev object so they are not global
+ */
+if(process.env.NODE_ENV === 'development') {
   Object.assign(window, {
     dev: {
       d3:         require('d3'),

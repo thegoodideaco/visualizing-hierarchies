@@ -2,7 +2,6 @@
   <div class="h-full w-full overflow-hidden">
     <svg class="w-full h-full">
       <g v-if="hierarchy">
-
         <!-- Paths -->
         <g :transform="translateCenter">
           <path
@@ -17,13 +16,11 @@
         <circle
           v-for="(item, i) in hierarchy.descendants()"
           :key="i"
-          class="node-point"
           :fill="getCircleColor(item)"
           :r="4"
+          class="node-point"
           v-bind="nodeProps(item)"
           @click.left="onClick(item)" />
-
-
       </g>
     </svg>
   </div>
@@ -33,18 +30,23 @@
 import { nest } from 'd3-collection'
 import * as d3h from 'd3-hierarchy'
 import * as d3s from 'd3-shape'
-import { timeFormat, scaleQuantile } from 'd3'
+import * as scales from 'd3-scale'
+import { ascending } from 'd3-array'
+import { timeFormat } from 'd3-time-format'
+
+import chroma from 'chroma-js'
 
 const dateFormat = timeFormat('%Y %b')
 
-
-
 const keyGroupers = {
-
   /** @param {Enron.EnronEmail} v */
   from: v => {
-    const n = v.FROM.replace(/.+<(\S+)>.+/, '$1')
-    return n.toLowerCase().substr(0, 1)
+    const n = v.FROM.replace(/(.+)<.+/, '$1')
+    const trimmed = n
+      .toLowerCase()
+      .trim()
+      .replace(/\s+/, ' ')
+    return trimmed ? trimmed : 'n/a'
   },
 
   /** @param {Enron.EnronEmail} v */
@@ -81,12 +83,9 @@ export default {
     return {
       width:  100,
       height: 100,
-      // rotation: 360,
       keys:   [
-        keyGroupers.byYear,
-        keyGroupers.byMonth,
         keyGroupers.from,
-        keyGroupers.to
+        keyGroupers.byYear
       ]
     }
   },
@@ -106,6 +105,8 @@ export default {
         } else {
           nester.key(d => d[k])
         }
+
+        nester.sortKeys(ascending)
       })
 
       return nester
@@ -140,12 +141,8 @@ export default {
      * Only uses the first name
      */
     people() {
-      if (this.dataset) {
-        return this.dataset.reduce((prev, cur) => {
-          const name = cur.FROM.replace(/\s<.+/, '').toLowerCase()
-          if (name && !prev.includes(name)) prev.push(name)
-          return prev
-        }, [])
+      if (this.hierarchy) {
+        return this.hierarchy.data.values.map(v => v.key)
       }
     },
 
@@ -154,7 +151,6 @@ export default {
      */
     hierarchy() {
       if (this.nest) {
-
         /**
          * @type {d3.HierarchyNode<{key: string, values: Enron.EnronEmail[]} & Enron.EnronEmail>}
          */
@@ -169,19 +165,22 @@ export default {
         h.count().sort((a, b) => {
           const leaf = a.children == null
 
-          if(leaf) {
+          if (leaf) {
             return Date.parse(a.data.MasterDate) - Date.parse(b.data.MasterDate)
-          }else{
-            return a.data.key > b.data.key ? 1 : a.data.key < b.data.key ? -1 : 0
-
+          } else {
+            return a.data.key > b.data.key
+              ? 1
+              : a.data.key < b.data.key
+                ? -1
+                : 0
           }
         })
 
         const cluster = d3h
           .cluster()
-          .size([(Math.PI * 2) * (this.rotation / 360), this.radius])
-          .separation(
-            (a, b) => ((!a.children) && a.data.MasterDate === b.data.MasterDate ? 0 : 90)
+          .size([Math.PI * 2 * (this.rotation / 360), this.radius])
+          .separation((a, b) =>
+            !a.children && a.data.MasterDate === b.data.MasterDate ? 0 : 90
           )
 
         return cluster(h)
@@ -189,8 +188,7 @@ export default {
     },
 
     filteredLinks() {
-      if(this.hierarchy){
-
+      if (this.hierarchy) {
         /** @type {d3.HierarchyPointLink<Enron.EnronEmail>[]} */
         const l = this.hierarchy.links()
 
@@ -202,10 +200,19 @@ export default {
       return []
     },
 
+    /**
+     * Colorized by the person who sent the email (1st grouping level)
+     */
     circleColor() {
-      const s = scaleQuantile()
-        .domain(this.hierarchy.data.values.map(v => v.key))
-        .range(['#00ffe7', '#ff0057', '#008eff'])
+      if (!this.people) return
+      // Let's generate an array of colors to match the amount of people
+      const colors = chroma
+        .scale(chroma.brewer.Spectral)
+        .colors(this.people.length)
+      const s = scales
+        .scaleThreshold()
+        .domain(this.people)
+        .range(colors)
 
       return s
     },
@@ -233,7 +240,6 @@ export default {
   mounted() {
     this.resize()
     window.addEventListener('resize', this.resize)
-
   },
 
   beforeDestroy() {
@@ -266,8 +272,8 @@ export default {
 
       // debugger
 
-
-      return d3s.linkRadial()
+      return d3s
+        .linkRadial()
         .angle(d => d.x)
         .radius(d => d.y)(link)
     },
@@ -314,14 +320,9 @@ export default {
      * @param {d3.HierarchyPointNode<Enron.EnronEmail | {key: string}>} item
      */
     getCircleColor(item) {
-      if(!item.parent) return
-      let y = null
-      if(item.children) {
-        y = +item.ancestors().reverse().slice(1)[0].data.key
-      }else{
-        y = timeFormat('%Y')(Date.parse(item.data.MasterDate))
-      }
-      return this.circleColor(y)
+      if (!item.parent || !this.people) return
+      const key = item.ancestors().reverse()[1].data.key
+      return this.circleColor(key)
     }
   }
 }
@@ -333,10 +334,9 @@ svg {
 
   shape-rendering: optimizeSpeed;
 
-
   path {
-    stroke-opacity: 0.5;
-    stroke-width: 1.75px;
+    stroke-opacity: 0.25;
+    stroke-width: 0.75px;
   }
 }
 
