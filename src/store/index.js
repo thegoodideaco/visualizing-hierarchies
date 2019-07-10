@@ -9,7 +9,8 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    readme: null
+    readme: null,
+    emails: []
   },
   modules: {
     controls

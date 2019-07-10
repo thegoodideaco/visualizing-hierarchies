@@ -1,15 +1,21 @@
 <template>
   <div>
-    <input v-model.number="angle"
-           type="range"
-           :min="0"
-           :max="360"
-           :step=".1">
+    <label>
+      <h5>Angle: <span class="text-yellow-500">{{ ~~angle }}</span></h5>
+
+      <slider v-model.number="angle"
+              :min="0"
+              :max="360" />
+    </label>
   </div>
 </template>
 
 <script>
+import SliderVue from '../../inputs/Slider.vue'
 export default {
+  components: {
+    Slider: SliderVue
+  },
   computed: {
     angle: {
       get() {

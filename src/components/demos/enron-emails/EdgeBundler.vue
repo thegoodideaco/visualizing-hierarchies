@@ -1,5 +1,7 @@
 <template>
-  <div class="h-full w-full overflow-hidden">
+  <div class="overflow-hidden"
+       @mousemove="updateMouse">
+    <!-- {{ mouseAngle }} -->
     <svg class="w-full h-full">
       <g v-if="hierarchy">
         <!-- Paths -->
@@ -82,12 +84,21 @@ export default {
   },
   data() {
     return {
-      width:  100,
-      height: 100,
-      keys:   [
-        keyGroupers.from,
-        keyGroupers.byYear
-      ]
+      width:      100,
+      height:     100,
+      seperation: {
+        min: 1,
+        max: 10
+      },
+      keys: [
+        keyGroupers.byYear,
+        keyGroupers.byMonth,
+        keyGroupers.from
+      ],
+      mouse: {
+        x: 0,
+        y: 0
+      }
     }
   },
   computed: {
@@ -143,7 +154,12 @@ export default {
      */
     people() {
       if (this.hierarchy) {
-        return this.hierarchy.data.values.map(v => v.key)
+        return this.dataset.reduce((prev, cur) => {
+          const name = cur.FROM.replace(/(.+)\/*<.*/, '$1').toLowerCase().trim()
+          if(!prev.includes(name) && name) prev.push(name)
+
+          return prev
+        }, [])
       }
     },
 
@@ -180,9 +196,12 @@ export default {
         const cluster = d3h
           .cluster()
           .size([Math.PI * 2 * (this.rotation / 360), this.radius])
-          .separation((a, b) =>
-            !a.children && a.data.MasterDate === b.data.MasterDate ? 0 : 90
-          )
+          .separation((a, b) => {
+            // const year = v => new Date(v.MasterDate).getFullYear()
+            const year = v => v.FROM.replace(/(.+)\S*<+.*/, '$1').toLowerCase().trim()
+
+            return year(a.data) !== year(b.data) ? this.seperation.max : this.seperation.min
+          } )
 
         return cluster(h)
       }
@@ -204,7 +223,13 @@ export default {
 
     filteredNodes() {
       if(this.hierarchy) {
-        return this.hierarchy.leaves()
+        const nodes = []
+
+        this.hierarchy.each(n => {
+          if(n.depth >= (this.hierarchy.height - 1)) nodes.push(n)
+        })
+
+        return nodes
       }
     },
 
@@ -223,6 +248,30 @@ export default {
         .range(colors)
 
       return s
+    },
+
+    angleScale() {
+      return scales.scaleBand()
+        .domain(this.hierarchy.leaves())
+        .range([0, 360])
+    },
+
+    mouseAngle() {
+      const {
+        x,
+        y
+      } = this.mouse
+
+      const offset = {
+        x: x - this.width * .5,
+        y: y - this.height * .5
+      }
+
+
+      let rad = Math.atan2(offset.y, offset.x) + (Math.PI * .5)
+      // rad =
+
+      return ((rad > 0 ? rad : rad + Math.PI * 2) * 180 / Math.PI)
     },
 
     radius() {
@@ -328,9 +377,22 @@ export default {
      * @param {d3.HierarchyPointNode<Enron.EnronEmail | {key: string}>} item
      */
     getCircleColor(item) {
-      if (!item.parent || !this.people) return
-      const key = item.ancestors().reverse()[1].data.key
+      if (item.children || !this.people) return
+      const key = item.data.FROM.replace(/(.+)<.*/, '$1').toLowerCase().trim()
       return this.circleColor(key)
+    },
+
+    /** @param {MouseEvent} ev */
+    updateMouse(ev) {
+      const {
+        layerX: x,
+        layerY: y
+      } = ev
+
+      Object.assign(this.mouse, {
+        x,
+        y
+      })
     }
   }
 }
