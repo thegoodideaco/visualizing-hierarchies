@@ -30,6 +30,9 @@ export default {
         {
           url:   '/static/images/radial-tree.png',
           title: 'Starburst visualization in Vue UI'
+        },
+        {
+          url: '/static/images/ill be back.gif'
         }
       ],
       curIndex: 0

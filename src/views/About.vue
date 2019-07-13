@@ -44,19 +44,8 @@ export default {
         {
           url:   '/static/images/imagenet.png',
           title: 'More Classification Uses'
-        },
-        {
-          url: '/static/images/gestalt.png'
-        },
-        {
-          url: '/static/images/what.gif'
-        },
-        {
-          url: '/static/images/omg1.gif'
-        },
-        {
-          url: '/static/images/clap1.gif'
         }
+
       ],
       curIndex: 0
     }

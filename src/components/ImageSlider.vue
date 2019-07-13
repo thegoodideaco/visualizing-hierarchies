@@ -15,7 +15,7 @@
         <transition
           appear
           name="zoom">
-<!-- Image / will be applied as a background for auto fitting once loaded -->
+          <!-- Image / will be applied as a background for auto fitting once loaded -->
           <img v-if="!loaded"
                :alt="activeItem.title"
                :src="activeItem.url"
@@ -53,7 +53,7 @@
 export default {
   filters: {
     asStyle: url => ({
-      backgroundImage: `url(${encodeURIComponent(url)})`
+      backgroundImage: `url(${url.startsWith('http') ? url : encodeURIComponent(url)})`
     })
   },
   props: {
@@ -168,8 +168,8 @@ export default {
     }
   }
 
-  &__component {
+  // &__component {
 
-  }
+  // }
 }
 </style>

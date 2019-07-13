@@ -15,7 +15,8 @@ export default {
     index:  0,
     images: [
       {
-        url: '/static/images/semiology.png'
+        url:   '/static/images/semiology.png',
+        title: 'Semiology of Graphics by Jacques Bertin'
       }
     ]
   })
