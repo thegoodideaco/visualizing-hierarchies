@@ -1,16 +1,18 @@
 <template>
   <div class="image-slider">
-    <div v-if="items">
+    <div
+      v-if="items"
+      class="image-slider__inner">
       <transition
         appear
         mode="out-in"
         name="fade">
         <!-- If Image -->
         <div v-if="!isComponent"
-             :key="activeIndex"
-             class="image-slider__inner">
+             :key="activeIndex">
           <img :alt="activeItem.title"
                :src="activeItem.url"
+               class="m-auto"
                draggable="false"
                @load="loaded = true">
 
@@ -112,9 +114,18 @@ export default {
 <style scoped lang="scss">
 .image-slider {
   display: grid;
+  align-items: center;
   &__inner {
     display: grid;
-    justify-items: center;
+    height: 100%;
+    text-align: center;
+
+    > div {
+      display: grid;
+      align-items: center;
+      align-content: center;
+    }
+
   }
 }
 </style>

@@ -42,6 +42,7 @@
   position: relative;
   transform: translateZ(0);
   will-change: scroll-position;
+
   // display: inline-block;
 
   @for $i from 1 through 6 {
@@ -50,7 +51,7 @@
       // set the background-color to cornflowerblue and
       // each time lighten the color slightly
       color: darken(#54eda9, ($i * 2.5));
-      line-height: 1.5rem + (5- ($i + 1)) * 2;
+      line-height: 1.5rem + (((5 -$i) + 1)) * 1.2;
     }
   }
 
@@ -68,6 +69,7 @@
     background-color: rgba(0, 0, 0, 0.23);
     padding: 10px;
     font-size: 1.1em;
+    overflow-x: auto;
   }
 
   :not(pre) code {
