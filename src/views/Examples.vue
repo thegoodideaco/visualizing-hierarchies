@@ -10,7 +10,7 @@
 <script>
 import SidenavLayoutVue from '../layouts/SidenavLayout.vue'
 import readme from './examples.md'
-import { ReportTree, ImageSlider, EdgeBundling } from '@/components/demos/asyncDemos'
+import { ReportTree, ImageSlider } from '@/components/demos/asyncDemos'
 
 export default {
   components: {
@@ -21,18 +21,30 @@ export default {
     return {
       readme: () => readme,
       images: [
-        ReportTree,
-        EdgeBundling,
         {
-          url:   '/static/images/edge-bundling.jpg',
-          title: 'Edge Bundling'
+          url:   'https://i.stack.imgur.com/iLsgy.png',
+          title: 'Custer Dendrogram'
+        },
+        {
+          url:   'https://architect-api.readthedocs.io/en/latest/_images/node-link-tree.png',
+          title: 'Tidy Tree'
         },
         {
           url:   '/static/images/radial-tree.png',
-          title: 'Starburst visualization in Vue UI'
+          title: 'Radial Tidy Tree'
         },
         {
-          url: '/static/images/ill be back.gif'
+          url:   '/static/images/starburst.gif',
+          title: 'Starburst'
+        },
+        ReportTree,
+        {
+          url:   'https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/imgs/js-profile.png',
+          title: 'Flame Graph using Partition Layout'
+        },
+        {
+          url:   'https://www.d3indepth.com/img/layouts/pack.png',
+          title: 'Circle Packing'
         }
       ],
       curIndex: 0
