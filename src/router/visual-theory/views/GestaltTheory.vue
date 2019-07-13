@@ -19,7 +19,7 @@ export default {
       },
       {
         url:   '/static/images/reading-gravity.jpg',
-        title: 'Reading Gravity'
+        title: 'The Gutenberg Diagram'
       }
     ],
     index: 0

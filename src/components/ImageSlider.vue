@@ -3,30 +3,45 @@
     <div
       v-if="items"
       class="image-slider__inner">
-      <transition
+      <!-- <transition
         appear
         mode="out-in"
-        name="fade">
-        <!-- If Image -->
-        <div v-if="!isComponent"
-             :key="activeIndex">
-          <img :alt="activeItem.title"
+        name="fade"> -->
+      <!-- If Image -->
+      <div
+        v-if="!isComponent"
+        :key="activeIndex"
+        class="image-slider__image">
+        <transition
+          appear
+          name="zoom">
+<!-- Image / will be applied as a background for auto fitting once loaded -->
+          <img v-if="!loaded"
+               :alt="activeItem.title"
                :src="activeItem.url"
-               class="m-auto"
+               class="image-slider__image-container hidden"
                draggable="false"
                @load="loaded = true">
 
-          <h4 v-show="loaded">
-            {{ activeItem.title }}
-          </h4>
-        </div>
-        <!-- If Component -->
-        <component :is="activeItem"
-                   v-else
-                   :key="'_'+activeIndex"
-                   class="h-full"
-                   @hook:mounted="loaded = true" />
-      </transition>
+          <!-- The div that _contains_ the image -->
+          <div v-else
+               class="image-slider__image-fill m-5"
+               :style="activeItem.url | asStyle" />
+        </transition>
+
+        <!-- Title -->
+        <h4 v-show="loaded"
+            class="image-slider__image-header">
+          {{ activeItem.title }}
+        </h4>
+      </div>
+      <!-- If Component -->
+      <component :is="activeItem"
+                 v-else
+                 :key="'_'+activeIndex"
+                 class="image-slider__component"
+                 @hook:mounted="loaded = true" />
+      <!-- </transition> -->
     </div>
   </div>
 </template>
@@ -36,6 +51,11 @@
  * @typedef {{url: string, title: string} & (() => Vue.AsyncComponent)} Item
  */
 export default {
+  filters: {
+    asStyle: url => ({
+      backgroundImage: `url(${encodeURIComponent(url)})`
+    })
+  },
   props: {
     /** Items can be an array of simple images, or components
      * @type {Vue.PropOptions<Item[]>}
@@ -114,17 +134,41 @@ export default {
 <style scoped lang="scss">
 .image-slider {
   display: grid;
+  height: 100%;
   align-items: center;
   &__inner {
     display: grid;
     height: 100%;
     text-align: center;
+  }
 
-    > div {
-      display: grid;
-      align-items: center;
-      align-content: center;
+  // Has image with underlying title
+  &__image {
+    display: grid;
+    grid: 1fr auto / 1fr;
+    overflow: hidden;
+    height: 100%;
+    // align-items: center;
+    // align-content: center;
+
+    &-container {
+      height: 100%;
+      margin: auto;
     }
+
+    &-fill {
+      background-size: contain;
+      background-repeat: no-repeat no-repeat;
+      background-position: center center;
+    }
+
+    &-header {
+      padding: 2rem;
+      font-size: 4rem;
+    }
+  }
+
+  &__component {
 
   }
 }

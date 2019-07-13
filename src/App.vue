@@ -1,18 +1,16 @@
 <template>
-  <div id="app"
-       class="h-full font-sans">
+  <div
+    id="app"
+    class="h-full font-sans">
     <router-view />
   </div>
 </template>
 
 <script>
-export default {
-
-}
+export default {}
 </script>
 
 <style lang="scss">
-
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -22,11 +20,45 @@ export default {
   }
 }
 
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .25s;
+.fade {
+  &-enter {
+    opacity: 0;
+    &-active {
+      transition: opacity 0.25s;
+    }
+  }
+
+  &-leave {
+    &-active {
+      transition: opacity 0.25s;
+    }
+
+    &-to {
+      opacity: 0;
+    }
+  }
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-  opacity: 0;
+.zoom {
+  $speed: 250ms;
+  &-enter {
+    opacity: 0;
+    transform: scale(0);
+    &-active {
+      transition: opacity $speed, transform $speed;
+      transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+  }
+
+  &-leave {
+    &-active {
+      transition: opacity $speed, transform $speed;
+      transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+
+    &-to {
+      transform: scale(0);
+    }
+  }
 }
 
 #app {
@@ -35,7 +67,7 @@ export default {
   animation-name: fadeIn;
   animation-duration: 1s;
   animation-fill-mode: both;
-  animation-delay: .5s;
+  animation-delay: 0.5s;
   animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 </style>
