@@ -73,3 +73,10 @@ a {
     @apply .underline;
   }
 }
+
+.component-container {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  overflow: hidden;
+}

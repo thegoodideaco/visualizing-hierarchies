@@ -6,10 +6,12 @@
       <h5>With Vue.js and D3.js</h5>
 
       <div class="logos">
-        <img src="@/assets/vue-logo.svg"
-             alt="Vue">
-        <img src="@/assets/d3-logo.svg"
-             alt="D3">
+        <img
+          alt="Vue"
+          src="@/assets/vue-logo.svg">
+        <img
+          alt="D3"
+          src="@/assets/d3-logo.svg">
       </div>
     </div>
 
@@ -35,10 +37,10 @@ export default {
 }
 
 .logos {
-    display: grid;
-    width: 100%;
-    padding: 2em;
-  grid: 70px / auto auto;
+  display: grid;
+  width: 100%;
+  padding: 2em;
+  grid: 70px / repeat(2, 1fr);
   justify-content: center;
   column-gap: 10px;
 

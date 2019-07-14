@@ -1,10 +1,16 @@
 <template>
-  <div>Hello</div>
+  <div class="component-container">
+    <!-- Put component element here -->
+    <my-component />
+  </div>
 </template>
 
 <script>
-export default {}
+import MyComponent from '@/lessons/vue/create/MyComponent.vue'
+export default {
+  name:       'ComponentContainer',
+  components: {
+    MyComponent
+  }
+}
 </script>
-
-<style>
-</style>

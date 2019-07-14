@@ -59,22 +59,6 @@ export const config = {
         title:  'Interaction',
         readme: ReactivityReadme
       }
-    },
-    {
-      path:      '/vue/nesting',
-      component: () => import('@/views/vue/Reactivity.vue'),
-      meta:      {
-        title:  'Nesting Components',
-        readme: ReactivityReadme
-      }
-    },
-    {
-      path:      '/vue/slots',
-      component: components.slots,
-      meta:      {
-        title: 'Slots',
-        readme: SlotsReadme
-      }
     }
   ]
 }

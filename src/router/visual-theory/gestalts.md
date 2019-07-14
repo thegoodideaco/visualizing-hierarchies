@@ -10,7 +10,7 @@ This is particularly interesting in respect to Design and UX, as most of these p
 
 ## Structured Design
 
-It seems apparant that this approach of grouping and categorizing is in alot of what we do, even outside of our visual sense... We order groups of information based on a rating of importance.
+It seems apparant that this approach of grouping and categorizing is in alot of what we do, even outside of our visual perception... We order groups of information based on a rating of importance.
 
 We use this format logically, as well as visually perceiving the world around us.
 
