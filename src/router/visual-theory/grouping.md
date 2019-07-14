@@ -29,7 +29,3 @@ States that objects are perceived as lines that move along the smoothest path. E
 ## Law of Continuity
 
 States that elements of objects tend to be grouped together, and therefore integrated into perceptual wholes if they are aligned within an object. In cases where there is an intersection between objects, individuals tend to perceive the two objects as two single uninterrupted entities.
-
-## Law of Past Experience
-
-Implies that under some circumstances visual stimuli are categorized according to past experience. If two objects tend to be observed within close proximity, or small temporal intervals, the objects are more likely to be perceived together.

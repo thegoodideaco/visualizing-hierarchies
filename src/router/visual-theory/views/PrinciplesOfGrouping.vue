@@ -23,6 +23,10 @@ export default {
         title: 'Law of Similarity'
       },
       {
+        url:   'https://miro.medium.com/max/700/1*LxCr2o4bLGzzZpYp3tPtFw.png',
+        title: 'Law of Closure'
+      },
+      {
         url:   'https://uxmisfit.com/wp-content/uploads/2019/04/symmetry.jpg',
         title: 'Law of Symmetry'
       },

@@ -318,7 +318,7 @@ export default {
     },
 
     onResize() {
-      console.log('resize')
+      // console.log('resize')
       const {
         width,
         height

@@ -22,28 +22,21 @@ export default {
       curIndex: 0,
       items:    [
         {
-          url:   '/static/images/webpack-treemap.jpg',
-          title: 'Testing'
+          url: 'https://thumbs.gfycat.com/DifficultDiligentCobra-size_restricted.gif'
         },
         {
-          url:   '/static/images/starburst.gif',
-          title: 'Testing'
+          url: 'http://worklad.co.uk/wp-content/uploads/2015/01/440860250997548473.jpg'
         },
         {
-          url:   '/static/images/edge-bundling.jpg',
-          title: 'Edge Bundling'
+          url:   'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/80d41e10901127.560ed42405670.png',
+          title: 'History of Life / Juan Martinez'
         },
         {
-          url:   '/static/images/semiology.png',
-          title: 'Semiology of Graphics'
+          url: 'http://media3.washingtonpost.com/wp-dyn/content/graphic/2009/08/12/GR2009081200033.gif'
         },
         {
-          url:   '/static/images/radial-tree.png',
-          title: 'Radial Tree'
-        },
-        {
-          url:   '/static/images/vue ui starburst.jpg',
-          title: 'Testing 2'
+          url:   'https://i.pinimg.com/originals/66/2d/ad/662dadef598541451d14d07a97999e4e.gif',
+          title: 'Let\'s do this!'
         }
       ]
     }

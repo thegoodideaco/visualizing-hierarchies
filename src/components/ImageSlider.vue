@@ -3,45 +3,43 @@
     <div
       v-if="items"
       class="image-slider__inner">
-      <!-- <transition
-        appear
-        mode="out-in"
-        name="fade"> -->
-      <!-- If Image -->
-      <div
-        v-if="!isComponent"
-        :key="activeIndex"
-        class="image-slider__image">
-        <transition
-          appear
-          name="zoom">
-          <!-- Image / will be applied as a background for auto fitting once loaded -->
-          <img v-if="!loaded"
-               :alt="activeItem.title"
-               :src="activeItem.url"
-               class="image-slider__image-container hidden"
-               draggable="false"
-               @load="loaded = true">
+      <keep-alive>
+        <!-- If Image -->
+        <div
+          v-if="!isComponent"
+          :key="activeIndex"
+          class="image-slider__image">
+          <transition
+            appear
+            name="zoom">
+            <!-- Image / will be applied as a background for auto fitting once loaded -->
+            <img v-if="!loaded"
+                 :alt="activeItem.title"
+                 :src="activeItem.url"
+                 class="image-slider__image-container hidden"
+                 draggable="false"
+                 @load="loaded = true">
 
-          <!-- The div that _contains_ the image -->
-          <div v-else
-               class="image-slider__image-fill m-5"
-               :style="activeItem.url | asStyle" />
-        </transition>
+            <!-- The div that _contains_ the image -->
+            <div v-else
+                 class="image-slider__image-fill m-5"
+                 :style="activeItem.url | asStyle" />
+          </transition>
 
-        <!-- Title -->
-        <h4 v-show="loaded"
-            class="image-slider__image-header">
-          {{ activeItem.title }}
-        </h4>
-      </div>
-      <!-- If Component -->
-      <component :is="activeItem"
-                 v-else
-                 :key="'_'+activeIndex"
-                 class="image-slider__component"
-                 @hook:mounted="loaded = true" />
+          <!-- Title -->
+          <h4 v-show="loaded"
+              class="image-slider__image-header">
+            {{ activeItem.title }}
+          </h4>
+        </div>
+        <!-- If Component -->
+        <component :is="activeItem"
+                   v-else
+                   :key="'_'+activeIndex"
+                   class="image-slider__component"
+                   @hook:mounted="loaded = true" />
       <!-- </transition> -->
+      </keep-alive>
     </div>
   </div>
 </template>
@@ -124,7 +122,7 @@ export default {
     },
 
     removeListeners() {
-      console.log('removing listeners')
+      // console.log('removing listeners')
       document.removeEventListener('keydown', this.keyPressed)
     }
   }

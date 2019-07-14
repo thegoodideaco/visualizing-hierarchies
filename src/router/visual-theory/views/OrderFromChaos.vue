@@ -15,10 +15,22 @@ export default {
     index:  0,
     images: [
       {
+        url: '/static/images/chaos2.gif'
+      },
+      {
         url: '/static/images/chaos1.gif'
       },
       {
-        url: '/static/images/chaos2.gif'
+        url:   'https://media.giphy.com/media/GR81UZYyhN3Ww/giphy.gif',
+        title: 'that\'s better'
+      },
+      {
+        url:   'https://media3.giphy.com/media/3osxYzUOBRWEg5S5q0/source.gif',
+        title: 'that\'s better'
+      },
+      {
+        url:   'https://i.imgur.com/rVeKdo9.gif',
+        title: 'that\'s better'
       }
     ]
   })
