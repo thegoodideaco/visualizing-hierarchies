@@ -1,58 +1,36 @@
 # Reactivity
 
-When things are reactive, they will automatically update their values, and always reference the most up to date information.
+User Interfaces for the most part, visually display data objects.
 
-## Computed Properties
+They are the visual representation of structured information.
 
-Computed objects update if anything it depends on changes.
+When you work with state management, the visual representation updates for you automatically. This means you don't have to put in extra work after changing the data to re-render it visually.
 
-```javascript
-computed: {
-    markdown() {
-      return () => marked(this.value)
-    }
-}
+## Adding Reactivity
 
-```
+Let's add on to the component we just created, `Mycomponent.vue`
 
-## Watch
+We will make a simple calculator that adds two numbers.
 
-Objects can be observed by using watch.
+```html
+<template>
+  <div>
+    <input v-model.number="a" />
+    <input v-model.number="b" />
+    <h2>The sum is {{ a + b }}</h2>
+  </div>
+</template>
 
-```javascript
-watch: {
-    /**
-     * Watches for change in hierarchy.
-     * Creates a clone before applying layout
-     */
-    hierarchy: {
-      /** @param {d3.HierarchyNode} val */
-      handler(val) {
-        this.localHierarchy = val ? val.copy() : null
-
-        this.$nextTick(() => {
-          if (this.localHierarchy) {
-            // debugger
-            this.localHierarchy.count()
-            .sort((a, b) => a.value - b.value)
-            this.treemap.size(this.size)
-            .(this.localHierarchy)
-
-            const nodes = []
-            this.localHierarchy.each(v => {
-              if (!this.showLeafs) {
-                if (v.children) {
-                  nodes.push(v)
-                }
-              } else {
-                nodes.push(v)
-              }
-            })
-            this.localDescendants = nodes
-          }
-        })
-      },
-      immediate: true
-    }
+<script>
+  export default {
+    data: () => ({
+      a: 2,
+      b: 3
+    })
   }
+</script>
 ```
+
+### Importing
+
+Now that we have our component ready to use, let's import it into our view.

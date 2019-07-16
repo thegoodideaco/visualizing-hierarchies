@@ -143,7 +143,7 @@ export default {
       ? 500
       : utils.isMobile.tablet
         ? 700
-        : 500
+        : 1200
 
     this.roots = range(~~Math.sqrt(particleAmount))
 

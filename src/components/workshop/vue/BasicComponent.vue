@@ -1,16 +1,16 @@
 <template>
   <div class="component-container">
     <!-- Put component element here -->
-    <my-component />
+    <!-- <my-component /> -->
   </div>
 </template>
 
 <script>
-import MyComponent from '@/lessons/vue/create/MyComponent.vue'
+// import MyComponent from '@/lessons/vue/create/MyComponent.vue'
 export default {
   name:       'ComponentContainer',
   components: {
-    MyComponent
+    // MyComponent
   }
 }
 </script>

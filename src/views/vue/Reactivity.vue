@@ -1,16 +1,14 @@
 <template>
-  <div>
-    <input v-model="input">
-
-    <d3-pie />
+  <div class="flex items-center justify-center">
+    <my-component />
   </div>
 </template>
 
 <script>
-import D3PieVue from '../../components/demos/D3Pie.vue'
+import MyComponent from '@/lessons/vue/reactivity/finished/MyComponent'
 export default {
   components: {
-    D3Pie: D3PieVue
+    MyComponent
   },
   data: () => ({
     input: null
@@ -19,7 +17,14 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  input {
+  /deep/ input {
     color: lighten(#000, 10);
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    padding: .2rem;
+    display: block;
+    position: relative;
+
   }
 </style>
