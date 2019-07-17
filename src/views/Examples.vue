@@ -23,7 +23,7 @@ export default {
       images: [
         {
           url:   'https://i.stack.imgur.com/iLsgy.png',
-          title: 'Custer Dendrogram'
+          title: 'Cluster Dendrogram'
         },
         {
           url:   'https://architect-api.readthedocs.io/en/latest/_images/node-link-tree.png',

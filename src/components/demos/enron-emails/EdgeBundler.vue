@@ -86,7 +86,7 @@ export default {
     return {
       width:      100,
       height:     100,
-      seperation: {
+      separation: {
         min: 1,
         max: 10
       },
@@ -135,7 +135,7 @@ export default {
       }
 
       if (!this.dataset) return coll
-      return this.dataset.reduce((prev, cur) => {
+      const collections =  this.dataset.reduce((prev, cur) => {
         const attachment = cur.Filename
 
         if (attachment) {
@@ -146,6 +146,10 @@ export default {
 
         return prev
       }, coll)
+
+      collections.emails.sort((a, b) => Date.parse(a.MasterDate) - Date.parse(b.MasterDate))
+
+      return collections
     },
 
     /**
@@ -200,7 +204,7 @@ export default {
             // const year = v => new Date(v.MasterDate).getFullYear()
             const year = v => v.FROM.replace(/(.+)\S*<+.*/, '$1').toLowerCase().trim()
 
-            return year(a.data) !== year(b.data) ? this.seperation.max : this.seperation.min
+            return year(a.data) !== year(b.data) ? this.separation.max : this.separation.min
           } )
 
         return cluster(h)
@@ -231,6 +235,8 @@ export default {
 
         return nodes
       }
+
+      return []
     },
 
     /**
