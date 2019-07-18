@@ -19,11 +19,11 @@
     </div>
 
     <ul
-      v-if="routeItem.children"
+      v-if="subItems"
       class="mb-2">
       <!-- Recursive Component -->
       <router-navigator-item
-        v-for="(item, index) in routeItem.children"
+        v-for="(item, index) in subItems"
         :key="index"
         :route-item="item" />
     </ul>
@@ -43,8 +43,14 @@ export default {
     }
   },
   computed: {
+    subItems() {
+      if(!this.routeItem.children) return null
+      return this.routeItem.children.filter((v) => {
+        return v.meta.title != null
+      })
+    },
     isLeaf() {
-      return this.routeItem.children == null
+      return this.subItems == null
     },
     isActive() {
 

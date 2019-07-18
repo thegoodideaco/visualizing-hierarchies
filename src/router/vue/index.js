@@ -33,12 +33,28 @@ export const config = {
         title:  'Making a Component',
         readme: MakingReadme
       }
+
+    },
+    {
+      path:      '/vue/code/single-file-component/finished',
+      component: components.finished.MakingComponent,
+      meta:      {
+        readme: RenderingReadme
+      }
+
     },
     {
       path:      '/vue/reactivity',
       component: components.Reactivity,
       meta:      {
         title:  'Reactivity',
+        readme: ReactivityReadme
+      }
+    },
+    {
+      path:      '/vue/reactivity/finished',
+      component: components.finished.Reactivity,
+      meta:      {
         readme: ReactivityReadme
       }
     },

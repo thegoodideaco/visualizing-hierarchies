@@ -1,18 +1,25 @@
 <template>
   <div class="component-container">
-    <my-component />
+    <reactivity-component />
   </div>
 </template>
 
 <script>
-import MyComponent from './MyComponent.vue'
+import ReactivityComponent from './ReactivityComponent.vue'
 export default {
   components: {
-    MyComponent
+    ReactivityComponent
   }
 }
 </script>
 
-<style>
-
+<style scoped lang="scss">
+/deep/ input {
+  padding: .5rem;
+  color: #000;
+  display: block;
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  line-height: normal;
+}
 </style>

@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import MyComponent from '@/lessons/vue/reactivity/finished/MyComponent'
+import MyComponent from '@/lessons/vue/reactivity/finished/ReactivityComponent.vue'
 export default {
   components: {
     MyComponent

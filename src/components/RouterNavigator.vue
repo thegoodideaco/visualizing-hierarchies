@@ -20,7 +20,7 @@ export default {
       /** @type {import('vue-router').RouterOptions} */
       const {routes} = this.$router.options
 
-      return routes.filter(v => v.meta != null)
+      return routes.filter(v => v.meta != null && v.meta.title != null)
     }
   }
 }
