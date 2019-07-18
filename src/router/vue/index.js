@@ -1,20 +1,18 @@
 
-/* eslint-disable */
-
-import IntroReadme from '@/views/vue/intro.md'
-import Sfc from '@/views/vue/sfc.md'
-import ReactivityReadme from '@/views/reactivity.md'
-import SlotsReadme from './slots.md'
+import IntroReadme from './intro.md'
+import MakingReadme from './making.md'
+import ReactivityReadme from './reactivity.md'
+import InteractionReadme from './interaction.md'
 import RenderingReadme from './rendering.md'
-import { SideNavLayout } from '@/layouts/componentViews';
 import * as components from './asyncComponents'
+import { SideNavLayout } from '@/layouts/componentViews'
 
 
 /** @type {import("vue-router").RouteConfig} */
 export const config = {
   name:      'vue',
   path:      '/vue',
-  redirect: '/vue/intro',
+  redirect:  '/vue/intro',
   component: SideNavLayout,
   meta:      {
     title: 'Vue'
@@ -22,7 +20,7 @@ export const config = {
   children: [
     {
       path:      '/vue/intro',
-      component: components.intro,
+      component: components.Intro,
       meta:      {
         title:  'What is Vue?',
         readme: IntroReadme
@@ -30,15 +28,15 @@ export const config = {
     },
     {
       path:      '/vue/code/single-file-component',
-      component: components.sfc,
+      component: components.MakingComponent,
       meta:      {
         title:  'Making a Component',
-        readme: Sfc
+        readme: MakingReadme
       }
     },
     {
       path:      '/vue/reactivity',
-      component: components.reactivity,
+      component: components.Reactivity,
       meta:      {
         title:  'Reactivity',
         readme: ReactivityReadme
@@ -46,7 +44,7 @@ export const config = {
     },
     {
       path:      '/vue/rendering',
-      component: () => import('@/views/vue/Reactivity.vue'),
+      component: components.TemplateRendering,
       meta:      {
         title:  'Template Rendering',
         readme: RenderingReadme
@@ -54,10 +52,10 @@ export const config = {
     },
     {
       path:      '/vue/interaction',
-      component: () => import('@/views/vue/Reactivity.vue'),
+      component: components.Interaction,
       meta:      {
         title:  'Interaction',
-        readme: ReactivityReadme
+        readme: InteractionReadme
       }
     }
   ]

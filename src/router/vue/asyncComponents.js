@@ -1,4 +1,6 @@
-export const intro = () => import('@/views/vue/Intro.vue')
-export const reactivity = () => import('@/views/vue/Reactivity.vue')
-export const slots = () => import('@/views/vue/Slots.vue')
-export const sfc = () => import('@/components/workshop/vue/BasicComponent.vue')
+export const Intro = () => import('./views/Intro.vue')
+
+export const MakingComponent = () => import('./views/MakingComponent.vue')
+export const Reactivity = () => import('./views/Reactivity.vue')
+export const TemplateRendering = () => import('./views/TemplateRendering.vue')
+export const Interaction = () => import('./views/Interaction.vue')
