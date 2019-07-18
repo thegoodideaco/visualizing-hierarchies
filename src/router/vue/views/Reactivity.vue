@@ -1,7 +1,5 @@
 <template>
-  <div>
-    Reactivity
-  </div>
+  <open-button />
 </template>
 
 <script>
