@@ -1,11 +1,13 @@
-
 <template>
-  <div>
-    Hello!
-  </div>
+  <open-button />
 </template>
 
 <script>
 export default {
+
 }
 </script>
+
+<style>
+
+</style>

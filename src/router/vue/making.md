@@ -24,10 +24,9 @@ Vue components consist of 3 main section blocks:
 </template>
 
 <script>
-  export default {}
+export default {
+}
 </script>
-
-<style></style>
 ```
 
 ## Importing

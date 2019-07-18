@@ -1,12 +1,33 @@
 <template>
   <div>
-    Intro (What is Vue)
+    <image-slider :active-index.sync="index"
+                  :items="items" />
   </div>
 </template>
 
 <script>
+import ImageSliderVue from '@/components/ImageSlider.vue'
 export default {
-
+  components: {
+    ImageSlider: ImageSliderVue
+  },
+  data: () => ({
+    index: 0,
+    items: [
+      {
+        url:   '/static/images/chaos2.gif',
+        title: 'Cool Dude'
+      },
+      {
+        url:   '/static/images/taxonomy2.jpg',
+        title: 'Cool Dude'
+      },
+      {
+        url:   '/static/images/hierarchy-expand.gif',
+        title: 'Cool Dude'
+      }
+    ]
+  })
 }
 </script>
 

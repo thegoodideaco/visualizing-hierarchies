@@ -1,6 +1,6 @@
 <template>
   <div class="component-container">
-    <button class="open-btn"
+    <button class="open-btn rounded-lg"
             @click.self="openInEditor($parent)">
       Open
     </button>
@@ -12,7 +12,3 @@ export default {
 
 }
 </script>
-
-<style>
-
-</style>

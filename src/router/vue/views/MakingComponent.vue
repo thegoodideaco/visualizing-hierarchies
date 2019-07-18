@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import MyComponentVue from '../../../lessons/vue/create/MyComponent.vue'
+import MyComponentVue from '@/lessons/vue/create/index.vue'
 export default {
   components: {
     MyComponent: MyComponentVue

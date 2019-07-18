@@ -10,14 +10,19 @@ import Axios from 'axios'
 
 import './utils/webFonts'
 
+// ! Available in production as well...
+Vue.component('OpenButton', () => import('@/utils/OpenButton.vue'))
 
 /**
- * Providing utils for dev only
- *
+ * .########..########.##.....##.....#######..##....##.##.......##....##
+ * .##.....##.##.......##.....##....##.....##.###...##.##........##..##.
+ * .##.....##.##.......##.....##....##.....##.####..##.##.........####..
+ * .##.....##.######...##.....##....##.....##.##.##.##.##..........##...
+ * .##.....##.##........##...##.....##.....##.##..####.##..........##...
+ * .##.....##.##.........##.##......##.....##.##...###.##..........##...
+ * .########..########....###........#######..##....##.########....##...
  */
 if(process.env.NODE_ENV === 'development') {
-
-
   /**
    * ^ Assigning to dev object so they are not global
    */
@@ -31,7 +36,7 @@ if(process.env.NODE_ENV === 'development') {
     }
   })
 
-  Vue.component('OpenButton', () => import('@/utils/OpenButton.vue'))
+
 
 
   /**
@@ -53,9 +58,7 @@ if(process.env.NODE_ENV === 'development') {
 
 
 Vue.use(VueAxios, Axios)
-
 Vue.config.productionTip = false
-
 new Vue({
   router,
   store,
