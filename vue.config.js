@@ -64,6 +64,14 @@ module.exports = {
         })
       )
 
+      const UsusedPlugin = require('unused-webpack-plugin')
+      config.plugins.push(
+        new UsusedPlugin({
+          directories: [resolve('src'), resolve('static')],
+          exclude:     ['unused']
+        })
+      )
+
     }
   },
 

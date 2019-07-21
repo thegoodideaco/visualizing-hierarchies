@@ -80,6 +80,13 @@ export const config = {
         title:  'Interaction',
         readme: InteractionReadme
       }
+    },
+    {
+      path:      '/vue/interaction/finished',
+      component: components.finished.Interaction,
+      meta:      {
+        readme: InteractionReadme
+      }
     }
   ]
 }

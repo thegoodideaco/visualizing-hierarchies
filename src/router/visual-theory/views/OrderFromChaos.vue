@@ -27,10 +27,6 @@ export default {
       {
         url:   'https://media3.giphy.com/media/3osxYzUOBRWEg5S5q0/source.gif',
         title: 'that\'s better'
-      },
-      {
-        url:   'https://i.imgur.com/rVeKdo9.gif',
-        title: 'that\'s better'
       }
     ]
   })

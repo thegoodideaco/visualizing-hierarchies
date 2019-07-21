@@ -1,7 +1,5 @@
 <template>
-  <div class="h-full">
-    <rendering-component />
-  </div>
+  <rendering-component />
 </template>
 
 <script>
