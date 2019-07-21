@@ -4,6 +4,7 @@ import ScaleReadme from './scales.md'
 import HierarchyReadme from './hierarchy.md'
 import { SideNavLayout } from '@/layouts/componentViews'
 import { ReactiveView } from '@/views/vue'
+import * as components from './asyncComponents'
 /** @type {import("vue-router").RouteConfig} */
 export const config = {
   name:      'd3',
@@ -15,7 +16,7 @@ export const config = {
   children: [
     {
       path:      '/d3/intro',
-      component: ReactiveView,
+      component: components.Intro,
       meta:      {
         title:  'What is D3?',
         readme: IntroReadme
