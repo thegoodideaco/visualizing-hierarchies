@@ -7,5 +7,6 @@ export const Interaction = () => import('./views/Interaction.vue')
 
 export const finished = {
   MakingComponent: () => import('@/lessons/vue/create/finished/index.vue'),
-  Reactivity:      () => import('@/lessons/vue/reactivity/finished/index.vue')
+  Reactivity:      () => import('@/lessons/vue/reactivity/finished/index.vue'),
+  Rendering:       () => import('@/lessons/vue/rendering/finished/index.vue')
 }

@@ -67,6 +67,13 @@ export const config = {
       }
     },
     {
+      path:      '/vue/rendering/finished',
+      component: components.finished.Rendering,
+      meta:      {
+        readme: RenderingReadme
+      }
+    },
+    {
       path:      '/vue/interaction',
       component: components.Interaction,
       meta:      {

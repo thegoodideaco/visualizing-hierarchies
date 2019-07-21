@@ -16,6 +16,8 @@ Vue components consist of 3 main section blocks:
 2. Script
 3. Style
 
+Not all blocks are needed. In this example, we'll exclude the style block.
+
 ```html
 <template>
   <div>
@@ -24,8 +26,7 @@ Vue components consist of 3 main section blocks:
 </template>
 
 <script>
-export default {
-}
+  export default {}
 </script>
 ```
 
