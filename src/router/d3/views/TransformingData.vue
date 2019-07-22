@@ -8,6 +8,7 @@
 <script>
 import ImageSliderVue from '@/components/ImageSlider.vue'
 import * as d3 from 'd3-array'
+import {csv} from 'd3-fetch'
 export default {
   components: {
     ImageSlider: ImageSliderVue
@@ -24,7 +25,7 @@ export default {
         title: 'Data Utilities'
       },
       {
-        url:   'https://miro.medium.com/max/7000/0*LRtj-YX29bDYCFLN',
+        url:   '/static/images/d3-visualization.png',
         title: 'Visualization'
       }
     ],
@@ -32,9 +33,9 @@ export default {
     d3:      d3
   }),
   async mounted() {
-    const {data} = await this.$http.get('/datasets/populations.json')
+    const data = await csv('/datasets/googleplaystore.csv')
 
-    this.dataset = data
+    this.dataset = Object.freeze(data)
   }
 }
 </script>

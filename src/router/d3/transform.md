@@ -14,10 +14,38 @@ However, just like lodash, D3 offers some additional utilities to transform data
 
 > Handling null or undefined data
 
+> CSV Loading / Formatting
+
 > Visual Data for Layouts
 
 > Nesting
 
 There's alot more, but the main point is that you can use D3 to transform your data, while using Vue to display that data.
 
-Let's say we want to construct a line based on the points in our dataset
+## Playing with Data
+
+So what could we find out from the google play store?
+
+Included is a sample dataset of 10,840 apps from the play store. Each item has the following properties
+
+```typescript
+interface PlaystoreItem {
+  'Android Ver': string
+  'Content Rating': string
+  'Current Ver': string
+  'Last Updated': string
+  App: string
+  Category: string
+  Genres: string
+  Installs: string
+  Price: string
+  Rating: string
+  Reviews: string
+  Size: string
+  Type: string
+}
+```
+
+Since we have a habit of grouping and ordering things based on a level of importance, we can split this huge list up into groups to find out information using `d3-nest`
+
+### Nest
