@@ -24,7 +24,7 @@ export const config = {
     },
     {
       path:      '/d3/transforming-data',
-      component: ReactiveView,
+      component: components.TransformingData,
       meta:      {
         title:  'Transforming Data',
         readme: TransformReadme
