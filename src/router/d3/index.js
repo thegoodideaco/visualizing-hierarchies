@@ -23,7 +23,7 @@ export const config = {
     },
     {
       path:      '/d3/scales',
-      component: components.ConsoleView,
+      component: components.ScaleView,
       meta:      {
         title:  'Scales',
         readme: ScaleReadme

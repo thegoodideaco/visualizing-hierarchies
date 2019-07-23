@@ -14,7 +14,7 @@ export default {
   }),
   async mounted() {
     window.d3 = window.dev.d3
-    const data = await csv('/datasets/googleplaystore.csv')
+    const data = await csv('/datasets/GamesDataset.csv')
     this.dataset = Object.freeze(data)
     window.dataset = this.dataset
   },
