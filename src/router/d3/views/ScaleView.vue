@@ -14,10 +14,11 @@ export default {
   }),
   async mounted() {
     window.d3 = window.dev.d3
-    const data = await csv('/datasets/GamesDataset.csv')
+    const data = await csv('/datasets/pokemon/pokemon.csv')
     this.dataset = Object.freeze(data)
     window.dataset = this.dataset
   },
+
   beforeDestroy() {
     this.$delete(window, 'd3')
     this.$delete(window, 'dataset')
