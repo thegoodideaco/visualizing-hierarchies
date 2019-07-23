@@ -165,4 +165,8 @@
       @apply .text-teal-400;
     }
   }
+
+  > *:last-child {
+    margin-bottom: 50vh;
+  }
 }

@@ -1,6 +1,6 @@
 
 export const Intro = () => import('./views/Intro.vue')
-export const TransformingData = () => import('./views/TransformingData.vue')
+export const ConsoleView = () => import('./views/ConsoleView.vue')
 
 export const finished = {
   MakingComponent: () => import('@/lessons/vue/create/finished/index.vue'),

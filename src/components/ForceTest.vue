@@ -37,6 +37,10 @@ import {
 import {interpolateRgb} from 'd3-interpolate'
 import {scaleSequential} from 'd3-scale'
 
+const particleCountHD = 800
+const particleCount = 500
+const particleCountSD = 300
+
 export default {
   data() {
     return {
@@ -140,10 +144,10 @@ export default {
     container.interactiveChildren = false
 
     const particleAmount = utils.isMobile.phone
-      ? 500
+      ? particleCountSD
       : utils.isMobile.tablet
-        ? 700
-        : 1200
+        ? particleCount
+        : particleCountHD
 
     this.roots = range(~~Math.sqrt(particleAmount))
 

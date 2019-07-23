@@ -2,6 +2,10 @@
 
 These are fundamental to visually representing information.
 
+As stated in the docs:
+
+> Although most often used for position-encoding quantitative data, such as mapping a measurement in meters to a position in pixels for dots in a scatterplot, scales can represent virtually any visual encoding, such as diverging colors, stroke widths, or symbol size. Scales can also be used with virtually any type of data, such as named categorical data or discrete data that requires sensible breaks.
+
 As stated in the `Semiology of Graphics`, scales can represent the visual variables that we order based on importance.
 
 ### Values to Visual Dimensions
