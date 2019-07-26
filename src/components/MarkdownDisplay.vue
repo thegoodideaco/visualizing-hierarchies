@@ -2,6 +2,7 @@
   <div class="md-viewer">
     <div class="h-full pr-2">
       <div
+        ref="scroller"
         class="hljs dark h-full overflow-auto"
         v-html="markdown()" />
     </div>
@@ -24,21 +25,38 @@ export default {
       required: true
     }
   },
-  computed: {
-    markdown() {
-      return () =>
-        marked(this.value, {
-          langPrefix:  'javascript',
-          smartypants: true,
-          pedantic:    false,
-          mangle:      true,
-          xhtml:       true,
-          smartLists:  true,
-          gfm:         true,
-          tables:      true,
-          breaks:      true,
-          highlight:   code => hl.highlightAuto(code).value
+  data: () => ({
+    markdown: () => null
+  }),
+  watch: {
+    value: {
+      async handler() {
+        this.markdown = () => this.createMarkdown()
+        if(!this.$refs.scroller) return
+
+        this.$refs.scroller.scroll({
+          top:      0,
+          left:     0,
+          behavior: 'smooth'
         })
+      },
+      immediate: true
+    }
+  },
+  methods: {
+    createMarkdown() {
+      return marked(this.value, {
+        langPrefix:  'javascript',
+        smartypants: true,
+        pedantic:    false,
+        mangle:      true,
+        xhtml:       true,
+        smartLists:  true,
+        gfm:         true,
+        tables:      true,
+        breaks:      true,
+        highlight:   code => hl.highlightAuto(code).value
+      })
     }
   }
 }

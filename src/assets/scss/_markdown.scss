@@ -42,6 +42,7 @@
   position: relative;
   transform: translateZ(0);
   will-change: scroll-position;
+  scroll-behavior: smooth;
 
   // display: inline-block;
 

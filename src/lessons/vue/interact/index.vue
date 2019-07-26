@@ -5,6 +5,7 @@
 <script>
 import InteractionComponentVue from './InteractionComponent.vue'
 export default {
+  name:       'Interaction',
   components: {
     InteractionComponent: InteractionComponentVue
   }

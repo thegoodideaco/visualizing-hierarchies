@@ -4,6 +4,8 @@ When working with a unidirected hierarchy, you can get other useful information.
 
 This essentially _wraps_ a new object around each one of your nodes, allowing you to add properties to each `node` without modifying the original data.
 
+A Hierarchy needs data with a recursive structure in order to find each node. Nest works well with this as it generates a hierarchy structure for us using the `entries` method
+
 ```javascript
 // Put javascript here
 ```
