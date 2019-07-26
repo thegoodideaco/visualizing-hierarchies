@@ -23,7 +23,7 @@ export default {
       images: [
         {
           url:   '/static/images/graph vs tree.png',
-          title: 'A Tree (Left) compared to a graph (Right)'
+          title: 'A Tree (Left) / A Graph (Right)'
         },
         {
           url:   '/static/images/dom.png',
