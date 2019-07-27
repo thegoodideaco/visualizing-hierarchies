@@ -53,6 +53,16 @@ export default new Router({
           meta: {
             title: 'Edge Bundling'
           }
+        },
+        {
+          path:       '/xp/f1',
+          components: {
+            default:  () => import('@/components/experiments/FormulaOne'),
+            controls: () => import('@/components/demos/enron-emails/Controls.vue')
+          },
+          meta: {
+            title: 'Formula One'
+          }
         }
       ]
     },

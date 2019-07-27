@@ -1,10 +1,18 @@
-import { HomeView } from '@/views/asyncComponents'
+
+import IntroReadme from './intro.md'
+import MakingReadme from './making.md'
+import ReactivityReadme from './reactivity.md'
+import InteractionReadme from './interaction.md'
+import RenderingReadme from './rendering.md'
+import * as components from './asyncComponents'
 import { SideNavLayout } from '@/layouts/componentViews'
+
 
 /** @type {import("vue-router").RouteConfig} */
 export const config = {
   name:      'vued3',
   path:      '/vue-d3',
+  redirect:  '/vue-d3/intro',
   component: SideNavLayout,
   meta:      {
     title: 'Vue + D3'
@@ -12,30 +20,72 @@ export const config = {
   children: [
     {
       path:      '/vue-d3/basic-rendering',
-      component: HomeView,
+      component: components.BasicRendering,
       meta:      {
-        title: 'Basic Rendering'
+        title:  'Basic Rendering',
+        readme: IntroReadme
       }
     },
     {
-      path:      '/vue-d3/layouts',
-      component: HomeView,
+      path:      '/vue/code/single-file-component',
+      component: components.Layouts,
       meta:      {
-        title: 'Hierarchical Layouts'
+        title:  'Making a Component',
+        readme: MakingReadme
+      }
+
+    },
+    {
+      path:      '/vue/code/single-file-component/finished',
+      component: components.finished.MakingComponent,
+      meta:      {
+        readme: RenderingReadme
+      }
+
+    },
+    {
+      path:      '/vue/reactivity',
+      component: components.Reactivity,
+      meta:      {
+        title:  'Reactivity',
+        readme: ReactivityReadme
       }
     },
     {
-      path:      '/vue-d3/optimization',
-      component: HomeView,
+      path:      '/vue/reactivity/finished',
+      component: components.finished.Reactivity,
       meta:      {
-        title: 'optimization'
+        readme: ReactivityReadme
       }
     },
     {
-      path:      '/vue-d3/infographics',
-      component: HomeView,
+      path:      '/vue/rendering',
+      component: components.TemplateRendering,
       meta:      {
-        title: 'Automating Infographics'
+        title:  'Template Rendering',
+        readme: RenderingReadme
+      }
+    },
+    {
+      path:      '/vue/rendering/finished',
+      component: components.finished.Rendering,
+      meta:      {
+        readme: RenderingReadme
+      }
+    },
+    {
+      path:      '/vue/interaction',
+      component: components.Interaction,
+      meta:      {
+        title:  'Interaction',
+        readme: InteractionReadme
+      }
+    },
+    {
+      path:      '/vue/interaction/finished',
+      component: components.finished.Interaction,
+      meta:      {
+        readme: InteractionReadme
       }
     }
   ]
