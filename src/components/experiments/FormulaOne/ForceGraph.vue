@@ -1,6 +1,7 @@
 <template>
   <div>
-  <!-- put something here -->
+    <!-- put something here -->
+    Force Graph
   </div>
 </template>
 

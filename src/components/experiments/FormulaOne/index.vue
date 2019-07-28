@@ -1,8 +1,28 @@
 <template>
-  <div>
-    F1 Racing Data
+  <div class="f1 p-5">
+    <!-- Title -->
+    <section class="f1__title">
+      <h2>Races Against Time</h2>
+      <small>Visualizing Formula One Data from 1950 to 2017</small>
+    </section>
 
-    <force-graph />
+    <!-- Side -->
+    <aside class="f1__sidebar">
+      <!-- Date Scanner -->
+      <date-scanner :dataset="test.races"
+                    @filter="dateRange = $event" />
+    </aside>
+
+
+    <!-- Force Graph -->
+    <div class="f1__content">
+      <force-graph v-if="false" />
+      <div v-if="dateRange"
+           class="demo">
+        <h4>{{ dateRange | asYear }} - {{ filtered.length }}</h4>
+        <pre>{{ filtered | capped }}</pre>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -12,6 +32,8 @@ import * as hierarchy from 'd3-hierarchy'
 import * as collection from 'd3-collection'
 import * as fetch from 'd3-fetch'
 import ForceGraphVue from './ForceGraph.vue'
+import { ascending, timeFormat, bisector } from 'd3'
+import DateScannerVue from './DateScanner.vue'
 
 const d3 = {
   ...hierarchy,
@@ -19,27 +41,162 @@ const d3 = {
   ...fetch
 }
 export default {
+  name:       'FormulaOne',
   components: {
-    ForceGraph: ForceGraphVue
+    ForceGraph:  ForceGraphVue,
+    DateScanner: DateScannerVue
   },
-  data() {
+  filters: {
+    asYear(arr) {
+      return arr.map(timeFormat('%Y'))
+    },
+
+    /** @param {any[]} arr */
+    capped(arr) {
+      return arr.slice(0, 2)
+    }
+  },
+  data: () => {
     return {
-      test: null
+      test: {
+        drivers:         [],
+        races:           [],
+        driverStandings: []
+      },
+      dateRange: null
+    }
+  },
+  computed: {
+    filtered() {
+      if(!this.dateRange) return []
+
+      /** @type {[number,number]} */
+      const [
+        start,
+        end
+      ] = this.dateRange
+
+      const bisect = bisector(v => Date.parse(v.date))
+
+      // debugger
+
+      const startIndex = bisect.left(this.test.races, start)
+      const endIndex = bisect.right(this.test.races, end)
+
+      return this.test.races.slice(startIndex, endIndex)
+    },
+    filteredDrivers() {
+      if(this.filtered) {
+        return this.filtered.reduce((prev, cur) => {
+
+
+          cur.drivers.forEach(driver => {
+            const id = driver.driverId
+            if(!prev.includes(id)) prev.push(id)
+          })
+
+          return prev
+        }, [])
+      }
     }
   },
   async beforeMount() {
-    const result = await d3.csv('/datasets/f1/drivers.csv')
+    let [
+      drivers,
+      races,
+      driverStandings
+    ] = await Promise.all([
+      d3.csv('/datasets/f1/drivers.csv'),
+      d3.csv('/datasets/f1/races.csv'),
+      d3.csv('/datasets/f1/driverStandings.csv')
+    ])
 
-    Object.freeze(result)
+    // Assign driver info to each race
+    races = races.map(race => {
 
-    this.test = result
+      const drivers = driverStandings
+        .filter(ds => ds.raceId === race.raceId)
+        .map(ds => ({
+          id:     ds.driverId,
+          points: ds.points,
+          wins:   ds.wins
+        }))
+
+      return {
+        ...race,
+        drivers
+      }
+    })
+
+
+
+    // Sort them
+    races.sort((a, b) => {
+      return ascending(Date.parse(a.date), Date.parse(b.date))
+    })
+
+    this.test = Object.freeze({
+      drivers,
+      races,
+      driverStandings
+    })
+
+    if(process.env.NODE_ENV === 'development'){
+      window.dataset = this.test
+    }
 
     console.log('yay')
 
+  },
+  mounted() {
+    if(process.env.NODE_ENV === 'development'){
+      window.d3 = require('d3')
+    }
+
+  },
+  beforeDestroy() {
+    this.$delete(window, 'd3')
+    this.$delete(window, 'dataset')
   }
 }
 </script>
 
-<style>
+<style scoped lang="scss">
+.f1 {
+  background-image: url('/static/images/f1/bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
 
+  // Grid Props
+  display: grid;
+  grid:
+  [row1-start] 'title content' auto [row1-end]
+  [row2-start] 'sidebar content' 1fr [row2-end]
+  / auto 1fr;
+  row-gap: 5px;
+  column-gap: 5px;
+
+  &__title {
+    grid-area: title;
+  }
+
+  &__sidebar {
+    grid-area: sidebar;
+    position: relative;
+    display: grid;
+  }
+
+  &__content {
+    grid-area: content;
+    position: relative;
+    display: grid;
+  }
+}
+
+.demo {
+  display: grid;
+  overflow: hidden;
+  grid: auto 1fr / 1fr;
+}
 </style>

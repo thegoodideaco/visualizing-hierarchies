@@ -26,5 +26,6 @@
     "src/**/*.vue",
     "src/**/*.scss",
     "src/**/*.md"
-  ]
+  ],
+  "typeAcquisition": {"enable": true}
 }

@@ -32,6 +32,7 @@ export default {
     value: {
       async handler() {
         this.markdown = () => this.createMarkdown()
+        await this.$nextTick()
         if(!this.$refs.scroller) return
 
         this.$refs.scroller.scroll({
