@@ -20,7 +20,10 @@
       <div v-if="dateRange"
            class="demo">
         <h4>{{ dateRange | asYear }} - {{ filtered.length }}</h4>
-        <pre>{{ filtered | capped }}</pre>
+        <div>
+          <pre>{{ filtered | capped }}</pre>
+          <pre>{{ filteredDrivers | capped }}</pre>
+        </div>
       </div>
     </div>
   </div>
@@ -32,7 +35,7 @@ import * as hierarchy from 'd3-hierarchy'
 import * as collection from 'd3-collection'
 import * as fetch from 'd3-fetch'
 import ForceGraphVue from './ForceGraph.vue'
-import { ascending, timeFormat, bisector } from 'd3'
+import { ascending, timeFormat, bisector, sum } from 'd3'
 import DateScannerVue from './DateScanner.vue'
 
 const d3 = {
@@ -63,7 +66,10 @@ export default {
         races:           [],
         driverStandings: []
       },
-      dateRange: null
+      dateRange: null,
+      maps:      {
+        drivers: new Map()
+      }
     }
   },
   computed: {
@@ -85,18 +91,24 @@ export default {
 
       return this.test.races.slice(startIndex, endIndex)
     },
+
+    /**
+     * This will create a list of drivers for the current dates
+     * Each driver will have the driver object, and values based on total wins / losses, etc...
+     */
     filteredDrivers() {
       if(this.filtered) {
-        return this.filtered.reduce((prev, cur) => {
 
 
-          cur.drivers.forEach(driver => {
-            const id = driver.driverId
-            if(!prev.includes(id)) prev.push(id)
-          })
+        const ids = this.filtered.map(v => v.drivers).flat()
 
-          return prev
-        }, [])
+        const positionNest = d3.nest().key(v => v.position).rollup(v => v.length)
+
+        return d3.nest().key(v => v.id).sortKeys(ascending).rollup(v => ({
+          wins:      sum(v, vv => vv.wins),
+          positions: positionNest.object(v),
+          points:    sum(v, vv => vv.points)
+        })).entries(ids)
       }
     }
   },
@@ -111,16 +123,22 @@ export default {
       d3.csv('/datasets/f1/driverStandings.csv')
     ])
 
+    // Assign drivers to map
+    drivers.forEach(d => this.maps.drivers.set(d.driverId, d))
+
     // Assign driver info to each race
     races = races.map(race => {
 
       const drivers = driverStandings
         .filter(ds => ds.raceId === race.raceId)
         .map(ds => ({
-          id:     ds.driverId,
-          points: ds.points,
-          wins:   ds.wins
+          id:       ds.driverId,
+          points:   ds.points,
+          wins:     ds.wins,
+          position: ds.position
         }))
+
+      drivers.sort((a, b) => ascending(+a.position, +b.position))
 
       return {
         ...race,
@@ -144,8 +162,6 @@ export default {
     if(process.env.NODE_ENV === 'development'){
       window.dataset = this.test
     }
-
-    console.log('yay')
 
   },
   mounted() {
@@ -198,5 +214,10 @@ export default {
   display: grid;
   overflow: hidden;
   grid: auto 1fr / 1fr;
+
+  > div {
+    display: grid;
+    grid: 1fr / 1fr 1fr;
+  }
 }
 </style>
