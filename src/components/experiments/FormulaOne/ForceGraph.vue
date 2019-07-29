@@ -103,7 +103,7 @@ export default {
         this.sim.nodes(this.nodes)
         this.sim.restart()
       },
-      immediate: true
+      immediate: false
     }
   },
   async mounted() {
