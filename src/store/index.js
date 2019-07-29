@@ -4,7 +4,6 @@ import Vuex from 'vuex'
 import words from 'lodash/words'
 
 import controls from './modules/controls'
-import Axios from 'axios'
 
 Vue.use(Vuex)
 
@@ -60,21 +59,6 @@ export default new Vuex.Store({
           }
         })
       })
-
-      // const {data} = await Axios.post('https://en.wikipedia.org/w/api.php', {
-      //   // params: {
-      //   action:      'query',
-      //   titles:      'Alain_Prost',
-      //   prop:        'pageimages',
-      //   format:      'json',
-      //   pithumbsize: 200
-      // },
-      // {
-      //   adapter: require('axios-jsonp')
-      //   // callbackParamName: 'c'
-      // })
-
-      // return data
     }
   },
   getters: {

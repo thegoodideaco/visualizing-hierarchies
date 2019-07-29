@@ -106,7 +106,8 @@ export const ThumbnailData = {
     'http://en.wikipedia.org/wiki/Valtteri_Bottas',
     'http://en.wikipedia.org/wiki/Max_Verstappen',
     'http://en.wikipedia.org/wiki/Robert_Kubica',
-    'http://en.wikipedia.org/wiki/Nigel_Mansell'
+    'http://en.wikipedia.org/wiki/Nigel_Mansell',
+    'https://en.wikipedia.org/wiki/Giuseppe_Farina'
   ],
   vals: [
     'https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Lewis_Hamilton_2016_Malaysia_2.jpg/133px-Lewis_Hamilton_2016_Malaysia_2.jpg',
@@ -126,7 +127,7 @@ export const ThumbnailData = {
     'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Anefo_932-2371_Elio_de_Angelis_03.07.1982.jpg/140px-Anefo_932-2371_Elio_de_Angelis_03.07.1982.jpg',
     'https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Pensive_Patrick_%28Tambay%29.jpg/200px-Pensive_Patrick_%28Tambay%29.jpg',
     'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Anefo_932-2378_Keke_Rosberg%2C_Zandvoort%2C_03-07-1982.jpg/132px-Anefo_932-2378_Keke_Rosberg%2C_Zandvoort%2C_03-07-1982.jpg',
-    'n/a',
+    'https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Alan_Jones_1980.jpg/220px-Alan_Jones_1980.jpg',
     'https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Jenson_Button_bahrain_2012.jpg/133px-Jenson_Button_bahrain_2012.jpg',
     'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Lauda_at_1982_Dutch_Grand_Prix.jpg/145px-Lauda_at_1982_Dutch_Grand_Prix.jpg',
     'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Watson_at_1982_Dutch_Grand_Prix.jpg/132px-Watson_at_1982_Dutch_Grand_Prix.jpg',
@@ -182,7 +183,7 @@ export const ThumbnailData = {
     'n/a',
     'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Stirling_Moss.jpg/148px-Stirling_Moss.jpg',
     'n/a',
-    'n/a',
+    'https://upload.wikimedia.org/wikipedia/commons/c/cc/1957_Aston_Martin_Tony_Brooks_Hotel_de_France.jpg',
     'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Heinz-Harald_Frentzen_a.jpg/200px-Heinz-Harald_Frentzen_a.jpg',
     'https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Jos%C3%A9_Froil%C3%A1n_Gonz%C3%A1lez_1950.jpg/150px-Jos%C3%A9_Froil%C3%A1n_Gonz%C3%A1lez_1950.jpg',
     'https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Effect_20190609_091716.jpg/156px-Effect_20190609_091716.jpg',
@@ -204,9 +205,9 @@ export const ThumbnailData = {
     'n/a',
     'https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Ascari_last_photo_in_car.jpg/130px-Ascari_last_photo_in_car.jpg',
     'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Johnny_Herbert_at_Goodwood_2014_002.jpg/159px-Johnny_Herbert_at_Goodwood_2014_002.jpg',
-    'n/a',
+    'https://en.wikipedia.org/wiki/Bill_Vukovich#/media/File:Bill_Vukovich_2.jpg',
     'https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Damon_Hill_May_2012_Cropped.jpg/191px-Damon_Hill_May_2012_Cropped.jpg',
-    'n/a',
+    'https://www.motorsportmagazine.com/sites/default/files/styles/driver_profile_image/public/people/profile/wallard.jpg?itok=b7LfJaLm',
     'https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Gerhard_Berger_1991USA.jpg/137px-Gerhard_Berger_1991USA.jpg',
     'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Luigi_Fagioli_in_his_Maserati_at_the_1932_Targa_Florio_%28cropped%29.jpg/161px-Luigi_Fagioli_in_his_Maserati_at_the_1932_Targa_Florio_%28cropped%29.jpg',
     'https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/F12019_Schloss_Gabelhofen_%2822%29.jpg/133px-F12019_Schloss_Gabelhofen_%2822%29.jpg',
@@ -215,6 +216,7 @@ export const ThumbnailData = {
     'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/2019_Formula_One_tests_Barcelona%2C_Bottas_%2847200028912%29.jpg/126px-2019_Formula_One_tests_Barcelona%2C_Bottas_%2847200028912%29.jpg',
     'https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Max_Verstappen_2017_Malaysia_3.jpg/133px-Max_Verstappen_2017_Malaysia_3.jpg',
     'https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/2019_Formula_One_tests_Barcelona%2C_Kubica_%2832309897777%29.jpg/133px-2019_Formula_One_tests_Barcelona%2C_Kubica_%2832309897777%29.jpg',
-    'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Nigel_Mansell_-_Mexican_Grand_Prix_01.JPG/200px-Nigel_Mansell_-_Mexican_Grand_Prix_01.JPG'
+    'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Nigel_Mansell_-_Mexican_Grand_Prix_01.JPG/200px-Nigel_Mansell_-_Mexican_Grand_Prix_01.JPG',
+    'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/NinoFarina.jpg/220px-NinoFarina.jpg'
   ]
 }

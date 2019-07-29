@@ -50,6 +50,7 @@ export default {
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 50%;
-  border: 2px solid #fff;
+  border: 4px solid #fff;
+  cursor: pointer;
 }
 </style>

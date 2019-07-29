@@ -3,16 +3,17 @@
     <force-circle v-for="item in nodes"
                   :key="item.data.key"
                   :item="item"
-                  :radius="radiusScale(item.data.value.wins)" />
+                  :radius="radiusScale(item.data.value.wins)"
+                  @click.native="showInfo(item)" />
   </div>
 </template>
 
 <script>
 import {
   forceSimulation,
-  forceCenter,
+  // forceCenter,
   forceCollide,
-  forceManyBody,
+  // forceManyBody,
   forceX,
   forceY,
   scaleLinear,
@@ -63,41 +64,45 @@ export default {
     }
   },
   watch: {
-    dataset() {
-      this.nodes = this.dataset.map(v => {
-        return {
-          data: v,
-          x:    this.width * 0.5,
-          y:    this.height * 0.5
-        }
-      }).filter(v => v.data.value.wins > 0)
+    dataset: {
+      handler() {
+        this.nodes = this.dataset.map(v => {
+          return {
+            data: v,
+            x:    this.width * 0.5,
+            y:    this.height * 0.5
+          }
+        }).filter(v => v.data.value.wins > 0)
 
-      window.urls = this.nodes.map(v => v.data.value.driver.url)
+        window.urls = this.nodes.map(v => v.data.value.driver.url)
 
-      // ? Apply current positions and velocities  if they exist
-      const oldNodes = this.sim.nodes()
+        // ? Apply current positions and velocities  if they exist
+        const oldNodes = this.sim.nodes()
 
-      this.nodes.forEach(n => {
-        const oldNode = oldNodes.find(oldn => oldn.data.key === n.data.key)
+        this.nodes.forEach(n => {
+          const oldNode = oldNodes.find(oldn => oldn.data.key === n.data.key)
 
-        if (oldNode) {
-          Object.assign(n, {
-            x:  oldNode.x,
-            y:  oldNode.y,
-            vx: oldNode.vx,
-            vy: oldNode.vy
-          })
-        }
-      })
+          if (oldNode) {
+            Object.assign(n, {
+              x:  oldNode.x,
+              y:  oldNode.y,
+              vx: oldNode.vx,
+              vy: oldNode.vy
+            })
+          }
+        })
 
-      this.sim.force('collide')
-        .radius(v => this.radiusScale(v.data.value.wins) + 5)
+        this.sim.force('collide')
+          .radius(v => this.radiusScale(v.data.value.wins) + 5)
 
-      this.sim.stop()
-      this.sim.velocityDecay(0.1)
-      this.sim.alpha(0.1)
-      this.sim.nodes(this.nodes)
-      this.sim.restart()
+        this.sim.stop()
+        this.sim.velocityDecay(0.1)
+        this.sim.alpha(0.1)
+        this.sim.alphaDecay(0.009)
+        this.sim.nodes(this.nodes)
+        this.sim.restart()
+      },
+      immediate: true
     }
   },
   async mounted() {
@@ -113,21 +118,19 @@ export default {
       data: v,
       x:    this.width * 0.5,
       y:    this.height * 0.5
-    }))
+    })).filter(v => v.data.value.wins > 0)
 
     this.sim
-    // .force('center', forceCenter())
-
       // ? Centers all circles
-      .force('x', forceX(this.width * 0.5).strength(0.05))
-      .force('y', forceY(this.height * 0.5).strength(0.05))
+      .force('x', forceX(this.width * 0.5).strength(0.09))
+      .force('y', forceY(this.height * 0.5).strength(0.09))
 
       // ? Check for collisions based on the size scale
       .force(
         'collide',
         forceCollide()
-          .radius(18)
-          .strength(0.3)
+          .radius(v => this.radiusScale(v.data.value.wins) + 5)
+          .strength(0.8)
       )
 
       // ? Apply nodes
@@ -136,7 +139,9 @@ export default {
     // Apply easing
     this.sim.alphaDecay(0.009)
 
-    this.sim.restart()
+    this.sim.tick(50)
+
+    // this.sim.stop()
   },
   beforeDestroy() {
     this.sim.stop()
@@ -149,11 +154,3 @@ export default {
   }
 }
 </script>
-
-<style scoped lang="scss">
-circle {
-  stroke: black;
-  stroke-width: 5px;
-  cursor: pointer;
-}
-</style>

@@ -2,8 +2,16 @@
   <div class="f1 p-5">
     <!-- Title -->
     <section class="f1__title">
-      <h2>Races Against Time</h2>
-      <small>Visualizing Formula One Data from 1950 to 2017</small>
+      <div>
+        <h2>Races Against Time</h2>
+        <small>Visualizing Formula One Data from 1950 to 2017</small>
+      </div>
+
+      <div>
+        <h2 v-if="dateRange && dateRange.length">
+          Top Racers between {{ dateRange[0] | asYear }} and {{ dateRange[1] | asYear }}
+        </h2>
+      </div>
     </section>
 
     <!-- Side -->
@@ -13,11 +21,24 @@
                     @filter="dateRange = $event" />
     </aside>
 
-
     <!-- Force Graph -->
     <div class="f1__content">
-      <force-graph v-if="dateRange"
-                   :dataset="filteredDrivers" />
+      <transition name="fade"
+                  mode="out-in">
+        <force-graph v-if="dateRange"
+                     :dataset="filteredDrivers" />
+
+        <div v-else
+             class="info">
+          <div class="p-32 bg-blue-800 m-auto">
+            <h1>Visualizing Racer Winnings</h1>
+            <h2>
+              Please select a range of time
+            </h2>
+            <p>Drag your mouse on the time range to make a selection.</p>
+          </div>
+        </div>
+      </transition>
     </div>
   </div>
 </template>
@@ -30,6 +51,7 @@ import * as fetch from 'd3-fetch'
 import ForceGraphVue from './ForceGraph.vue'
 import { ascending, timeFormat, bisector, sum } from 'd3'
 import DateScannerVue from './DateScanner.vue'
+// import D3AxisVue from './D3Axis.vue';
 
 const d3 = {
   ...hierarchy,
@@ -41,10 +63,11 @@ export default {
   components: {
     ForceGraph:  ForceGraphVue,
     DateScanner: DateScannerVue
+    // TickDisplay: D3AxisVue
   },
   filters: {
     asYear(arr) {
-      return arr.map(timeFormat('%Y'))
+      return timeFormat('%Y')(arr)
     },
 
     /** @param {any[]} arr */
@@ -67,13 +90,10 @@ export default {
   },
   computed: {
     filtered() {
-      if(!this.dateRange) return []
+      if (!this.dateRange) return []
 
       /** @type {[number,number]} */
-      const [
-        start,
-        end
-      ] = this.dateRange
+      const [start, end] = this.dateRange
 
       const bisect = bisector(v => Date.parse(v.date))
 
@@ -90,47 +110,50 @@ export default {
      * Each driver will have the driver object, and values based on total wins / losses, etc...
      */
     filteredDrivers() {
-      if(this.filtered) {
-
-
+      if (this.filtered) {
         const ids = this.filtered.map(v => v.drivers).flat()
 
-        const positionNest = d3.nest().key(v => v.position).rollup(v => v.length)
+        const positionNest = d3
+          .nest()
+          .key(v => v.position)
+          .rollup(v => v.length)
 
-        return d3.nest().key(v => v.id).sortKeys(ascending).rollup(v => ({
-          driver:    this.maps.drivers[v[0].id],
-          wins:      sum(v, vv => vv.wins),
-          positions: positionNest.object(v),
-          points:    sum(v, vv => vv.points)
-        })).entries(ids)
+        return d3
+          .nest()
+          .key(v => v.id)
+          .sortKeys(ascending)
+          .rollup(v => ({
+            driver:    this.maps.drivers[v[0].id],
+            wins:      sum(v, vv => vv.wins),
+            positions: positionNest.object(v),
+            points:    sum(v, vv => vv.points)
+          }))
+          .entries(ids)
       }
     }
   },
   async beforeMount() {
-    let [
-      drivers,
-      races,
-      driverStandings
-    ] = await Promise.all([
+    let [drivers, races, driverStandings] = await Promise.all([
       d3.csv('/datasets/f1/drivers.csv'),
       d3.csv('/datasets/f1/races.csv'),
       d3.csv('/datasets/f1/driverStandings.csv')
     ])
 
     // Assign drivers to map
-    drivers.forEach(d => this.maps.drivers[d.driverId] = Object.freeze(d))
+    drivers.forEach(d => (this.maps.drivers[d.driverId] = Object.freeze(d)))
 
     // Assign driver info to each race
     races = races.map(race => {
-
       const drivers = driverStandings
         .filter(ds => ds.raceId === race.raceId)
-        .map(ds => (Object.freeze({
-          id:       ds.driverId,
-          points:   ds.points,
-          wins:     ds.wins,
-          position: ds.position
-        })))
+        .map(ds =>
+          Object.freeze({
+            id:       ds.driverId,
+            points:   ds.points,
+            wins:     ds.wins,
+            position: ds.position
+          })
+        )
 
       drivers.sort((a, b) => ascending(+a.position, +b.position))
 
@@ -139,8 +162,6 @@ export default {
         drivers
       }
     })
-
-
 
     // Sort them
     races.sort((a, b) => {
@@ -153,16 +174,14 @@ export default {
       driverStandings
     })
 
-    if(process.env.NODE_ENV === 'development'){
+    if (process.env.NODE_ENV === 'development') {
       window.dataset = this.test
     }
-
   },
   mounted() {
-    if(process.env.NODE_ENV === 'development'){
+    if (process.env.NODE_ENV === 'development') {
       window.d3 = require('d3')
     }
-
   },
   beforeDestroy() {
     this.$delete(window, 'd3')
@@ -181,20 +200,25 @@ export default {
   // Grid Props
   display: grid;
   grid:
-  [row1-start] 'title content' auto [row1-end]
-  [row2-start] 'sidebar content' 1fr [row2-end]
-  / auto 1fr;
+    [row1-start] 'title title' auto [row1-end]
+    [row2-start] 'sidebar content' 1fr [row2-end]
+    / auto 1fr;
   row-gap: 5px;
   column-gap: 5px;
 
   &__title {
     grid-area: title;
+    display: grid;
+    grid: auto / auto 1fr;
+    align-items: center;
+    justify-items: center;
   }
 
   &__sidebar {
     grid-area: sidebar;
     position: relative;
     display: grid;
+    padding-top: 25px;
   }
 
   &__content {
@@ -213,5 +237,12 @@ export default {
     display: grid;
     grid: 1fr / 1fr 1fr;
   }
+}
+
+.info {
+  font-size: 1.2rem;
+  display: grid;
+  align-items: center;
+  text-align: center;
 }
 </style>
