@@ -1,21 +1,10 @@
 <template>
-  <svg
-    height="100%"
-    width="100%">
-    <g>
-      <circle v-for="item in nodes"
-              :key="item.data.key"
-              :cx="item.x"
-              :cy="item.y"
-              :fill="colorScale(item.data.value.wins)"
-              :r="radiusScale(item.data.value.wins)"
-              @click="sim.restart()">
-        <title>
-          {{ item.data.value }}
-        </title>
-      </circle>
-    </g>
-  </svg>
+  <div>
+    <force-circle v-for="item in nodes"
+                  :key="item.data.key"
+                  :item="item"
+                  :radius="radiusScale(item.data.value.wins)" />
+  </div>
 </template>
 
 <script>
@@ -30,7 +19,13 @@ import {
   extent
 } from 'd3'
 
+import {ThumbnailData} from './thumbnails'
+import ForceCircleVue from './ForceCircle.vue'
+
 export default {
+  components: {
+    ForceCircle: ForceCircleVue
+  },
   props: {
     /**
      * @type {Vue.PropOptions<any[]>}
@@ -56,6 +51,15 @@ export default {
       return scaleLinear()
         .domain(extent(this.dataset, v => v.value.wins))
         .range([10, 150])
+    },
+    thumbnails() {
+      return this.nodes.map(v => {
+        const url = v.data.value.driver.url
+
+        const i = ThumbnailData.urls.indexOf(url)
+
+        return ThumbnailData.vals[i]
+      })
     }
   },
   watch: {
@@ -67,6 +71,8 @@ export default {
           y:    this.height * 0.5
         }
       }).filter(v => v.data.value.wins > 0)
+
+      window.urls = this.nodes.map(v => v.data.value.driver.url)
 
       // ? Apply current positions and velocities  if they exist
       const oldNodes = this.sim.nodes()
@@ -134,6 +140,12 @@ export default {
   },
   beforeDestroy() {
     this.sim.stop()
+  },
+  methods: {
+    showInfo(item) {
+      console.log(item.data.value.url)
+      window.open(item.data.value.driver.url, '_blank')
+    }
   }
 }
 </script>
@@ -142,5 +154,6 @@ export default {
 circle {
   stroke: black;
   stroke-width: 5px;
+  cursor: pointer;
 }
 </style>
