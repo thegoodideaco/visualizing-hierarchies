@@ -16,15 +16,8 @@
 
     <!-- Force Graph -->
     <div class="f1__content">
-      <force-graph v-if="false" />
-      <div v-if="dateRange"
-           class="demo">
-        <h4>{{ dateRange | asYear }} - {{ filtered.length }}</h4>
-        <div>
-          <pre>{{ filtered | capped }}</pre>
-          <pre>{{ filteredDrivers | capped }}</pre>
-        </div>
-      </div>
+      <force-graph v-if="dateRange"
+                   :dataset="filteredDrivers" />
     </div>
   </div>
 </template>
@@ -68,7 +61,7 @@ export default {
       },
       dateRange: null,
       maps:      {
-        drivers: new Map()
+        drivers: []
       }
     }
   },
@@ -105,6 +98,7 @@ export default {
         const positionNest = d3.nest().key(v => v.position).rollup(v => v.length)
 
         return d3.nest().key(v => v.id).sortKeys(ascending).rollup(v => ({
+          driver:    this.maps.drivers[v[0].id],
           wins:      sum(v, vv => vv.wins),
           positions: positionNest.object(v),
           points:    sum(v, vv => vv.points)
@@ -124,19 +118,19 @@ export default {
     ])
 
     // Assign drivers to map
-    drivers.forEach(d => this.maps.drivers.set(d.driverId, d))
+    drivers.forEach(d => this.maps.drivers[d.driverId] = Object.freeze(d))
 
     // Assign driver info to each race
     races = races.map(race => {
 
       const drivers = driverStandings
         .filter(ds => ds.raceId === race.raceId)
-        .map(ds => ({
+        .map(ds => (Object.freeze({
           id:       ds.driverId,
           points:   ds.points,
           wins:     ds.wins,
           position: ds.position
-        }))
+        })))
 
       drivers.sort((a, b) => ascending(+a.position, +b.position))
 

@@ -59,7 +59,7 @@ export default {
   },
   methods: {
     filterDates(range) {
-      if(!range) return
+      if(!range) this.$emit('filter', null)
 
       this.brushSelection = range
 
