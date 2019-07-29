@@ -58,7 +58,7 @@ export default {
             'input',
             min === max ? null : [min, max].map(v => this.scale(v))
           )
-        }, 150)()
+        }, 550)()
       }
     }
   },
