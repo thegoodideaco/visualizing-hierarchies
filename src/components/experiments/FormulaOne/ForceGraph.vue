@@ -94,10 +94,11 @@ export default {
 
         this.sim.force('collide')
           .radius(v => this.radiusScale(v.data.value.wins) + 5)
+          .strength(.2)
 
         this.sim.stop()
-        this.sim.velocityDecay(0.1)
-        this.sim.alpha(0.1)
+        this.sim.velocityDecay(0.2)
+        this.sim.alpha(0.4)
         this.sim.alphaDecay(0.009)
         this.sim.nodes(this.nodes)
         this.sim.restart()
@@ -122,8 +123,8 @@ export default {
 
     this.sim
       // ? Centers all circles
-      .force('x', forceX(this.width * 0.5).strength(0.09))
-      .force('y', forceY(this.height * 0.5).strength(0.09))
+      .force('x', forceX(this.width * 0.5).strength(0.011))
+      .force('y', forceY(this.height * 0.5).strength(0.011))
 
       // ? Check for collisions based on the size scale
       .force(
