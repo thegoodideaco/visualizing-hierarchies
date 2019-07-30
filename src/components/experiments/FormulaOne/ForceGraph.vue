@@ -37,7 +37,9 @@ export default {
     }
   },
   data: () => ({
-    sim:    forceSimulation(),
+    sim: forceSimulation(),
+
+    /** @type {any[]} */
     nodes:  [],
     width:  100,
     height: 100
