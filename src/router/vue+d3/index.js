@@ -25,7 +25,7 @@ export const config = {
       }
     },
     {
-      path:      '/vue/code/Layouts',
+      path:      '/vue-d3/code/Layouts',
       component: components.Layouts,
       meta:      {
         title:  'Layouts',
@@ -41,7 +41,7 @@ export const config = {
 
     // },
     {
-      path:      '/vue/force',
+      path:      '/vue-d3/force',
       component: components.Force,
       meta:      {
         title:  'Force',

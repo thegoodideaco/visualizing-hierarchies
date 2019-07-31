@@ -12,7 +12,7 @@ We don't _need_ to use D3 for this functionality, we could even use things like 
 
 However, just like lodash, D3 offers some additional utilities to transform data. Some of these include
 
-- Scanning (Binary Search)
+- Bisecting (Binary Search)
 - Handling null or undefined data
 - CSV Loading / Formatting
 - Visual Data for Layouts
@@ -24,7 +24,7 @@ There's alot more, but the main point is that you can use `D3` to transform your
 
 So what could we find out from the google play store?
 
-Included is a sample dataset of 10,840 apps from the play store. Each item has the following properties
+Included is a sample dataset of 9,365 apps from the play store. Each item has the following properties
 
 ```typescript
 interface PlaystoreItem {
@@ -133,5 +133,3 @@ myNest = d3
 ```
 
 Much better :)
-
-Moving on!

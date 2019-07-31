@@ -1,11 +1,14 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import routes from './main.routes'
+// import routes from './main.routes'
+import {HomeView} from '@/views/asyncComponents'
 
 import d3Route from './d3'
 import vueRoute from './vue'
 import vued3Route from './vue+d3'
+import intro from './intro'
+import outro from './outro'
 
 import theoryRoute from './visual-theory'
 import { EdgeBundling } from '@/components/demos/asyncDemos'
@@ -15,27 +18,19 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
-    ...routes,
+    // ...routes,
+    {
+      name:      'index',
+      path:      '/',
+      component: HomeView
+    },
+    intro,
     theoryRoute,
     vueRoute,
     d3Route,
     vued3Route,
-    {
-      path: '/outro',
-      name: 'Outro',
-      meta: {
-        title: 'Outro'
-      },
-      component: () => import('../views/intro.vue')
-    },
-    {
-      path: '/resources',
-      name: 'Resources',
-      meta: {
-        title: 'Resources'
-      },
-      component: () => import('../views/intro.vue')
-    },
+    outro,
+
     {
       path: '/xp',
       name: 'Experiments',
