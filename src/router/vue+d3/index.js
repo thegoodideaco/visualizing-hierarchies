@@ -1,9 +1,7 @@
 
-import IntroReadme from './intro.md'
-import MakingReadme from './making.md'
-import ReactivityReadme from './reactivity.md'
-import InteractionReadme from './interaction.md'
-import RenderingReadme from './rendering.md'
+import ShapesReadme from './shapes.md'
+import LayoutsReadme from './layouts.md'
+import ForceReadme from './force.md'
 import * as components from './asyncComponents'
 import { SideNavLayout } from '@/layouts/componentViews'
 
@@ -12,80 +10,42 @@ import { SideNavLayout } from '@/layouts/componentViews'
 export const config = {
   name:      'vued3',
   path:      '/vue-d3',
-  redirect:  '/vue-d3/intro',
+  redirect:  '/vue-d3/shapes',
   component: SideNavLayout,
   meta:      {
     title: 'Vue + D3'
   },
   children: [
     {
-      path:      '/vue-d3/basic-rendering',
-      component: components.BasicRendering,
+      path:      '/vue-d3/shapes',
+      component: components.Shapes,
       meta:      {
-        title:  'Basic Rendering',
-        readme: IntroReadme
+        title:  'Shapes',
+        readme: ShapesReadme
       }
     },
     {
-      path:      '/vue/code/single-file-component',
+      path:      '/vue/code/Layouts',
       component: components.Layouts,
       meta:      {
-        title:  'Making a Component',
-        readme: MakingReadme
+        title:  'Layouts',
+        readme: LayoutsReadme
       }
-
     },
-    {
-      path:      '/vue/code/single-file-component/finished',
-      component: components.finished.MakingComponent,
-      meta:      {
-        readme: RenderingReadme
-      }
+    // {
+    //   path:      '/vue/code/single-file-component/finished',
+    //   component: components.finished.MakingComponent,
+    //   meta:      {
+    //     readme: RenderingReadme
+    //   }
 
-    },
+    // },
     {
-      path:      '/vue/reactivity',
-      component: components.Reactivity,
+      path:      '/vue/force',
+      component: components.Force,
       meta:      {
         title:  'Reactivity',
-        readme: ReactivityReadme
-      }
-    },
-    {
-      path:      '/vue/reactivity/finished',
-      component: components.finished.Reactivity,
-      meta:      {
-        readme: ReactivityReadme
-      }
-    },
-    {
-      path:      '/vue/rendering',
-      component: components.TemplateRendering,
-      meta:      {
-        title:  'Template Rendering',
-        readme: RenderingReadme
-      }
-    },
-    {
-      path:      '/vue/rendering/finished',
-      component: components.finished.Rendering,
-      meta:      {
-        readme: RenderingReadme
-      }
-    },
-    {
-      path:      '/vue/interaction',
-      component: components.Interaction,
-      meta:      {
-        title:  'Interaction',
-        readme: InteractionReadme
-      }
-    },
-    {
-      path:      '/vue/interaction/finished',
-      component: components.finished.Interaction,
-      meta:      {
-        readme: InteractionReadme
+        readme: ForceReadme
       }
     }
   ]

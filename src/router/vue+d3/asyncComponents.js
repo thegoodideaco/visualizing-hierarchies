@@ -1,9 +1,6 @@
-export const BasicRendering = () => import('./views/Intro.vue')
-
-export const Layouts = () => import('./views/MakingComponent.vue')
-export const Reactivity = () => import('@/lessons/vue/reactivity/index.vue')
-export const TemplateRendering = () => import('@/lessons/vue/rendering/index.vue')
-export const Interaction = () => import('@/lessons/vue/interact/index.vue')
+export const Shapes = () => import('@/lessons/vue-d3/shapes/index.vue')
+export const Layouts = () => import('@/lessons/vue-d3/layouts/index.vue')
+export const Force = () => import('@/lessons/vue-d3/force/index.vue')
 
 export const finished = {
   MakingComponent: () => import('@/lessons/vue/create/finished/index.vue'),
