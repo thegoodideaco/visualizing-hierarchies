@@ -20,6 +20,8 @@ import {
   extent
 } from 'd3'
 
+import debounce from 'lodash/debounce'
+
 import {ThumbnailData} from './thumbnails'
 import ForceCircleVue from './ForceCircle.vue'
 
@@ -98,12 +100,12 @@ export default {
           .radius(v => this.radiusScale(v.data.value.wins) + 5)
           .strength(.2)
 
-        this.sim.stop()
         this.sim.velocityDecay(0.2)
-        this.sim.alpha(0.4)
-        this.sim.alphaDecay(0.009)
-        this.sim.nodes(this.nodes)
-        this.sim.restart()
+          .alpha(0.4)
+          .alphaDecay(0.009)
+          .nodes(this.nodes)
+
+        this.sim.stop().restart()
       },
       immediate: false
     }
@@ -153,6 +155,10 @@ export default {
     showInfo(item) {
       console.log(item.data.value.url)
       window.open(item.data.value.driver.url, '_blank')
+    },
+    restartSim() {
+      const sim = this.sim
+      debounce(() => sim.restart(), .5)
     }
   }
 }

@@ -44,7 +44,7 @@ export const config = {
       path:      '/vue/force',
       component: components.Force,
       meta:      {
-        title:  'Reactivity',
+        title:  'Force',
         readme: ForceReadme
       }
     }
