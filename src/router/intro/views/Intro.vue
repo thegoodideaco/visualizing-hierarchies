@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import ImageSliderVue from '../../../components/ImageSlider.vue'
+import ImageSliderVue from '@/components/ImageSlider.vue'
 export default {
   components: {
     ImageSlider: ImageSliderVue

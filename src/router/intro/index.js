@@ -2,6 +2,7 @@
 
 
 import IntroReadme from './intro.md'
+import ExamplesReadme from './examples.md'
 import { SideNavLayout } from '@/layouts/componentViews'
 import * as components from './asyncComponents'
 
@@ -17,6 +18,14 @@ export const config = {
   },
   children: [
     {
+      path:      '/intro/setup',
+      component: components.Setup,
+      meta:      {
+        title:  'Setup',
+        readme: IntroReadme
+      }
+    },
+    {
       path:      '/intro/welcome',
       component: components.intro,
       meta:      {
@@ -25,11 +34,11 @@ export const config = {
       }
     },
     {
-      path:      '/intro/setup',
-      component: components.Setup,
+      path:      '/intro/examples',
+      component: components.Examples,
       meta:      {
-        title:  'Setup',
-        readme: IntroReadme
+        title:  'Examples',
+        readme: ExamplesReadme
       }
     }
   ]

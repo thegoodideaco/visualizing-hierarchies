@@ -7,7 +7,7 @@
 import { brushY } from 'd3-brush'
 import * as dSelection from 'd3-selection'
 import { scaleLinear } from 'd3-scale'
-import _ from 'lodash'
+import debounce from 'lodash/debounce'
 export default {
   model: {
     event: 'input',
@@ -53,7 +53,7 @@ export default {
 
       // Debounce updating the model
       debounceFunction: (min, max) => {
-        _.debounce(() => {
+        debounce(() => {
           this.$emit(
             'input',
             min === max ? null : [min, max].map(v => this.scale(v))
@@ -80,7 +80,7 @@ export default {
     value: {
       handler(val) {
         if (!this.brushing) {
-          // move brush to match inital value
+          // move brush to match initial value
           // values are in range of domain values
           this.aBrush.on('start brush end', null)
 
@@ -99,7 +99,7 @@ export default {
     this.$nextTick(() => {
       // Set selection for brush
       this.selection = dSelection.select(this.$el).call(this.aBrush)
-      // move brush to match inital value
+      // move brush to match initial value
       this.aBrush.move(
         this.selection,
         this.value ? this.value.map(v => this.scale(v)) : null
@@ -137,14 +137,6 @@ export default {
             'input',
             selection.map(v => this.scale.invert(v)).reverse()
           )
-        } else {
-          console.log('redraw')
-          // this.selection = d3.select(this.$el).call(this.aBrush)
-          // move brush to match inital value
-          // this.aBrush.move(
-          //   this.selection,
-          //   this.value ? this.value.map(v => v) : null
-          // )
         }
         break
       }
