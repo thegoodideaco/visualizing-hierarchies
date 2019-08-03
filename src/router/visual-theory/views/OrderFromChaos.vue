@@ -15,10 +15,12 @@ export default {
     index:  0,
     images: [
       {
-        url: '/static/images/chaos2.gif'
+        url:   '/static/images/chaos2.gif',
+        title: 'This is Annoying'
       },
       {
-        url: '/static/images/chaos1.gif'
+        url:   '/static/images/chaos1.gif',
+        title: 'Typical Human Reaction'
       },
       {
         url:   'https://media.giphy.com/media/GR81UZYyhN3Ww/giphy.gif',

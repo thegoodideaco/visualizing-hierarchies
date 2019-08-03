@@ -11,7 +11,7 @@ import * as components from './asyncComponents'
 export const config = {
   name:      'intro',
   path:      '/intro',
-  redirect:  '/intro/welcome',
+  redirect:  '/intro/setup',
   component: SideNavLayout,
   meta:      {
     title: 'Intro'
@@ -21,8 +21,7 @@ export const config = {
       path:      '/intro/setup',
       component: components.Setup,
       meta:      {
-        title:  'Setup',
-        readme: IntroReadme
+        title: 'Setup'
       }
     },
     {

@@ -1,12 +1,13 @@
 <template>
   <div
-    :class="{'focus-text': $attrs.focusedOnText}"
+    :class="{'focus-text': $attrs.focusedOnText, 'no-readme': !$route.meta.readme}"
     class="side-layout select-none">
     <!-- Side menu -->
     <side-nav class="overflow-hidden" />
 
     <!-- Markdown -->
-    <div class="overflow-auto grid">
+    <div v-if="$route.meta.readme"
+         class="overflow-auto grid">
       <markdown-viewer
         ref="readme"
         :value="readme()"
@@ -86,6 +87,10 @@ export default {
   grid: 1fr / minmax(auto, 260px) minmax(300px, 28rem) 2fr;
   position: relative;
   overflow: hidden;
+
+  &.no-readme {
+    grid: 1fr / minmax(auto, 260px) 2fr;
+  }
 
   > * {
     position: relative;

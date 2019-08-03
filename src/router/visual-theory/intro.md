@@ -8,7 +8,7 @@ Our Human behaviour surrounds this notion that everything must have order. We ar
 
 We try to figure out the world by using our senses. This is our `interface`. We take in data in a multitude of ways.
 
-One of them being `Sight`.
+One of them being *_sight_*.
 
 About 80% of how we process information, is vision. And we process it remarkably fast.
 

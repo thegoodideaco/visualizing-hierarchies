@@ -1,7 +1,10 @@
 <template>
   <div class="h-full grid">
-    <image-slider :items="items"
-                  :active-index.sync="index" />
+    <!-- <image-slider :items="items"
+                  :active-index.sync="index" /> -->
+    <div>
+      <h1>Setup</h1>
+    </div>
   </div>
 </template>
 
@@ -36,6 +39,9 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped lang="scss">
+.grid {
+  align-items: center;
+  justify-items: center;
+}
 </style>
