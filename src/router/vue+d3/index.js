@@ -16,6 +16,7 @@ export const config = {
     title: 'Vue + D3'
   },
   children: [
+    // ! Shapes
     {
       path:      '/vue-d3/shapes',
       component: components.Shapes,
@@ -31,27 +32,37 @@ export const config = {
         readme: ShapesReadme
       }
     },
+
+    // ! Layouts
     {
-      path:      '/vue-d3/code/Layouts',
+      path:      '/vue-d3/layouts',
       component: components.Layouts,
       meta:      {
         title:  'Layouts',
         readme: LayoutsReadme
       }
     },
-    // {
-    //   path:      '/vue/code/single-file-component/finished',
-    //   component: components.finished.MakingComponent,
-    //   meta:      {
-    //     readme: RenderingReadme
-    //   }
+    {
+      path:      '/vue-d3/layouts/finished',
+      component: components.finished.Layouts,
+      meta:      {
+        readme: LayoutsReadme
+      }
+    },
 
-    // },
+    // ! Force
     {
       path:      '/vue-d3/force',
       component: components.Force,
       meta:      {
         title:  'Force',
+        readme: ForceReadme
+      }
+    },
+    {
+      path:      '/vue-d3/force/finished',
+      component: components.finished.Force,
+      meta:      {
         readme: ForceReadme
       }
     }
