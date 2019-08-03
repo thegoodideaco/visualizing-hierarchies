@@ -1,5 +1,6 @@
 <template>
   <div
+
     :class="{'focus-text': $attrs.focusedOnText, 'no-readme': !$route.meta.readme}"
     class="side-layout select-none">
     <!-- Side menu -->
@@ -18,11 +19,11 @@
     <!-- Content Entry -->
     <div class="grid">
       <slot>
-        <transition
-          mode="out-in"
-          name="fade">
-          <router-view />
-        </transition>
+        <!-- <transition
+          mode="in-out"
+          name="fade"> -->
+        <router-view />
+        <!-- </transition> -->
       </slot>
     </div>
   </div>

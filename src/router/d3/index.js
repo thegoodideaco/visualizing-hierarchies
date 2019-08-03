@@ -30,22 +30,23 @@ export const config = {
       }
     },
     {
-      path:      '/d3/scales',
-      component: components.ScaleView,
-      meta:      {
-        title:  'Scales',
-        readme: ScaleReadme
-      }
-    },
-
-    {
       path:      '/d3/hierarchy',
       component: components.ConsoleView,
       meta:      {
         title:  'D3.hierarchy',
         readme: HierarchyReadme
       }
+    },
+    {
+      path:      '/d3/scales',
+      component: components.ScaleView,
+      meta:      {
+        title:  'Scales',
+        readme: ScaleReadme
+      }
     }
+
+
   ]
 }
 

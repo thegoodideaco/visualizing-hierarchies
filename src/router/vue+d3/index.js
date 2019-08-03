@@ -25,6 +25,13 @@ export const config = {
       }
     },
     {
+      path:      '/vue-d3/shapes/finished',
+      component: components.finished.Shapes,
+      meta:      {
+        readme: ShapesReadme
+      }
+    },
+    {
       path:      '/vue-d3/code/Layouts',
       component: components.Layouts,
       meta:      {

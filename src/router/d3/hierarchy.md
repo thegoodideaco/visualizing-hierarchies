@@ -14,11 +14,12 @@ nester = d3.nest()
 nester.key(item => item['Category'])
 nester.key(v => v['Content Rating'])
 nester.key(item => item['Price'])
+
+// Using the entries method
+nester.entries(dataset)
 ```
 
-A Hierarchy needs a recursive object with an array in each that represents it's children. This is where the `entries` method comes in.
-
-Another rule is that we must have a root node. We can do this by applying `entries` to a predefined root object.
+One main rule is that we must have a root node. We can do this by applying `entries` to a predefined root object.
 
 ```javascript
 tree = {
@@ -31,7 +32,6 @@ We can now create a hierarchy object like magic!
 
 ```javascript
 h = d3.hierarchy(tree, v => v.values)
-// Node {data: {…}, height: 4, depth: 0, ...}
 ```
 
 By comparing the entries array to the hierarchy, you will see a resemblance.
