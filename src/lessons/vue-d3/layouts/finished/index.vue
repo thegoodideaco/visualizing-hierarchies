@@ -13,6 +13,10 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped lang="scss">
+.component-container {
+  display: grid;
+  grid: 1fr / 1fr;
+  overflow: hidden;
+}
 </style>

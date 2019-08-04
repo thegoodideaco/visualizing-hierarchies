@@ -1,6 +1,6 @@
 
 <template>
-  <div class="flex items-center justify-center">
+  <div class="grid">
     <my-component />
   </div>
 </template>

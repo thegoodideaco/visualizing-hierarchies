@@ -22,7 +22,7 @@
 
 <script>
 // eslint-disable-next-line no-unused-vars
-import {line, curveNatural, curveStep, curveCatmullRom, curveCardinalClosed} from 'd3'
+import {line, curveNatural, curveStep, curveCatmullRom, curveCardinalClosed, curveBundle} from 'd3'
 export default {
   data: () => ({
     points: [
@@ -41,7 +41,7 @@ export default {
       return line()
         .x(v => v.x)
         .y(v => v.y)
-        .curve(curveStep)
+        .curve(curveBundle)
     }
   },
   methods: {

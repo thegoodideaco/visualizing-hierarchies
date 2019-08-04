@@ -25,6 +25,7 @@
     "pixi.js": "4",
     "vue": "^2.6.10",
     "vue-axios": "^2.1.4",
+    "vue-resize": "^0.4.5",
     "vue-router": "^3.0.7",
     "vue-slider-component": "^3.0.33",
     "vuedraggable": "^2.23.0",
