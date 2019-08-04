@@ -7,6 +7,8 @@ import store from './store'
 
 import VueAxios from 'vue-axios'
 import Axios from 'axios'
+import VueResize from 'vue-resize'
+import 'vue-resize/dist/vue-resize.css'
 
 import './utils/webFonts'
 
@@ -56,6 +58,7 @@ if(process.env.NODE_ENV === 'development') {
   })
 }
 
+Vue.use(VueResize)
 
 
 Vue.use(VueAxios, Axios)
