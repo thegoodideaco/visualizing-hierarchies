@@ -1,14 +1,14 @@
 <template>
   <div class="component-container">
-    <my-component />
+    <layout-component />
   </div>
 </template>
 
 <script>
-import MyComponent from './MyComponent.vue'
+import LayoutComponent from './LayoutComponent.vue'
 export default {
   components: {
-    MyComponent
+    LayoutComponent
   }
 }
 </script>

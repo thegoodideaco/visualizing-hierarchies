@@ -50,13 +50,17 @@ export default {
           this.width,
           this.height
         ])
-        .padding(this.padding)
+        // .padding(this.padding)
         // .radius(v => v.value)
 
 
       return layout
     },
 
+
+    /**
+     * Map colors to the value of each node
+     */
     colorScale() {
       if(this.h) return d3.scaleSqrt()
         .domain([0, this.h.value])
@@ -68,7 +72,7 @@ export default {
      */
     nodes() {
       if(this.h) {
-        return this.h.descendants().filter(n => n.height > -1)
+        return this.h.descendants()
       }else{
         return null
 
@@ -169,7 +173,7 @@ export default {
   cursor: pointer;
 
   &:hover {
-    background-color: yellow;
+    background-color: yellow !important;
   }
 }
 </style>
