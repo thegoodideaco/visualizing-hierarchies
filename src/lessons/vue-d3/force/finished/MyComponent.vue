@@ -5,10 +5,21 @@
 
     <circle v-for="(node, index) in nodes"
             :key="index"
-            r="5"
+            r="10"
+            :cx="node.x"
+            :cy="node.y"
             fill="white">
       <title>{{ node.data }}</title>
     </circle>
+
+    <!-- Links -->
+    <path v-for="(path, index) in chainedPaths"
+          :key="`line-${index}`"
+          :d="path"
+          stroke="white"
+          fill="none"
+          opacity=".5"
+          stroke-width="2" />
 
   </svg>
 </template>
@@ -19,8 +30,12 @@ export default {
   data: () => ({
     width:  100,
     height: 100,
-    h:      null,
-    force:  null
+
+    /** @type {d3.HierarchyPointNode} */
+    h: null,
+
+    /** @type {d3.Simulation} */
+    force: null
   }),
   computed: {
     layout() {
@@ -38,10 +53,32 @@ export default {
 
     nodes() {
       if(this.h) return this.h.descendants()
+    },
+
+    links() {
+      if(this.h) return this.h.links()
+    },
+
+    chainedPaths() {
+      if(this.h) {
+        const lastBranches = this.h.descendants().filter(v => v.depth === this.h.height)
+
+        const nodePaths = lastBranches.map(n => n.ancestors().slice(1))
+
+        return nodePaths.map(path => {
+          return d3.line()
+            .x(n => n.x)
+            .y(n => n.y)
+            .curve(d3.curveBundle.beta(.9))(path)
+        })
+      }
     }
   },
   mounted() {
     this.init()
+  },
+  beforeDestroy() {
+    this.force.stop()
   },
   methods: {
     updateSize() {
@@ -80,14 +117,29 @@ export default {
 
       // 5. We must assign x and y properties so they can be observed
       h.each(node => Object.assign(node, {
-        x: 0,
-        y: 0
+        x: this.width * .5,
+        y: this.height * .5
       }))
 
       // Calculate totals, no need for sorting
       h.sum(v => v.value)
 
       this.h = h
+
+
+      // Create force simulation
+      this.force = d3.forceSimulation()
+
+      // Add x and y forces to move all nodes to the center
+      this.force
+        .force('x', d3.forceX(this.width * .5))
+        .force('y', d3.forceY(this.height * .5))
+        .force('collision', d3.forceCollide(10))
+        .force('links', d3.forceLink(this.links).distance(n => n.children ? 150 : 10).strength(1))
+        .force('bodies', d3.forceManyBody().strength(-80))
+        .nodes(this.nodes)
+        .alphaDecay(.002)
+        .alpha(.9)
     }
   }
 
