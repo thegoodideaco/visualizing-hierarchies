@@ -14,7 +14,7 @@ export default {
   data: () => ({
     items: [
       {
-        url: 'https://thumbs.gfycat.com/DifficultDiligentCobra-size_restricted.gif'
+        url: '/static/images/explore.gif'
       },
       {
         url: 'http://worklad.co.uk/wp-content/uploads/2015/01/440860250997548473.jpg'

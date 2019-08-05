@@ -1,6 +1,6 @@
 <template>
   <!-- Replace this button with
-   http://localhost:8080/#/vue-d3/shapes  -->
+   http://localhost:8080/#/vue-d3/force  -->
   <open-button />
 </template>
 

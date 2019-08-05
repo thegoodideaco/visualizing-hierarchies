@@ -16,7 +16,8 @@
 
 
     <!-- HTML Version -->
-    <div class="html-version">
+    <div v-if="h"
+         class="html-version">
       <div v-for="(node, index) in nodes"
            :key="index"
            class="html-element"

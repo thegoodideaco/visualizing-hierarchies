@@ -20,8 +20,7 @@ export const config = {
       path:      '/outro/thanks',
       component: components.intro,
       meta:      {
-        title:  'Thank You!',
-        readme: IntroReadme
+        title: 'Thank You!'
       }
     }
   ]

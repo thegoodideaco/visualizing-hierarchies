@@ -126,8 +126,8 @@ Let's render it
     :cx="node.x"
     :cy="node.y"
     :r="node.r"
-    fill="rgba(255,255,255,.5)"
-    @click="nodeClick(node)"
+    stroke="white"
+    stroke-width="2"
   />
 </svg>
 ```
@@ -160,6 +160,14 @@ By passing a value (population) to this scale, it will give us a corresponding c
 We can use this in the template itself, by binding the scale to an attribute
 
 ```html
-
+<circle
+  v-for="(node, index) in nodes"
+  :key="index"
+  :cx="node.x"
+  :cy="node.y"
+  :r="node.r"
+  stroke="white"
+  stroke-width="2"
+  :fill="colorScale(node.value)"
+/>
 ```
-
