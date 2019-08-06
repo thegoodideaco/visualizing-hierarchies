@@ -1,14 +1,14 @@
 <template>
   <div class="component-container">
-    <my-component />
+    <force-component />
   </div>
 </template>
 
 <script>
-import MyComponent from './MyComponent.vue'
+import ForceComponent from './ForceComponent.vue'
 export default {
   components: {
-    MyComponent
+    ForceComponent
   }
 }
 </script>

@@ -140,6 +140,8 @@ export default {
         .nodes(this.nodes)
         .alphaDecay(.002)
         .alpha(.9)
+        .tick(30)
+
     }
   }
 
