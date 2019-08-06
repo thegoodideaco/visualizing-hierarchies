@@ -40,7 +40,7 @@ export default {
   async mounted() {
     const data = await csv('/datasets/googleplaystore.csv')
 
-    console.log(data)
+    // console.log(data)
   }
 }
 </script>

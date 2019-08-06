@@ -18,8 +18,8 @@
           :d="path"
           stroke="white"
           fill="none"
-          opacity=".5"
-          stroke-width="2" />
+          opacity=".25"
+          stroke-width="1" />
 
   </svg>
 </template>
@@ -69,7 +69,7 @@ export default {
           return d3.line()
             .x(n => n.x)
             .y(n => n.y)
-            .curve(d3.curveBundle.beta(.9))(path)
+            .curve(d3.curveNatural)(path)
         })
       }
     }
@@ -98,7 +98,7 @@ export default {
       // 2. Load the data
       const data = await d3.json('/datasets/populations.json')
 
-      console.log('data loaded', data)
+      // console.log('data loaded', data)
 
 
       // 3. Nest the data

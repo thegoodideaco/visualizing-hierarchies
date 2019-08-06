@@ -153,7 +153,7 @@ export default {
   },
   methods: {
     showInfo(item) {
-      console.log(item.data.value.url)
+      // console.log(item.data.value.url)
       window.open(item.data.value.driver.url, '_blank')
     },
     restartSim() {

@@ -4,9 +4,10 @@
     <router-link
       v-if="isLeaf"
       :to="routeItem"
-      active-class="pointer-events-none active"
+      active-class="active"
       class="nav__item__title block"
-      draggable="false">
+      draggable="false"
+      @click.native.prevent="onClick">
       {{ routeItem.meta.title }}
     </router-link>
 
@@ -61,6 +62,24 @@ export default {
       const match = this.$route.matched.some(value => value.path === this.routeItem.path)
 
       return match
+    }
+  },
+  methods: {
+
+    /** @param {MouseEvent} ev */
+    onClick(ev) {
+      let url = this.routeItem.path
+      if(ev.ctrlKey) url += '/finished'
+
+      const res = this.$router.match(url)
+
+      // debugger
+
+      if(res && res.name !== 'index' && res.fullPath){
+
+        this.$router.push(res)
+        ev.currentTarget.blur()
+      }
     }
   }
 }

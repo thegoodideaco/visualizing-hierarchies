@@ -94,7 +94,7 @@ export default {
     // 1. Load the data
     const data = await d3.json('/datasets/populations.json')
 
-    console.log('data loaded', data)
+    // console.log('data loaded', data)
 
 
     // 2. Nest the data
