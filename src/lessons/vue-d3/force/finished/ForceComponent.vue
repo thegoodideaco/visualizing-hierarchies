@@ -3,15 +3,6 @@
        height="100%">
     <!-- Put content here -->
 
-    <circle v-for="(node, index) in nodes"
-            :key="index"
-            r="10"
-            :cx="node.x"
-            :cy="node.y"
-            fill="white">
-      <title>{{ node.data }}</title>
-    </circle>
-
     <!-- Links -->
     <path v-for="(path, index) in chainedPaths"
           :key="`line-${index}`"
@@ -20,6 +11,18 @@
           fill="none"
           opacity=".25"
           stroke-width="1" />
+
+    <circle v-for="(node, index) in filteredNodes"
+            :key="index"
+            :r="sizeScale(node.value)"
+            :cx="node.x"
+            :cy="node.y"
+            stroke="white"
+            stroke-width="2">
+      <title>{{ node.data }}</title>
+    </circle>
+
+
 
   </svg>
 </template>
@@ -30,6 +33,10 @@ export default {
   data: () => ({
     width:  100,
     height: 100,
+    radius: {
+      min: 10,
+      max: 100
+    },
 
     /** @type {d3.HierarchyPointNode} */
     h: null,
@@ -51,12 +58,27 @@ export default {
       return layout
     },
 
+    sizeScale() {
+      return d3.scaleLinear()
+        .domain(d3.extent(this.h.descendants(), n => n.value))
+        .range([
+          this.radius.min,
+          this.radius.max
+        ])
+    },
+
     nodes() {
       if(this.h) return this.h.descendants()
     },
 
+    filteredNodes() {
+      if(this.nodes) return this.nodes.filter(v => v.children != null)
+    },
+
     links() {
-      if(this.h) return this.h.links()
+      if(this.h) return this.h.links().filter(v => {
+        return v.source.children != null && v.target.children != null
+      })
     },
 
     chainedPaths() {
@@ -69,7 +91,7 @@ export default {
           return d3.line()
             .x(n => n.x)
             .y(n => n.y)
-            .curve(d3.curveNatural)(path)
+            .curve(d3.curveLinear)(path)
         })
       }
     }
@@ -122,7 +144,7 @@ export default {
       }))
 
       // Calculate totals, no need for sorting
-      h.sum(v => v.value)
+      h.sum(v => v.value).sort((a, b) => d3.ascending(a.value, b.value))
 
       this.h = h
 
@@ -132,15 +154,15 @@ export default {
 
       // Add x and y forces to move all nodes to the center
       this.force
-        .force('x', d3.forceX(this.width * .5))
-        .force('y', d3.forceY(this.height * .5))
-        .force('collision', d3.forceCollide(10))
-        .force('links', d3.forceLink(this.links).distance(n => n.children ? 150 : 10).strength(1))
-        .force('bodies', d3.forceManyBody().strength(-80))
-        .nodes(this.nodes)
+        // .force('x', d3.forceX(this.width * .5))
+        // .force('y', d3.forceY(this.height * .5))
+        .force('center', d3.forceCenter(this.width * .5, this.height * .5))
+        .force('collision', d3.forceCollide(n => this.sizeScale(n.value)))
+        .force('links', d3.forceLink(this.links).distance(160).strength(.5))
+        .force('bodies', d3.forceManyBody().strength(-90))
+        .nodes(this.filteredNodes)
         .alphaDecay(.002)
         .alpha(.9)
-        .tick(30)
 
     }
   }

@@ -58,4 +58,8 @@ export default {
 }
 </script>
 
-<style></style>
+<style scoped lang="scss">
+path {
+  transition: all 500ms ease;
+}
+</style>
