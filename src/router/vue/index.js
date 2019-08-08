@@ -2,7 +2,7 @@
 import IntroReadme from './intro.md'
 import MakingReadme from './making.md'
 import ReactivityReadme from './reactivity.md'
-import InteractionReadme from './interaction.md'
+// import InteractionReadme from './interaction.md'
 import RenderingReadme from './rendering.md'
 import * as components from './asyncComponents'
 import { SideNavLayout } from '@/layouts/componentViews'
@@ -57,37 +57,37 @@ export const config = {
       meta:      {
         readme: ReactivityReadme
       }
-    },
-    {
-      path:      '/vue/rendering',
-      component: components.TemplateRendering,
-      meta:      {
-        title:  'Template Rendering',
-        readme: RenderingReadme
-      }
-    },
-    {
-      path:      '/vue/rendering/finished',
-      component: components.finished.Rendering,
-      meta:      {
-        readme: RenderingReadme
-      }
-    },
-    {
-      path:      '/vue/interaction',
-      component: components.Interaction,
-      meta:      {
-        title:  'Interaction',
-        readme: InteractionReadme
-      }
-    },
-    {
-      path:      '/vue/interaction/finished',
-      component: components.finished.Interaction,
-      meta:      {
-        readme: InteractionReadme
-      }
     }
+    // {
+    //   path:      '/vue/rendering',
+    //   component: components.TemplateRendering,
+    //   meta:      {
+    //     title:  'Template Rendering',
+    //     readme: RenderingReadme
+    //   }
+    // },
+    // {
+    //   path:      '/vue/rendering/finished',
+    //   component: components.finished.Rendering,
+    //   meta:      {
+    //     readme: RenderingReadme
+    //   }
+    // },
+    // {
+    //   path:      '/vue/interaction',
+    //   component: components.Interaction,
+    //   meta:      {
+    //     title:  'Interaction',
+    //     readme: InteractionReadme
+    //   }
+    // },
+    // {
+    //   path:      '/vue/interaction/finished',
+    //   component: components.finished.Interaction,
+    //   meta:      {
+    //     readme: InteractionReadme
+    //   }
+    // }
   ]
 }
 

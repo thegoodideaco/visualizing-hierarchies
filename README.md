@@ -1,35 +1,44 @@
 # visualizing-hierarchies
 
+## Prerequisites
+
+You will need to have [Node](https://nodejs.org) on your machine in order to run this workshop.
+
+- [Vue DevTools](https://github.com/vuejs/vue-devtools)
+
 ## Project setup
 
-```
+```terminal
 yarn install
 ```
 
-### Compiles and hot-reloads for development
+or
 
-```
-yarn run serve
-```
-
-### Compiles and minifies for production
-
-```
-yarn run build
+```terminal
+npm install
 ```
 
-### Run your tests
+### Start the workshop
 
-```
-yarn run test
-```
-
-### Lints and fixes files
-
-```
-yarn run lint
+```terminal
+yarn dev
 ```
 
-### Customize configuration
+or
 
-See [Configuration Reference](https://cli.vuejs.org/config/).
+```terminal
+npm run dev
+```
+
+### VSCode
+
+Feel free to use any IDE you wish, we will be using [VSCode](https://code.visualstudio.com)
+
+The extensions I use are
+
+- [Vue.js Extension Pack](https://marketplace.visualstudio.com/items?itemName=mubaidr.vuejs-extension-pack)
+- [Eslint](https://github.com/vuejs/vue-devtools)
+- [Babel](https://marketplace.visualstudio.com/items?itemName=mgmcdermott.vscode-language-babel)
+- [Bracket Pair Colorizer](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer)
+- [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense)
+- [Prettier](https://github.com/prettier/prettier)

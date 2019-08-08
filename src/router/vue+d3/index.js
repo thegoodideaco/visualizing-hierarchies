@@ -21,7 +21,7 @@ export const config = {
       path:      '/vue-d3/shapes',
       component: components.Shapes,
       meta:      {
-        title:  'Shapes',
+        title:  'SVG & Shapes',
         readme: ShapesReadme
       }
     },

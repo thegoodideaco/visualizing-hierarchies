@@ -1,16 +1,17 @@
 <template>
   <div class="h-full grid">
     <!-- <image-slider :items="items"
-                  :active-index.sync="index" /> -->
-    <markdown-viewer class="h-full text-2xl w-full"
-                     :value="readme" />
+    :active-index.sync="index" />-->
+    <markdown-viewer
+      :value="readme"
+      class="h-full text-2xl w-full" />
   </div>
 </template>
 
 <script>
 // import ImageSliderVue from '../../../components/ImageSlider.vue'
 import MarkdownDisplayVue from '../../../components/MarkdownDisplay.vue'
-import setup from '../setup.md'
+import setup from '../../../../README.md'
 export default {
   components: {
     // ImageSlider:    ImageSliderVue,
@@ -18,9 +19,7 @@ export default {
   },
   data: () => ({
     readme: setup,
-    items:  [
-      {}
-    ]
+    items:  [{}]
   })
 }
 </script>
@@ -29,5 +28,20 @@ export default {
 .grid {
   align-items: center;
   justify-items: center;
+}
+
+/deep/ .hljs {
+  pre {
+    font-size: 2rem;
+    display: inline-block;
+    padding: 2rem;
+    border: 2px dashed green;
+    margin: 0;
+
+    + p {
+      display: inline;
+      margin: 0;
+    }
+  }
 }
 </style>

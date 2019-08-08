@@ -73,11 +73,10 @@ export default {
 
       const res = this.$router.match(url)
 
-      // debugger
-
       if(res && res.name !== 'index' && res.fullPath){
 
-        this.$router.push(res)
+        // eslint-disable-next-line no-unused-vars
+        this.$router.push(res).catch(err => {})
         ev.currentTarget.blur()
       }
     }

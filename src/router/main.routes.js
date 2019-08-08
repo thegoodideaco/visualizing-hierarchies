@@ -1,11 +1,10 @@
-import { HomeView, IntroView, AboutView, ExampleView, PerceptionView } from '@/views/asyncComponents'
+import { HomeView, IntroView, AboutView, ExampleView } from '@/views/asyncComponents'
 
 const components = {
   home:       HomeView,
   intro:      IntroView,
   definition: AboutView,
-  examples:   ExampleView,
-  Perception: PerceptionView
+  examples:   ExampleView
 }
 
 /** @type {import('vue-router').RouteConfig[]} */

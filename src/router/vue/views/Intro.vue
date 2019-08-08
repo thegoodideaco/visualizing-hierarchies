@@ -15,8 +15,7 @@ export default {
     index: 0,
     items: [
       {
-        url:   '/static/images/chaos2.gif',
-        title: 'Cool Dude'
+        url: '/static/images/vue intro.png'
       },
       {
         url:   '/static/images/taxonomy2.jpg',
