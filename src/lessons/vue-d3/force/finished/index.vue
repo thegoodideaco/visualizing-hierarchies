@@ -13,6 +13,19 @@ export default {
 }
 </script>
 
-<style>
+<style scoped lang="scss">
+/deep/ svg {
+  circle {
+    stroke: #fff;
+    // fill: transparent;
+    stroke-width: 2px;
+  }
 
+  path {
+    stroke: rgba(#fff, 0.5);
+    stroke-width: 2px;
+    fill: none;
+
+  }
+}
 </style>

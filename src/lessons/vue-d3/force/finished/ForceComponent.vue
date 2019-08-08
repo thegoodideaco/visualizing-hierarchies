@@ -2,29 +2,20 @@
   <svg
     height="100%"
     width="100%">
-    <!-- Put content here -->
-
     <!-- Links -->
-    <path
-      v-for="(path, index) in chainedPaths"
-      :key="`line-${index}`"
-      :d="path"
-      fill="none"
-      opacity=".25"
-      stroke="white"
-      stroke-width="1" />
+    <path v-for="(item, index) in h.links()"
+          :key="`p${index}`"
+          :d="lineGenerator([item.source, item.target])" />
 
-    <!-- Circles -->
+    <!-- Nodes -->
     <circle
-      v-for="(node, index) in filteredNodes"
+      v-for="(node, index) in h.descendants()"
       :key="index"
       :cx="node.x"
       :cy="node.y"
-      :r="sizeScale(node.value)"
-      stroke="white"
-      stroke-width="2">
-      <title>{{ node.data }}</title>
-    </circle>
+      :fill="colorScale(node.value)"
+      :r="getSize(node)"
+      @click="onClick(node)" />
   </svg>
 </template>
 
@@ -34,98 +25,31 @@ export default {
   data: () => ({
     width:  100,
     height: 100,
-    radius: {
-      min: 10,
-      max: 100
-    },
-    forces: {
-      center: {
-        x:        100,
-        y:        100,
-        strength: 1
-      },
-      bodies: {
-        strength: -90
-      }
-    },
 
     /** @type {d3.HierarchyPointNode} */
-    h: null,
+    h: d3.hierarchy({}),
 
-    /** @type {d3.Simulation} */
-    force: null
+    force: d3.forceSimulation(),
+
+    /** @type {d3.Line<d3.HierarchyPointNode>} */
+    lineGenerator: d3.line()
+      .x(node => node.x)
+      .y(node => node.y)
   }),
   computed: {
-    sizeScale() {
-      return d3
-        .scaleSqrt()
+    colorScale() {
+      return d3.scaleSequential(d3.interpolateRdYlGn)
         .domain(d3.extent(this.h.descendants(), n => n.value))
-        .range([this.radius.min, this.radius.max])
-    },
 
-    nodes() {
-      if (this.h) return this.h.descendants()
-    },
 
-    filteredNodes() {
-      if (this.nodes) return this.nodes.filter(v => v.children != null)
-    },
-
-    links() {
-      if (this.h)
-        return this.h.links().filter(v => {
-          return v.source.children != null && v.target.children != null
-        })
-    },
-
-    chainedPaths() {
-      if (this.h) {
-        const lastBranches = this.h
-          .descendants()
-          .filter(v => v.depth === this.h.height)
-
-        const nodePaths = lastBranches.map(n => n.ancestors().slice(1))
-
-        return nodePaths.map(path => {
-          return d3
-            .line()
-            .x(n => n.x)
-            .y(n => n.y)
-            .curve(d3.curveNatural)(path)
-        })
-      }
-    }
-  },
-  watch: {
-    'forces.bodies': {
-      handler() {
-        /** @type {d3.ForceManyBody} */
-        const force = this.force.force('bodies')
-
-        if (force) {
-          force.strength(this.forces.bodies.strength)
-        }
-      },
-      deep: true
-    },
-
-    forces: {
-      handler() {
-        this.force.alpha(0.9).restart()
-      },
-      deep: true
     }
   },
   mounted() {
     this.init()
   },
-  beforeDestroy() {
-    this.force.stop()
-  },
   methods: {
     updateSize() {
       const { width, height } = this.$el.getBoundingClientRect()
-
       this.width = width
       this.height = height
     },
@@ -136,8 +60,6 @@ export default {
 
       // 2. Load the data
       const data = await d3.json('/datasets/populations.json')
-
-      // console.log('data loaded', data)
 
       // 3. Nest the data
       const nester = d3
@@ -150,84 +72,53 @@ export default {
         values: nester.entries(data)
       }
 
-      // 4. Add Hierarchy to nested data
+      // 4. Add Hierarchy
       const h = d3.hierarchy(nestedData, v => v.values)
 
-      // 5. We must assign x and y properties so they can be observed
-      h.each(node =>
+      // Calculate totals and sort
+      h.sum(v => v.value)
+      h.sort((a, b) => d3.ascending(a, b))
+
+      /**
+       * ! Important: We must add x and y properties
+       * ! to each node in order for vue to observe changes
+       */
+      const descendants = h.descendants()
+      descendants.forEach(node =>
         Object.assign(node, {
           x: this.width * 0.5,
           y: this.height * 0.5
         })
       )
 
-      // Calculate totals, no need for sorting
-      h.sum(v => v.value).sort((a, b) => d3.ascending(a.value, b.value))
-
+      // 6. Assign the hierarchy to our data object
       this.h = h
 
-      this.initForce()
+      this.setupForces()
+      this.force.nodes(descendants).alpha(.9).alphaDecay(.02)
     },
-    initForce() {
-      // Create force simulation
-      this.force = d3.forceSimulation()
 
-      // Add x and y forces to move all nodes to the center
+    setupForces() {
       this.force
-        // .force('x', d3.forceX(this.width * .5))
-        // .force('y', d3.forceY(this.height * .5))
-        .force('center', d3.forceCenter(this.width * 0.5, this.height * 0.5))
-        .force('collision', d3.forceCollide(n => this.sizeScale(n.value)))
-        .force(
-          'links',
-          d3
-            .forceLink(this.links)
-            .distance(160)
-            .strength(0.5)
-        )
-        .force(
-          'bodies',
-          d3.forceManyBody().strength(this.forces.bodies.strength)
-        )
-        .nodes(this.filteredNodes)
-        .alphaDecay(0.002)
-        .alpha(0.9)
+        // .force('x', d3.forceX(this.width * 0.5).strength(.02))
+        // .force('y', d3.forceY(this.height * 0.5).strength(.02))
+        .force('center', d3.forceCenter(this.width * .5, this.height *.5))
+        .force('collision', d3.forceCollide(this.getSize))
+        .force('links', d3.forceLink(this.h.links()).distance(this.getLinkDistance).strength(.9))
+        .force('bodies', d3.forceManyBody().strength(-110).distanceMin(10).distanceMax(220))
     },
-    updateForce() {
 
-      /**
-       * @type {{center: d3.ForceCenter, collision: d3.ForceCollide, links: d3.ForceLink, bodies: d3.ForceManyBody}}
-       */
-      const forces = {
-        center:    this.force('center'),
-        collision: this.force('collision'),
-        links:     this.force('links'),
-        bodies:    this.force('bodies')
-      }
+    getSize(node) {
+      return node.children != null ? 5 : 10
+    },
 
-      // Update all of them
+    getLinkDistance(link) {
+      return link.source.children ? 25 : 65
+    },
 
-      forces.center
-        .x(this.width * .5)
-        .y(this.height * .5)
-
-      forces.collision
-        .radius(node => this.sizeScale(node.value))
-
-      forces.links
-        .distance(160)
-        .strength(.9)
-
-      forces.bodies
-        .theta(.9)
-
-      // Restart the force
-      this.force.restart()
-
-
+    onClick(node) {
+      console.log(node)
     }
   }
 }
 </script>
-
-<style></style>

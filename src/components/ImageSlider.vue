@@ -1,5 +1,6 @@
 <template>
-  <div class="image-slider">
+  <div class="image-slider"
+       :class="{fullscreen}">
     <div
       v-if="items"
       class="image-slider__inner">
@@ -8,7 +9,8 @@
         <div
           v-if="!isComponent"
           :key="activeIndex"
-          class="image-slider__image">
+          class="image-slider__image"
+          :class="{'no-title': !activeItem.title}">
           <transition
             appear
             name="zoom">
@@ -21,13 +23,21 @@
                  @load="loaded = true">
 
             <!-- The div that _contains_ the image -->
-            <div v-else
+            <div v-else-if="!fullscreen"
                  class="image-slider__image-fill m-5"
-                 :style="activeItem.url | asStyle" />
+                 :style="activeItem.url | asStyle"
+                 @click="fullscreen = true" />
+
+            <div v-else>
+              <img :src="activeImagePath"
+                   draggable="false"
+                   @click="fullscreen = false">
+            </div>
           </transition>
 
           <!-- Title -->
           <h4 v-show="loaded"
+              v-if="activeItem.title"
               class="image-slider__image-header">
             {{ activeItem.title }}
           </h4>
@@ -68,7 +78,8 @@ export default {
     }
   },
   data: () => ({
-    loaded: false
+    loaded:     false,
+    fullscreen: false
   }),
   computed: {
     /**
@@ -79,6 +90,13 @@ export default {
       return this.items[this.activeIndex]
     },
 
+    activeImagePath() {
+      if(this.activeItem && this.activeItem.url) {
+        const url = this.activeItem.url
+        return url.startsWith('http') ? url : encodeURIComponent(url)
+      }
+    },
+
     isComponent() {
       return this.activeItem && typeof this.activeItem === 'function'
     }
@@ -86,6 +104,23 @@ export default {
   watch: {
     activeIndex() {
       this.loaded = false
+    },
+    fullscreen: {
+      handler(val) {
+        if(val) {
+          this.$el.remove()
+
+          document.body.append(this.$el)
+        }else{
+          this.$el.remove()
+          this.realParentElement.append(this.$el)
+        }
+      }
+    },
+    activeItem() {
+      if(this.fullscreen) {
+        this.fullscreen = false
+      }
     }
   },
   async mounted() {
@@ -94,6 +129,15 @@ export default {
 
     this.$on('hook:beforeDestroy', this.removeListeners)
     this.$on('hook:deactivated', this.removeListeners)
+
+    this.realParentElement = this.$el.parentElement
+  },
+  beforeDestroy() {
+    if(this.fullscreen) {
+      this.fullscreen = false
+      this.$el.remove()
+      this.realParentElement.append(this.$el)
+    }
   },
   methods: {
     /** @type {(ev: KeyboardEvent) => void} */
@@ -103,6 +147,9 @@ export default {
       }
       if (ev.key === 'ArrowRight') {
         this.next()
+      }
+      if(ev.key === 'Escape') {
+        this.fullscreen = false
       }
       ev.stopPropagation()
     },
@@ -125,6 +172,8 @@ export default {
       // console.log('removing listeners')
       document.removeEventListener('keydown', this.keyPressed)
     }
+
+
   }
 }
 </script>
@@ -134,6 +183,19 @@ export default {
   display: grid;
   height: 100%;
   align-items: center;
+  cursor: pointer;
+
+  &.fullscreen {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: auto;
+    background-color: rgba(#000, 0.75);
+    cursor: none;
+  }
+
   &__inner {
     display: grid;
     height: 100%;
@@ -149,6 +211,10 @@ export default {
     // align-items: center;
     // align-content: center;
 
+    &.no-title {
+      grid: 1fr / 1fr;
+    }
+
     &-container {
       height: 100%;
       margin: auto;
@@ -163,6 +229,19 @@ export default {
     &-header {
       padding: 2rem;
       font-size: 4rem;
+
+      .fullscreen & {
+        display: none;
+      }
+    }
+
+    .fullscreen & {
+      grid: 1fr / 1fr;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
     }
   }
 
