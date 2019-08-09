@@ -50,18 +50,21 @@ export default {
 }
 
 .logos {
-  display: grid;
+  display: flex;
   height: 170px;
-  width: 100%;
+  // width: 100%;
   padding: 10px;
+  position: relative;
 
-  grid: 1fr / auto auto;
+  grid: auto / repeat(2, auto);
   justify-content: center;
+  justify-items: center;
   column-gap: 10px;
 
   img {
+    display: inline-block;
     height: 100%;
-    width: 100%;
+    width: auto;
   }
 }
 </style>
