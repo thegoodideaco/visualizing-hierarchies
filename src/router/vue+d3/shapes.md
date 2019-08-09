@@ -20,7 +20,7 @@ Let's setup our component to have a SVG element
 
 ```html
 <template>
-  <svg width="500" height="500">
+  <svg width="100%" height="100%">
     <!-- Content -->
   </svg>
 </template>
@@ -35,7 +35,7 @@ These are used for the positioning and size of the circle to render.
 ```html
 <template>
   <svg width="500" height="500">
-    <!-- Content -->
+    <circle r="10" cx="200" cy="500" />
   </svg>
 </template>
 ```
@@ -63,7 +63,6 @@ To render these, we will use `v-for` to iterate through each point, using circle
   :cx="item.x"
   :cy="item.y"
   r="5"
-  fill="white"
 />
 ```
 
@@ -108,9 +107,11 @@ instructions. Any shape can be created with a path. This attribute is called `d`
 
 This can be used to draw `links` which are simply lines connecting nodes together.
 
-In this case, we can create a line from the point array! To do this, we will use `d3.line`
+In this case, we can create a line from the point array!
 
-### Drawing a line
+To do this, we will use `d3.line`
+
+### d3.line
 
 An instance of a line, is a generator just like `scale`. They are methods that return values based on the dataset you provide.
 
@@ -120,6 +121,8 @@ line(dataset)
 ```
 
 When using `d3.line` we need to provide methods to retrieve positioning values.
+
+We pass in methods to retrieve the x and y values based on a single item
 
 ```javascript
 line = d3.line()
@@ -137,7 +140,6 @@ computed: {
     return d3.line()
     .x(v => v.x)
     .y(v => v.y)
-    (this.points)
   }
 }
 ```
@@ -145,7 +147,7 @@ computed: {
 What this will do, is provide a string to be passed as an attribute to a path element, therefore rendering the shape
 
 ```html
-<path stroke="white" stroke-width="5" :d="lineGen" />
+<path stroke="white" stroke-width="5" :d="lineGen(points)" />
 ```
 
 Cool now we can draw a line!

@@ -53,8 +53,7 @@ Let's do this with our current properties
   export default {
     data: () => ({
       a: 2,
-      b: 3,
-      reduced: 0
+      b: 3
     }),
     computed: {
       c() {
@@ -70,6 +69,10 @@ This means that whenever `a` or `b` changes in value, the `c` property will auto
 ### Watchers
 
 In some cases, computed properties aren't the best option. they are cached, and not observed internally. This is where `watch` comes in.
+
+Let's add a `reduced` property to our data object.
+
+When `c` changes, we will set `reduced` to be the same value, and then continuously subtract until it's 0
 
 ```html
 <template>
@@ -94,15 +97,23 @@ In some cases, computed properties aren't the best option. they are cached, and 
       }
     },
     watch: {
+      /**
+       * When c changes, set reduced
+       * to the same number
+       * Then start subtracting
+       */
       c(val) {
         this.reduced = val
-        this.divide()
+        this.subtract()
       }
     },
     methods: {
-      divide() {
-        this.reduced = ~~(this.reduced * 0.99)
-
+      /**
+       * will continuously subtract
+       * from reduced until it's 0
+       */
+      subtract() {
+        this.reduced -= 0.1
         if (this.reduced > 0.001) {
           requestAnimationFrame(this.divide)
         } else {

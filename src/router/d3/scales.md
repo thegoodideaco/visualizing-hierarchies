@@ -43,7 +43,7 @@ Think of `D`ata for `Domain` to avoid mixing them up.
 
 ### Values to Visual Dimensions
 
-As stated in the `Semiology of Graphics`, scales can represent the visual variables of each item in a collection.
+As stated in the [Semiology of Graphics](http://localhost:8080/#/theory/variables), scales can represent the visual variables of each item in a collection.
 
 Let's take for example a `dataset` of emails within 2 years time. We could use a linear scale to map the value of time to color.
 
