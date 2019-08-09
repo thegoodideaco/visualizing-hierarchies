@@ -13,6 +13,10 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped lang="scss">
+/deep/ circle {
+  fill: #48eca3;
+  stroke: #fff;
+  stroke-width: 3;
+}
 </style>

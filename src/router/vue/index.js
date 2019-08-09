@@ -3,7 +3,7 @@ import IntroReadme from './intro.md'
 import MakingReadme from './making.md'
 import ReactivityReadme from './reactivity.md'
 // import InteractionReadme from './interaction.md'
-import RenderingReadme from './rendering.md'
+// import RenderingReadme from './rendering.md'
 import * as components from './asyncComponents'
 import { SideNavLayout } from '@/layouts/componentViews'
 
@@ -39,7 +39,7 @@ export const config = {
       path:      '/vue/code/single-file-component/finished',
       component: components.finished.MakingComponent,
       meta:      {
-        readme: RenderingReadme
+        readme: MakingReadme
       }
 
     },

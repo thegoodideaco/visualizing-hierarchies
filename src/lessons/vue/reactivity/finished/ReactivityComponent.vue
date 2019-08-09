@@ -20,15 +20,21 @@ export default {
     }
   },
   watch: {
+    /**
+     * When c changes, set reduced to the same number
+     * Then start subtracting
+     */
     c(val) {
       this.reduced = val
-      this.divide()
+      this.subtract()
     }
   },
   methods: {
-    divide() {
-      this.reduced = ~~(this.reduced * .99)
-
+    /**
+     * will continuously subtract from reduced until it's 0
+     */
+    subtract() {
+      this.reduced -= .1
       if(this.reduced > .001){
         requestAnimationFrame(this.divide)
       }else{

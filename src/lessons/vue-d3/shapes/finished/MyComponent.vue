@@ -4,19 +4,18 @@
        @click="addPoint"
        @contextmenu.prevent="points = []">
 
-    <!-- Circles -->
-    <circle v-for="(item, index) in points"
-            :key="index"
-            :cx="item.x"
-            :cy="item.y"
-            r="5"
-            fill="white" />
-
     <!-- Path -->
     <path fill="none"
           stroke="white"
           stroke-width="5"
           :d="definition(points)" />
+
+    <!-- Circles -->
+    <circle v-for="(item, index) in points"
+            :key="index"
+            :cx="item.x"
+            :cy="item.y"
+            r="10" />
   </svg>
 </template>
 
