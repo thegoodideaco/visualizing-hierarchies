@@ -8,7 +8,8 @@
       </div>
 
       <div>
-        <h2 v-if="dateRange && dateRange.length">
+        <h2
+          v-if="dateRange && dateRange.length">
           Top Racers between {{ dateRange[0] | asYear }} and {{ dateRange[1] | asYear }}
         </h2>
       </div>
@@ -16,15 +17,15 @@
 
     <!-- Side -->
     <aside class="f1__sidebar">
-      <!-- Date Scanner -->
       <date-scanner :dataset="test.races"
                     @filter="dateRange = $event" />
     </aside>
 
     <!-- Force Graph -->
     <div class="f1__content">
-      <transition name="fade"
-                  mode="out-in">
+      <transition
+        mode="out-in"
+        name="fade">
         <force-graph v-if="dateRange"
                      :dataset="filteredDrivers" />
 
@@ -32,9 +33,7 @@
              class="info">
           <div class="p-32 bg-blue-800 m-auto">
             <h1>Visualizing Racer Winnings</h1>
-            <h2>
-              Please select a range of time
-            </h2>
+            <h2>Please select a range of time</h2>
             <p>Drag your mouse on the time range to make a selection.</p>
           </div>
         </div>
@@ -82,7 +81,7 @@ export default {
         races:           [],
         driverStandings: []
       },
-      dateRange: null,
+      dateRange: [],
       maps:      {
         drivers: []
       }
@@ -202,7 +201,7 @@ export default {
   grid:
     [row1-start] 'title title' auto [row1-end]
     [row2-start] 'sidebar content' 1fr [row2-end]
-    / auto 1fr;
+    / minmax(20%, min-content) 1fr;
   row-gap: 5px;
   column-gap: 5px;
 

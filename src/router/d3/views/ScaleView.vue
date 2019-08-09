@@ -17,6 +17,11 @@ export default {
     const data = await csv('/datasets/pokemon/pokemon.csv')
     this.dataset = Object.freeze(data)
     window.dataset = this.dataset
+
+    console.clear()
+    console.log('%c Use window.dataset and window.d3', [
+      'font-size: 30px'
+    ].join(';'))
   },
 
   beforeDestroy() {

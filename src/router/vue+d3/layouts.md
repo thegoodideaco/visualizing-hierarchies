@@ -63,7 +63,7 @@ computed: {
 }
 ```
 
-Now we need to load the data and construct a hierarchy. We can create another method to do initiate everything
+Now we need to load the data and construct a hierarchy. We can create another method to initiate everything.
 
 ```javascript
 methods: {

@@ -2,7 +2,7 @@
 
 Install using `yarn`
 
-```
+```javascript
 yarn install
 ```
 
