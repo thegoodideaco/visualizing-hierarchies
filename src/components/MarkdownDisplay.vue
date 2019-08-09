@@ -35,6 +35,8 @@ export default {
         await this.$nextTick()
         if(!this.$refs.scroller) return
 
+        this.updateLinkTargets()
+
         this.$refs.scroller.scroll({
           top:      0,
           left:     0,
@@ -58,6 +60,35 @@ export default {
         breaks:      true,
         highlight:   code => hl.highlightAuto(code).value
       })
+    },
+
+    /**
+     * Makes all links open in a new window
+     */
+    updateLinkTargets() {
+
+      /** @type {HTMLElement} */
+      const {
+        innerHTML
+      } = this.$refs.scroller
+
+      /**
+       * Create a new div, apply innerHTML
+       */
+      const temp = document.createElement('div')
+      temp.innerHTML = innerHTML
+
+      /**
+       * Make all targets blank
+       */
+      temp.querySelectorAll('a').forEach(anchor => {
+        anchor.target = '_blank'
+      })
+
+      /**
+       * Update HTML
+       */
+      this.$refs.scroller.innerHTML = temp.innerHTML
     }
   }
 }
