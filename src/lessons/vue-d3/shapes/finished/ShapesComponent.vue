@@ -49,9 +49,11 @@ export default {
     definition() {
       let curve = d3[this.curveType]
 
-      if(this.curveType === 'curveBundle') {
-        curve = curve.beta(this.bundle)
-      }
+
+
+      if(curve.tension) curve = curve.tension(this.bundle)
+      if(curve.beta) curve = curve.beta(this.bundle)
+      if(curve.alpha) curve = curve.alpha(this.bundle)
       return d3.line()
         .x(v => v.x)
         .y(v => v.y)
