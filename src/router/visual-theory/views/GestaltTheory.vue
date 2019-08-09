@@ -18,7 +18,7 @@ export default {
         title: '"The whole is other than the sum of the parts."'
       },
       {
-        url:   'https://i.giphy.com/media/73epRtPyzaOOY/giphy.webp',
+        url:   '/static/images/gestalt1.webp',
         title: 'This is your brain making sense of random stuff'
       },
       {

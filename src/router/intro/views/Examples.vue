@@ -15,11 +15,11 @@ export default {
   data: () => ({
     items: [
       {
-        url:   'https://i.stack.imgur.com/iLsgy.png',
+        url:   '/static/images/examples/cluster.png',
         title: 'Cluster Dendrogram'
       },
       {
-        url:   'https://architect-api.readthedocs.io/en/latest/_images/node-link-tree.png',
+        url:   '/static/images/examples/tidy-tree.png',
         title: 'Tidy Tree'
       },
       {
@@ -32,11 +32,11 @@ export default {
       },
       ReportTree,
       {
-        url:   'https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/imgs/js-profile.png',
+        url:   '/static/images/examples/partition.png',
         title: 'Flame Graph using Partition Layout'
       },
       {
-        url:   'https://www.d3indepth.com/img/layouts/pack.png',
+        url:   '/static/images/examples/circle-packing.png',
         title: 'Circle Packing'
       }
     ],

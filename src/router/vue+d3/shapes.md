@@ -34,7 +34,7 @@ These are used for the positioning and size of the circle to render.
 
 ```html
 <template>
-  <svg width="500" height="500">
+  <svg width="100%" height="100%">
     <circle r="10" cx="200" cy="500" />
   </svg>
 </template>
@@ -150,7 +150,7 @@ What this will do, is provide a string to be passed as an attribute to a path el
 <path stroke="white" stroke-width="5" :d="lineGen(points)" />
 ```
 
-Cool now we can draw a line!
+Cool, now we can draw a line! ✨ Magic!
 
 but `d3.line` has some other useful options,such as applying a curve.
 

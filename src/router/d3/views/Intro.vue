@@ -23,7 +23,7 @@ export default {
         title: 'Data Utilities'
       },
       {
-        url:   'https://miro.medium.com/max/7000/0*LRtj-YX29bDYCFLN',
+        url:   '/static/images/d3-visualization.png',
         title: 'Visualization'
       }
     ]

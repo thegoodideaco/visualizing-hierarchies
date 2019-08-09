@@ -22,6 +22,13 @@ export const config = {
       meta:      {
         title: 'Thank You!'
       }
+    },
+    {
+      path:      '/outro/resources',
+      component: components.Resources,
+      meta:      {
+        title: 'Resources'
+      }
     }
   ]
 }

@@ -83,7 +83,7 @@ header {
   align-items: center;
   &:not(:empty) {
     padding: 10px;
-    background-color: rgba(#000, .25);
+    background-color: rgba(#3182ce, .5);
   }
 
   > * {
