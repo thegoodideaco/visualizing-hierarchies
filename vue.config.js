@@ -18,6 +18,7 @@ module.exports = {
   filenameHashing:     true,
   productionSourceMap: false,
   runtimeCompiler:     true,
+  lintOnSave:          true,
 
   configureWebpack: config => {
     /**

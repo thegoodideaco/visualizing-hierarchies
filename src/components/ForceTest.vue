@@ -35,6 +35,7 @@ import { interpolateRgb } from 'd3-interpolate'
 import { scaleSequential } from 'd3-scale'
 
 const particleCountHD = 300
+
 const particleCount = 500
 const particleCountSD = 300
 
@@ -159,6 +160,7 @@ export default {
 
     this.nodes = range(particleAmount).map((k, i) => {
       /** @type {PIXI.Sprite} */
+      // eslint-disable-next-line new-cap
       const spr = new Sprite.fromImage('/test.png')
 
       container.addChild(spr)
