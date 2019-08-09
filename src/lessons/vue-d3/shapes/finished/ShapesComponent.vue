@@ -21,8 +21,18 @@
 
 <script>
 // eslint-disable-next-line no-unused-vars
-import {line, curveNatural, curveStep, curveCatmullRom, curveCardinalClosed, curveBundle} from 'd3'
+import * as d3 from 'd3'
 export default {
+  props: {
+    bundle: {
+      type:    Number,
+      default: .5
+    },
+    curveType: {
+      type:    String,
+      default: 'curveLinear'
+    }
+  },
   data: () => ({
     points: [
       {
@@ -37,10 +47,15 @@ export default {
      * @returns {d3.Line<{x: number, y: number}>}
      */
     definition() {
-      return line()
+      let curve = d3[this.curveType]
+
+      if(this.curveType === 'curveBundle') {
+        curve = curve.beta(this.bundle)
+      }
+      return d3.line()
         .x(v => v.x)
         .y(v => v.y)
-        .curve(curveBundle)
+        .curve(curve)
     }
   },
   methods: {

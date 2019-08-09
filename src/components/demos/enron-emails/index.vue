@@ -64,7 +64,7 @@
 import { csv } from 'd3-fetch'
 
 // import EdgeBundler from '@/components/demos/enron-emails/EdgeBundler.vue'
-import { ascending, hierarchy, nest, cluster, line, curveBundle, lineRadial } from 'd3'
+import { ascending, hierarchy, nest, cluster, curveBundle, lineRadial } from 'd3'
 import { timeFormat } from 'd3-time-format'
 
 const dateFormat = timeFormat('%Y %b')

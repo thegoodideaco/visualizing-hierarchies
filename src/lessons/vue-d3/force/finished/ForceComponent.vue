@@ -8,14 +8,13 @@
           :d="lineGenerator([item.source, item.target])" />
 
     <!-- Nodes -->
-    <circle
-      v-for="(node, index) in h.descendants()"
-      :key="index"
-      :cx="node.x"
-      :cy="node.y"
-      :fill="colorScale(node.value)"
-      :r="getSize(node)"
-      @click="onClick(node)" />
+    <circle v-for="(node, index) in h.descendants()"
+            :key="index"
+            :cx="node.x"
+            :cy="node.y"
+            :fill="colorScale(node.value)"
+            :r="getSize(node)"
+            @click.self="onClick(node)" />
   </svg>
 </template>
 

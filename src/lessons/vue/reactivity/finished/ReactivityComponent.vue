@@ -36,7 +36,7 @@ export default {
     subtract() {
       this.reduced -= .1
       if(this.reduced > .001){
-        requestAnimationFrame(this.divide)
+        requestAnimationFrame(this.subtract)
       }else{
         this.reduced = 0
       }
