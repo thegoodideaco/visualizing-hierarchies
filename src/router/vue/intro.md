@@ -12,7 +12,7 @@ However, some parts of Vue compliment D3 and it's usage extremely well.
 
 Vue components have a template that serves as the markup of the component instance.
 
-In most cases, a simple div element is used. However, you can do the same thing with an SVG!
+In most cases, a simple div element is used. However, you can do the same thing with a SVG!
 
 Ability to construct an svg element instead.
 

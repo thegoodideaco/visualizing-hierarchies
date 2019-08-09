@@ -38,10 +38,9 @@ export default {
   }),
   computed: {
     colorScale() {
-      return d3.scaleSequential(d3.interpolateSpectral)
-        .domain(d3.extent(this.h.leaves(), n => n.value))
-
-
+      return d3.scalePow().exponent(.2)
+        .domain(d3.extent(this.h.descendants(), n => n.value))
+        .range(['green', 'red'])
     }
   },
   mounted() {

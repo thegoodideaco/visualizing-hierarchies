@@ -1,5 +1,5 @@
 declare namespace Enron {
-  interface EnronEmail {
+  interface EnronEmailOld {
     DocumentID: string;
     FamilyID: string;
     'Page Count': string;
@@ -13,5 +13,13 @@ declare namespace Enron {
     FROM: string;
     TO: string;
     CC: string;
+  }
+
+  interface EnronEmail {
+    from: string;
+    to: string;
+    subject: string;
+    date: string;
+    domain: string;
   }
 }

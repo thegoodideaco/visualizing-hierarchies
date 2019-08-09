@@ -1,486 +1,60 @@
-DocumentID,FamilyID,Page Count,Custodian,Email Subject,Filename,MasterDate,MailstoreName,FROM,TO,CC
-264,264,1,Susan Bailey,,,11/10/2000,joe_quenet.pst,Joe Quenet <Joe Quenet>,rebecca.quenet@eds.com <rebecca.quenet@eds.com>,
-265,265,1,Susan Bailey,,,11/10/2000,joe_quenet.pst,Joe Quenet <Joe Quenet>,Vince@gfigroup.com <Vince@gfigroup.com>,
-266,266,1,Susan Bailey,,,11/10/2000,joe_quenet.pst,Joe Quenet <Joe Quenet>,Hteitelbaum@natsource.com <Hteitelbaum@natsource.com>,
-267,267,1,Susan Bailey,,,11/10/2000,joe_quenet.pst,Joe Quenet <Joe Quenet>,dfincher@utilicorp.com <dfincher@utilicorp.com>,
-268,268,1,Susan Bailey,,,11/10/2000,joe_quenet.pst,Joe Quenet <Joe Quenet>,smacrorie@utilicorp.com <smacrorie@utilicorp.com>,
-269,269,1,Susan Bailey,,,11/10/2000,joe_quenet.pst,Joe Quenet <Joe Quenet>,dmurphy@utilicorp.com <dmurphy@utilicorp.com>,
-270,270,1,Susan Bailey,,,11/10/2000,joe_quenet.pst,Joe Quenet <Joe Quenet>,knockj@epenergy.com <knockj@epenergy.com>,
-271,271,1,Susan Bailey,RE:,,11/10/2000,joe_quenet.pst,Joe Quenet <Joe Quenet>,Fincher  Dave <DFincher@utilicorp.com>,
-272,272,1,Susan Bailey,RE:,,11/10/2000,joe_quenet.pst,Joe Quenet <Joe Quenet>,Murphy  Dan <DMurphy@utilicorp.com>,
-273,273,1,Susan Bailey,Re: Travel,,11/10/2000,joe_quenet.pst,Joe Quenet <Joe Quenet>,Quenet  Rebecca <rebecca.quenet@eds.com>,
-274,274,1,Susan Bailey,Re: Status,,11/10/2000,joe_quenet.pst,Joe Quenet <Joe Quenet>,Quenet  Rebecca <rebecca.quenet@eds.com>,
-275,275,1,Susan Bailey,Re: OK,,11/10/2000,joe_quenet.pst,Joe Quenet <Joe Quenet>,Quenet  Rebecca <rebecca.quenet@eds.com>,
-276,276,1,Susan Bailey,RE: OK,,11/10/2000,joe_quenet.pst,Joe Quenet <Joe Quenet>,Quenet  Rebecca <rebecca.quenet@eds.com>,
-277,277,1,Susan Bailey,RE: OK,,11/10/2000,joe_quenet.pst,Joe Quenet <Joe Quenet>,Quenet  Rebecca <rebecca.quenet@eds.com>,
-278,278,1,Susan Bailey,RE: OK,,11/10/2000,joe_quenet.pst,Joe Quenet <Joe Quenet>,Quenet  Rebecca <rebecca.quenet@eds.com>,
-279,279,1,Susan Bailey,,,11/13/2000,joe_quenet.pst,Joe Quenet <Joe Quenet>,knockj@epenergy.com <knockj@epenergy.com>,
-280,280,1,Susan Bailey,Re: Access to Markets,,11/13/2000,joe_quenet.pst,Joe Quenet <Joe Quenet>,Douglas W Burns <dwburns@cmsenergy.com>,
-281,281,1,Susan Bailey,Re: Access to Markets,,11/13/2000,joe_quenet.pst,Joe Quenet <Joe Quenet>,Douglas W Burns <dwburns@cmsenergy.com>,
-282,282,1,Susan Bailey,Re: NOTARY,,11/14/2000,joe_quenet.pst,Joe Quenet <Joe Quenet>,Quenet  Rebecca <rebecca.quenet@eds.com>,
-283,283,1,Susan Bailey,Re: Travel,,11/14/2000,joe_quenet.pst,Joe Quenet <Joe Quenet>,Quenet  Rebecca <rebecca.quenet@eds.com>,
-284,284,1,Susan Bailey,RE: NOTARY,,11/14/2000,joe_quenet.pst,Joe Quenet <Joe Quenet>,Quenet  Rebecca <rebecca.quenet@eds.com>,
-285,285,1,Susan Bailey,,,11/14/2000,joe_quenet.pst,Joe Quenet <Joe Quenet>,rebecca.quenet@eds.com <rebecca.quenet@eds.com>,
-286,286,1,Susan Bailey,Re:,,11/15/2000,joe_quenet.pst,Joe Quenet <Joe Quenet>,Paradise  Mike <Paradise.Mike@EPEnergy.com>,
-287,287,1,Susan Bailey,Re:,,11/15/2000,joe_quenet.pst,Joe Quenet <Joe Quenet>,Knock  John <Knock.John@EPEnergy.com>,
-288,288,1,Susan Bailey,Holiday Invitation,,11/17/2000,joe_quenet.pst,Joe Quenet <Joe Quenet>,rebecca.quenet@eds.com <rebecca.quenet@eds.com>,
-289,289,1,Susan Bailey,Re: Moving,,11/20/2000,joe_quenet.pst,Joe Quenet <Joe Quenet>,Quenet  Rebecca <rebecca.quenet@eds.com>,
-290,290,1,Susan Bailey,Re:,,11/20/2000,joe_quenet.pst,Joe Quenet <Joe Quenet>,Abel Rosenberg <ARosenberg@edisonmission.com>,
-291,291,1,Susan Bailey,Re:,,11/20/2000,joe_quenet.pst,Joe Quenet <Joe Quenet>,ARosenberg@edisonmission.com <ARosenberg@edisonmission.com>,
-292,292,1,Susan Bailey,go boilermakrers !,,11/20/2000,joe_quenet.pst,Joe Quenet <Joe Quenet>,DMurphy@utilicorp.com <DMurphy@utilicorp.com>,
-293,293,1,Susan Bailey,Re: My Boys,,11/21/2000,joe_quenet.pst,Joe Quenet <Joe Quenet>,Quenet  Rebecca <rebecca.quenet@eds.com>,
-294,294,1,Susan Bailey,Re: Travel,,11/21/2000,joe_quenet.pst,Joe Quenet <Joe Quenet>,Quenet  Rebecca <rebecca.quenet@eds.com>,
-295,295,1,Susan Bailey,RE: My Boys,,11/21/2000,joe_quenet.pst,Joe Quenet <Joe Quenet>,Quenet  Rebecca <rebecca.quenet@eds.com>,
-296,296,1,Susan Bailey,RE: go boilermakrers !,,11/21/2000,joe_quenet.pst,Joe Quenet <Joe Quenet>,Murphy  Dan <DMurphy@utilicorp.com>,
-297,297,1,Susan Bailey,RE: go boilermakrers !,,11/21/2000,joe_quenet.pst,Joe Quenet <Joe Quenet>,Murphy  Dan <DMurphy@utilicorp.com>,
-298,298,1,Susan Bailey,,,11/21/2000,joe_quenet.pst,Joe Quenet <Joe Quenet>,Paul J. Broderick <Paul.j.broderick@enron.com>,rstalford@enron.com <rstalford@enron.com>
-299,299,1,Susan Bailey,Re: Plans,,11/21/2000,joe_quenet.pst,Joe Quenet <Joe Quenet>,Quenet  Rebecca <rebecca.quenet@eds.com>,
-300,300,1,Susan Bailey,Re:,,11/22/2000,joe_quenet.pst,Joe Quenet <Joe Quenet>,McCabe  Jim <Jim.McCabe@conectiv.com>,
-301,301,1,Susan Bailey,Re: Fw: Mistress,,11/22/2000,joe_quenet.pst,Joe Quenet <Joe Quenet>,Stephanie Blackman <sblackman@futuresource.com>,
-302,302,1,Susan Bailey,Re: End of the World?,,11/22/2000,joe_quenet.pst,Joe Quenet <Joe Quenet>,Quenet  Rebecca <rebecca.quenet@eds.com>,
-303,303,1,Susan Bailey,Re: Fw: Mistress,,11/22/2000,joe_quenet.pst,Joe Quenet <Joe Quenet>,Kevino2@unocal.com <Kevino2@unocal.com>,
-304,304,1,Susan Bailey,RE: End of the World?,,11/22/2000,joe_quenet.pst,Joe Quenet <Joe Quenet>,Quenet  Rebecca <rebecca.quenet@eds.com>,
-305,305,1,Susan Bailey,RE: End of the World?,,11/22/2000,joe_quenet.pst,Joe Quenet <Joe Quenet>,Quenet  Rebecca <rebecca.quenet@eds.com>,
-306,306,1,Susan Bailey,weekend activities,,11/27/2000,joe_quenet.pst,Joe Quenet <Joe Quenet>,knockj@epenergy.com <knockj@epenergy.com>,
-307,307,1,Susan Bailey,weekend activities,,11/27/2000,joe_quenet.pst,Joe Quenet <Joe Quenet>,knockj@epenergy.com <knockj@epenergy.com>,
-308,308,1,Susan Bailey,Re: Christmas Party,,11/27/2000,joe_quenet.pst,Joe Quenet <Joe Quenet>,markg@amerexenergy.com <markg@amerexenergy.com>,
-309,309,1,Susan Bailey,Re: Resume-Brad Orosey,,11/28/2000,joe_quenet.pst,Joe Quenet <Joe Quenet>,Orosey  Cindy <Cindy.Orosey@COMPAQ.com>,
-310,310,1,Susan Bailey,Re: FW: Official Seal of the Democratic Party,,11/29/2000,joe_quenet.pst,Joe Quenet <Joe Quenet>,O'Keefe  Kevin <kevino2@unocal.com>,
-311,311,1,Susan Bailey,Re: Hey There,,12/4/2000,joe_quenet.pst,Joe Quenet <Joe Quenet>,KELLYBRYNNE@aol.com <KELLYBRYNNE@aol.com>,
-312,312,1,Susan Bailey,Re: Precious Cargo,,12/5/2000,joe_quenet.pst,Joe Quenet <Joe Quenet>,Quenet  Rebecca <rebecca.quenet@eds.com>,
-313,313,1,Susan Bailey,"up , up and away !!!!!!!!!",,12/6/2000,joe_quenet.pst,Joe Quenet <Joe Quenet>,Kevino2@unocal.com <Kevino2@unocal.com>,
-314,314,1,Susan Bailey,Re: Status,,12/7/2000,joe_quenet.pst,Joe Quenet <Joe Quenet>,Quenet  Rebecca <rebecca.quenet@eds.com>,
-315,315,1,Susan Bailey,"RE: up , up and away !!!!!!!!!",,12/7/2000,joe_quenet.pst,Joe Quenet <Joe Quenet>,O'Keefe  Kevin <kevino2@unocal.com>,
-316,316,1,Susan Bailey,Re: Question,,12/7/2000,joe_quenet.pst,Joe Quenet <Joe Quenet>,Quenet  Rebecca <rebecca.quenet@eds.com>,
-317,317,1,Susan Bailey,Re: Question,,12/7/2000,joe_quenet.pst,Joe Quenet <Joe Quenet>,Quenet  Rebecca <rebecca.quenet@eds.com>,
-318,318,1,Susan Bailey,Re: Cable,,12/7/2000,joe_quenet.pst,Joe Quenet <Joe Quenet>,Quenet  Rebecca <rebecca.quenet@eds.com>,
-319,319,1,Susan Bailey,Re: Stuff,,12/7/2000,joe_quenet.pst,Joe Quenet <Joe Quenet>,Quenet  Rebecca <rebecca.quenet@eds.com>,
-320,320,1,Susan Bailey,Re: Travel,,12/8/2000,joe_quenet.pst,Joe Quenet <Joe Quenet>,Quenet  Rebecca <rebecca.quenet@eds.com>,
-321,321,1,Susan Bailey,EOL (CUSTOMER) PASSWORD,,12/11/2000,joe_quenet.pst,Joe Quenet <Joe Quenet>,Stephanie Sever <Stephanie.Sever@enron.com>,k.presto@enron.com <k.presto@enron.com>
-322,322,1,Susan Bailey,Re: EOL (CUSTOMER) PASSWORD,,12/11/2000,joe_quenet.pst,Joe Quenet <Joe Quenet>,Stephanie Sever <Stephanie Sever>,
-323,323,1,Susan Bailey,Re: FW: (no subject),,12/11/2000,joe_quenet.pst,Joe Quenet <Joe Quenet>,O'Keefe  Kevin <kevino2@unocal.com>,
-324,324,1,Susan Bailey,Re: Travel,,12/11/2000,joe_quenet.pst,Joe Quenet <Joe Quenet>,Quenet  Rebecca <rebecca.quenet@eds.com>,
-325,325,1,Susan Bailey,A friend wanted you to see this!,,12/12/2000,joe_quenet.pst,Joe Quenet <Joe Quenet>,Chris Dorland <CHRIS.DORLAND@ENRON.COM>,
-326,326,1,Susan Bailey,A friend wanted you to see this!,,12/12/2000,joe_quenet.pst,Joe Quenet <Joe Quenet>,KNOCKJ@EPENERGY.COM <KNOCKJ@EPENERGY.COM>,
-327,327,1,Susan Bailey,Re: Weather what Weather??,,12/13/2000,joe_quenet.pst,Joe Quenet <Joe Quenet>,Quenet  Rebecca <rebecca.quenet@eds.com>,
-328,328,1,Susan Bailey,RE: Weather what Weather??,,12/13/2000,joe_quenet.pst,Joe Quenet <Joe Quenet>,Quenet  Rebecca <rebecca.quenet@eds.com>,
-329,329,1,Susan Bailey,RE: Weather what Weather??,,12/13/2000,joe_quenet.pst,Joe Quenet <Joe Quenet>,Quenet  Rebecca <rebecca.quenet@eds.com>,
-330,330,1,Susan Bailey,ISO-NE failure to mitigate ICAP market -- Release of ISO NE confidential information,,12/13/2000,joe_quenet.pst,Thane Twiggs <Thane Twiggs>,Jeffery Ader <Jeffery Ader>; Mark Bernstein <Mark Bernstein>; Scott Healy <Scott Healy>; Janelle Scheuer <Janelle Scheuer>; Tom Dutta <Tom Dutta>; Dana <Dana>,
-331,331,1,Susan Bailey,NEPOOL refusal to use resources external to New England,,12/13/2000,joe_quenet.pst,Thane Twiggs <Thane Twiggs>,Jeffery Ader <Jeffery Ader>; Mark Bernstein <Mark Bernstein>; Scott Healy <Scott Healy>; Janelle Scheuer <Janelle Scheuer>; Tom Dutta <Tom Dutta>; Dana <Dana>,
-332,332,1,Susan Bailey,PJM RTO Filing/  PJM Answer to Motion for Defer the FERC ruling on RTO Status,,12/13/2000,joe_quenet.pst,Thane Twiggs <Thane Twiggs>,Jeffery Ader <Jeffery Ader>; Mark Bernstein <Mark Bernstein>; Scott Healy <Scott Healy>; Janelle Scheuer <Janelle Scheuer>; Tom Dutta <Tom Dutta>; Dana <Dana>,
-333,333,1,Susan Bailey,PIRA's Gas Flash Weekly 12/13/00,,12/13/2000,joe_quenet.pst,George Hopley <George Hopley>,Kevin M Presto <Kevin M Presto>; Rogers Herndon <Rogers Herndon>; Doug Gilbert-Smith <Doug Gilbert-Smith>; Fletcher J Sturm <Fletcher J Sturm>; Joe Quenet <Joe Quenet>,
-400,333,3,Susan Bailey,,aga121300.pdf,12/13/2000,joe_quenet.pst,,,
-1,1,3,Phillip Allen,2- SURVEY/INFORMATION EMAIL,,5/2/2001,phillip_allen.pst,Phillip K Allen <Phillip K Allen>,Ina Rangel <Ina Rangel/HOU/ECT@ECT>,
-2,2,3,Phillip Allen,4-URGENT - OWA Please print this now.,,5/2/2001,phillip_allen.pst,Phillip K Allen <Phillip K Allen>,Ina Rangel <Ina Rangel/HOU/ECT@ECT>,
-3,3,3,Phillip Allen,2- SURVEY/INFORMATION EMAIL,,5/2/2001,phillip_allen.pst,Phillip K Allen <Phillip K Allen>,Ina Rangel <Ina Rangel/HOU/ECT@ECT>,
-4,4,3,Phillip Allen,4-URGENT - OWA Please print this now.,,5/2/2001,phillip_allen.pst,Phillip K Allen <Phillip K Allen>,Ina Rangel <Ina Rangel/HOU/ECT@ECT>,
-5,5,3,Phillip Allen,2- SURVEY/INFORMATION EMAIL,,5/2/2001,phillip_allen.pst,Phillip K Allen <Phillip K Allen>,Ina Rangel <Ina Rangel/HOU/ECT@ECT>,
-6,6,2,Phillip Allen,Re: 2- SURVEY - PHILLIP ALLEN,,5/2/2001,phillip_allen.pst,Phillip K Allen <Phillip K Allen>,Tori Kuykendall <Tori Kuykendall/HOU/ECT@ECT>,
-334,6,0,Phillip Allen,,#1.dat,5/2/2001,phillip_allen.pst,,,
-7,7,2,Phillip Allen,Re: 2- SURVEY - PHILLIP ALLEN,,5/2/2001,phillip_allen.pst,Phillip K Allen <Phillip K Allen>,Tori Kuykendall <Tori Kuykendall/HOU/ECT@ECT>,
-335,7,0,Phillip Allen,,#1.dat,5/2/2001,phillip_allen.pst,,,
-8,8,2,Phillip Allen,Re: 2- SURVEY - PHILLIP ALLEN,,5/2/2001,phillip_allen.pst,Phillip K Allen <Phillip K Allen>,Tori Kuykendall <Tori Kuykendall/HOU/ECT@ECT>,
-336,8,0,Phillip Allen,,#1.dat,5/2/2001,phillip_allen.pst,,,
-9,9,1,Phillip Allen,,,5/2/2001,phillip_allen.pst,Phillip K Allen <Phillip K Allen>,James D Steffes <James D Steffes/NA/Enron@Enron>,
-10,10,1,Phillip Allen,,,5/2/2001,phillip_allen.pst,Phillip K Allen <Phillip K Allen>,James D Steffes <James D Steffes/NA/Enron@Enron>,
-11,11,1,Phillip Allen,,,5/2/2001,phillip_allen.pst,Phillip K Allen <Phillip K Allen>,James D Steffes <James D Steffes/NA/Enron@Enron>,
-12,12,1,Phillip Allen,,,5/4/2001,phillip_allen.pst,Phillip K Allen <Phillip K Allen>,rlehmann <rlehmann@yahoo.com>,
-13,13,1,Phillip Allen,,,5/4/2001,phillip_allen.pst,Phillip K Allen <Phillip K Allen>,rlehmann <rlehmann@yahoo.com>,
-14,14,1,Phillip Allen,,,5/4/2001,phillip_allen.pst,Phillip K Allen <Phillip K Allen>,rlehmann <rlehmann@yahoo.com>,
-15,15,1,Phillip Allen,,,5/4/2001,phillip_allen.pst,Phillip K Allen <Phillip K Allen>,Tim Heizenrader <Tim Heizenrader/Enron@EnronXGate>,
-16,16,1,Phillip Allen,,,5/4/2001,phillip_allen.pst,Phillip K Allen <Phillip K Allen>,Tim Heizenrader <Tim Heizenrader/Enron@EnronXGate>,
-17,17,1,Phillip Allen,,,5/4/2001,phillip_allen.pst,Phillip K Allen <Phillip K Allen>,Tim Heizenrader <Tim Heizenrader/Enron@EnronXGate>,
-18,18,1,Phillip Allen,Re:,,5/4/2001,phillip_allen.pst,Phillip K Allen <Phillip K Allen>,John J Lavorato <John J Lavorato/ENRON@enronXgate@ENRON>,
-19,19,1,Phillip Allen,Re:,,5/4/2001,phillip_allen.pst,Phillip K Allen <Phillip K Allen>,John J Lavorato <John J Lavorato/ENRON@enronXgate@ENRON>,
-20,20,1,Phillip Allen,Re:,,5/4/2001,phillip_allen.pst,Phillip K Allen <Phillip K Allen>,John J Lavorato <John J Lavorato/ENRON@enronXgate@ENRON>,
-21,21,2,Phillip Allen,Re: Western Wholesale Activities - Gas & Power Conf. Call Privileged & Confidential,,5/5/2001,phillip_allen.pst,Phillip K Allen <Phillip K Allen>,Mike Grigsby <Mike Grigsby/HOU/ECT@ECT>; Keith Holst <Keith Holst/HOU/ECT@ect>,
-337,21,4,Phillip Allen,,Western Wholesale FERC Issues.doc,5/5/2001,phillip_allen.pst,,,
-22,22,2,Phillip Allen,Re: Western Wholesale Activities - Gas & Power Conf. Call Privileged & Confidential,,5/5/2001,phillip_allen.pst,Phillip K Allen <Phillip K Allen>,Mike Grigsby <Mike Grigsby/HOU/ECT@ECT>; Keith Holst <Keith Holst/HOU/ECT@ect>,
-438,22,4,Phillip Allen,,Western Wholesale FERC Issues.doc,5/5/2001,phillip_allen.pst,,,
-23,23,2,Phillip Allen,Re: Western Wholesale Activities - Gas & Power Conf. Call Privileged & Confidential,,5/5/2001,phillip_allen.pst,Phillip K Allen <Phillip K Allen>,Mike Grigsby <Mike Grigsby/HOU/ECT@ECT>; Keith Holst <Keith Holst/HOU/ECT@ect>,
-439,23,4,Phillip Allen,,Western Wholesale FERC Issues.doc,5/5/2001,phillip_allen.pst,,,
-24,24,2,Phillip Allen,California Update 5/4/01,,5/7/2001,phillip_allen.pst,Phillip K Allen <Phillip K Allen>,Keith Holst <Keith Holst/HOU/ECT@ect>,
-25,25,2,Phillip Allen,California Update 5/4/01,,5/7/2001,phillip_allen.pst,Phillip K Allen <Phillip K Allen>,Keith Holst <Keith Holst/HOU/ECT@ect>,
-26,26,2,Phillip Allen,California Update 5/4/01,,5/7/2001,phillip_allen.pst,Phillip K Allen <Phillip K Allen>,Keith Holst <Keith Holst/HOU/ECT@ect>,
-27,27,2,Phillip Allen,Re: Western Wholesale Activities - Gas & Power Conf. Call Privileged & Confidential,,5/7/2001,phillip_allen.pst,Phillip K Allen <Phillip K Allen>,Matthew Lenhart <Matthew Lenhart/HOU/ECT@ECT>; Jay Reitmeyer <Jay Reitmeyer/HOU/ECT@ECT>,
-338,27,4,Phillip Allen,,Western Wholesale FERC Issues.doc,5/7/2001,phillip_allen.pst,,,
-28,28,2,Phillip Allen,Re: Western Wholesale Activities - Gas & Power Conf. Call Privileged & Confidential,,5/7/2001,phillip_allen.pst,Phillip K Allen <Phillip K Allen>,Matthew Lenhart <Matthew Lenhart/HOU/ECT@ECT>; Jay Reitmeyer <Jay Reitmeyer/HOU/ECT@ECT>,
-440,28,4,Phillip Allen,,Western Wholesale FERC Issues.doc,5/7/2001,phillip_allen.pst,,,
-29,29,2,Phillip Allen,Re: Western Wholesale Activities - Gas & Power Conf. Call Privileged & Confidential,,5/7/2001,phillip_allen.pst,Phillip K Allen <Phillip K Allen>,Matthew Lenhart <Matthew Lenhart/HOU/ECT@ECT>; Jay Reitmeyer <Jay Reitmeyer/HOU/ECT@ECT>,
-441,29,4,Phillip Allen,,Western Wholesale FERC Issues.doc,5/7/2001,phillip_allen.pst,,,
-30,30,1,Phillip Allen,California Summary,,5/8/2001,phillip_allen.pst,Phillip K Allen <Phillip K Allen>,stanley.horton <stanley.horton@enron.com>; dmccarty <dmccarty@enron.com>,
-339,30,7,Phillip Allen,,California Summary.doc,5/8/2001,phillip_allen.pst,,,
-340,30,3,Phillip Allen,,California Summary Plus.doc,5/8/2001,phillip_allen.pst,,,
-31,31,1,Phillip Allen,California Summary,,5/8/2001,phillip_allen.pst,Phillip K Allen <Phillip K Allen>,stanley.horton <stanley.horton@enron.com>; dmccarty <dmccarty@enron.com>,
-442,31,7,Phillip Allen,,California Summary.doc,5/8/2001,phillip_allen.pst,,,
-444,31,3,Phillip Allen,,California Summary Plus.doc,5/8/2001,phillip_allen.pst,,,
-32,32,1,Phillip Allen,California Summary,,5/8/2001,phillip_allen.pst,Phillip K Allen <Phillip K Allen>,stanley.horton <stanley.horton@enron.com>; dmccarty <dmccarty@enron.com>,
-443,32,7,Phillip Allen,,California Summary.doc,5/8/2001,phillip_allen.pst,,,
-445,32,3,Phillip Allen,,California Summary Plus.doc,5/8/2001,phillip_allen.pst,,,
-33,33,1,Phillip Allen,Re:,,5/10/2001,phillip_allen.pst,Phillip K Allen <Phillip K Allen>,John J Lavorato <John J Lavorato/ENRON@enronXgate@ENRON>,
-34,34,1,Phillip Allen,Re:,,5/10/2001,phillip_allen.pst,Phillip K Allen <Phillip K Allen>,John J Lavorato <John J Lavorato/ENRON@enronXgate@ENRON>,
-35,35,1,Phillip Allen,Re:,,5/10/2001,phillip_allen.pst,Phillip K Allen <Phillip K Allen>,John J Lavorato <John J Lavorato/ENRON@enronXgate@ENRON>,
-36,36,1,Phillip Allen,,,5/10/2001,phillip_allen.pst,Phillip K Allen <Phillip K Allen>,jsmith <jsmith@austintx.com>,
-37,37,1,Phillip Allen,,,5/10/2001,phillip_allen.pst,Phillip K Allen <Phillip K Allen>,jsmith <jsmith@austintx.com>,
-38,38,1,Phillip Allen,,,5/10/2001,phillip_allen.pst,Phillip K Allen <Phillip K Allen>,jsmith <jsmith@austintx.com>,
-39,39,1,Phillip Allen,,,5/11/2001,phillip_allen.pst,Phillip K Allen <Phillip K Allen>,jsmith <jsmith@austintx.com>,
-40,40,1,Phillip Allen,,,5/11/2001,phillip_allen.pst,Phillip K Allen <Phillip K Allen>,jsmith <jsmith@austintx.com>,
-41,41,1,Phillip Allen,,,5/11/2001,phillip_allen.pst,Phillip K Allen <Phillip K Allen>,jsmith <jsmith@austintx.com>,
-42,42,3,Phillip Allen,Re: 2- SURVEY/INFORMATION EMAIL 5-14- 01,,5/14/2001,phillip_allen.pst,Phillip K Allen <Phillip K Allen>,Outlook Migration Team <Outlook Migration Team/Corp/Enron@ENRON>,
-43,43,3,Phillip Allen,Re: 2- SURVEY/INFORMATION EMAIL 5-14- 01,,5/14/2001,phillip_allen.pst,Phillip K Allen <Phillip K Allen>,Outlook Migration Team <Outlook Migration Team/Corp/Enron@ENRON>,
-44,44,3,Phillip Allen,Re: 2- SURVEY/INFORMATION EMAIL 5-14- 01,,5/14/2001,phillip_allen.pst,Phillip K Allen <Phillip K Allen>,Outlook Migration Team <Outlook Migration Team/Corp/Enron@ENRON>,
-45,45,1,Phillip Allen,,,5/15/2001,phillip_allen.pst,Phillip K Allen <Phillip K Allen>,Tim Belden <Tim Belden/Enron@EnronXGate>,
-341,45,28,Phillip Allen,,Master0509.xls,5/15/2001,phillip_allen.pst,,,
-46,46,1,Phillip Allen,,,5/15/2001,phillip_allen.pst,Phillip K Allen <Phillip K Allen>,Tim Belden <Tim Belden/Enron@EnronXGate>,
-446,46,28,Phillip Allen,,Master0509.xls,5/15/2001,phillip_allen.pst,,,
-47,47,1,Phillip Allen,,,5/15/2001,phillip_allen.pst,Phillip K Allen <Phillip K Allen>,Tim Belden <Tim Belden/Enron@EnronXGate>,
-447,47,28,Phillip Allen,,Master0509.xls,5/15/2001,phillip_allen.pst,,,
-48,48,2,Susan Bailey,RE: assignment,,11/30/2002,susan_bailey.pst,,Breslau <Breslau>; Craig </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Cbresla>; Williams <Williams>; Jason R <Jason R>,
-49,49,1,Susan Bailey,Enron Corp. Guaranty,,11/30/2002,susan_bailey.pst,,Richardson <Richardson>; Cindy </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Crichar1>,
-50,50,2,Susan Bailey,FW: assignment,,11/30/2002,susan_bailey.pst,,Panus <Panus>; Stephanie </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Spanus>,
-342,50,4,Susan Bailey,,Assignment-sample doc.doc,11/30/2002,susan_bailey.pst,,,
-51,51,2,Susan Bailey,FW: assignment,,11/30/2002,susan_bailey.pst,,Panus <Panus>; Stephanie </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Spanus>,
-448,51,4,Susan Bailey,,Assignment-sample doc.doc,11/30/2002,susan_bailey.pst,,,
-52,52,1,Susan Bailey,Enron Corp.,,11/30/2002,susan_bailey.pst,,Abrams <Abrams>; Clement </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Cabrams>,Hendry <Hendry>; Brent </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Bhendry>; Vanek <Vanek>; Darren </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Dvanek>
-53,53,2,Susan Bailey,"Commercial Risk Reinsurance Company Limited (""CRRC"")",,11/30/2002,susan_bailey.pst,,Rohauer <Rohauer>; Tanya </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Trohaue>,Koehler <Koehler>; Anne C. </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Akoehle>
-345,53,31,Susan Bailey,,(commercial risk reinsurance 11-26-01)master agmt. redline.doc,11/30/2002,susan_bailey.pst,,,
-54,54,1,Susan Bailey,"Merced Irrigation District (""Merced"")",,11/30/2002,susan_bailey.pst,,Rosman <Rosman>; Stewart </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Srosman>; Calger <Calger>; Christopher <Christopher>,Shackleton <Shackleton>; Sara </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Sshackl>; Sacks <Sacks>; Edward </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Esacks>
-55,55,1,Susan Bailey,PCS Nitorgen Fertilizer LP,,11/30/2002,susan_bailey.pst,,Ornelas <Ornelas>; Bianca </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Bornelas>,Breslau <Breslau>; Craig </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Cbresla>; Williams <Williams>; Jason R <Jason R>
-56,56,1,Susan Bailey,PCS Nitorgen Fertilizer LP,,11/30/2002,susan_bailey.pst,,Ornelas <Ornelas>; Bianca </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Bornelas>,Breslau <Breslau>; Craig </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Cbresla>; Williams <Williams>; Jason R <Jason R>
-57,57,1,Susan Bailey,Enron Corp.,,11/30/2002,susan_bailey.pst,,Abrams <Abrams>; Clement </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Cabrams>,Hendry <Hendry>; Brent </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Bhendry>; Vanek <Vanek>; Darren </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Dvanek>
-58,58,1,Susan Bailey,FW: Chiricahua Notes,,11/30/2002,susan_bailey.pst,,Swafford <Swafford>; John </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Jswaffo>,Stoler <Stoler>; Lou </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Lstolle>; Korkmas <Korkmas>; Deb </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Dkorkma>
-401,58,2,Susan Bailey,,Demand Note1.doc,11/30/2002,susan_bailey.pst,,,
-402,58,2,Susan Bailey,,Demand Note10.doc,11/30/2002,susan_bailey.pst,,,
-403,58,2,Susan Bailey,,Demand Note11.doc,11/30/2002,susan_bailey.pst,,,
-404,58,2,Susan Bailey,,Demand Note12.doc,11/30/2002,susan_bailey.pst,,,
-405,58,2,Susan Bailey,,Demand Note13.doc,11/30/2002,susan_bailey.pst,,,
-406,58,2,Susan Bailey,,Demand Note14.doc,11/30/2002,susan_bailey.pst,,,
-407,58,2,Susan Bailey,,Demand Note15.doc,11/30/2002,susan_bailey.pst,,,
-408,58,2,Susan Bailey,,Demand Note16.doc,11/30/2002,susan_bailey.pst,,,
-409,58,2,Susan Bailey,,Demand Note17.doc,11/30/2002,susan_bailey.pst,,,
-410,58,2,Susan Bailey,,Demand Note2.doc,11/30/2002,susan_bailey.pst,,,
-411,58,2,Susan Bailey,,Demand Note3.doc,11/30/2002,susan_bailey.pst,,,
-412,58,2,Susan Bailey,,Demand Note4.doc,11/30/2002,susan_bailey.pst,,,
-413,58,2,Susan Bailey,,Demand Note5.doc,11/30/2002,susan_bailey.pst,,,
-414,58,2,Susan Bailey,,Demand Note6.doc,11/30/2002,susan_bailey.pst,,,
-415,58,2,Susan Bailey,,Demand Note7.doc,11/30/2002,susan_bailey.pst,,,
-416,58,2,Susan Bailey,,Demand Note8.doc,11/30/2002,susan_bailey.pst,,,
-417,58,2,Susan Bailey,,Demand Note9.doc,11/30/2002,susan_bailey.pst,,,
-59,59,2,Susan Bailey,RE: assignment,,11/30/2002,susan_bailey.pst,,Breslau <Breslau>; Craig </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Cbresla>; Williams <Williams>; Jason R <Jason R>,
-60,60,1,Susan Bailey,Enron Corp. Guaranty,,11/30/2002,susan_bailey.pst,,Richardson <Richardson>; Cindy </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Crichar1>,
-61,61,1,Susan Bailey,Jackson National Life-- Quarterly Premium,,11/30/2002,susan_bailey.pst,,dsciullo@bw-legal.com <dsciullo@bw-legal.com>; CPTDOUGIE@aol.com <CPTDOUGIE@aol.com>,
-62,62,1,Susan Bailey,"Millennium Gas Marketing, LLC",,10/30/2001,susan_bailey.pst,Bailey <Bailey>,Ornelas <Ornelas>; Bianca </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Bornelas>; Bell <Bell>; Jean </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Jbell>,Espinoza <Espinoza>; Veronica </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Vespino>; Landry <Landry>; Shemeika <Shemeika>
-421,62,6,Susan Bailey,,196conf(millennium gas marketing).doc,10/30/2001,susan_bailey.pst,,,
-63,63,1,Susan Bailey,"Millennium Gas Marketing, LLC",,10/30/2001,susan_bailey.pst,Bailey <Bailey>,Ornelas <Ornelas>; Bianca </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Bornelas>; Bell <Bell>; Jean </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Jbell>,Espinoza <Espinoza>; Veronica </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Vespino>; Landry <Landry>; Shemeika <Shemeika>
-449,63,6,Susan Bailey,,196conf(millennium gas marketing).doc,10/30/2001,susan_bailey.pst,,,
-64,64,1,Susan Bailey,Re: Deposit -- $73.08,,11/13/2001,susan_bailey.pst,CPTDOUGIE@aol.com <CPTDOUGIE@aol.com>,Susan Bailey <Susan.Bailey@enron.com>,
-422,64,2,Susan Bailey,,Four Star Check Book Register October.xls,11/13/2001,susan_bailey.pst,,,
-65,65,1,Susan Bailey,Re: Deposit -- $73.08,,11/13/2001,susan_bailey.pst,CPTDOUGIE@aol.com <CPTDOUGIE@aol.com>,Susan Bailey <Susan.Bailey@enron.com>,
-450,65,2,Susan Bailey,,Four Star Check Book Register October.xls,11/13/2001,susan_bailey.pst,,,
-66,66,1,Susan Bailey,Fidelity Container Corporation (YJ4529.1),,11/16/2001,susan_bailey.pst,Bailey <Bailey>,Bell <Bell>; Rebecca </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Rbell>,Monterrey <Monterrey>; Maribel </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Mmonterr>; Landry <Landry>; Shemeika <Shemeika>
-423,66,10,Susan Bailey,,197conf(fidelity container).doc,11/16/2001,susan_bailey.pst,,,
-67,67,1,Susan Bailey,Fidelity Container Corporation (YJ4529.1),,11/16/2001,susan_bailey.pst,Bailey <Bailey>,Bell <Bell>; Rebecca </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Rbell>,Monterrey <Monterrey>; Maribel </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Mmonterr>; Landry <Landry>; Shemeika <Shemeika>
-451,67,10,Susan Bailey,,197conf(fidelity container).doc,11/16/2001,susan_bailey.pst,,,
-68,68,1,Susan Bailey,Enron Corp. Guaranty,,11/16/2001,susan_bailey.pst,Bailey <Bailey>,Richardson <Richardson>; Cindy </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Crichar1>,
-482,68,4,Susan Bailey,,197conf(enron)guaranty.doc,11/16/2001,susan_bailey.pst,,,
-69,69,4,Susan Bailey,SUPPLEMENTAL Weekend Outage Report for 11-16-01 through 11-18-01,,11/16/2001,susan_bailey.pst,Enron Announcements/Corp/Enron@ENRON <IMCEANOTES-Enron+20Announcements_Corp_Enron+40ENRON@ENRON.com>,Houston Outage Report@ENRON <IMCEANOTES-Houston+20Outage+20Report+40ENRON@ENRON.com>,
-70,70,4,Susan Bailey,SUPPLEMENTAL Weekend Outage Report for 11-16-01 through 11-18-01,,11/16/2001,susan_bailey.pst,Enron Announcements/Corp/Enron@ENRON <IMCEANOTES-Enron+20Announcements_Corp_Enron+40ENRON@ENRON.com>,Houston Outage Report@ENRON <IMCEANOTES-Houston+20Outage+20Report+40ENRON@ENRON.com>,
-71,71,1,Susan Bailey,"Legal\Credit Meeting -- Tuesday, November 20th",,11/17/2001,susan_bailey.pst,Bailey <Bailey>,Brackett <Brackett>; Debbie R. </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Dbracke>; Bradford <Bradford>; William <William>,Gonzalez <Gonzalez>; Esmeralda </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Egonzal4>
-72,72,1,Susan Bailey,"Legal\Credit Meeting -- Tuesday, November 20th",,11/17/2001,susan_bailey.pst,Bailey <Bailey>,Brackett <Brackett>; Debbie R. </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Dbracke>; Bradford <Bradford>; William <William>,Gonzalez <Gonzalez>; Esmeralda </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Egonzal4>
-73,73,1,Susan Bailey,New Schedule,,11/17/2001,susan_bailey.pst,Bailey <Bailey>,Pryor <Pryor>; Tony </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Tpryor>; Brown <Brown>; William E. </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Bbrown4>,
-424,73,53,Susan Bailey,,isda-schedule(multicurrency11-14-01).doc,11/17/2001,susan_bailey.pst,,,
-74,74,1,Susan Bailey,New Schedule,,11/17/2001,susan_bailey.pst,Bailey <Bailey>,Pryor <Pryor>; Tony </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Tpryor>; Brown <Brown>; William E. </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Bbrown4>,
-452,74,53,Susan Bailey,,isda-schedule(multicurrency11-14-01).doc,11/17/2001,susan_bailey.pst,,,
-75,75,1,Susan Bailey,New Schedule,,11/17/2001,susan_bailey.pst,Bailey <Bailey>,Pryor <Pryor>; Tony </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Tpryor>; Brown <Brown>; William E. </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Bbrown4>,
-425,75,53,Susan Bailey,,isda-schedule(multicurrency11-14-01).doc,11/17/2001,susan_bailey.pst,,,
-426,75,1,Susan Bailey,,setoff(compare).doc,11/17/2001,susan_bailey.pst,,,
-76,76,1,Susan Bailey,New Schedule,,11/17/2001,susan_bailey.pst,Bailey <Bailey>,Pryor <Pryor>; Tony </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Tpryor>; Brown <Brown>; William E. </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Bbrown4>,
-453,76,53,Susan Bailey,,isda-schedule(multicurrency11-14-01).doc,11/17/2001,susan_bailey.pst,,,
-454,76,1,Susan Bailey,,setoff(compare).doc,11/17/2001,susan_bailey.pst,,,
-77,77,2,Susan Bailey,RE: Cash Flow -- Sciullo Entities,,11/17/2001,susan_bailey.pst,Bailey <Bailey>,'Dan Sciullo' <dsciullo@bw-legal.com>,
-78,78,2,Susan Bailey,RE: Cash Flow -- Sciullo Entities,,11/17/2001,susan_bailey.pst,Bailey <Bailey>,'Dan Sciullo' <dsciullo@bw-legal.com>,
-79,79,1,Susan Bailey,Enron Kids - EWS Legal child adoption,,11/17/2001,susan_bailey.pst,Truss  Stephanie <Stephanie.Truss@ENRON.com>,Adams  Suzanne <Suzanne.Adams@ENRON.com>; Alfaro  Renee <Renee.Alfaro@ENRON.com>,
-427,79,4,Susan Bailey,,Adopt a Kid.pps,11/17/2001,susan_bailey.pst,,,
-80,80,1,Susan Bailey,Enron Kids - EWS Legal child adoption,,11/17/2001,susan_bailey.pst,Truss  Stephanie <Stephanie.Truss@ENRON.com>,Adams  Suzanne <Suzanne.Adams@ENRON.com>; Alfaro  Renee <Renee.Alfaro@ENRON.com>,
-455,80,4,Susan Bailey,,Adopt a Kid.pps,11/17/2001,susan_bailey.pst,,,
-81,81,1,Susan Bailey,Enron In Action 11.19.01,,11/19/2001,susan_bailey.pst,Enron Announcements/Corp/Enron@ENRON <IMCEANOTES-Enron+20Announcements_Corp_Enron+40ENRON@ENRON.com>,All Enron Houston@ENRON <IMCEANOTES-All+20Enron+20Houston+40ENRON@ENRON.com>,
-428,81,1,Susan Bailey,,Enron in Action Submission Form.doc,11/19/2001,susan_bailey.pst,,,
-82,82,1,Susan Bailey,Enron In Action 11.19.01,,11/19/2001,susan_bailey.pst,Enron Announcements/Corp/Enron@ENRON <IMCEANOTES-Enron+20Announcements_Corp_Enron+40ENRON@ENRON.com>,All Enron Houston@ENRON <IMCEANOTES-All+20Enron+20Houston+40ENRON@ENRON.com>,
-456,82,1,Susan Bailey,,Enron in Action Submission Form.doc,11/19/2001,susan_bailey.pst,,,
-83,83,2,Susan Bailey,Bin Laden,,11/19/2001,susan_bailey.pst,Harris  Stephanie J <Stephanie.Harris@ENRON.com>,Arlis Schulte (E-mail) <olshep@interlinkcc.com>; Betty Ladish (E-mail) <bettyladish@yahoo.com>,
-84,84,2,Susan Bailey,Bin Laden,,11/19/2001,susan_bailey.pst,Harris  Stephanie J <Stephanie.Harris@ENRON.com>,Arlis Schulte (E-mail) <olshep@interlinkcc.com>; Betty Ladish (E-mail) <bettyladish@yahoo.com>,
-85,85,1,Susan Bailey,Lunch today,,11/19/2001,susan_bailey.pst,Harris  Stephanie J <Stephanie.Harris@ENRON.com>,Bailey  Susan <Susan.Bailey@ENRON.com>,
-86,86,1,Susan Bailey,Lunch today,,11/19/2001,susan_bailey.pst,Harris  Stephanie J <Stephanie.Harris@ENRON.com>,Bailey  Susan <Susan.Bailey@ENRON.com>,
-87,87,1,Susan Bailey,Cheryl Nelson - In around 11:30 am today,,11/19/2001,susan_bailey.pst,Farrell  Keegan <Keegan.Farrell@ENRON.com>,Heitmeyer  Kayla <Kayla.Heitmeyer@ENRON.com>; Bailey  Susan <Susan.Bailey@ENRON.com>,
-88,88,1,Susan Bailey,Cheryl Nelson - In around 11:30 am today,,11/19/2001,susan_bailey.pst,Farrell  Keegan <Keegan.Farrell@ENRON.com>,Heitmeyer  Kayla <Kayla.Heitmeyer@ENRON.com>; Bailey  Susan <Susan.Bailey@ENRON.com>,
-89,89,1,Susan Bailey,Lunch,,11/19/2001,susan_bailey.pst,Harris  Stephanie J <Stephanie.Harris@ENRON.com>,Bailey  Susan <Susan.Bailey@ENRON.com>,
-90,90,1,Susan Bailey,Lunch,,11/19/2001,susan_bailey.pst,Harris  Stephanie J <Stephanie.Harris@ENRON.com>,Bailey  Susan <Susan.Bailey@ENRON.com>,
-91,91,1,Susan Bailey,American Commercial Barge Line LLC  annex b,,11/19/2001,susan_bailey.pst,Mendoza  Nidia <Nidia.Mendoza@ENRON.com>,Bailey  Susan <Susan.Bailey@ENRON.com>; Boyd  Samantha <Samantha.Boyd@ENRON.com>,Ornelas  Bianca <Bianca.Ornelas@ENRON.com>; Anderson  Diane <Diane.Anderson@ENRON.com>
-429,91,13,Susan Bailey,,American Commercial Barge Line LLC annex b 11-19-01.xls,11/19/2001,susan_bailey.pst,,,
-92,92,1,Susan Bailey,American Commercial Barge Line LLC  annex b,,11/19/2001,susan_bailey.pst,Mendoza  Nidia <Nidia.Mendoza@ENRON.com>,Bailey  Susan <Susan.Bailey@ENRON.com>; Boyd  Samantha <Samantha.Boyd@ENRON.com>,Ornelas  Bianca <Bianca.Ornelas@ENRON.com>; Anderson  Diane <Diane.Anderson@ENRON.com>
-457,92,13,Susan Bailey,,American Commercial Barge Line LLC annex b 11-19-01.xls,11/19/2001,susan_bailey.pst,,,
-93,93,1,Susan Bailey,Out of Office AutoReply:,,11/19/2001,susan_bailey.pst,Jones  Tana <Tana.Jones@ENRON.com>,Bailey  Susan <Susan.Bailey@ENRON.com>,
-94,94,1,Susan Bailey,Out of Office AutoReply:,,11/19/2001,susan_bailey.pst,Jones  Tana <Tana.Jones@ENRON.com>,Bailey  Susan <Susan.Bailey@ENRON.com>,
-95,95,1,Susan Bailey,FW: Forest Oil,,11/19/2001,susan_bailey.pst,Anderson  Diane <Diane.Anderson@ENRON.com>,Bailey  Susan <Susan.Bailey@ENRON.com>,
-96,96,1,Susan Bailey,FW: Forest Oil,,11/19/2001,susan_bailey.pst,Anderson  Diane <Diane.Anderson@ENRON.com>,Bailey  Susan <Susan.Bailey@ENRON.com>,
-97,97,1,Susan Bailey,"BP Capital Energy Equity International Holding 1, LP",,11/19/2001,susan_bailey.pst,Sonnonstine  Max <Max.Sonnonstine@ENRON.com>,Panus  Stephanie <Stephanie.Panus@ENRON.com>; Boyd  Samantha <Samantha.Boyd@ENRON.com>,
-430,97,4,Susan Bailey,,BP Capital International Fund (industrial).xls,11/19/2001,susan_bailey.pst,,,
-98,98,1,Susan Bailey,"BP Capital Energy Equity International Holding 1, LP",,11/19/2001,susan_bailey.pst,Sonnonstine  Max <Max.Sonnonstine@ENRON.com>,Panus  Stephanie <Stephanie.Panus@ENRON.com>; Boyd  Samantha <Samantha.Boyd@ENRON.com>,
-458,98,4,Susan Bailey,,BP Capital International Fund (industrial).xls,11/19/2001,susan_bailey.pst,,,
-99,99,2,Susan Bailey,"Earn 1,000 bonus Starpoints each night",,11/19/2001,susan_bailey.pst,Starwood Preferred Guest <Starwood@spg.0mm.com>,Susan Bailey <susan.bailey@enron.com>,
-100,100,2,Susan Bailey,"Earn 1,000 bonus Starpoints each night",,11/19/2001,susan_bailey.pst,Starwood Preferred Guest <Starwood@spg.0mm.com>,Susan Bailey <susan.bailey@enron.com>,
-101,101,1,Susan Bailey,Parent Guarantee,,11/19/2001,susan_bailey.pst,Monterrey  Maribel <Maribel.Monterrey@ENRON.com>,Bailey  Susan <Susan.Bailey@ENRON.com>; Boyd  Samantha <Samantha.Boyd@ENRON.com>,Heard  Marie <Marie.Heard@ENRON.com>
-102,102,1,Susan Bailey,Parent Guarantee,,11/19/2001,susan_bailey.pst,Monterrey  Maribel <Maribel.Monterrey@ENRON.com>,Bailey  Susan <Susan.Bailey@ENRON.com>; Boyd  Samantha <Samantha.Boyd@ENRON.com>,Heard  Marie <Marie.Heard@ENRON.com>
-103,103,1,Susan Bailey,Cheryl Nelson - Working From Home,,11/19/2001,susan_bailey.pst,Farrell  Keegan <Keegan.Farrell@ENRON.com>,Heitmeyer  Kayla <Kayla.Heitmeyer@ENRON.com>; Bailey  Susan <Susan.Bailey@ENRON.com>,
-104,104,1,Susan Bailey,Cheryl Nelson - Working From Home,,11/19/2001,susan_bailey.pst,Farrell  Keegan <Keegan.Farrell@ENRON.com>,Heitmeyer  Kayla <Kayla.Heitmeyer@ENRON.com>; Bailey  Susan <Susan.Bailey@ENRON.com>,
-105,105,2,Susan Bailey,FW: Bin Laden,,11/19/2001,susan_bailey.pst,Bailey <Bailey>,'sbailey@crusescott.com' <'sbailey@crusescott.com'>,
-106,106,2,Susan Bailey,FW: Bin Laden,,11/19/2001,susan_bailey.pst,Bailey <Bailey>,'sbailey@crusescott.com' <'sbailey@crusescott.com'>,
-107,107,1,Susan Bailey,**HIGH PRIORITY** AltaGas Services Inc. CW for ISDA,,11/19/2001,susan_bailey.pst,Conwell  Wendy <Wendy.Conwell@ENRON.com>,Cook  Mary <Mary.Cook@ENRON.com>; Leite  Francisco Pinto <Francisco.Pinto.Leite@ENRON.com>,Davies  Derek <Derek.Davies@ENRON.com>; Bradford  William S. <William.S.Bradford@ENRON.com>
-431,107,15,Susan Bailey,,AltaGas Services ISDA CW.xls,11/19/2001,susan_bailey.pst,,,
-108,108,1,Susan Bailey,**HIGH PRIORITY** AltaGas Services Inc. CW for ISDA,,11/19/2001,susan_bailey.pst,Conwell  Wendy <Wendy.Conwell@ENRON.com>,Cook  Mary <Mary.Cook@ENRON.com>; Leite  Francisco Pinto <Francisco.Pinto.Leite@ENRON.com>,Davies  Derek <Derek.Davies@ENRON.com>; Bradford  William S. <William.S.Bradford@ENRON.com>
-459,108,15,Susan Bailey,,AltaGas Services ISDA CW.xls,11/19/2001,susan_bailey.pst,,,
-109,109,1,Susan Bailey,RE: **HIGH PRIORITY** AltaGas Services Inc. CW for ISDA,,11/19/2001,susan_bailey.pst,Leite  Francisco Pinto <Francisco.Pinto.Leite@ENRON.com>,Conwell  Wendy <Wendy.Conwell@ENRON.com>; Cook  Mary <Mary.Cook@ENRON.com>,
-110,110,1,Susan Bailey,RE: **HIGH PRIORITY** AltaGas Services Inc. CW for ISDA,,11/19/2001,susan_bailey.pst,Leite  Francisco Pinto <Francisco.Pinto.Leite@ENRON.com>,Conwell  Wendy <Wendy.Conwell@ENRON.com>; Cook  Mary <Mary.Cook@ENRON.com>,
-111,111,2,Susan Bailey,RE: **HIGH PRIORITY** AltaGas Services Inc. CW for ISDA,,11/19/2001,susan_bailey.pst,Conwell  Wendy <Wendy.Conwell@ENRON.com>,Leite  Francisco Pinto <Francisco.Pinto.Leite@ENRON.com>; Cook  Mary <Mary.Cook@ENRON.com>,
-112,112,2,Susan Bailey,RE: **HIGH PRIORITY** AltaGas Services Inc. CW for ISDA,,11/19/2001,susan_bailey.pst,Conwell  Wendy <Wendy.Conwell@ENRON.com>,Leite  Francisco Pinto <Francisco.Pinto.Leite@ENRON.com>; Cook  Mary <Mary.Cook@ENRON.com>,
-113,113,1,Susan Bailey,Holiday Party - Canceled,,11/19/2001,susan_bailey.pst,Enron Announcements/Corp/Enron@ENRON <IMCEANOTES-Enron+20Announcements_Corp_Enron+40ENRON@ENRON.com>,All Enron Houston@ENRON <IMCEANOTES-All+20Enron+20Houston+40ENRON@ENRON.com>,
-114,114,1,Susan Bailey,Holiday Party - Canceled,,11/19/2001,susan_bailey.pst,Enron Announcements/Corp/Enron@ENRON <IMCEANOTES-Enron+20Announcements_Corp_Enron+40ENRON@ENRON.com>,All Enron Houston@ENRON <IMCEANOTES-All+20Enron+20Houston+40ENRON@ENRON.com>,
-115,115,1,Susan Bailey,AltaGas CW,,11/19/2001,susan_bailey.pst,Conwell  Wendy <Wendy.Conwell@ENRON.com>,Leite  Francisco Pinto <Francisco.Pinto.Leite@ENRON.com>; Cook  Mary <Mary.Cook@ENRON.com>,Davies  Derek <Derek.Davies@ENRON.com>; Brown  Kortney <Kortney.Brown@Enron.Com>
-432,115,15,Susan Bailey,,AltaGas Services ISDA CW.xls,11/19/2001,susan_bailey.pst,,,
-116,116,1,Susan Bailey,AltaGas CW,,11/19/2001,susan_bailey.pst,Conwell  Wendy <Wendy.Conwell@ENRON.com>,Leite  Francisco Pinto <Francisco.Pinto.Leite@ENRON.com>; Cook  Mary <Mary.Cook@ENRON.com>,Davies  Derek <Derek.Davies@ENRON.com>; Brown  Kortney <Kortney.Brown@Enron.Com>
-460,116,15,Susan Bailey,,AltaGas Services ISDA CW.xls,11/19/2001,susan_bailey.pst,,,
-117,117,1,Susan Bailey,RE: Forest Oil,,11/19/2001,susan_bailey.pst,Bailey <Bailey>,Anderson <Anderson>; Diane </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Danders2>,
-118,118,1,Susan Bailey,RE: Forest Oil,,11/19/2001,susan_bailey.pst,Bailey <Bailey>,Anderson <Anderson>; Diane </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Danders2>,
-119,119,1,Susan Bailey,Forest Oil Corporation,,11/19/2001,susan_bailey.pst,Bailey <Bailey>,Vanek <Vanek>; Darren </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Dvanek>,
-120,120,1,Susan Bailey,Forest Oil Corporation,,11/19/2001,susan_bailey.pst,Bailey <Bailey>,Vanek <Vanek>; Darren </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Dvanek>,
-121,121,1,Susan Bailey,Enron Japan Corp.,,11/19/2001,susan_bailey.pst,Bailey <Bailey>,Shackleton <Shackleton>; Sara </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Sshackl>,
-122,122,1,Susan Bailey,Enron Japan Corp.,,11/19/2001,susan_bailey.pst,Bailey <Bailey>,Shackleton <Shackleton>; Sara </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Sshackl>,
-123,123,1,Susan Bailey,Enron Corp.,,11/19/2001,susan_bailey.pst,Bailey <Bailey>,Abrams <Abrams>; Clement </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Cabrams>,Hendry <Hendry>; Brent </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Bhendry>; Vanek <Vanek>; Darren </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Dvanek>
-433,123,6,Susan Bailey,,246A multi guaranty(enron).doc,11/19/2001,susan_bailey.pst,,,
-124,124,1,Susan Bailey,Enron Corp.,,11/19/2001,susan_bailey.pst,Bailey <Bailey>,Abrams <Abrams>; Clement </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Cabrams>,Hendry <Hendry>; Brent </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Bhendry>; Vanek <Vanek>; Darren </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Dvanek>
-461,124,6,Susan Bailey,,246A multi guaranty(enron).doc,11/19/2001,susan_bailey.pst,,,
-125,125,1,Susan Bailey,Global Contracts/Facilities new responsibilities,,11/20/2001,susan_bailey.pst,Richardson  Stacey <Stacey.Richardson@ENRON.com>,Wallumrod  Ellen <Ellen.Wallumrod@ENRON.com>; Anderson  Diane <Diane.Anderson@ENRON.com>,Theriot  Kim S. <Kim.S.Theriot@ENRON.com>; Anderson  Bridgette <Bridgette.Anderson@ENRON.com>
-434,125,1,Susan Bailey,,2001 Reorganization 111901.xls,11/20/2001,susan_bailey.pst,,,
-126,126,1,Susan Bailey,Global Contracts/Facilities new responsibilities,,11/20/2001,susan_bailey.pst,Richardson  Stacey <Stacey.Richardson@ENRON.com>,Wallumrod  Ellen <Ellen.Wallumrod@ENRON.com>; Anderson  Diane <Diane.Anderson@ENRON.com>,Theriot  Kim S. <Kim.S.Theriot@ENRON.com>; Anderson  Bridgette <Bridgette.Anderson@ENRON.com>
-462,126,1,Susan Bailey,,2001 Reorganization 111901.xls,11/20/2001,susan_bailey.pst,,,
-127,127,1,Susan Bailey,"Panaco, Inc.",,11/20/2001,susan_bailey.pst,Sonnonstine  Max <Max.Sonnonstine@ENRON.com>,Heard  Marie <Marie.Heard@ENRON.com>; Bailey  Susan <Susan.Bailey@ENRON.com>,
-435,127,2,Susan Bailey,,Panaco Inc..xls,11/20/2001,susan_bailey.pst,,,
-128,128,1,Susan Bailey,"Panaco, Inc.",,11/20/2001,susan_bailey.pst,Sonnonstine  Max <Max.Sonnonstine@ENRON.com>,Heard  Marie <Marie.Heard@ENRON.com>; Bailey  Susan <Susan.Bailey@ENRON.com>,
-463,128,2,Susan Bailey,,Panaco Inc..xls,11/20/2001,susan_bailey.pst,,,
-129,129,2,Susan Bailey,"RE: YJ4705.1, YJ4707.1, YJ7870.1, YJ7870.2",,11/20/2001,susan_bailey.pst,Bailey  Derek <Derek.Bailey@ENRON.com>,Anderson  Diane <Diane.Anderson@ENRON.com>,Mulvany  Patrick <patrick.mulvany@ENRON.com>; Cisneros  Celeste <Celeste.Cisneros@ENRON.com>
-130,130,2,Susan Bailey,"RE: YJ4705.1, YJ4707.1, YJ7870.1, YJ7870.2",,11/20/2001,susan_bailey.pst,Bailey  Derek <Derek.Bailey@ENRON.com>,Anderson  Diane <Diane.Anderson@ENRON.com>,Mulvany  Patrick <patrick.mulvany@ENRON.com>; Cisneros  Celeste <Celeste.Cisneros@ENRON.com>
-131,131,1,Susan Bailey,The Chase Manhattan Bank,,11/20/2001,susan_bailey.pst,Heard  Marie <Marie.Heard@ENRON.com>,Allen  Kimberly <Kimberly_Allen@pgn.com>; Anderson  Diane <Diane.Anderson@ENRON.com>,
-132,132,1,Susan Bailey,The Chase Manhattan Bank,,11/20/2001,susan_bailey.pst,Heard  Marie <Marie.Heard@ENRON.com>,Allen  Kimberly <Kimberly_Allen@pgn.com>; Anderson  Diane <Diane.Anderson@ENRON.com>,
-133,133,1,Susan Bailey,Out of Office AutoReply: American Commercial Barge Line LLC,,11/20/2001,susan_bailey.pst,Landry  Shemeika S. <Shemeika.S.Landry@ENRON.com>,Bailey  Susan <Susan.Bailey@ENRON.com>,
-134,134,1,Susan Bailey,Out of Office AutoReply: American Commercial Barge Line LLC,,11/20/2001,susan_bailey.pst,Landry  Shemeika S. <Shemeika.S.Landry@ENRON.com>,Bailey  Susan <Susan.Bailey@ENRON.com>,
-135,135,1,Susan Bailey,On Behalf of Mark Taylor and Barbara Gray,,11/20/2001,susan_bailey.pst,Farrell  Keegan <Keegan.Farrell@ENRON.com>,Bailey  Susan <Susan.Bailey@ENRON.com>; Boyd  Samantha <Samantha.Boyd@ENRON.com>,
-436,135,2,Susan Bailey,,You Are Invited.doc,11/20/2001,susan_bailey.pst,,,
-136,136,1,Susan Bailey,On Behalf of Mark Taylor and Barbara Gray,,11/20/2001,susan_bailey.pst,Farrell  Keegan <Keegan.Farrell@ENRON.com>,Bailey  Susan <Susan.Bailey@ENRON.com>; Boyd  Samantha <Samantha.Boyd@ENRON.com>,
-464,136,2,Susan Bailey,,You Are Invited.doc,11/20/2001,susan_bailey.pst,,,
-137,137,1,Susan Bailey,American Commercial Barge Line LLC,,11/20/2001,susan_bailey.pst,Bailey <Bailey>,Koehler <Koehler>; Anne C. </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Akoehle>,
-138,138,1,Susan Bailey,American Commercial Barge Line LLC,,11/20/2001,susan_bailey.pst,Bailey <Bailey>,Koehler <Koehler>; Anne C. </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Akoehle>,
-139,139,1,Susan Bailey,Wednesday's SWAP Meeting Canceled,,11/20/2001,susan_bailey.pst,Keiser  Holly <Holly.Keiser@ENRON.com>,Cook  Mary <Mary.Cook@ENRON.com>; Gray  Barbara N. <Barbara.N.Gray@ENRON.com>,
-140,140,1,Susan Bailey,Wednesday's SWAP Meeting Canceled,,11/20/2001,susan_bailey.pst,Keiser  Holly <Holly.Keiser@ENRON.com>,Cook  Mary <Mary.Cook@ENRON.com>; Gray  Barbara N. <Barbara.N.Gray@ENRON.com>,
-141,141,1,Susan Bailey,RE: On Behalf of Mark Taylor and Barbara Gray,,11/20/2001,susan_bailey.pst,Nelson  Cheryl <Cheryl.Nelson@ENRON.com>,Farrell  Keegan <Keegan.Farrell@ENRON.com>; Bailey  Susan <Susan.Bailey@ENRON.com>,
-142,142,1,Susan Bailey,RE: On Behalf of Mark Taylor and Barbara Gray,,11/20/2001,susan_bailey.pst,Nelson  Cheryl <Cheryl.Nelson@ENRON.com>,Farrell  Keegan <Keegan.Farrell@ENRON.com>; Bailey  Susan <Susan.Bailey@ENRON.com>,
-143,143,1,Susan Bailey,RE: On Behalf of Mark Taylor and Barbara Gray,,11/20/2001,susan_bailey.pst,Taylor  Mark E (Legal) <Mark.Taylor@ENRON.com>,Nelson  Cheryl <Cheryl.Nelson@ENRON.com>; Farrell  Keegan <Keegan.Farrell@ENRON.com>,
-144,144,1,Susan Bailey,RE: On Behalf of Mark Taylor and Barbara Gray,,11/20/2001,susan_bailey.pst,Taylor  Mark E (Legal) <Mark.Taylor@ENRON.com>,Nelson  Cheryl <Cheryl.Nelson@ENRON.com>; Farrell  Keegan <Keegan.Farrell@ENRON.com>,
-145,145,1,Susan Bailey,Ontario Electricity Financial Corporation CW,,11/20/2001,susan_bailey.pst,Conwell  Wendy <Wendy.Conwell@ENRON.com>,Leite  Francisco Pinto <Francisco.Pinto.Leite@ENRON.com>; Cook  Mary <Mary.Cook@ENRON.com>,Wilson  Jan <Jan.Wilson@ENRON.com>; Brown  Kortney <Kortney.Brown@Enron.Com>
-437,145,4,Susan Bailey,,Ontario Electricity Financial Corp ISDA CW.xls,11/20/2001,susan_bailey.pst,,,
-146,146,1,Susan Bailey,Ontario Electricity Financial Corporation CW,,11/20/2001,susan_bailey.pst,Conwell  Wendy <Wendy.Conwell@ENRON.com>,Leite  Francisco Pinto <Francisco.Pinto.Leite@ENRON.com>; Cook  Mary <Mary.Cook@ENRON.com>,Wilson  Jan <Jan.Wilson@ENRON.com>; Brown  Kortney <Kortney.Brown@Enron.Com>
-465,146,4,Susan Bailey,,Ontario Electricity Financial Corp ISDA CW.xls,11/20/2001,susan_bailey.pst,,,
-147,147,1,Susan Bailey,"Bank of America, N.A.",,11/21/2001,susan_bailey.pst,Heard  Marie <Marie.Heard@ENRON.com>,Allen  Kimberly <Kimberly_Allen@pgn.com>; Anderson  Diane <Diane.Anderson@ENRON.com>,
-148,148,1,Susan Bailey,"Bank of America, N.A.",,11/21/2001,susan_bailey.pst,Heard  Marie <Marie.Heard@ENRON.com>,Allen  Kimberly <Kimberly_Allen@pgn.com>; Anderson  Diane <Diane.Anderson@ENRON.com>,
-149,149,1,Susan Bailey,Morgan Stanley Capital Group Inc.,,11/21/2001,susan_bailey.pst,Heard  Marie <Marie.Heard@ENRON.com>,Allen  Kimberly <Kimberly_Allen@pgn.com>; Anderson  Diane <Diane.Anderson@ENRON.com>,
-150,150,1,Susan Bailey,Morgan Stanley Capital Group Inc.,,11/21/2001,susan_bailey.pst,Heard  Marie <Marie.Heard@ENRON.com>,Allen  Kimberly <Kimberly_Allen@pgn.com>; Anderson  Diane <Diane.Anderson@ENRON.com>,
-151,151,1,Susan Bailey,RE: ISDA Documents,,11/21/2001,susan_bailey.pst,Laurie Orchard <lorchard@commrisk.bm>,'Bailey  Susan' <Susan.Bailey@ENRON.com>,
-152,152,1,Susan Bailey,RE: ISDA Documents,,11/21/2001,susan_bailey.pst,Laurie Orchard <lorchard@commrisk.bm>,'Bailey  Susan' <Susan.Bailey@ENRON.com>,
-153,153,2,Susan Bailey,RE: Enron Corp.,,11/21/2001,susan_bailey.pst,Abrams  Clement <Clement.Abrams@ENRON.com>,Bailey  Susan <Susan.Bailey@ENRON.com>,Hendry  Brent <Brent.Hendry@ENRON.com>; Vanek  Darren <Darren.Vanek@ENRON.com>
-154,154,2,Susan Bailey,RE: Enron Corp.,,11/21/2001,susan_bailey.pst,Abrams  Clement <Clement.Abrams@ENRON.com>,Bailey  Susan <Susan.Bailey@ENRON.com>,Hendry  Brent <Brent.Hendry@ENRON.com>; Vanek  Darren <Darren.Vanek@ENRON.com>
-155,155,1,Susan Bailey,Program Changes,,11/21/2001,susan_bailey.pst,Enron Announcements/Corp/Enron@ENRON <IMCEANOTES-Enron+20Announcements_Corp_Enron+40ENRON@ENRON.com>,All Enron Employees United States Group@ENRON <IMCEANOTES-All+20Enron+20Employees+20United+20States+20Group+40ENRON@ENRON.com>,
-156,156,1,Susan Bailey,Program Changes,,11/21/2001,susan_bailey.pst,Enron Announcements/Corp/Enron@ENRON <IMCEANOTES-Enron+20Announcements_Corp_Enron+40ENRON@ENRON.com>,All Enron Employees United States Group@ENRON <IMCEANOTES-All+20Enron+20Employees+20United+20States+20Group+40ENRON@ENRON.com>,
-157,157,1,Susan Bailey,"Encore Energy Solutions, L.P.",,11/21/2001,susan_bailey.pst,Panus  Stephanie <Stephanie.Panus@ENRON.com>,Adams  Laurel <Laurel.Adams@ENRON.com>; Anderson  Diane <Diane.Anderson@ENRON.com>,
-158,158,1,Susan Bailey,"Encore Energy Solutions, L.P.",,11/21/2001,susan_bailey.pst,Panus  Stephanie <Stephanie.Panus@ENRON.com>,Adams  Laurel <Laurel.Adams@ENRON.com>; Anderson  Diane <Diane.Anderson@ENRON.com>,
-159,159,1,Susan Bailey,Francisco Pinto-Leite,,11/21/2001,susan_bailey.pst,Keiser  Holly <Holly.Keiser@ENRON.com>,Mahan  Mariella <Mariella.Mahan@ENRON.com>; Melinchon  Ermes <Ermes.Melinchon@ENRON.com>,
-160,160,1,Susan Bailey,Francisco Pinto-Leite,,11/21/2001,susan_bailey.pst,Keiser  Holly <Holly.Keiser@ENRON.com>,Mahan  Mariella <Mariella.Mahan@ENRON.com>; Melinchon  Ermes <Ermes.Melinchon@ENRON.com>,
-161,161,1,Susan Bailey,SWAP Calendar,,11/21/2001,susan_bailey.pst,Keiser  Holly <Holly.Keiser@ENRON.com>,Bailey  Susan <Susan.Bailey@ENRON.com>; Boyd  Samantha <Samantha.Boyd@ENRON.com>,
-343,161,0,Susan Bailey,,SWAP_Calendar.pub,11/21/2001,susan_bailey.pst,,,
-162,162,1,Susan Bailey,SWAP Calendar,,11/21/2001,susan_bailey.pst,Keiser  Holly <Holly.Keiser@ENRON.com>,Bailey  Susan <Susan.Bailey@ENRON.com>; Boyd  Samantha <Samantha.Boyd@ENRON.com>,
-466,162,0,Susan Bailey,,SWAP_Calendar.pub,11/21/2001,susan_bailey.pst,,,
-163,163,4,Susan Bailey,Weekend Outage Report for 11-21-01 through 11-25-01,,11/21/2001,susan_bailey.pst,General Announcement/Corp/Enron@ENRON <IMCEANOTES-General+20Announcement_Corp_Enron+40ENRON@ENRON.com>,Houston Outage Report@ENRON <IMCEANOTES-Houston+20Outage+20Report+40ENRON@ENRON.com>,
-164,164,4,Susan Bailey,Weekend Outage Report for 11-21-01 through 11-25-01,,11/21/2001,susan_bailey.pst,General Announcement/Corp/Enron@ENRON <IMCEANOTES-General+20Announcement_Corp_Enron+40ENRON@ENRON.com>,Houston Outage Report@ENRON <IMCEANOTES-Houston+20Outage+20Report+40ENRON@ENRON.com>,
-165,165,1,Susan Bailey,RE: ISDA Documents,,11/21/2001,susan_bailey.pst,Bailey <Bailey>,'lorchard@commrisk.bm' <'lorchard@commrisk.bm'>,Koehler <Koehler>; Anne C. </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Akoehle>
-166,166,2,Susan Bailey,RE: Enron Corp.,,11/21/2001,susan_bailey.pst,Bailey <Bailey>,Abrams <Abrams>; Clement </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Cabrams>,
-167,167,2,Susan Bailey,RE: Enron Corp.,,11/21/2001,susan_bailey.pst,Bailey <Bailey>,Abrams <Abrams>; Clement </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Cabrams>,
-168,168,1,Susan Bailey,Ontario Energy Savings Corp,,11/21/2001,susan_bailey.pst,Conwell  Wendy <Wendy.Conwell@ENRON.com>,Cook  Mary <Mary.Cook@ENRON.com>; Leite  Francisco Pinto <Francisco.Pinto.Leite@ENRON.com>,Gaffney  Chris <Chris.Gaffney@ENRON.com>; Brown  Kortney <Kortney.Brown@Enron.Com>
-346,168,2,Susan Bailey,,Ontario Energy Savings Corp ISDA CW.xls,11/21/2001,susan_bailey.pst,,,
-169,169,1,Susan Bailey,Ontario Energy Savings Corp,,11/21/2001,susan_bailey.pst,Conwell  Wendy <Wendy.Conwell@ENRON.com>,Cook  Mary <Mary.Cook@ENRON.com>; Leite  Francisco Pinto <Francisco.Pinto.Leite@ENRON.com>,Gaffney  Chris <Chris.Gaffney@ENRON.com>; Brown  Kortney <Kortney.Brown@Enron.Com>
-467,169,2,Susan Bailey,,Ontario Energy Savings Corp ISDA CW.xls,11/21/2001,susan_bailey.pst,,,
-170,170,2,Susan Bailey,FW: Enron Corp.,,11/21/2001,susan_bailey.pst,Bailey <Bailey>,Hendry <Hendry>; Brent </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Bhendry>,
-171,171,2,Susan Bailey,FW: Enron Corp.,,11/21/2001,susan_bailey.pst,Bailey <Bailey>,Hendry <Hendry>; Brent </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Bhendry>,
-172,172,1,Susan Bailey,,,11/21/2001,susan_bailey.pst,Bailey <Bailey>,'dsciullo@bw-legal.com' <'dsciullo@bw-legal.com'>,
-173,173,1,Susan Bailey,,,11/21/2001,susan_bailey.pst,Bailey <Bailey>,'dsciullo@bw-legal.com' <'dsciullo@bw-legal.com'>,
-174,174,1,Susan Bailey,Update to Merger Q&A,,11/25/2001,susan_bailey.pst,Human Resources <mbx_humanresources@ENRON.com>,DL-GA-ALL_enron_worldwide5 <DL-GA-ALL_enron_worldwide5@ENRON.com>,
-175,175,1,Susan Bailey,Update to Merger Q&A,,11/25/2001,susan_bailey.pst,Human Resources <mbx_humanresources@ENRON.com>,DL-GA-ALL_enron_worldwide5 <DL-GA-ALL_enron_worldwide5@ENRON.com>,
-176,176,1,Susan Bailey,RE: Ontario Electricity Financial Corporation CW,,11/26/2001,susan_bailey.pst,Sacks  Edward <Edward.Sacks@ENRON.com>,Conwell  Wendy <Wendy.Conwell@ENRON.com>; Bailey  Susan <Susan.Bailey@ENRON.com>,
-177,177,1,Susan Bailey,RE: Ontario Electricity Financial Corporation CW,,11/26/2001,susan_bailey.pst,Sacks  Edward <Edward.Sacks@ENRON.com>,Conwell  Wendy <Wendy.Conwell@ENRON.com>; Bailey  Susan <Susan.Bailey@ENRON.com>,
-178,178,1,Susan Bailey,Adopt a Kid - Reminder,,11/26/2001,susan_bailey.pst,Truss  Stephanie <Stephanie.Truss@ENRON.com>,Adams  Suzanne <Suzanne.Adams@ENRON.com>; Alfaro  Renee <Renee.Alfaro@ENRON.com>,
-349,178,0,Susan Bailey,,master03.htm,11/26/2001,susan_bailey.pst,,,
-350,178,2,Susan Bailey,,master03.xml,11/26/2001,susan_bailey.pst,,,
-351,178,0,Susan Bailey,,master02.htm,11/26/2001,susan_bailey.pst,,,
-352,178,1,Susan Bailey,,pres.xml,11/26/2001,susan_bailey.pst,,,
-353,178,6,Susan Bailey,,slide0001_image001.gif,11/26/2001,susan_bailey.pst,,,
-354,178,1,Susan Bailey,,slide0001_image002.gif,11/26/2001,susan_bailey.pst,,,
-355,178,1,Susan Bailey,,slide0001_image003.gif,11/26/2001,susan_bailey.pst,,,
-356,178,0,Susan Bailey,,master01.htm,11/26/2001,susan_bailey.pst,,,
-357,178,0,Susan Bailey,,master03_stylesheet.css,11/26/2001,susan_bailey.pst,,,
-358,178,12,Susan Bailey,,script.js,11/26/2001,susan_bailey.pst,,,
-179,179,1,Susan Bailey,Adopt a Kid - Reminder,,11/26/2001,susan_bailey.pst,Truss  Stephanie <Stephanie.Truss@ENRON.com>,Adams  Suzanne <Suzanne.Adams@ENRON.com>; Alfaro  Renee <Renee.Alfaro@ENRON.com>,
-468,179,0,Susan Bailey,,master03.htm,11/26/2001,susan_bailey.pst,,,
-469,179,2,Susan Bailey,,master03.xml,11/26/2001,susan_bailey.pst,,,
-470,179,0,Susan Bailey,,master02.htm,11/26/2001,susan_bailey.pst,,,
-471,179,1,Susan Bailey,,pres.xml,11/26/2001,susan_bailey.pst,,,
-472,179,6,Susan Bailey,,slide0001_image001.gif,11/26/2001,susan_bailey.pst,,,
-473,179,1,Susan Bailey,,slide0001_image002.gif,11/26/2001,susan_bailey.pst,,,
-474,179,1,Susan Bailey,,slide0001_image003.gif,11/26/2001,susan_bailey.pst,,,
-475,179,0,Susan Bailey,,master01.htm,11/26/2001,susan_bailey.pst,,,
-476,179,0,Susan Bailey,,master03_stylesheet.css,11/26/2001,susan_bailey.pst,,,
-477,179,12,Susan Bailey,,script.js,11/26/2001,susan_bailey.pst,,,
-180,180,1,Susan Bailey,FW: e prime omnibus,,11/26/2001,susan_bailey.pst,Sonnonstine  Max <Max.Sonnonstine@ENRON.com>,Heard  Marie <Marie.Heard@ENRON.com>; Panus  Stephanie <Stephanie.Panus@ENRON.com>,
-359,180,15,Susan Bailey,,e prime Energy Marketing omnibus.xls,11/26/2001,susan_bailey.pst,,,
-181,181,1,Susan Bailey,FW: e prime omnibus,,11/26/2001,susan_bailey.pst,Sonnonstine  Max <Max.Sonnonstine@ENRON.com>,Heard  Marie <Marie.Heard@ENRON.com>; Panus  Stephanie <Stephanie.Panus@ENRON.com>,
-478,181,15,Susan Bailey,,e prime Energy Marketing omnibus.xls,11/26/2001,susan_bailey.pst,,,
-182,182,2,Susan Bailey,"RE: Orientation Meeting -- January 14, 2002",,11/26/2001,susan_bailey.pst,Pat Sorrells <Executive_Director@periwinklefoundation.org>,Bailey  Susan <Susan.Bailey@ENRON.com>,Kelley Harrell <kharrell@periwinklefoundation.org>
-183,183,2,Susan Bailey,"RE: Orientation Meeting -- January 14, 2002",,11/26/2001,susan_bailey.pst,Pat Sorrells <Executive_Director@periwinklefoundation.org>,Bailey  Susan <Susan.Bailey@ENRON.com>,Kelley Harrell <kharrell@periwinklefoundation.org>
-184,184,1,Susan Bailey,Comments needed:  Maria Nava (112601) Gonzalez,,11/26/2001,susan_bailey.pst,Spencer  Becky <Becky.Spencer@ENRON.com>,Cook  Mary <Mary.Cook@ENRON.com>; Davis  Angela <Angela.Davis@ENRON.com>; Bailey <Bailey>,
-185,185,1,Susan Bailey,Comments needed:  Maria Nava (112601) Gonzalez,,11/26/2001,susan_bailey.pst,Spencer  Becky <Becky.Spencer@ENRON.com>,Cook  Mary <Mary.Cook@ENRON.com>; Davis  Angela <Angela.Davis@ENRON.com>; Bailey <Bailey>,
-186,186,2,Susan Bailey,Re:,,11/26/2001,susan_bailey.pst,Dan Sciullo <dsciullo@bw-legal.com>,Susan Bailey <Susan.Bailey@ENRON.com>,
-187,187,2,Susan Bailey,Re:,,11/26/2001,susan_bailey.pst,Dan Sciullo <dsciullo@bw-legal.com>,Susan Bailey <Susan.Bailey@ENRON.com>,
-188,188,1,Susan Bailey,Birthday Cake--Stephanie Panus,,11/26/2001,susan_bailey.pst,Keiser  Holly <Holly.Keiser@ENRON.com>,Cook  Mary <Mary.Cook@ENRON.com>; Gray  Barbara N. <Barbara.N.Gray@ENRON.com>,
-189,189,1,Susan Bailey,Birthday Cake--Stephanie Panus,,11/26/2001,susan_bailey.pst,Keiser  Holly <Holly.Keiser@ENRON.com>,Cook  Mary <Mary.Cook@ENRON.com>; Gray  Barbara N. <Barbara.N.Gray@ENRON.com>,
-190,190,1,Susan Bailey,FW: assignment,,11/26/2001,susan_bailey.pst,Breslau  Craig <Craig.Breslau@ENRON.com>,Bailey  Susan <Susan.Bailey@ENRON.com>; Williams  Jason R (Credit) <Jason.R.Williams@ENRON.com>,
-360,190,4,Susan Bailey,,Assignment-sample doc.doc,11/26/2001,susan_bailey.pst,,,
-191,191,1,Susan Bailey,"RE: PCS Nitorgen Fertilizer LP (""PCS"")",,11/26/2001,susan_bailey.pst,Ornelas  Bianca <Bianca.Ornelas@ENRON.com>,Bailey  Susan <Susan.Bailey@ENRON.com>,Breslau  Craig <Craig.Breslau@ENRON.com>; Williams  Jason R (Credit) <Jason.R.Williams@ENRON.com>
-361,191,1,Susan Bailey,,PCS Live Trades.csv,11/26/2001,susan_bailey.pst,,,
-192,192,1,Susan Bailey,"RE: PCS Nitorgen Fertilizer LP (""PCS"")",,11/26/2001,susan_bailey.pst,Ornelas  Bianca <Bianca.Ornelas@ENRON.com>,Bailey  Susan <Susan.Bailey@ENRON.com>,Breslau  Craig <Craig.Breslau@ENRON.com>; Williams  Jason R (Credit) <Jason.R.Williams@ENRON.com>
-480,192,1,Susan Bailey,,PCS Live Trades.csv,11/26/2001,susan_bailey.pst,,,
-193,193,1,Susan Bailey,"Orientation Meeting -- January 14, 2002",,11/26/2001,susan_bailey.pst,Bailey <Bailey>,'psorrells@periwinklefoundation.org' <'psorrells@periwinklefoundation.org'>,
-194,194,1,Susan Bailey,"Orientation Meeting -- January 14, 2002",,11/26/2001,susan_bailey.pst,Bailey <Bailey>,'psorrells@periwinklefoundation.org' <'psorrells@periwinklefoundation.org'>,
-195,195,2,Susan Bailey,"RE: Orientation Meeting -- January 14, 2002",,11/26/2001,susan_bailey.pst,Bailey <Bailey>,'Pat Sorrells' <Executive_Director@periwinklefoundation.org>,
-196,196,2,Susan Bailey,FW: assignment,,11/26/2001,susan_bailey.pst,Bailey <Bailey>,Sayre <Sayre>; Frank </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Fsayre>,Breslau <Breslau>; Craig </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Cbresla>
-485,196,4,Susan Bailey,,Assignment-sample doc.doc,11/26/2001,susan_bailey.pst,,,
-197,197,2,Susan Bailey,RE: assignment,,11/27/2001,susan_bailey.pst,Bailey <Bailey>,Breslau <Breslau>; Craig </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Cbresla>; Williams <Williams>; Jason R <Jason R>,
-198,198,1,Susan Bailey,"PCS Nitorgen Fertilizer LP (""PCS"")",,11/27/2001,susan_bailey.pst,Bailey <Bailey>,Ornelas <Ornelas>; Bianca </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Bornelas>,Breslau <Breslau>; Craig </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Cbresla>; Williams <Williams>; Jason R <Jason R>
-199,199,1,Susan Bailey,Amerada Hess Corporation,,11/27/2001,susan_bailey.pst,Heard  Marie <Marie.Heard@ENRON.com>,Allen  Kimberly <Kimberly_Allen@pgn.com>; Anderson  Diane <Diane.Anderson@ENRON.com>,
-200,200,1,Susan Bailey,Chiricahua Notes,,11/27/2001,susan_bailey.pst,Korkmas  Deb <Deb.Korkmas@ENRON.com>,Bailey  Susan <Susan.Bailey@ENRON.com>,
-365,200,2,Susan Bailey,,Demand Note1.doc,11/27/2001,susan_bailey.pst,,,
-366,200,2,Susan Bailey,,Demand Note10.doc,11/27/2001,susan_bailey.pst,,,
-367,200,2,Susan Bailey,,Demand Note11.doc,11/27/2001,susan_bailey.pst,,,
-368,200,2,Susan Bailey,,Demand Note12.doc,11/27/2001,susan_bailey.pst,,,
-369,200,2,Susan Bailey,,Demand Note13.doc,11/27/2001,susan_bailey.pst,,,
-370,200,2,Susan Bailey,,Demand Note14.doc,11/27/2001,susan_bailey.pst,,,
-371,200,2,Susan Bailey,,Demand Note15.doc,11/27/2001,susan_bailey.pst,,,
-372,200,2,Susan Bailey,,Demand Note16.doc,11/27/2001,susan_bailey.pst,,,
-373,200,2,Susan Bailey,,Demand Note17.doc,11/27/2001,susan_bailey.pst,,,
-374,200,2,Susan Bailey,,Demand Note2.doc,11/27/2001,susan_bailey.pst,,,
-375,200,2,Susan Bailey,,Demand Note3.doc,11/27/2001,susan_bailey.pst,,,
-376,200,2,Susan Bailey,,Demand Note4.doc,11/27/2001,susan_bailey.pst,,,
-377,200,2,Susan Bailey,,Demand Note5.doc,11/27/2001,susan_bailey.pst,,,
-378,200,2,Susan Bailey,,Demand Note6.doc,11/27/2001,susan_bailey.pst,,,
-379,200,2,Susan Bailey,,Demand Note7.doc,11/27/2001,susan_bailey.pst,,,
-380,200,2,Susan Bailey,,Demand Note8.doc,11/27/2001,susan_bailey.pst,,,
-381,200,2,Susan Bailey,,Demand Note9.doc,11/27/2001,susan_bailey.pst,,,
-201,201,1,Susan Bailey,Timesheets Due on Friday,,11/27/2001,susan_bailey.pst,Keiser  Holly <Holly.Keiser@ENRON.com>,Bailey  Susan <Susan.Bailey@ENRON.com>; Boyd  Samantha <Samantha.Boyd@ENRON.com>,
-202,202,2,Susan Bailey,FW: Mirant Canada's purchase of TransCanada Pipelines trading business,,11/27/2001,susan_bailey.pst,Boyd  Samantha <Samantha.Boyd@ENRON.com>,Bailey  Susan <Susan.Bailey@ENRON.com>; Panus  Stephanie <Stephanie.Panus@ENRON.com>,
-203,203,1,Susan Bailey,Re: Jackson National Life-- Quarterly Premium,,11/27/2001,susan_bailey.pst,CPTDOUGIE@aol.com <CPTDOUGIE@aol.com>,Susan Bailey <Susan.Bailey@enron.com>,
-204,204,1,Susan Bailey,interesting,,11/27/2001,susan_bailey.pst,Anderson  Diane <Diane.Anderson@ENRON.com>,Bailey  Susan <Susan.Bailey@ENRON.com>,
-205,205,1,Susan Bailey,EnergyUSA-TPC,,11/27/2001,susan_bailey.pst,Panus  Stephanie <Stephanie.Panus@ENRON.com>,Adams  Laurel <Laurel.Adams@ENRON.com>; Anderson  Diane <Diane.Anderson@ENRON.com>,
-206,206,1,Susan Bailey,Jackson National Life-- Quarterly Premium,,11/27/2001,susan_bailey.pst,Bailey <Bailey>,'dsciullo@bw-legal.com' <'dsciullo@bw-legal.com'>; 'CPTDOUGIE@aol.com' <'CPTDOUGIE@aol.com'>,
-207,207,1,Susan Bailey,"Noble Gas Marketing, Inc.",,11/27/2001,susan_bailey.pst,Panus  Stephanie <Stephanie.Panus@ENRON.com>,Adams  Laurel <Laurel.Adams@ENRON.com>; Anderson  Diane <Diane.Anderson@ENRON.com>,
-208,208,1,Susan Bailey,RE: Chiricahua Notes,,11/27/2001,susan_bailey.pst,Bailey <Bailey>,Korkmas <Korkmas>; Deb </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Dkorkma>,
-209,209,1,Susan Bailey,RE: Timesheets Due on Friday,,11/27/2001,susan_bailey.pst,Bailey <Bailey>,Keiser <Keiser>; Holly </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Hkeiser>,
-210,210,2,Susan Bailey,RE: interesting,,11/27/2001,susan_bailey.pst,Bailey <Bailey>,Anderson <Anderson>; Diane </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Danders2>,
-211,211,1,Susan Bailey,FW: interesting,,11/27/2001,susan_bailey.pst,Bailey <Bailey>,'sbailey@crusescott.com' <'sbailey@crusescott.com'>,
-212,212,1,Susan Bailey,People on Termination List,,12/26/2001,susan_bailey.pst,Rosman  Stewart <Stewart.Rosman@ENRON.com>,Bailey  Susan <Susan.Bailey@ENRON.com>,
-213,213,1,Susan Bailey,FW: People on Termination List,,12/26/2001,susan_bailey.pst,Bailey <Bailey>,Panus <Panus>; Stephanie </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Spanus>,Rosman <Rosman>; Stewart </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Srosman>
-214,214,1,Susan Bailey,Guaranty Distribution,,4/18/2001,susan_bailey.pst,Mary Cook <Mary Cook>,Angela Davis <Angela Davis>; Anne C Koehler <Anne C Koehler>; Brent Hendry <Brent Hendry>; Carol St Clair <Carol St Clair>; fleite@enron.com <fleite@enron.com>,
-215,215,1,Susan Bailey,Glencore Commodities Ltd.,,6/6/2001,susan_bailey.pst,Brant Reves <Brant Reves>,Frank Sayre <Frank Sayre>; Susan Bailey <Susan Bailey>,
-418,215,2,Susan Bailey,,Glencore Commodities Ltd. financial trades.xls,6/6/2001,susan_bailey.pst,,,
-216,216,4,Susan Bailey,Outlook Migration - EWS Legal,,6/7/2001,susan_bailey.pst,Janette Elbertson <Janette Elbertson>,Alan Aronowitz <Alan Aronowitz>; Sandi M Braband <Sandi M Braband>; Robert Bruce <Robert Bruce>; Teresa G Bushman <Teresa G Bushman>; Michelle Cash <Michelle Cash>,Gary Bode <Gary Bode>; Vanessa Griffin <Vanessa Griffin>; Esmeralda Gonzalez <Esmeralda Gonzalez>; Martha Keesler <Martha Keesler>; Rae Meadows <Rae Meadows>
-217,217,2,Susan Bailey,4-URGENT - OWA Please print this now.,,6/7/2001,susan_bailey.pst,Outlook Migration Team <Outlook Migration Team>,Alan Aronowitz <Alan Aronowitz>; Susan Bailey <Susan Bailey>; Samantha Boyd <Samantha Boyd>; Martha Braddy <Martha Braddy>; Robert Bruce <Robert Bruce>; Sarah <Sarah>,
-218,218,1,Susan Bailey,3 - URGENT - TO PREVENT LOSS OF INFORMATION,,6/7/2001,susan_bailey.pst,Outlook Migration Team <Outlook Migration Team>,Alan Aronowitz <Alan Aronowitz>; Susan Bailey <Susan Bailey>; Samantha Boyd <Samantha Boyd>; Martha Braddy <Martha Braddy>; Robert Bruce <Robert Bruce>; Sarah <Sarah>,
-219,219,1,Susan Bailey,1-URGENT - Outlook Email Notification (new),,6/7/2001,susan_bailey.pst,Outlook Migration Team <Outlook Migration Team>,Alan Aronowitz <Alan Aronowitz>; Susan Bailey <Susan Bailey>; Samantha Boyd <Samantha Boyd>; Martha Braddy <Martha Braddy>; Robert Bruce <Robert Bruce>; Sarah <Sarah>,
-220,220,2,Susan Bailey,2- SURVEY/INFORMATION EMAIL,,6/7/2001,susan_bailey.pst,Outlook Migration Team <Outlook Migration Team>,Alan Aronowitz <Alan Aronowitz>; Susan Bailey <Susan Bailey>; Samantha Boyd <Samantha Boyd>; Martha Braddy <Martha Braddy>; Robert Bruce <Robert Bruce>; Sarah <Sarah>,
-221,221,1,Susan Bailey,PG&E BANKRUPTCY CASE-- IMPORTANT,,6/8/2001,susan_bailey.pst,Enron Announcements <Enron Announcements>,Enron Restricted List <Enron Restricted List>,
-419,221,4,Susan Bailey,,EthicalWallProcedures.doc,6/8/2001,susan_bailey.pst,,,
-420,221,1,Susan Bailey,,EthicalWallEmployeeCertification.doc,6/8/2001,susan_bailey.pst,,,
-222,222,1,Susan Bailey,XMS Upgrade Transition Plan - All XMS Users Please Read!!,,6/8/2001,susan_bailey.pst,Enron Announcements <Enron Announcements>,All XMS Users <All XMS Users>,
-223,223,1,Susan Bailey,Out of Office AutoReply: ENRON METALL RECYCLING GMBH & CO KG,,6/8/2001,susan_bailey.pst,Cindy Buckley <Cindy Buckley>,Susan Bailey <Susan Bailey>,
-224,224,1,Susan Bailey,FW: assignment,,11/26/2001,susan_bailey.pst,Breslau  Craig <Craig.Breslau@ENRON.com>,Bailey  Susan <Susan.Bailey@ENRON.com>; Williams  Jason R (Credit) <Jason.R.Williams@ENRON.com>,
-479,224,4,Susan Bailey,,Assignment-sample doc.doc,11/26/2001,susan_bailey.pst,,,
-225,225,1,Susan Bailey,Please Read: Resolution Center to Disconnect Toll Free number,,12/27/2001,susan_bailey.pst,General Announcement/Corp/Enron@ENRON <IMCEANOTES-General+20Announcement_Corp_Enron+40ENRON@ENRON.com>,Announcement Group@ENRON <IMCEANOTES-Announcement+20Group+40ENRON@ENRON.com>,
-226,226,1,Susan Bailey,"Metro Bus Passes and Woodlands Express Passes Available Effective  Friday, December",,12/28/2001,susan_bailey.pst,Enron General Announcements <mbx_anncenron@ENRON.com>,DL-GA-all_enron_houston_employees <DL-GA-all_enron_houston_employees@ENRON.com>,
-227,227,1,Susan Bailey,"PSEG Energy Resources & Trade LLC (""PSEG"")",,4/10/2001,susan_bailey.pst,Susan Bailey <Susan Bailey>,shawn.leyden@pseg.com <shawn.leyden@pseg.com>; gary.greiner@pseg.com <gary.greiner@pseg.com>,Brent Hendry <Brent Hendry>
-228,228,1,Susan Bailey,Corrugated Master,,4/16/2001,susan_bailey.pst,Susan Bailey <Susan Bailey>,neel.lemon@bakerbotts.com <neel.lemon@bakerbotts.com>; ffelvey@csipaper.com <ffelvey@csipaper.com>,
-229,229,1,Susan Bailey,Due West Partnership,,5/22/2001,susan_bailey.pst,Susan Bailey <Susan Bailey>,Larry Joe Hunter <Larry Joe Hunter>,
-230,230,1,Susan Bailey,Re: Enron Corp. Certificates,,5/24/2001,susan_bailey.pst,Susan Bailey <Susan Bailey>,Mary Cook <Mary Cook>,
-231,231,1,Susan Bailey,ISDA with ENA,,5/29/2001,susan_bailey.pst,Susan Bailey <Susan Bailey>,lemelpe@nu.com <lemelpe@nu.com>,Robert Bruce <Robert Bruce>
-232,232,1,Susan Bailey,Enron Corp. Guaranty,,5/29/2001,susan_bailey.pst,Susan Bailey <Susan Bailey>,Cindy Richardson <Cindy Richardson>,
-233,233,1,Susan Bailey,"Sigma Alimentos, S.A. de C.V.",,5/31/2001,susan_bailey.pst,Susan Bailey <Susan Bailey>,Bianca Ornelas <Bianca Ornelas>; Gordon Heaney <Gordon Heaney>; Larry Joe Hunter <Larry Joe Hunter>,Veronica Espinoza <Veronica Espinoza>; Lesli Campbell <Lesli Campbell>
-234,234,1,Susan Bailey,Compagnie de Papiers Stadacona Ltee,,6/1/2001,susan_bailey.pst,Susan Bailey <Susan Bailey>,Bob Bowen <Bob Bowen>; Laurel Adams <Laurel Adams>; Andrea R Guillen <Andrea R Guillen>; Larry Joe Hunter <Larry Joe Hunter>; Gordon Heaney <Gordon Heaney>,
-235,235,1,Susan Bailey,"Univex, S.A.",,6/1/2001,susan_bailey.pst,Susan Bailey <Susan Bailey>,Bianca Ornelas <Bianca Ornelas>; Gordon Heaney <Gordon Heaney>; Larry Joe Hunter <Larry Joe Hunter>,Veronica Espinoza <Veronica Espinoza>; Lesli Campbell <Lesli Campbell>
-236,236,1,Susan Bailey,Enron Corp. Guaranty,,6/4/2001,susan_bailey.pst,Susan Bailey <Susan Bailey>,Cindy Richardson <Cindy Richardson>,
-237,237,1,Susan Bailey,"Univex, S.A.",,6/4/2001,susan_bailey.pst,Susan Bailey <Susan Bailey>,Gordon Heaney <Gordon Heaney>,
-238,238,1,Susan Bailey,Merchant Energy Group of the Americas,,6/5/2001,susan_bailey.pst,Susan Bailey <Susan Bailey>,Carol St Clair <Carol St Clair>,
-239,239,1,Susan Bailey,Re: Merchant Energy Group of the Americas,,6/5/2001,susan_bailey.pst,Susan Bailey <Susan Bailey>,Carol St Clair <Carol St Clair>,
-240,240,1,Susan Bailey,Re: ENRON METALS RECYCLING GMBH & CO KG,,6/5/2001,susan_bailey.pst,Susan Bailey <Susan Bailey>,Cindy Buckley <Cindy Buckley>,
-241,241,1,Susan Bailey,Enron Teesside Operations Limited,,6/5/2001,susan_bailey.pst,Susan Bailey <Susan Bailey>,Bob Bowen <Bob Bowen>; Laurel Adams <Laurel Adams>; Andrea R Guillen <Andrea R Guillen>; Larry Joe Hunter <Larry Joe Hunter>; Gordon Heaney <Gordon Heaney>,
-242,242,1,Susan Bailey,Enron Corp. Guaranty,,6/5/2001,susan_bailey.pst,Susan Bailey <Susan Bailey>,Ellen_Evans@rge.com <Ellen_Evans@rge.com>,Edward Sacks <Edward Sacks>
-243,243,1,Susan Bailey,Re: Merchant Energy Group of the Americas,,6/5/2001,susan_bailey.pst,Susan Bailey <Susan Bailey>,Sara Shackleton <Sara Shackleton>; Mary Cook <Mary Cook>,
-244,244,1,Susan Bailey,Weekly Canada Report,,6/7/2001,susan_bailey.pst,Susan Bailey <Susan Bailey>,Mary Cook <Mary Cook>,
-245,245,1,Susan Bailey,Corporate Support Documents,,6/7/2001,susan_bailey.pst,Susan Bailey <Susan Bailey>,lemelpe@nu.com <lemelpe@nu.com>,Robert Bruce <Robert Bruce>
-246,246,1,Susan Bailey,Re: ENRON METALL RECYCLING GMBH & CO KG,,6/7/2001,susan_bailey.pst,Susan Bailey <Susan Bailey>,Cindy Buckley <Cindy Buckley>,
-247,247,1,Susan Bailey,New Dominion LLC,,10/26/2001,susan_bailey.pst,Bailey <Bailey>,'john.special@newdominion.net' <'john.special@newdominion.net'>,Lebrocq <Lebrocq>; Wendi </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Wlebrocq>
-481,247,3,Susan Bailey,,CA(new dominion).doc,10/26/2001,susan_bailey.pst,,,
-248,248,1,Susan Bailey,New Dominion LLC,,10/26/2001,susan_bailey.pst,Bailey <Bailey>,'john.special@newdominion.net' <'john.special@newdominion.net'>,Lebrocq <Lebrocq>; Wendi </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Wlebrocq>
-344,248,3,Susan Bailey,,CA(new dominion).doc,10/26/2001,susan_bailey.pst,,,
-249,249,1,Susan Bailey,Cavell Energy Corporation,,10/30/2001,susan_bailey.pst,Bailey <Bailey>,Adams <Adams>; Laurel </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Ladams>; Anderson <Anderson>; Diane </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Danders2>,
-250,250,1,Susan Bailey,Cavell Energy Corporation,,10/30/2001,susan_bailey.pst,Bailey <Bailey>,Adams <Adams>; Laurel </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Ladams>; Anderson <Anderson>; Diane </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Danders2>,
-251,251,1,Susan Bailey,Enron Corp. Guaranty,,11/16/2001,susan_bailey.pst,Bailey <Bailey>,Richardson <Richardson>; Cindy </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Crichar1>,
-347,251,4,Susan Bailey,,197conf(enron)guaranty.doc,11/16/2001,susan_bailey.pst,,,
-252,252,1,Susan Bailey,American Commercial Barge Line LLC,,11/21/2001,susan_bailey.pst,Bailey <Bailey>,Ornelas <Ornelas>; Bianca </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Bornelas>; Anderson <Anderson>; Diane <Diane>,Mendoza <Mendoza>; Nidia </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Nmartin>; Landry <Landry>; Shemeika S. <Shemeika S.>
-348,252,6,Susan Bailey,,198conf(american commercial barge line).doc,11/21/2001,susan_bailey.pst,,,
-253,253,1,Susan Bailey,American Commercial Barge Line LLC,,11/21/2001,susan_bailey.pst,Bailey <Bailey>,Ornelas <Ornelas>; Bianca </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Bornelas>; Anderson <Anderson>; Diane <Diane>,Mendoza <Mendoza>; Nidia </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Nmartin>; Landry <Landry>; Shemeika S. <Shemeika S.>
-483,253,6,Susan Bailey,,198conf(american commercial barge line).doc,11/21/2001,susan_bailey.pst,,,
-254,254,1,Susan Bailey,RE: ISDA Documents,,11/21/2001,susan_bailey.pst,Bailey <Bailey>,'lorchard@commrisk.bm' <'lorchard@commrisk.bm'>,Koehler <Koehler>; Anne C. </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Akoehle>
-255,255,1,Susan Bailey,Enron Corp. Guaranty,,11/21/2001,susan_bailey.pst,Bailey <Bailey>,Richardson <Richardson>; Cindy </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Crichar1>,
-362,255,4,Susan Bailey,,enron guaranty (forest oil - conf).doc,11/21/2001,susan_bailey.pst,,,
-256,256,1,Susan Bailey,Enron Corp. Guaranty,,11/21/2001,susan_bailey.pst,Bailey <Bailey>,Richardson <Richardson>; Cindy </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Crichar1>,
-484,256,4,Susan Bailey,,enron guaranty (forest oil - conf).doc,11/21/2001,susan_bailey.pst,,,
-257,257,2,Susan Bailey,"RE: Orientation Meeting -- January 14, 2002",,11/26/2001,susan_bailey.pst,Bailey <Bailey>,'Pat Sorrells' <Executive_Director@periwinklefoundation.org>,
-258,258,2,Susan Bailey,FW: assignment,,11/26/2001,susan_bailey.pst,Bailey <Bailey>,Sayre <Sayre>; Frank </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Fsayre>,Breslau <Breslau>; Craig </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Cbresla>
-363,258,4,Susan Bailey,,Assignment-sample doc.doc,11/26/2001,susan_bailey.pst,,,
-259,259,2,Susan Bailey,RE: assignment,,11/27/2001,susan_bailey.pst,Bailey <Bailey>,Breslau <Breslau>; Craig </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Cbresla>; Williams <Williams>; Jason R <Jason R>,
-260,260,1,Susan Bailey,"PCS Nitorgen Fertilizer LP (""PCS"")",,11/27/2001,susan_bailey.pst,Bailey <Bailey>,Ornelas <Ornelas>; Bianca </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Bornelas>,Breslau <Breslau>; Craig </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Cbresla>; Williams <Williams>; Jason R <Jason R>
-261,261,2,Susan Bailey,"Commercial Risk Reinsurance Company Limited (""CRRC"")",,11/27/2001,susan_bailey.pst,Bailey <Bailey>,Rohauer <Rohauer>; Tanya </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Trohaue>,Koehler <Koehler>; Anne C. </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Akoehle>
-364,261,31,Susan Bailey,,(commercial risk reinsurance 11-26-01)master agmt. redline.doc,11/27/2001,susan_bailey.pst,,,
-262,262,2,Susan Bailey,FW: Chiricahua Notes,,11/27/2001,susan_bailey.pst,Bailey <Bailey>,Swafford <Swafford>; John </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Jswaffo>,Stoler <Stoler>; Lou </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Lstolle>; Korkmas <Korkmas>; Deb </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Dkorkma>
-382,262,2,Susan Bailey,,Demand Note1.doc,11/27/2001,susan_bailey.pst,,,
-383,262,2,Susan Bailey,,Demand Note10.doc,11/27/2001,susan_bailey.pst,,,
-384,262,2,Susan Bailey,,Demand Note11.doc,11/27/2001,susan_bailey.pst,,,
-385,262,2,Susan Bailey,,Demand Note12.doc,11/27/2001,susan_bailey.pst,,,
-386,262,2,Susan Bailey,,Demand Note13.doc,11/27/2001,susan_bailey.pst,,,
-387,262,2,Susan Bailey,,Demand Note14.doc,11/27/2001,susan_bailey.pst,,,
-388,262,2,Susan Bailey,,Demand Note15.doc,11/27/2001,susan_bailey.pst,,,
-389,262,2,Susan Bailey,,Demand Note16.doc,11/27/2001,susan_bailey.pst,,,
-390,262,2,Susan Bailey,,Demand Note17.doc,11/27/2001,susan_bailey.pst,,,
-391,262,2,Susan Bailey,,Demand Note2.doc,11/27/2001,susan_bailey.pst,,,
-392,262,2,Susan Bailey,,Demand Note3.doc,11/27/2001,susan_bailey.pst,,,
-393,262,2,Susan Bailey,,Demand Note4.doc,11/27/2001,susan_bailey.pst,,,
-394,262,2,Susan Bailey,,Demand Note5.doc,11/27/2001,susan_bailey.pst,,,
-395,262,2,Susan Bailey,,Demand Note6.doc,11/27/2001,susan_bailey.pst,,,
-396,262,2,Susan Bailey,,Demand Note7.doc,11/27/2001,susan_bailey.pst,,,
-397,262,2,Susan Bailey,,Demand Note8.doc,11/27/2001,susan_bailey.pst,,,
-398,262,2,Susan Bailey,,Demand Note9.doc,11/27/2001,susan_bailey.pst,,,
-263,263,1,Susan Bailey,"Merced Irrigation District (""Merced"")",,11/28/2001,susan_bailey.pst,Bailey <Bailey>,Rosman <Rosman>; Stewart </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Srosman>; Calger <Calger>; Christopher <Christopher>,Shackleton <Shackleton>; Sara </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Sshackl>; Sacks <Sacks>; Edward </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Esacks>
-399,263,8,Susan Bailey,,029amend(merced irrigation district).doc,11/28/2001,susan_bailey.pst,,,
+from,to,subject,date,domain
+cptdougie@aol.com,susan.bailey@enron.com,Re: Deposit -- $73.08,1005627600000,aol.com
+40enron@enron.com,40enron@enron.com,SUPPLEMENTAL Weekend Outage Report for 11-16-01 through 11-18-01,1005886800000,enron.com
+stephanie.truss@enron.com,"suzanne.adams@enron.com,renee.alfaro@enron.com",Enron Kids - EWS Legal child adoption,1005973200000,enron.com
+40enron@enron.com,40enron@enron.com,Enron In Action 11.19.01,1006146000000,enron.com
+stephanie.harris@enron.com,"olshep@interlinkcc.com,bettyladish@yahoo.com",Bin Laden,1006146000000,enron.com
+stephanie.harris@enron.com,susan.bailey@enron.com,Lunch today,1006146000000,enron.com
+keegan.farrell@enron.com,"kayla.heitmeyer@enron.com,susan.bailey@enron.com",Cheryl Nelson - In around 11:30 am today,1006146000000,enron.com
+stephanie.harris@enron.com,susan.bailey@enron.com,Lunch,1006146000000,enron.com
+nidia.mendoza@enron.com,"susan.bailey@enron.com,samantha.boyd@enron.com",American Commercial Barge Line LLC  annex b,1006146000000,enron.com
+tana.jones@enron.com,susan.bailey@enron.com,Out of Office AutoReply:,1006146000000,enron.com
+diane.anderson@enron.com,susan.bailey@enron.com,FW: Forest Oil,1006146000000,enron.com
+max.sonnonstine@enron.com,"stephanie.panus@enron.com,samantha.boyd@enron.com","BP Capital Energy Equity International Holding 1, LP",1006146000000,enron.com
+starwood@spg.0mm.com,susan.bailey@enron.com,"Earn 1,000 bonus Starpoints each night",1006146000000,spg.0mm.com
+maribel.monterrey@enron.com,"susan.bailey@enron.com,samantha.boyd@enron.com",Parent Guarantee,1006146000000,enron.com
+keegan.farrell@enron.com,"kayla.heitmeyer@enron.com,susan.bailey@enron.com",Cheryl Nelson - Working From Home,1006146000000,enron.com
+wendy.conwell@enron.com,"mary.cook@enron.com,francisco.pinto.leite@enron.com",**HIGH PRIORITY** AltaGas Services Inc. CW for ISDA,1006146000000,enron.com
+francisco.pinto.leite@enron.com,"wendy.conwell@enron.com,mary.cook@enron.com",RE: **HIGH PRIORITY** AltaGas Services Inc. CW for ISDA,1006146000000,enron.com
+40enron@enron.com,40enron@enron.com,Holiday Party - Canceled,1006146000000,enron.com
+wendy.conwell@enron.com,"francisco.pinto.leite@enron.com,mary.cook@enron.com",AltaGas CW,1006146000000,enron.com
+stacey.richardson@enron.com,"ellen.wallumrod@enron.com,diane.anderson@enron.com",Global Contracts/Facilities new responsibilities,1006232400000,enron.com
+max.sonnonstine@enron.com,"marie.heard@enron.com,susan.bailey@enron.com","Panaco, Inc.",1006232400000,enron.com
+derek.bailey@enron.com,diane.anderson@enron.com,"RE: YJ4705.1, YJ4707.1, YJ7870.1, YJ7870.2",1006232400000,enron.com
+marie.heard@enron.com,"kimberly_allen@pgn.com,diane.anderson@enron.com",The Chase Manhattan Bank,1006232400000,enron.com
+shemeika.s.landry@enron.com,susan.bailey@enron.com,Out of Office AutoReply: American Commercial Barge Line LLC,1006232400000,enron.com
+keegan.farrell@enron.com,"susan.bailey@enron.com,samantha.boyd@enron.com",On Behalf of Mark Taylor and Barbara Gray,1006232400000,enron.com
+holly.keiser@enron.com,"mary.cook@enron.com,barbara.n.gray@enron.com",Wednesday's SWAP Meeting Canceled,1006232400000,enron.com
+cheryl.nelson@enron.com,"keegan.farrell@enron.com,susan.bailey@enron.com",RE: On Behalf of Mark Taylor and Barbara Gray,1006232400000,enron.com
+wendy.conwell@enron.com,"francisco.pinto.leite@enron.com,mary.cook@enron.com",Ontario Electricity Financial Corporation CW,1006232400000,enron.com
+marie.heard@enron.com,"kimberly_allen@pgn.com,diane.anderson@enron.com","Bank of America, N.A.",1006318800000,enron.com
+marie.heard@enron.com,"kimberly_allen@pgn.com,diane.anderson@enron.com",Morgan Stanley Capital Group Inc.,1006318800000,enron.com
+lorchard@commrisk.bm,susan.bailey@enron.com,RE: ISDA Documents,1006318800000,commrisk.bm
+clement.abrams@enron.com,susan.bailey@enron.com,RE: Enron Corp.,1006318800000,enron.com
+40enron@enron.com,40enron@enron.com,Program Changes,1006318800000,enron.com
+stephanie.panus@enron.com,"laurel.adams@enron.com,diane.anderson@enron.com","Encore Energy Solutions, L.P.",1006318800000,enron.com
+holly.keiser@enron.com,"mariella.mahan@enron.com,ermes.melinchon@enron.com",Francisco Pinto-Leite,1006318800000,enron.com
+holly.keiser@enron.com,"susan.bailey@enron.com,samantha.boyd@enron.com",SWAP Calendar,1006318800000,enron.com
+40enron@enron.com,40enron@enron.com,Weekend Outage Report for 11-21-01 through 11-25-01,1006318800000,enron.com
+wendy.conwell@enron.com,"mary.cook@enron.com,francisco.pinto.leite@enron.com",Ontario Energy Savings Corp,1006318800000,enron.com
+mbx_humanresources@enron.com,dl-ga-all_enron_worldwide5@enron.com,Update to Merger Q&A,1006664400000,enron.com
+edward.sacks@enron.com,"wendy.conwell@enron.com,susan.bailey@enron.com",RE: Ontario Electricity Financial Corporation CW,1006750800000,enron.com
+stephanie.truss@enron.com,"suzanne.adams@enron.com,renee.alfaro@enron.com",Adopt a Kid - Reminder,1006750800000,enron.com
+max.sonnonstine@enron.com,"marie.heard@enron.com,stephanie.panus@enron.com",FW: e prime omnibus,1006750800000,enron.com
+executive_director@periwinklefoundation.org,susan.bailey@enron.com,"RE: Orientation Meeting -- January 14, 2002",1006750800000,periwinklefoundation.org
+becky.spencer@enron.com,"mary.cook@enron.com,angela.davis@enron.com",Comments needed:  Maria Nava (112601) Gonzalez,1006750800000,enron.com
+dsciullo@bw-legal.com,susan.bailey@enron.com,Re:,1006750800000,bw-legal.com
+holly.keiser@enron.com,"mary.cook@enron.com,barbara.n.gray@enron.com",Birthday Cake--Stephanie Panus,1006750800000,enron.com
+craig.breslau@enron.com,"susan.bailey@enron.com,jason.r.williams@enron.com",FW: assignment,1006750800000,enron.com
+bianca.ornelas@enron.com,susan.bailey@enron.com,"RE: PCS Nitorgen Fertilizer LP (""PCS"")",1006750800000,enron.com
+marie.heard@enron.com,"kimberly_allen@pgn.com,diane.anderson@enron.com",Amerada Hess Corporation,1006837200000,enron.com
+deb.korkmas@enron.com,susan.bailey@enron.com,Chiricahua Notes,1006837200000,enron.com
+holly.keiser@enron.com,"susan.bailey@enron.com,samantha.boyd@enron.com",Timesheets Due on Friday,1006837200000,enron.com
+samantha.boyd@enron.com,"susan.bailey@enron.com,stephanie.panus@enron.com",FW: Mirant Canada's purchase of TransCanada Pipelines trading business,1006837200000,enron.com
+cptdougie@aol.com,susan.bailey@enron.com,Re: Jackson National Life-- Quarterly Premium,1006837200000,aol.com
+diane.anderson@enron.com,susan.bailey@enron.com,interesting,1006837200000,enron.com
+stephanie.panus@enron.com,"laurel.adams@enron.com,diane.anderson@enron.com",EnergyUSA-TPC,1006837200000,enron.com
+stephanie.panus@enron.com,"laurel.adams@enron.com,diane.anderson@enron.com","Noble Gas Marketing, Inc.",1006837200000,enron.com
+stewart.rosman@enron.com,susan.bailey@enron.com,People on Termination List,1009342800000,enron.com
+40enron@enron.com,40enron@enron.com,Please Read: Resolution Center to Disconnect Toll Free number,1009429200000,enron.com
+mbx_anncenron@enron.com,dl-ga-all_enron_houston_employees@enron.com,"Metro Bus Passes and Woodlands Express Passes Available Effective  Friday, December",1009515600000,enron.com

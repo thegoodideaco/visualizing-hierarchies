@@ -2,37 +2,42 @@
   <div>
     <div class="inner">
       <div
-        v-if="dataset.length"
+        v-if="h.leaves().length"
         class="visual">
-        <edge-bundler
-          :rotation="newAngle"
-          class="edge-bundler"
-          v-bind="{dataset}"
-          @selected="clickedItem = $event" />
+        <svg
+          ref="svg"
+          height="100%"
+          width="100%">
+          <path
+            v-for="(link, index) in h.links()"
+            :key="index"
+            :d="lineGenerator(getLinkPath(link))" />
+
+          <circle
+            v-for="(c, index) in h.descendants()"
+            :key="`_${index}`"
+            :cx="c.x"
+            :cy="c.y"
+            r="5">
+            <title>{{ c.data.key || c.data.from }}</title>
+          </circle>
+
+          <path v-for="(blink, index) in emailLinks"
+                :key="`b${index}`"
+                class="bundle"
+                :d="lineGenerator(getLinkPath(blink))" />
+        </svg>
 
         <!-- Summary -->
         <aside class="info-bar text-right">
           <div class="summary p-5">
             <h4>Summary</h4>
-            <div>Total Emails: {{ dataset.length }}</div>
-            <div>People: {{ people.length }}</div>
-            <div>Timespan: {{ timespan | inDays }} days</div>
+            <div>Total Emails: {{ h.leaves().length }}</div>
           </div>
 
           <!-- Legend -->
           <div class="legend p-5 mb-5">
             <h4>Legend</h4>
-            <ul>
-              <li
-                v-for="(person, index) in people"
-                :key="index"
-                :style="{color: colorScale(person)}">
-                <label>
-                  <span>{{ person }}</span>
-                  <input type="checkbox">
-                </label>
-              </li>
-            </ul>
           </div>
         </aside>
       </div>
@@ -41,112 +46,156 @@
 </template>
 
 <script>
-import { csv } from 'd3-fetch'
-import anime from 'animejs'
-import chroma from 'chroma-js'
+/**
+ * @typedef {d3.HierarchyPointNode<d3.NestedObject<Enron.EnronEmail>>} EnronNode
+ * @typedef {d3.HierarchyPointLink<d3.NestedObject<Enron.EnronEmail>>} EnronLink
+ */
 
-import EdgeBundler from '@/components/demos/enron-emails/EdgeBundler.vue'
-import { extent, ascending } from 'd3'
-import * as scales from 'd3-scale'
+import { csv } from 'd3-fetch'
+
+// import EdgeBundler from '@/components/demos/enron-emails/EdgeBundler.vue'
+import { ascending, hierarchy, nest, cluster, line, curveBundle } from 'd3'
+import { timeFormat } from 'd3-time-format'
+
+const dateFormat = timeFormat('%Y %b')
+
+export const keyGroupers = {
+  /** @param {Enron.EnronEmail} v */
+  from: v => {
+    const n = v.FROM.replace(/(.+)<.+/, '$1')
+    const trimmed = n
+      .toLowerCase()
+      .trim()
+      .replace(/\s+/, ' ')
+    return trimmed ? trimmed : 'n/a'
+  },
+
+  /** @param {Enron.EnronEmail} v */
+  to: v => {
+    const n = v.TO.replace(/.+<(\S+)>.+/, '$1')
+    return n.toLowerCase().substr(0, 1)
+  },
+
+  /** @param {Enron.EnronEmail} v */
+  byYear: v => {
+    const year = Date.parse(v.MasterDate)
+    return dateFormat(year).split(' ')[0]
+  },
+
+  /** @param {Enron.EnronEmail} v */
+  byMonth: v => {
+    const year = Date.parse(v.MasterDate)
+    return dateFormat(year).split(' ')[1]
+  }
+}
 
 export default {
-  components: {
-    EdgeBundler
-  },
-  filters: {
-    inDays(extent) {
-      const totalms = extent[1] - extent[0]
-
-      return totalms / 1000 / 60 / 60 / 24
-    }
-  },
+  components: {},
   data() {
     return {
-      /** @type {Enron.EnronEmail[]} */
-      dataset:     [],
-      clickedItem: null,
-      angle:       180
+      /** @type {EnronNode} */
+      h: hierarchy({}),
+
+      /** @type {{[key: string]: EnronNode}} */
+      personMap: {},
+
+      /** @type {EnronLink} */
+      emailLinks: [],
+
+      /** @type {number[]} */
+      size: [500, 500]
     }
   },
   computed: {
-    rotation: {
-      get() {
-        return this.newAngle
-      },
-      set(val) {
-        // this.angle = val
-
-        // anime.remove(this)
-
-        anime({
-          targets:    this,
-          newAngle:   val,
-          duration:   80,
-          easing:     'easeOutCubic',
-          elasticity: 200,
-          autoplay:   true
-        })
-      }
+    nester() {
+      return nest()
+        .key(v => v.domain)
+        .key(v => v.from)
     },
-    newAngle: {
-      get() {
-        return this.$store.state.controls.edgeBundling.angle
-      },
-      set(val) {
-        this.$store.commit('controls/update', {
-          path:  'edgeBundling.angle',
-          value: val
-        })
-      }
+    cluster() {
+      return cluster().size(this.size)
     },
-    people() {
-      const filtered = this.dataset.reduce((prev, email) => {
-        const from = email.FROM
-        if (!from) return prev
 
-        const name = from
-          .replace(/(.+)<.*/, '$1')
-          .toLowerCase()
-          .trim()
-
-        if (!prev.includes(name)) prev.push(name)
-        return prev
-      }, [])
-
-      return filtered.sort((a, b) => ascending(a, b))
-    },
-    timespan() {
-      return extent(this.dataset, v => Date.parse(v.MasterDate))
-    },
-    colorScale() {
-      const colors = chroma
-        .scale([
-          ...chroma.brewer.Set1,
-          ...chroma.brewer.Set2,
-          ...chroma.brewer.Set3
-        ])
-        .colors(this.people.length)
-      const s = scales
-        .scaleThreshold()
-        .domain(this.people)
-        .range(colors)
-
-      return s
+    /** @returns {d3.Line<EnronNode>} */
+    lineGenerator() {
+      return line()
+        .x(node => node.x)
+        .y(node => node.y)
+        .curve(curveBundle)
     }
   },
   async mounted() {
+    const { width, height } = this.$refs.svg.getBoundingClientRect()
+
+    this.size = [width, height]
+
     const data = await csv('/datasets/enron-emails.csv')
 
-    data.sort((a, b) =>
-      ascending(Date.parse(a.MasterDate), Date.parse(b.MasterDate))
+    data.sort((a, b) => ascending(a.date, b.date))
+
+
+
+    window.dataset = data
+
+    this.$once('hook:beforeDestroy', () => this.$delete(window, 'dataset'))
+
+    const h = hierarchy(
+      {
+        key:    'root',
+        values: this.nester.entries(data)
+      },
+      node => node.values
     )
-    this.dataset = Object.freeze(data)
+
+    h.count().sort((a, b) => ascending(a.date, b.date))
+
+    this.h = this.cluster(h)
+
+    const leaves = this.h.leaves()
+
+    const people = {}
+    leaves.forEach(leaf => {
+      const {
+        data: { from }
+      } = leaf
+
+      if (!people[from]) {
+        people[from] = leaf.parent
+      }
+    })
+
+    this.personMap = people
+
+    const links = []
+    leaves.forEach(l => {
+      const {
+        data: { to }
+      } = l
+      /** @type {string[]} */
+      const toEmails = to.split(',')
+      toEmails.forEach(toEmail => {
+        const matchNode = this.personMap[toEmail]
+
+        if (matchNode) {
+          links.push({
+            source: l.parent,
+            target: matchNode
+          })
+        }
+      })
+    })
+
+    this.emailLinks = links
   },
   methods: {
-    /** @param {Event} ev */
-    updateRotation(ev) {
-      // console.log(ev.currentTarget.value)
-      this.rotation = parseFloat(ev.currentTarget.value)
+    /**
+     * Converts a link into an array of nodes
+     * @type {(link: EnronLink) => EnronNode[]}
+     */
+    getLinkPath(link) {
+      const { source, target } = link
+
+      return source.path(target)
     }
   }
 }
@@ -173,6 +222,19 @@ export default {
   display: grid;
   grid: 1fr / 1fr max-content;
   row-gap: 10px;
+}
+
+path {
+  fill: none;
+  stroke: #fff;
+
+  &.bundle {
+    stroke: red;
+  }
+}
+
+circle {
+  fill: #fff;
 }
 
 .edge-bundler {
