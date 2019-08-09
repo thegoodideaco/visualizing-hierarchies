@@ -16,8 +16,9 @@
 
             <circle
               v-for="(c, index) in h.descendants()"
+              v-show="c.height === 1"
               :key="`_${index}`"
-              r="5"
+              r="10"
               v-bind="pointPosition(c)"
               @click="selectNode(c)">
               <title>{{ c.data.key || c.data.from }}</title>
@@ -230,7 +231,7 @@ export default {
 
         if (matchNode) {
           links.push({
-            source: l,
+            source: l.parent,
             target: matchNode
           })
         }
@@ -238,6 +239,9 @@ export default {
     })
 
     this.emailLinks = links
+
+    this.h.descendants().filter(n => n.height === 1).forEach(n => delete n.children)
+    this.cluster(this.h)
   },
   methods: {
     /**
@@ -286,6 +290,8 @@ path {
 
   &.bundle {
     stroke: red;
+    stroke-width: 2px;
+    shape-rendering: geometricPrecision;
   }
 }
 
