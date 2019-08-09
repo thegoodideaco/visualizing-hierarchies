@@ -16,14 +16,6 @@ export default {
     items: [
       {
         url: '/static/images/vue intro.png'
-      },
-      {
-        url:   '/static/images/taxonomy2.jpg',
-        title: 'Cool Dude'
-      },
-      {
-        url:   '/static/images/hierarchy-expand.gif',
-        title: 'Cool Dude'
       }
     ]
   })

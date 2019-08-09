@@ -29,6 +29,10 @@ export default {
       {
         url:   'https://media3.giphy.com/media/3osxYzUOBRWEg5S5q0/source.gif',
         title: 'that\'s also better'
+      },
+      {
+        url:   '/static/images/sense-bandwidth.jpg',
+        title: 'Bandwidth of our senses'
       }
     ]
   })

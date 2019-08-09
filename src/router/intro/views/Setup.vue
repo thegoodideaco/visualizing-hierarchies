@@ -33,10 +33,7 @@ export default {
 /deep/ .hljs {
   pre {
     font-size: 2rem;
-    display: inline-block;
-    padding: 2rem;
-    border: 2px dashed green;
-    margin: 0;
+
 
     + p {
       display: inline;

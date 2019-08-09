@@ -87,20 +87,6 @@ export default {
 </script>
 ```
 
-The next step is to initialize a force simulation. Let's add force to our data object.
-
-```javascript
-data: () => ({
-  width: 100,
-  height: 100,
-
-  /** @type {d3.HierarchyPointNode} */
-  h: d3.hierarchy({}),
-
-  force: d3.forceSimulation()
-})
-```
-
 It is crucial that we assign properties to the hierarchy before we pass it to Vue
 
 ```javascript
@@ -117,6 +103,20 @@ h.descendants().forEach(node =>
 )
 
 // 6. Assign the hierarchy to our data object
+```
+
+The next step is to initialize a force simulation. Let's add force to our data object.
+
+```javascript
+data: () => ({
+  width: 100,
+  height: 100,
+
+  /** @type {d3.HierarchyPointNode} */
+  h: d3.hierarchy({}),
+
+  force: d3.forceSimulation()
+})
 ```
 
 ```javascript
@@ -257,5 +257,4 @@ setupForces() {
 We can easily apply color values based on population density by creating a color scale
 
 ```javascript
-
 ```
