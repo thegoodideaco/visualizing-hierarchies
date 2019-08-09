@@ -36,14 +36,9 @@ import * as scales from 'd3-scale'
 // import * as d3c from 'd3-chord'
 import { ascending } from 'd3-array'
 
-
 import chroma from 'chroma-js'
 
-
-
-import {keyGroupers} from './index.vue'
-
-
+import { keyGroupers } from './index.vue'
 
 export default {
   name:  'EdgeBundler',
@@ -64,11 +59,7 @@ export default {
         min: 1,
         max: 10
       },
-      keys: [
-        keyGroupers.byYear,
-        keyGroupers.byMonth,
-        keyGroupers.from
-      ],
+      keys:  [keyGroupers.byYear, keyGroupers.byMonth, keyGroupers.from],
       mouse: {
         x: 0,
         y: 0
@@ -109,7 +100,7 @@ export default {
       }
 
       if (!this.dataset) return coll
-      const collections =  this.dataset.reduce((prev, cur) => {
+      const collections = this.dataset.reduce((prev, cur) => {
         const attachment = cur.Filename
 
         if (attachment) {
@@ -121,7 +112,9 @@ export default {
         return prev
       }, coll)
 
-      collections.emails.sort((a, b) => Date.parse(a.MasterDate) - Date.parse(b.MasterDate))
+      collections.emails.sort(
+        (a, b) => Date.parse(a.MasterDate) - Date.parse(b.MasterDate)
+      )
 
       return collections
     },
@@ -133,8 +126,10 @@ export default {
     people() {
       if (this.hierarchy) {
         return this.dataset.reduce((prev, cur) => {
-          const name = cur.FROM.replace(/(.+)\/*<.*/, '$1').toLowerCase().trim()
-          if(!prev.includes(name) && name) prev.push(name)
+          const name = cur.FROM.replace(/(.+)\/*<.*/, '$1')
+            .toLowerCase()
+            .trim()
+          if (!prev.includes(name) && name) prev.push(name)
 
           return prev
         }, [])
@@ -161,7 +156,9 @@ export default {
           const leaf = a.children == null
 
           if (leaf) {
-            return Date.parse(a.data.MasterDate) - Date.parse(b.data.MasterDate)
+            return (
+              Date.parse(a.data.MasterDate) - Date.parse(b.data.MasterDate)
+            )
           } else {
             return a.data.key > b.data.key
               ? 1
@@ -176,10 +173,15 @@ export default {
           .size([Math.PI * 2 * (this.rotation / 360), this.radius])
           .separation((a, b) => {
             // const year = v => new Date(v.MasterDate).getFullYear()
-            const year = v => v.FROM.replace(/(.+)\S*<+.*/, '$1').toLowerCase().trim()
+            const year = v =>
+              v.FROM.replace(/(.+)\S*<+.*/, '$1')
+                .toLowerCase()
+                .trim()
 
-            return year(a.data) !== year(b.data) ? this.separation.max : this.separation.min
-          } )
+            return year(a.data) !== year(b.data)
+              ? this.separation.max
+              : this.separation.min
+          })
 
         return cluster(h)
       }
@@ -200,11 +202,11 @@ export default {
     },
 
     filteredNodes() {
-      if(this.hierarchy) {
+      if (this.hierarchy) {
         const nodes = []
 
         this.hierarchy.each(n => {
-          if(n.depth >= (this.hierarchy.height - 1)) nodes.push(n)
+          if (n.depth >= this.hierarchy.height - 1) nodes.push(n)
         })
 
         return nodes
@@ -231,27 +233,24 @@ export default {
     },
 
     angleScale() {
-      return scales.scaleBand()
+      return scales
+        .scaleBand()
         .domain(this.hierarchy.leaves())
         .range([0, 360])
     },
 
     mouseAngle() {
-      const {
-        x,
-        y
-      } = this.mouse
+      const { x, y } = this.mouse
 
       const offset = {
-        x: x - this.width * .5,
-        y: y - this.height * .5
+        x: x - this.width * 0.5,
+        y: y - this.height * 0.5
       }
 
-
-      let rad = Math.atan2(offset.y, offset.x) + (Math.PI * .5)
+      let rad = Math.atan2(offset.y, offset.x) + Math.PI * 0.5
       // rad =
 
-      return ((rad > 0 ? rad : rad + Math.PI * 2) * 180 / Math.PI)
+      return ((rad > 0 ? rad : rad + Math.PI * 2) * 180) / Math.PI
     },
 
     radius() {
@@ -358,16 +357,15 @@ export default {
      */
     getCircleColor(item) {
       if (item.children || !this.people) return
-      const key = item.data.FROM.replace(/(.+)<.*/, '$1').toLowerCase().trim()
+      const key = item.data.FROM.replace(/(.+)<.*/, '$1')
+        .toLowerCase()
+        .trim()
       return this.circleColor(key)
     },
 
     /** @param {MouseEvent} ev */
     updateMouse(ev) {
-      const {
-        layerX: x,
-        layerY: y
-      } = ev
+      const { layerX: x, layerY: y } = ev
 
       Object.assign(this.mouse, {
         x,

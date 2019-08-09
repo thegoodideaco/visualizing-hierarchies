@@ -26,7 +26,7 @@
 
 <script>
 import BlankLayoutVue from '@/layouts/BlankLayout.vue'
-import {ForceDemo} from '@/components/demos/asyncDemos'
+import { ForceDemo } from '@/components/demos/asyncDemos'
 export default {
   components: {
     Layout:    BlankLayoutVue,
@@ -34,7 +34,6 @@ export default {
   }
 }
 </script>
-
 
 <style scoped lang="scss">
 .home {

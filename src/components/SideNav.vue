@@ -6,12 +6,10 @@
       <h5>With Vue.js and D3.js</h5>
 
       <div class="logos">
-        <img
-          alt="Vue"
-          src="@/assets/vue-logo.svg">
-        <img
-          alt="D3"
-          src="@/assets/d3-logo.svg">
+        <img alt="Vue"
+             src="@/assets/vue-logo.svg">
+        <img alt="D3"
+             src="@/assets/d3-logo.svg">
       </div>
     </div>
 

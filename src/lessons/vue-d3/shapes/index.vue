@@ -1,4 +1,3 @@
-
 <template>
   <div class="grid-tools">
     <header>
@@ -40,7 +39,7 @@ export default {
 header {
   &:not(:empty) {
     padding: 10px;
-    background-color: rgba(#000, .25);
+    background-color: rgba(#000, 0.25);
   }
 }
 </style>

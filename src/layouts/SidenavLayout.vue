@@ -1,7 +1,9 @@
 <template>
   <div
-
-    :class="{'focus-text': $attrs.focusedOnText, 'no-readme': !$route.meta.readme}"
+    :class="{
+      'focus-text': $attrs.focusedOnText,
+      'no-readme': !$route.meta.readme
+    }"
     class="side-layout select-none">
     <!-- Side menu -->
     <side-nav class="overflow-hidden" />
@@ -35,8 +37,10 @@ import SideNavVue from '../components/SideNav.vue'
 export default {
   components: {
     MarkdownViewer: () =>
-      import(/* webpackChunkName: "MarkdownViewer" */
-        '../components/MarkdownDisplay.vue'),
+      import(
+        /* webpackChunkName: "MarkdownViewer" */
+        '../components/MarkdownDisplay.vue'
+      ),
     SideNav: SideNavVue
   },
   props: {

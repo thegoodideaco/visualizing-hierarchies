@@ -1,4 +1,3 @@
-
 <template>
   <div class="grid-tools">
     <header>
@@ -35,7 +34,7 @@ export default {
     OptionSlider: SliderVue
   },
   data: () => ({
-    bundle:    .5,
+    bundle:    0.5,
     curveType: 'curveLinear',
     curves:    [
       'curveBasisClosed',
@@ -83,7 +82,7 @@ header {
   align-items: center;
   &:not(:empty) {
     padding: 10px;
-    background-color: rgba(#3182ce, .5);
+    background-color: rgba(#3182ce, 0.5);
   }
 
   > * {

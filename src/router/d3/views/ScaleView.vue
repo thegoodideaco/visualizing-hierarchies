@@ -6,8 +6,7 @@
 </template>
 
 <script>
-
-import {csv} from 'd3-fetch'
+import { csv } from 'd3-fetch'
 export default {
   data: () => ({
     dataset: null
@@ -19,9 +18,10 @@ export default {
     window.dataset = this.dataset
 
     console.clear()
-    console.log('%c Use window.dataset and window.d3', [
-      'font-size: 30px'
-    ].join(';'))
+    console.log(
+      '%c Use window.dataset and window.d3',
+      ['font-size: 30px'].join(';')
+    )
   },
 
   beforeDestroy() {

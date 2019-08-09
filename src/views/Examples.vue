@@ -26,7 +26,8 @@ export default {
           title: 'Cluster Dendrogram'
         },
         {
-          url:   'https://architect-api.readthedocs.io/en/latest/_images/node-link-tree.png',
+          url:
+            'https://architect-api.readthedocs.io/en/latest/_images/node-link-tree.png',
           title: 'Tidy Tree'
         },
         {
@@ -39,7 +40,8 @@ export default {
         },
         ReportTree,
         {
-          url:   'https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/imgs/js-profile.png',
+          url:
+            'https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/imgs/js-profile.png',
           title: 'Flame Graph using Partition Layout'
         },
         {
@@ -48,8 +50,6 @@ export default {
         }
       ],
       curIndex: 0
-
-
     }
   }
 }

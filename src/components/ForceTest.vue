@@ -29,13 +29,10 @@ import {
   forceRadial,
   forceCollide
 } from 'd3-force'
-import {
-  rgb,
-  color
-} from 'd3-color'
+import { rgb, color } from 'd3-color'
 
-import {interpolateRgb} from 'd3-interpolate'
-import {scaleSequential} from 'd3-scale'
+import { interpolateRgb } from 'd3-interpolate'
+import { scaleSequential } from 'd3-scale'
 
 const particleCountHD = 300
 const particleCount = 500
@@ -82,7 +79,7 @@ export default {
   watch: {
     colorScale() {
       this.simulation.nodes().forEach((n, i) => {
-        if(!this.roots.includes(i)) {
+        if (!this.roots.includes(i)) {
           this.updateTint(n.spr, i)
         }
       })
@@ -151,28 +148,20 @@ export default {
 
     this.roots = range(~~Math.sqrt(particleAmount))
 
-
     this.linkRender = new Graphics()
-
-
 
     this.pixiRender.stage.addChild(this.linkRender)
     this.pixiRender.stage.addChild(container)
 
-    this.colorScale = scaleSequential(interpolateRgb(color('#08fb8f'), color('#ff6414'))).domain([
-      0,
-      particleAmount
-    ])
+    this.colorScale = scaleSequential(
+      interpolateRgb(color('#08fb8f'), color('#ff6414'))
+    ).domain([0, particleAmount])
 
     this.nodes = range(particleAmount).map((k, i) => {
-
       /** @type {PIXI.Sprite} */
       const spr = new Sprite.fromImage('/test.png')
 
-
       container.addChild(spr)
-
-
 
       const [r, g, b] = this.colorScale(i)
         .replace(/[^\d,]/g, '')
@@ -186,11 +175,10 @@ export default {
         16
       )
 
-      if(this.roots.includes(i)){
+      if (this.roots.includes(i)) {
         spr.tint = 0xffffff
-        spr.alpha = .1
+        spr.alpha = 0.1
       }
-
 
       return {
         index: i,
@@ -208,17 +196,37 @@ export default {
     })
 
     this.simulation = forceSimulation(this.nodes)
-      .force('charge', forceManyBody().strength(n => this.roots.includes(n.index) ? -10 : -300))
-      .force('link', forceLink(this.links).distance(this.zoom).strength(.7))
+      .force(
+        'charge',
+        forceManyBody().strength(n =>
+          this.roots.includes(n.index) ? -10 : -300
+        )
+      )
+      .force(
+        'link',
+        forceLink(this.links)
+          .distance(this.zoom)
+          .strength(0.7)
+      )
       .force(
         'radial',
-        forceRadial(height / 1.5, width / 2, height / 2).strength(.7)
-          .radius(n => n.index < 40 ? width / 7 : width / 1.9)
+        forceRadial(height / 1.5, width / 2, height / 2)
+          .strength(0.7)
+          .radius(n => (n.index < 40 ? width / 7 : width / 1.9))
       )
-      .force('mouse', forceRadial(height / 4, width / 2, height / 2).strength(0.5)
-        .radius((n, i) => i < 40 ? 15 * (i+5) : height / 2.9))
+      .force(
+        'mouse',
+        forceRadial(height / 4, width / 2, height / 2)
+          .strength(0.5)
+          .radius((n, i) => (i < 40 ? 15 * (i + 5) : height / 2.9))
+      )
       .force('center', forceCenter(width / 2, height / 2))
-      .force('collide', forceCollide().radius(node => this.roots.includes(node.index) ? 0 : 5).strength(2))
+      .force(
+        'collide',
+        forceCollide()
+          .radius(node => (this.roots.includes(node.index) ? 0 : 5))
+          .strength(2)
+      )
 
       // .force('x', forceX())
       // .force('y', forceY())
@@ -239,12 +247,10 @@ export default {
     test(e) {
       this.zoom += e.deltaY * 0.5
 
-      this.simulation
-        .restart()
+      this.simulation.restart()
     },
     ticked() {
       this.simulation.force('link').distance(this.zoom)
-
 
       /** @type {PIXI.Graphics} */
       const gfx = this.linkRender
@@ -252,35 +258,27 @@ export default {
 
       // const rs = this.roots
       this.links.forEach(l => {
-
         /** @type number */
         const n1 = l.source
         const n2 = l.target
-
-
 
         // return
         // this.nodes.forEach((n) => {
 
         /** @type {{x: number, y: number, spr: PIXI.Sprite}} */
-        const { x:x1, y:y1, spr:spr1 } = n1
+        const { x: x1, y: y1, spr: spr1 } = n1
 
         /** @type {{x: number, y: number, spr: PIXI.Sprite}} */
-        const { x:x2, y:y2, spr:spr2 } = n2
+        const { x: x2, y: y2, spr: spr2 } = n2
 
         spr1.position.set(x1 - spr1.width / 2, y1 - spr1.height / 2)
         spr2.position.set(x2 - spr2.width / 2, y2 - spr2.height / 2)
 
-
         const isRoot = this.roots.includes(n2.index)
 
-        gfx.lineStyle(isRoot ? 3 : 1, spr2.tint, isRoot ? .05 : .2)
+        gfx.lineStyle(isRoot ? 3 : 1, spr2.tint, isRoot ? 0.05 : 0.2)
         gfx.moveTo(n1.x, n1.y).lineTo(n2.x, n2.y)
-
-
-
       })
-
     },
 
     dragsubject(event) {
@@ -323,10 +321,7 @@ export default {
 
     onResize() {
       // console.log('resize')
-      const {
-        width,
-        height
-      } = this.$el.getBoundingClientRect()
+      const { width, height } = this.$el.getBoundingClientRect()
 
       this.width = width
       this.height = height
@@ -334,8 +329,8 @@ export default {
 
       /** @type {d3.ForceCenter} */
       const centerSim = this.simulation.force('center')
-      const w = width * .5
-      const h = height * .5
+      const w = width * 0.5
+      const h = height * 0.5
       centerSim.x(w).y(h)
 
       /** @type {d3.ForceRadial} */
@@ -363,7 +358,7 @@ export default {
       force.x(x).y(y)
     },
 
-    updateTint(spr, i){
+    updateTint(spr, i) {
       const [r, g, b] = this.colorScale(i)
         .replace(/[^\d,]/g, '')
         .split(',')

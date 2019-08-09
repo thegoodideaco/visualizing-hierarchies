@@ -17,14 +17,13 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  /deep/ input {
-    color: lighten(#000, 10);
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 2rem;
-    padding: .2rem;
-    display: block;
-    position: relative;
-
-  }
+/deep/ input {
+  color: lighten(#000, 10);
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  padding: 0.2rem;
+  display: block;
+  position: relative;
+}
 </style>

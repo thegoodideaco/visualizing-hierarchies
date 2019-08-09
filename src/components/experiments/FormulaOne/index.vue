@@ -8,9 +8,9 @@
       </div>
 
       <div>
-        <h2
-          v-if="dateRange && dateRange.length">
-          Top Racers between {{ dateRange[0] | asYear }} and {{ dateRange[1] | asYear }}
+        <h2 v-if="dateRange && dateRange.length">
+          Top Racers between {{ dateRange[0] | asYear }} and
+          {{ dateRange[1] | asYear }}
         </h2>
       </div>
     </section>
@@ -23,9 +23,8 @@
 
     <!-- Force Graph -->
     <div class="f1__content">
-      <transition
-        mode="out-in"
-        name="fade">
+      <transition mode="out-in"
+                  name="fade">
         <force-graph v-if="dateRange"
                      :dataset="filteredDrivers" />
 
@@ -191,7 +190,7 @@ export default {
 
 <style scoped lang="scss">
 .f1 {
-  background-image: url('/static/images/f1/bg.jpg');
+  background-image: url("/static/images/f1/bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -199,8 +198,8 @@ export default {
   // Grid Props
   display: grid;
   grid:
-    [row1-start] 'title title' auto [row1-end]
-    [row2-start] 'sidebar content' 1fr [row2-end]
+    [row1-start] "title title" auto [row1-end]
+    [row2-start] "sidebar content" 1fr [row2-end]
     / minmax(20%, min-content) 1fr;
   row-gap: 5px;
   column-gap: 5px;

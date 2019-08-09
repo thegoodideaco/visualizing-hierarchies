@@ -1,7 +1,6 @@
 <template>
-  <svg
-    height="100%"
-    width="100%">
+  <svg height="100%"
+       width="100%">
     <!-- Put content here -->
 
     <!-- Links -->
@@ -15,14 +14,15 @@
       stroke-width="2" />
 
     <!-- Circles -->
-    <circle v-for="(node, index) in descendants(h)"
-            :key="index"
-            :cx="node.x"
-            :cy="node.y"
-            :r="sizeScale(node.value)"
-            stroke="white"
-            stroke-width="2"
-            @click.self="nodeClick(node)">
+    <circle
+      v-for="(node, index) in descendants(h)"
+      :key="index"
+      :cx="node.x"
+      :cy="node.y"
+      :r="sizeScale(node.value)"
+      stroke="white"
+      stroke-width="2"
+      @click.self="nodeClick(node)">
       <title>Expanded: {{ node.expanded }}</title>
     </circle>
   </svg>
@@ -63,10 +63,11 @@ export default {
         .range([this.radius.min, this.radius.max])
     },
     lineGenerator() {
-      return d3.line()
+      return d3
+        .line()
         .x(n => n.x)
         .y(n => n.y)
-        // .curve(d3.curveBundle)
+      // .curve(d3.curveBundle)
     }
   },
   watch: {
@@ -104,23 +105,19 @@ export default {
     },
 
     links(node) {
-      if(node) {
+      if (node) {
         const links = node.links()
-
 
         return links
       }
     },
 
     path(link) {
-      return this.lineGenerator([
-        link.source,
-        link.target
-      ])
+      return this.lineGenerator([link.source, link.target])
     },
 
     descendants(node) {
-      if(node) {
+      if (node) {
         const nodes = node.descendants()
         // .filter(n => {
         //   const isRoot = n.parent == null
@@ -175,12 +172,22 @@ export default {
 
       // Add x and y forces to move all nodes to the center
       this.force
-        .force('x', d3.forceX(n => {
-          return n.parent ? n.parent.x : this.width * .5
-        }).strength(0))
-        .force('y', d3.forceY(n => {
-          return n.parent ? n.parent.y : this.height * .5
-        }).strength(0))
+        .force(
+          'x',
+          d3
+            .forceX(n => {
+              return n.parent ? n.parent.x : this.width * 0.5
+            })
+            .strength(0)
+        )
+        .force(
+          'y',
+          d3
+            .forceY(n => {
+              return n.parent ? n.parent.y : this.height * 0.5
+            })
+            .strength(0)
+        )
         .force('center', d3.forceCenter(this.width * 0.5, this.height * 0.5))
         .force('collision', d3.forceCollide(n => this.sizeScale(n.value)))
         .force(
@@ -199,7 +206,6 @@ export default {
         .alpha(0.9)
     },
     updateForce() {
-
       // this.force.nodes(this.descendants(this.h))
 
       const nodes = this.descendants(this.h)
@@ -220,18 +226,15 @@ export default {
 
       // Update all of them
 
-      forces.center
-        .x(this.width * .5)
-        .y(this.height * .5)
+      forces.center.x(this.width * 0.5).y(this.height * 0.5)
 
-      forces.collision
-        .radius(node => {
-          if(node.expanded) {
-            return this.sizeScale(node.value)
-          }else{
-            return 0
-          }
-        })
+      forces.collision.radius(node => {
+        if (node.expanded) {
+          return this.sizeScale(node.value)
+        } else {
+          return 0
+        }
+      })
 
       forces.links
         // .links(this.links(this.h))
@@ -241,9 +244,9 @@ export default {
             target
           } = link
 
-          if(target.expanded) {
+          if (target.expanded) {
             return 70
-          }else{
+          } else {
             return 0
           }
         })
@@ -253,41 +256,40 @@ export default {
             target
           } = link
 
-          if(target.expanded) {
-            return .9
-          }else{
-            return .8
+          if (target.expanded) {
+            return 0.9
+          } else {
+            return 0.8
           }
         })
 
       forces.bodies
         .strength(this.forces.bodies.strength)
-        .theta(.9)
-        .distanceMax(this.width * .8)
+        .theta(0.9)
+        .distanceMax(this.width * 0.8)
 
       forces.x.strength(n => {
-        if(n.parent) {
-          if(n.parent.expanded) {
-            return .8
-          }else{
-            return .1
+        if (n.parent) {
+          if (n.parent.expanded) {
+            return 0.8
+          } else {
+            return 0.1
           }
         }
       })
 
       // Restart the force
       // this.force.nodes(nodes)
-      this.force.alpha(.9).restart()
-
+      this.force.alpha(0.9).restart()
     },
     nodeClick(node) {
-      if(node.expanded !== true) {
+      if (node.expanded !== true) {
         node.expanded = true
-      }else{
+      } else {
         node.expanded = false
       }
 
-      node.each(n => n.expanded = node.expanded)
+      node.each(n => (n.expanded = node.expanded))
 
       console.log(node)
 

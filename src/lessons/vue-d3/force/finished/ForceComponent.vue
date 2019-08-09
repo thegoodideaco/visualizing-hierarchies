@@ -1,20 +1,21 @@
 <template>
-  <svg
-    height="100%"
-    width="100%">
+  <svg height="100%"
+       width="100%">
     <!-- Links -->
-    <path v-for="(item, index) in h.links()"
-          :key="`p${index}`"
-          :d="lineGenerator([item.source, item.target])" />
+    <path
+      v-for="(item, index) in h.links()"
+      :key="`p${index}`"
+      :d="lineGenerator([item.source, item.target])" />
 
     <!-- Nodes -->
-    <circle v-for="(node, index) in h.descendants()"
-            :key="index"
-            :cx="node.x"
-            :cy="node.y"
-            :fill="colorScale(node.value)"
-            :r="getSize(node)"
-            @click.self="onClick(node)" />
+    <circle
+      v-for="(node, index) in h.descendants()"
+      :key="index"
+      :cx="node.x"
+      :cy="node.y"
+      :fill="colorScale(node.value)"
+      :r="getSize(node)"
+      @click.self="onClick(node)" />
   </svg>
 </template>
 
@@ -31,13 +32,16 @@ export default {
     force: d3.forceSimulation(),
 
     /** @type {d3.Line<d3.HierarchyPointNode>} */
-    lineGenerator: d3.line()
+    lineGenerator: d3
+      .line()
       .x(node => node.x)
       .y(node => node.y)
   }),
   computed: {
     colorScale() {
-      return d3.scalePow().exponent(.2)
+      return d3
+        .scalePow()
+        .exponent(0.2)
         .domain(d3.extent(this.h.descendants(), n => n.value))
         .range(['green', 'red'])
     }
@@ -93,17 +97,33 @@ export default {
       this.h = h
 
       this.setupForces()
-      this.force.nodes(descendants).alpha(.9).alphaDecay(.02)
+      this.force
+        .nodes(descendants)
+        .alpha(0.9)
+        .alphaDecay(0.02)
     },
 
     setupForces() {
       this.force
         // .force('x', d3.forceX(this.width * 0.5).strength(.02))
         // .force('y', d3.forceY(this.height * 0.5).strength(.02))
-        .force('center', d3.forceCenter(this.width * .5, this.height *.5))
+        .force('center', d3.forceCenter(this.width * 0.5, this.height * 0.5))
         .force('collision', d3.forceCollide(this.getSize))
-        .force('links', d3.forceLink(this.h.links()).distance(this.getLinkDistance).strength(.9))
-        .force('bodies', d3.forceManyBody().strength(-110).distanceMin(10).distanceMax(220))
+        .force(
+          'links',
+          d3
+            .forceLink(this.h.links())
+            .distance(this.getLinkDistance)
+            .strength(0.9)
+        )
+        .force(
+          'bodies',
+          d3
+            .forceManyBody()
+            .strength(-110)
+            .distanceMin(10)
+            .distanceMax(220)
+        )
     },
 
     getSize(node) {

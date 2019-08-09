@@ -1,10 +1,11 @@
 <template>
   <div>
-    <force-circle v-for="item in nodes"
-                  :key="item.data.key"
-                  :item="item"
-                  :radius="radiusScale(item.data.value.wins)"
-                  @click.native="showInfo(item)" />
+    <force-circle
+      v-for="item in nodes"
+      :key="item.data.key"
+      :item="item"
+      :radius="radiusScale(item.data.value.wins)"
+      @click.native="showInfo(item)" />
   </div>
 </template>
 
@@ -22,7 +23,7 @@ import {
 
 import debounce from 'lodash/debounce'
 
-import {ThumbnailData} from './thumbnails'
+import { ThumbnailData } from './thumbnails'
 import ForceCircleVue from './ForceCircle.vue'
 
 export default {
@@ -70,13 +71,15 @@ export default {
   watch: {
     dataset: {
       handler() {
-        this.nodes = this.dataset.map(v => {
-          return {
-            data: v,
-            x:    this.width * 0.5,
-            y:    this.height * 0.5
-          }
-        }).filter(v => v.data.value.wins > 0)
+        this.nodes = this.dataset
+          .map(v => {
+            return {
+              data: v,
+              x:    this.width * 0.5,
+              y:    this.height * 0.5
+            }
+          })
+          .filter(v => v.data.value.wins > 0)
 
         window.urls = this.nodes.map(v => v.data.value.driver.url)
 
@@ -96,11 +99,13 @@ export default {
           }
         })
 
-        this.sim.force('collide')
+        this.sim
+          .force('collide')
           .radius(v => this.radiusScale(v.data.value.wins) + 5)
-          .strength(.2)
+          .strength(0.2)
 
-        this.sim.velocityDecay(0.2)
+        this.sim
+          .velocityDecay(0.2)
           .alpha(0.4)
           .alphaDecay(0.009)
           .nodes(this.nodes)
@@ -119,11 +124,13 @@ export default {
 
     // Create a node hash??
 
-    this.nodes = this.dataset.map(v => ({
-      data: v,
-      x:    this.width * 0.5,
-      y:    this.height * 0.5
-    })).filter(v => v.data.value.wins > 0)
+    this.nodes = this.dataset
+      .map(v => ({
+        data: v,
+        x:    this.width * 0.5,
+        y:    this.height * 0.5
+      }))
+      .filter(v => v.data.value.wins > 0)
 
     this.sim
       // ? Centers all circles
@@ -158,7 +165,7 @@ export default {
     },
     restartSim() {
       const sim = this.sim
-      debounce(() => sim.restart(), .5)
+      debounce(() => sim.restart(), 0.5)
     }
   }
 }

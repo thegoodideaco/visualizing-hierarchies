@@ -9,9 +9,8 @@
         <option disabled>
           Select a Group
         </option>
-        <option
-          v-for="(item, index) in selectGroups"
-          :key="index">
+        <option v-for="(item, index) in selectGroups"
+                :key="index">
           <span class="p-2">{{ item.name }}</span>
         </option>
       </select>
@@ -191,7 +190,7 @@ export default {
     },
 
     data(val) {
-      if(val) {
+      if (val) {
         this.$emit(
           'change',
           hierarchy(
@@ -261,7 +260,7 @@ export default {
 
             &:hover {
               outline: none;
-              color: rgb(112, 255, 155)
+              color: rgb(112, 255, 155);
             }
 
             &:focus {
@@ -274,4 +273,3 @@ export default {
   }
 }
 </style>
-

@@ -1,12 +1,10 @@
 <template>
-  <svg
-    height="500"
-    width="500">
-    <path
-      :d="lineGen"
-      fill="none"
-      stroke="white"
-      stroke-width="2" />
+  <svg height="500"
+       width="500">
+    <path :d="lineGen"
+          fill="none"
+          stroke="white"
+          stroke-width="2" />
   </svg>
 </template>
 
@@ -14,11 +12,7 @@
 import * as d3 from 'd3-shape'
 export default {
   data: () => ({
-    points: [
-      [120, 250],
-      [480, 300],
-      [310, 20]
-    ]
+    points: [[120, 250], [480, 300], [310, 20]]
   }),
   computed: {
     lineGen() {
@@ -32,5 +26,4 @@ export default {
 }
 </script>
 
-<style>
-</style>
+<style></style>

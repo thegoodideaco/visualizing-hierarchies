@@ -1,13 +1,11 @@
 <template>
   <div>
     <div class="inner">
-      <div
-        v-if="h.leaves().length"
-        class="visual p-5">
-        <svg
-          ref="svg"
-          height="100%"
-          width="100%">
+      <div v-if="h.leaves().length"
+           class="visual p-5">
+        <svg ref="svg"
+             height="100%"
+             width="100%">
           <g :transform="size | centered | asTransform">
             <path
               v-for="(link, index) in h.links()"
@@ -64,7 +62,14 @@
 import { csv } from 'd3-fetch'
 
 // import EdgeBundler from '@/components/demos/enron-emails/EdgeBundler.vue'
-import { ascending, hierarchy, nest, cluster, curveBundle, lineRadial } from 'd3'
+import {
+  ascending,
+  hierarchy,
+  nest,
+  cluster,
+  curveBundle,
+  lineRadial
+} from 'd3'
 import { timeFormat } from 'd3-time-format'
 
 const dateFormat = timeFormat('%Y %b')
@@ -77,7 +82,7 @@ export const keyGroupers = {
       .toLowerCase()
       .trim()
       .replace(/\s+/, ' ')
-    return trimmed ? trimmed : 'n/a'
+    return trimmed || 'n/a'
   },
 
   /** @param {Enron.EnronEmail} v */
@@ -150,7 +155,6 @@ export default {
     },
 
     pointPosition() {
-
       return node => {
         const { x, y } = node
         const angle = x - Math.PI / 2
@@ -167,10 +171,10 @@ export default {
       if (this.selectedNode) {
         const { x } = this.selectedNode
 
-        const r = this.size[1] * .5
+        const r = this.size[1] * 0.5
 
-        const rx = Math.sin(x * Math.PI / 180) * r
-        const ry = Math.cos(x * Math.PI / 180) * r
+        const rx = Math.sin((x * Math.PI) / 180) * r
+        const ry = Math.cos((x * Math.PI) / 180) * r
 
         return {
           x: rx,
@@ -240,7 +244,10 @@ export default {
 
     this.emailLinks = links
 
-    this.h.descendants().filter(n => n.height === 1).forEach(n => delete n.children)
+    this.h
+      .descendants()
+      .filter(n => n.height === 1)
+      .forEach(n => delete n.children)
     this.cluster(this.h)
   },
   methods: {
@@ -286,7 +293,7 @@ export default {
 
 path {
   fill: none;
-  stroke: rgba(#fff, .25);
+  stroke: rgba(#fff, 0.25);
 
   &.bundle {
     stroke: red;

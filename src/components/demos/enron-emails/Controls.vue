@@ -2,7 +2,9 @@
   <div>
     <!-- Angle -->
     <label>
-      <h5>Angle: <span class="text-yellow-500">{{ ~~angle }}</span></h5>
+      <h5>
+        Angle: <span class="text-yellow-500">{{ ~~angle }}</span>
+      </h5>
       <slider v-model.number="angle"
               :min="0"
               :max="360" />
@@ -10,7 +12,9 @@
 
     <!-- Date Filter -->
     <label>
-      <h5>Dates: <span class="text-yellow-500">{{ ~~angle }}</span></h5>
+      <h5>
+        Dates: <span class="text-yellow-500">{{ ~~angle }}</span>
+      </h5>
       <slider v-model.number="angle"
               :min="0"
               :max="360" />
@@ -40,6 +44,4 @@ export default {
 }
 </script>
 
-<style>
-
-</style>
+<style></style>

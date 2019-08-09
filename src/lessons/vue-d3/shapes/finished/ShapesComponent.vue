@@ -1,9 +1,9 @@
 <template>
-  <svg width="100%"
-       height="100%"
-       @click="addPoint"
-       @contextmenu.prevent="points = []">
-
+  <svg
+    width="100%"
+    height="100%"
+    @click="addPoint"
+    @contextmenu.prevent="points = []">
     <!-- Path -->
     <path fill="none"
           stroke="white"
@@ -11,11 +11,12 @@
           :d="definition(points)" />
 
     <!-- Circles -->
-    <circle v-for="(item, index) in points"
-            :key="index"
-            :cx="item.x"
-            :cy="item.y"
-            r="10" />
+    <circle
+      v-for="(item, index) in points"
+      :key="index"
+      :cx="item.x"
+      :cy="item.y"
+      r="10" />
   </svg>
 </template>
 
@@ -26,7 +27,7 @@ export default {
   props: {
     bundle: {
       type:    Number,
-      default: .5
+      default: 0.5
     },
     curveType: {
       type:    String,
@@ -42,19 +43,17 @@ export default {
     ]
   }),
   computed: {
-
     /**
      * @returns {d3.Line<{x: number, y: number}>}
      */
     definition() {
       let curve = d3[this.curveType]
 
-
-
-      if(curve.tension) curve = curve.tension(this.bundle)
-      if(curve.beta) curve = curve.beta(this.bundle)
-      if(curve.alpha) curve = curve.alpha(this.bundle)
-      return d3.line()
+      if (curve.tension) curve = curve.tension(this.bundle)
+      if (curve.beta) curve = curve.beta(this.bundle)
+      if (curve.alpha) curve = curve.alpha(this.bundle)
+      return d3
+        .line()
         .x(v => v.x)
         .y(v => v.y)
         .curve(curve)
@@ -63,12 +62,9 @@ export default {
   methods: {
     /** @param {MouseEvent} mouseEvent */
     addPoint(mouseEvent) {
-      const {
-        layerX: x,
-        layerY: y
-      } = mouseEvent
+      const { layerX: x, layerY: y } = mouseEvent
 
-      this.points.push({x, y})
+      this.points.push({ x, y })
     }
   }
 }

@@ -8,11 +8,12 @@
                 @input="filterDates" />
 
     <!-- Ticks -->
-    <tick-display :count="22"
-                  transform="translate(21 0)"
-                  :scale="timeScale"
-                  position="right">
-      <template v-slot="{value}">
+    <tick-display
+      :count="22"
+      transform="translate(21 0)"
+      :scale="timeScale"
+      position="right">
+      <template v-slot="{ value }">
         <text>{{ value | asYear }}</text>
       </template>
     </tick-display>
@@ -70,17 +71,13 @@ export default {
     }
   },
   mounted() {
-    const {
-      height
-    } = this.$el.getBoundingClientRect()
+    const { height } = this.$el.getBoundingClientRect()
 
     this.height = height
-
-
   },
   methods: {
     filterDates(range) {
-      if(!range) this.$emit('filter', null)
+      if (!range) this.$emit('filter', null)
 
       this.brushSelection = range
 

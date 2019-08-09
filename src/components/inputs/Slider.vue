@@ -1,9 +1,9 @@
 <template>
-  <vue-slider v-bind="$props"
-              class="slider cursor-pointer"
-              @change="$emit('input', $event)" />
+  <vue-slider
+    v-bind="$props"
+    class="slider cursor-pointer"
+    @change="$emit('input', $event)" />
 </template>
-
 
 <script>
 import VueSlider from 'vue-slider-component'
@@ -34,6 +34,4 @@ export default {
 }
 </script>
 
-<style src="vue-slider-component/theme/antd.css">
-
-</style>
+<style src="vue-slider-component/theme/antd.css"></style>

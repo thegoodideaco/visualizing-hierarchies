@@ -1,4 +1,3 @@
-
 <template>
   <!-- Replace all of this
   http://localhost:8080/#/vue/code/single-file-component -->
@@ -11,6 +10,5 @@
 </template>
 
 <script>
-export default {
-}
+export default {}
 </script>

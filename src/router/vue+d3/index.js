@@ -1,10 +1,8 @@
-
 import ShapesReadme from './shapes.md'
 import LayoutsReadme from './layouts.md'
 import ForceReadme from './force.md'
 import * as components from './asyncComponents'
 import { SideNavLayout } from '@/layouts/componentViews'
-
 
 /** @type {import("vue-router").RouteConfig} */
 export const config = {

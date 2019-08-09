@@ -1,8 +1,7 @@
 <template>
   <div class="md-viewer">
     <div class="h-full pr-2">
-      <div
-        ref="scroller"
+      <div ref="scroller"
         class="hljs dark h-full overflow-auto"
         v-html="markdown()" />
     </div>
@@ -33,7 +32,7 @@ export default {
       async handler() {
         this.markdown = () => this.createMarkdown()
         await this.$nextTick()
-        if(!this.$refs.scroller) return
+        if (!this.$refs.scroller) return
 
         this.updateLinkTargets()
 
@@ -66,11 +65,8 @@ export default {
      * Makes all links open in a new window
      */
     updateLinkTargets() {
-
       /** @type {HTMLElement} */
-      const {
-        innerHTML
-      } = this.$refs.scroller
+      const { innerHTML } = this.$refs.scroller
 
       /**
        * Create a new div, apply innerHTML
@@ -94,6 +90,4 @@ export default {
 }
 </script>
 
-<style lang="scss" src="@/assets/scss/_markdown.scss">
-
-</style>
+<style lang="scss" src="@/assets/scss/_markdown.scss"></style>

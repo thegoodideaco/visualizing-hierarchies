@@ -10,10 +10,7 @@ export default {
     height: 100
   }),
   mounted() {
-    const {
-      width,
-      height
-    } = this.$el.getBoundingClientRect()
+    const { width, height } = this.$el.getBoundingClientRect()
 
     Object.assign(this, {
       width,
@@ -21,16 +18,17 @@ export default {
     })
   },
   methods: {
-
     /**
      * @returns {d3.HierarchyCircularNode}
      */
     createRandomHierarchy(amount = 300) {
-      const nodes = [{
-        index:       0,
-        parentIndex: ''
-      }]
-      for(let i = 1; i<amount; i++){
+      const nodes = [
+        {
+          index:       0,
+          parentIndex: ''
+        }
+      ]
+      for (let i = 1; i < amount; i++) {
         nodes.push({
           index:       i,
           parentIndex: Math.ceil(Math.sqrt(i)) - 1
@@ -39,8 +37,8 @@ export default {
 
       console.log(nodes)
 
-
-      const strat = d3.stratify()
+      const strat = d3
+        .stratify()
         .id(n => n.index)
         .parentId(n => n.parentIndex)
 
@@ -50,6 +48,4 @@ export default {
 }
 </script>
 
-<style>
-
-</style>
+<style></style>

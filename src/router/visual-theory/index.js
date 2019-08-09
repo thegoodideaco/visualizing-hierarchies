@@ -1,13 +1,9 @@
-
-
-
 import IntroReadme from './intro.md'
 import GestaltReadme from './gestalts.md'
 import VariableReadme from './variables.md'
 import GroupingReadme from './grouping.md'
 import { SideNavLayout } from '@/layouts/componentViews'
 import * as components from './asyncComponents'
-
 
 /** @type {import("vue-router").RouteConfig} */
 export const config = {

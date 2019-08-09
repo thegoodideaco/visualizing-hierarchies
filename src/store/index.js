@@ -21,71 +21,35 @@ export default new Vuex.Store({
     }
   },
   actions: {
-    setReadme: ({commit}, text) => {
+    setReadme: ({ commit }, text) => {
       commit('setReadme', text)
-    },
-    getWikiThumbnail: ({}, url) => {
-
-
-      return new Promise((resolve, reject) => {
-        const title = url.slice(url.lastIndexOf('/')+1)
-
-        const newUrl = 'https://en.wikipedia.org/w/api.php'
-
-        const jsonp = require('jsonp')
-
-        jsonp(newUrl, {
-          param: `action=query&titles=${title}&prop=pageimages&format=json&pithumbsize=200&callback`,
-          name:  'callback'
-
-        }, (err, data) => {
-          if(err) {
-            reject(err)
-          }else{
-            const [item] = Object.entries(data.query.pages)
-
-            const {
-              thumbnail
-            } = item[1]
-
-            if(thumbnail){
-              resolve(item[1].thumbnail.source)
-
-            }else{
-              resolve('n/a')
-            }
-
-
-          }
-        })
-      })
     }
   },
   getters: {
-
     /**
      * Word Frequency in active readme
      * @returns {{word: string, value: number}}
      * @param {*} state
      */
     wordScores(state) {
-      if(!state.readme) return []
-      return words(state.readme.toLowerCase()).reduce((prev, cur) => {
-        const match = prev.find(v => v.word === cur)
+      if (!state.readme) return []
+      return words(state.readme.toLowerCase())
+        .reduce((prev, cur) => {
+          const match = prev.find(v => v.word === cur)
 
-        if(match) {
-          match.value ++
-        }else{
-          prev.push({
-            word:  cur,
-            value: 1
-          })
-        }
+          if (match) {
+            match.value++
+          } else {
+            prev.push({
+              word:  cur,
+              value: 1
+            })
+          }
 
-        return prev
-      }, []).sort((a, b) => b.value - a.value)
+          return prev
+        }, [])
+        .sort((a, b) => b.value - a.value)
     }
   },
   strict: process.env.NODE_ENV === 'development'
-
 })

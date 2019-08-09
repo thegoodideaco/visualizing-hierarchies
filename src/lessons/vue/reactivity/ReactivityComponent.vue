@@ -1,4 +1,3 @@
-
 <template>
   <!-- Replace this button with
    http://localhost:8080/#/vue/reactivity  -->
@@ -6,7 +5,5 @@
 </template>
 
 <script>
-export default {
-
-}
+export default {}
 </script>

@@ -64,11 +64,13 @@ export default {
   },
   computed: {
     scale() {
-      return scaleLinear()
-        // .nice(5)
-        // .nice(15)
-        .domain(this.domain)
-        .range([this.height, this.y])
+      return (
+        scaleLinear()
+          // .nice(5)
+          // .nice(15)
+          .domain(this.domain)
+          .range([this.height, this.y])
+      )
     },
     aBrush() {
       return brushY()

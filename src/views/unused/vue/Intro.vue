@@ -7,9 +7,7 @@
 </template>
 
 <script>
-export default {
-
-}
+export default {}
 </script>
 
 <style scoped lang="scss">
@@ -21,7 +19,7 @@ export default {
   display: grid;
 }
 img {
-height: 100%;
-width: auto;
+  height: 100%;
+  width: auto;
 }
 </style>

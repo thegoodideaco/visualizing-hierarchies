@@ -24,7 +24,7 @@ Vue.component('OpenButton', () => import('@/utils/OpenButton.vue'))
  * .##.....##.##.........##.##......##.....##.##...###.##..........##...
  * .########..########....###........#######..##....##.########....##...
  */
-if(process.env.NODE_ENV === 'development') {
+if (process.env.NODE_ENV === 'development') {
   /**
    * ^ Assigning to dev object so they are not global
    */
@@ -38,9 +38,6 @@ if(process.env.NODE_ENV === 'development') {
       Vue
     }
   })
-
-
-
 
   /**
    * ^ Provide a global method to open a component in the editor
@@ -60,7 +57,6 @@ if(process.env.NODE_ENV === 'development') {
 
 Vue.use(VueResize)
 
-
 Vue.use(VueAxios, Axios)
 Vue.config.productionTip = false
 new Vue({
@@ -68,5 +64,3 @@ new Vue({
   store,
   render: h => h(App)
 }).$mount('#app')
-
-

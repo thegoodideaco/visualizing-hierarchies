@@ -9,7 +9,7 @@
     <g v-if="$slots.default"
        class="centroid"
        :transform="trans">
-      <slot v-bind="{centroid}">
+      <slot v-bind="{ centroid }">
         <text>centroid</text>
       </slot>
     </g>

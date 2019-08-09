@@ -8,7 +8,6 @@
 </template>
 
 <script>
-
 import SidenavLayoutVue from '../layouts/SidenavLayout.vue'
 import readme from './about.md'
 import { ImageSlider } from '../components/demos/asyncDemos'
@@ -45,12 +44,10 @@ export default {
           url:   '/static/images/imagenet.png',
           title: 'More Classification Uses'
         }
-
       ],
       curIndex: 0
     }
   }
-
 }
 </script>
 

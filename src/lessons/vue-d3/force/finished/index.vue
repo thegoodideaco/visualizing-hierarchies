@@ -25,7 +25,6 @@ export default {
     stroke: rgba(#fff, 0.5);
     stroke-width: 2px;
     fill: none;
-
   }
 }
 </style>

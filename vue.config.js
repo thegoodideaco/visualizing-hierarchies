@@ -8,19 +8,16 @@ function resolve(dir) {
  * @typedef { import("webpack-chain") } ChainWebpack
  */
 
-
 /**
  * @type { Options }
  */
 module.exports = {
-
   css: {
     sourceMap: true
   },
   filenameHashing:     true,
   productionSourceMap: false,
   runtimeCompiler:     true,
-
 
   configureWebpack: config => {
     /**
@@ -42,12 +39,9 @@ module.exports = {
       ])
     )
 
-    if(process.env.NODE_ENV === 'production') {
-
+    if (process.env.NODE_ENV === 'production') {
       const CompressionPlugin = require('compression-webpack-plugin')
-      config.plugins.push(
-        new CompressionPlugin()
-      )
+      config.plugins.push(new CompressionPlugin())
 
       const TerserPlugin = require('terser-webpack-plugin')
       config.optimization.minimizer.push(
@@ -71,7 +65,6 @@ module.exports = {
           exclude:     ['unused']
         })
       )
-
     }
   },
 
@@ -89,5 +82,4 @@ module.exports = {
       .loader('raw-loader')
       .end()
   }
-
 }

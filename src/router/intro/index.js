@@ -1,11 +1,7 @@
-
-
-
 import IntroReadme from './intro.md'
 import ExamplesReadme from './examples.md'
 import { SideNavLayout } from '@/layouts/componentViews'
 import * as components from './asyncComponents'
-
 
 /** @type {import("vue-router").RouteConfig} */
 export const config = {

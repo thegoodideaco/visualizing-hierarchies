@@ -4,7 +4,7 @@
 </template>
 
 <script>
-import {ThumbnailData} from './thumbnails'
+import { ThumbnailData } from './thumbnails'
 export default {
   props: {
     item: {
@@ -23,9 +23,7 @@ export default {
         y,
         data: {
           value: {
-            driver: {
-              url
-            }
+            driver: { url }
           }
         }
       } = this.item

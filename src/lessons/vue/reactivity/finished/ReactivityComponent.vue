@@ -34,10 +34,10 @@ export default {
      * will continuously subtract from reduced until it's 0
      */
     subtract() {
-      this.reduced -= .1
-      if(this.reduced > .001){
+      this.reduced -= 0.1
+      if (this.reduced > 0.001) {
         requestAnimationFrame(this.subtract)
-      }else{
+      } else {
         this.reduced = 0
       }
     }

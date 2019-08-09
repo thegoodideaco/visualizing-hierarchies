@@ -2,7 +2,8 @@ export const Intro = () => import('./views/Intro.vue')
 
 export const MakingComponent = () => import('./views/MakingComponent.vue')
 export const Reactivity = () => import('@/lessons/vue/reactivity/index.vue')
-export const TemplateRendering = () => import('@/lessons/vue/rendering/index.vue')
+export const TemplateRendering = () =>
+  import('@/lessons/vue/rendering/index.vue')
 export const Interaction = () => import('@/lessons/vue/interact/index.vue')
 
 export const finished = {

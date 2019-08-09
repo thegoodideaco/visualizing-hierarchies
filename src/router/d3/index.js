@@ -45,8 +45,6 @@ export const config = {
         readme: ScaleReadme
       }
     }
-
-
   ]
 }
 

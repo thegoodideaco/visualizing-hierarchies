@@ -1,4 +1,3 @@
-
 <template>
   <div class="flex items-center justify-center">
     <my-component />

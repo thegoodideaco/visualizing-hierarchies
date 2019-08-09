@@ -1,4 +1,9 @@
-import { HomeView, IntroView, AboutView, ExampleView } from '@/views/asyncComponents'
+import {
+  HomeView,
+  IntroView,
+  AboutView,
+  ExampleView
+} from '@/views/asyncComponents'
 
 const components = {
   home:       HomeView,

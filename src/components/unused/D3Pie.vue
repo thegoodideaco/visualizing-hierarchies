@@ -1,14 +1,15 @@
 <template>
   <svg>
-    <D3Arc v-for="(item, key) in paths"
-           :key="key"
-           :start-angle="item.startAngle"
-           :end-angle="item.endAngle"
-           :pad-angle="item.padAngle"
-           :inner-radius="innerRadius"
-           :outer-radius="outerRadius"
-           :corner-radius="cornerRadius">
-           <!-- <g slot-scope="{centroid}">
+    <D3Arc
+      v-for="(item, key) in paths"
+      :key="key"
+      :start-angle="item.startAngle"
+      :end-angle="item.endAngle"
+      :pad-angle="item.padAngle"
+      :inner-radius="innerRadius"
+      :outer-radius="outerRadius"
+      :corner-radius="cornerRadius">
+      <!-- <g slot-scope="{centroid}">
         <slot v-bind="{centroid, item, key, color: colors(paths.length)[key] }">
           {{ item.centroid }}
         </slot>
@@ -59,7 +60,6 @@ export default {
       default: 200
     },
 
-
     outerRadius: {
       type:    Number,
       default: 300
@@ -71,14 +71,12 @@ export default {
     }
   },
   computed: {
-
     /** @returns {d3.Pie} */
     pieGenerator() {
       return pie()
         .startAngle(this.startAngle)
         .endAngle(this.endAngle)
         .padAngle(this.padAngle)
-
     },
     paths() {
       if (this.inputDatum) {

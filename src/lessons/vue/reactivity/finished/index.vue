@@ -15,7 +15,7 @@ export default {
 
 <style scoped lang="scss">
 /deep/ input {
-  padding: .5rem;
+  padding: 0.5rem;
   color: #000;
   display: block;
   margin-bottom: 1rem;

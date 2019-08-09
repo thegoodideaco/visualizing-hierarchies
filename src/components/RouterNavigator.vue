@@ -1,9 +1,10 @@
 <template>
   <div class="nav-menu">
     <ul>
-      <route-navigator-item v-for="(route, index) in routes"
-                            :key="index"
-                            :route-item="route" />
+      <route-navigator-item
+        v-for="(route, index) in routes"
+        :key="index"
+        :route-item="route" />
     </ul>
   </div>
 </template>
@@ -16,9 +17,8 @@ export default {
   },
   computed: {
     routes() {
-
       /** @type {import('vue-router').RouterOptions} */
-      const {routes} = this.$router.options
+      const { routes } = this.$router.options
 
       return routes.filter(v => v.meta != null && v.meta.title != null)
     }
@@ -26,6 +26,4 @@ export default {
 }
 </script>
 
-<style>
-
-</style>
+<style></style>

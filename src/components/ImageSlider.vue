@@ -1,54 +1,57 @@
 <template>
   <div class="image-slider"
-       :class="{fullscreen}">
-    <div
-      v-if="items"
-      class="image-slider__inner">
+       :class="{ fullscreen }">
+    <div v-if="items"
+         class="image-slider__inner">
       <keep-alive>
         <!-- If Image -->
         <div
           v-if="!isComponent"
           :key="activeIndex"
           class="image-slider__image"
-          :class="{'no-title': !activeItem.title}">
-          <transition
-            appear
-            name="zoom">
+          :class="{ 'no-title': !activeItem.title }">
+          <transition appear
+                      name="zoom">
             <!-- Image / will be applied as a background for auto fitting once loaded -->
-            <img v-if="!loaded"
-                 :alt="activeItem.title"
-                 :src="activeItem.url"
-                 class="image-slider__image-container hidden"
-                 draggable="false"
-                 @load="loaded = true">
+            <img
+              v-if="!loaded"
+              :alt="activeItem.title"
+              :src="activeItem.url"
+              class="image-slider__image-container hidden"
+              draggable="false"
+              @load="loaded = true">
 
             <!-- The div that _contains_ the image -->
-            <div v-else-if="!fullscreen"
-                 class="image-slider__image-fill m-5"
-                 :style="activeItem.url | asStyle"
-                 @click="fullscreen = true" />
+            <div
+              v-else-if="!fullscreen"
+              class="image-slider__image-fill m-5"
+              :style="activeItem.url | asStyle"
+              @click="fullscreen = true" />
 
             <div v-else>
-              <img :src="activeImagePath"
-                   draggable="false"
-                   @click="fullscreen = false">
+              <img
+                :src="activeImagePath"
+                draggable="false"
+                @click="fullscreen = false">
             </div>
           </transition>
 
           <!-- Title -->
-          <h4 v-show="loaded"
-              v-if="activeItem.title"
-              class="image-slider__image-header">
+          <h4
+            v-show="loaded"
+            v-if="activeItem.title"
+            class="image-slider__image-header">
             {{ activeItem.title }}
           </h4>
         </div>
         <!-- If Component -->
-        <component :is="activeItem"
-                   v-else
-                   :key="'_'+activeIndex"
-                   class="image-slider__component"
-                   @hook:mounted="loaded = true" />
-      <!-- </transition> -->
+        <component
+          :is="activeItem"
+          v-else
+          :key="'_' + activeIndex"
+          class="image-slider__component"
+          @hook:mounted="loaded = true" />
+        <!-- </transition> -->
       </keep-alive>
     </div>
   </div>
@@ -61,7 +64,9 @@
 export default {
   filters: {
     asStyle: url => ({
-      backgroundImage: `url(${url.startsWith('http') ? url : encodeURIComponent(url)})`
+      backgroundImage: `url(${
+        url.startsWith('http') ? url : encodeURIComponent(url)
+      })`
     })
   },
   props: {
@@ -91,7 +96,7 @@ export default {
     },
 
     activeImagePath() {
-      if(this.activeItem && this.activeItem.url) {
+      if (this.activeItem && this.activeItem.url) {
         const url = this.activeItem.url
         return url.startsWith('http') ? url : encodeURIComponent(url)
       }
@@ -107,18 +112,18 @@ export default {
     },
     fullscreen: {
       handler(val) {
-        if(val) {
+        if (val) {
           this.$el.remove()
 
           document.body.append(this.$el)
-        }else{
+        } else {
           this.$el.remove()
           this.realParentElement.append(this.$el)
         }
       }
     },
     activeItem() {
-      if(this.fullscreen) {
+      if (this.fullscreen) {
         this.fullscreen = false
       }
     }
@@ -133,7 +138,7 @@ export default {
     this.realParentElement = this.$el.parentElement
   },
   beforeDestroy() {
-    if(this.fullscreen) {
+    if (this.fullscreen) {
       this.fullscreen = false
       this.$el.remove()
       this.realParentElement.append(this.$el)
@@ -148,7 +153,7 @@ export default {
       if (ev.key === 'ArrowRight') {
         this.next()
       }
-      if(ev.key === 'Escape') {
+      if (ev.key === 'Escape') {
         this.fullscreen = false
       }
       ev.stopPropagation()
@@ -172,8 +177,6 @@ export default {
       // console.log('removing listeners')
       document.removeEventListener('keydown', this.keyPressed)
     }
-
-
   }
 }
 </script>

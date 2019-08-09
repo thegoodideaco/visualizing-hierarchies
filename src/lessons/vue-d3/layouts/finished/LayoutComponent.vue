@@ -14,7 +14,6 @@
               @click="nodeClick(node)" />
     </svg> -->
 
-
     <!-- HTML Version -->
     <div v-if="h"
          class="html-version">
@@ -54,40 +53,38 @@ export default {
         // .padding(this.padding)
         // .radius(v => v.value)
 
-
       return layout
     },
-
 
     /**
      * Map colors to the value of each node
      */
     colorScale() {
-      if(this.h) return d3.scaleSqrt()
-        .domain([0, this.h.value])
-        .range([this.colors.small, this.colors.large])
+      if (this.h) {
+        return d3.scaleSqrt()
+          .domain([0, this.h.value])
+          .range([this.colors.small, this.colors.large])
+      }
     },
 
     /**
      * The branch nodes to be rendered
      */
     nodes() {
-      if(this.h) {
+      if (this.h) {
         return this.h.descendants()
-      }else{
+      } else {
         return null
-
       }
     }
   },
   watch: {
     layout() {
-      if(!this.h) return
+      if (!this.h) return
       this.layout(this.h)
     }
   },
   async mounted() {
-
     // Assign Sizes
     this.updateSize()
 
@@ -95,7 +92,6 @@ export default {
     const data = await d3.json('/datasets/populations.json')
 
     // console.log('data loaded', data)
-
 
     // 2. Nest the data
     const nester = d3.nest()
@@ -107,14 +103,12 @@ export default {
       values: nester.entries(data)
     }
 
-
     // 3. Add Hierarchy to nested data
     const h = d3.hierarchy(nestedData, v => v.values)
 
     // Calculate Totals and sort
     h.sum(v => v.value)
     h.sort((a, b) => d3.ascending(a, b))
-
 
     // 4. Apply a layout to the hierarchy
     this.layout(h)

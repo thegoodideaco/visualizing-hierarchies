@@ -15,13 +15,12 @@
     <div
       v-else
       class="section-title text-orange-400 font-bold mt-5"
-      :class="{active: isActive}">
+      :class="{ active: isActive }">
       {{ routeItem.meta.title }}
     </div>
 
-    <ul
-      v-if="subItems"
-      class="mb-2">
+    <ul v-if="subItems"
+        class="mb-2">
       <!-- Recursive Component -->
       <router-navigator-item
         v-for="(item, index) in subItems"
@@ -45,8 +44,8 @@ export default {
   },
   computed: {
     subItems() {
-      if(!this.routeItem.children) return null
-      return this.routeItem.children.filter((v) => {
+      if (!this.routeItem.children) return null
+      return this.routeItem.children.filter(v => {
         return v.meta.title != null
       })
     },
@@ -54,29 +53,29 @@ export default {
       return this.subItems == null
     },
     isActive() {
-
       /**
        * @type {boolean}
        * @param {import('vue-router').RouteConfig} value
        */
-      const match = this.$route.matched.some(value => value.path === this.routeItem.path)
+      const match = this.$route.matched.some(
+        value => value.path === this.routeItem.path
+      )
 
       return match
     }
   },
   methods: {
-
     /** @param {MouseEvent} ev */
     onClick(ev) {
       let url = this.routeItem.path
-      if(ev.ctrlKey) url += '/finished'
+      if (ev.ctrlKey) url += '/finished'
 
       const res = this.$router.match(url)
 
-      if(res && res.name !== 'index' && res.fullPath){
-
+      if (res && res.name !== 'index' && res.fullPath) {
         // eslint-disable-next-line no-unused-vars
-        this.$router.push(res).catch(err => {})
+        // eslint-disable-next-line handle-callback-err
+        this.$router.push(res).catch(() => {})
         ev.currentTarget.blur()
       }
     }
@@ -103,13 +102,12 @@ export default {
       padding-left: 0.5rem;
 
       &::before {
-        content: '-';
+        content: "-";
         display: block;
         position: absolute;
         left: 0;
         top: 0;
         color: #fff;
-
       }
     }
 
@@ -122,7 +120,7 @@ export default {
   }
 
   .section-title {
-    opacity: .5;
+    opacity: 0.5;
 
     &.active {
       opacity: unset;

@@ -1,3 +1,4 @@
+/* eslint-disable */
 function resize() {
   ;(width = vis.node().clientWidth),
   (height = window.innerHeight - 50 - 0),

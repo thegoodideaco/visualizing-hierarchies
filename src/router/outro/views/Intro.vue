@@ -16,13 +16,10 @@ export default {
       {
         url: '/static/images/ender.gif'
       }
-
     ],
     index: 0
   })
 }
 </script>
 
-<style>
-
-</style>
+<style></style>

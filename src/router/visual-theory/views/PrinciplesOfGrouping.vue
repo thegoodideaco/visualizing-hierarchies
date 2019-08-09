@@ -18,7 +18,8 @@ export default {
         url: '/static/images/pragnanz.png'
       },
       {
-        url:   'https://designforgeeks.com/wp-content/uploads/2018/08/Two-groups-of-blue-dots-exemplifying-the-Gestalt-principle-of-Proximity.png',
+        url:
+          'https://designforgeeks.com/wp-content/uploads/2018/08/Two-groups-of-blue-dots-exemplifying-the-Gestalt-principle-of-Proximity.png',
         title: 'Law of Proximity'
       },
       {
@@ -46,6 +47,4 @@ export default {
 }
 </script>
 
-<style>
-
-</style>
+<style></style>
