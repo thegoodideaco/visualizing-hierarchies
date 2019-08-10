@@ -41,4 +41,4 @@ The extensions I use are
 - [Babel](https://marketplace.visualstudio.com/items?itemName=mgmcdermott.vscode-language-babel)
 - [Bracket Pair Colorizer](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer)
 - [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense)
-- [Prettier](https://github.com/prettier/prettier)
+- [VS Intellicode](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode)
