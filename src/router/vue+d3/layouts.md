@@ -157,7 +157,7 @@ computed: {
 
 By passing a value (population) to this scale, it will give us a corresponding color.
 
-We can use this in the template itself, by binding the scale to an attribute
+We can use this in the template itself, by binding the color value to an attribute
 
 ```html
 <circle

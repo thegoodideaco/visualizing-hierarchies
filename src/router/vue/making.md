@@ -6,7 +6,7 @@ We will be writing a very basic Vue SFC (Single File Component) and wire it to u
 
 First, let's create the file.
 
-Navigate to `src/lessons/vue/create` and create file called `MyComponent.vue`
+Click open to navigate to our directory, and create file called `MyComponent.vue`
 
 ## Basic Structure
 
@@ -26,31 +26,32 @@ Not all blocks are needed. In this example, we'll exclude the style block.
 </template>
 
 <script>
-  export default {}
+  export default {};
 </script>
 ```
 
 ## Importing
 
-Components are used by _composing_ them with others. We can create global references to components to use globally, or we can import them when we need to.
+Components are used by _composing_ them with others. We can create global references to components to use, or we can import them when we need to.
 
-Let's import your component into the container on the right. We can inspect the dev tools and find the `ComponentContainer` component. Once we have it open, we can write the following:
+Let's import our component into the container on the right.
+
+Click the open button so we can check out the file in our editor.
 
 ### Component Container
 
 ```javascript
 <template>
-  <div>
-    <!-- Put component element here -->
+  <div class="component-container">
+    <my-component />
   </div>
 </template>
 
 <script>
-// Import component synchronously
+import MyComponent from './MyComponent.vue'
 export default {
-  name:       'ComponentContainer',
   components: {
-    // Add component here
+    MyComponent
   }
 }
 </script>

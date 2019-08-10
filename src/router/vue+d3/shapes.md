@@ -98,7 +98,7 @@ methods: {
 }
 ```
 
-If done correctly, you will be able to add circles to the screen by clicking
+If done correctly, you will be able to add circles to the screen by left clicking, and clearing them by right clicking.
 
 ### The `path` element
 
@@ -163,7 +163,6 @@ computed: {
     .x(v => v.x)
     .y(v => v.y)
     .curve(d3.curveNatural)
-    (this.points)
   }
 }
 ```
