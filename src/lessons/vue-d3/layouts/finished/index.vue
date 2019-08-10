@@ -18,5 +18,10 @@ export default {
   display: grid;
   grid: 1fr / 1fr;
   overflow: hidden;
+
+  /deep/ circle {
+    stroke: #fff;
+    stroke-width: 3;
+  }
 }
 </style>

@@ -6,9 +6,19 @@ We can use these to create a number of layouts like the ones shown in the [examp
 
 They expect a hierarchy instance to be passed, and they simply assign more properties to each node for position and size.
 
-Let's visualize a dataset of `World Population` in a `circle packing` layout.
+## Full Reactivity
 
-We'll add a SVG, and make it fill the entire area
+Because of the way layouts are applied, we have to be careful about where we place our properties.
+
+For example, when we run a layout, it mutates the hierarchy object by assigning various positioning values to each node.
+
+Therefore the hierarchy object should be observed as as a data property so it can be observed.
+
+## The setup
+
+Let's visualize a dataset of the `world population` in a `circle packing` layout.
+
+We'll add a SVG to our template, and make it fill the entire area
 
 ```html
 <svg width="100%" height="100%">
@@ -18,15 +28,22 @@ We'll add a SVG, and make it fill the entire area
 
 In our script, let's setup the basic structure.
 
+### The Data
+
 We need to assign some properties to our data object
 
 ```javascript
 data: () => ({
   width: 100,
   height: 100,
-  h: null
-})
+  padding: 2,
+  h: d3.hierarchy({}),
+  groupOrder: ["region", "subregion"],
+  dataset: []
+});
 ```
+
+### Methods
 
 Each layout needs some type of size in order to perform it's calculations for scaling and positioning.
 
@@ -45,129 +62,149 @@ methods: {
 }
 ```
 
-A typical layout instance is actually a method we will eventually pass data to. However, it also has methods attached to modify how it will be displayed.
+### Mounting
 
-Because of this, we can make it a computed property and update it when any values being passed changes
+When this component is mounted, we simply load our dataset in, as well as initialize our width and height
 
 ```javascript
-computed: {
-    layout() {
-      const layout = d3.pack()
-        .size([
-          this.width,
-          this.height
-        ])
+async mounted() {
+  // 1. Assign Sizes
+  this.updateSize()
 
-      return layout
-    }
+  // 2. Load the raw data
+  const data = await d3.json('/datasets/populations.json')
+
+  // 3. Assign data to our dataset object
+  this.dataset = Object.freeze(data)
 }
 ```
 
-Now we need to load the data and construct a hierarchy. We can create another method to initiate everything.
+### Computed
+
+We need a layout that updates whenever the dimensions or padding change.
 
 ```javascript
-methods: {
-  async init() {
-    // 1. Assign Sizes
-    this.updateSize()
+/**
+ * if width, height or padding changes
+ * this will change, triggering our watcher
+ * to apply changes to our nodes
+ * @returns {d3.PackLayout<population.Country>}
+ */
+layout() {
+  return d3.pack()
+    .size([this.width, this.height])
+    .padding(this.padding)
+}
+```
 
-    // 2. Load the data
-    const data =
-    await d3.json('/datasets/populations.json')
+Next, we can create a nester method that always reflects the current grouping order.
 
-    // 3. Nest the data
-    const nester = d3.nest()
-      .key(v => v.region)
-      .key(v => v.subregion)
+```javascript
+/**
+ * if the group order is changed
+ * this will change, triggering the
+ * hierarchy to be recreated
+ * @returns {d3.Nest<population.Country>}
+ */
+nester() {
+  const n = d3.nest()
 
-    const nestedData = {
-      key:    'root',
-      values: nester.entries(data)
-    }
+  this.groupOrder.forEach(v => {
+    n.key(node => node[v])
+  })
 
-    // 4. Add Hierarchy
-    const h = d3.hierarchy(
-      nestedData,
-      v => v.values)
+  return n
+}
+```
 
-    // Calculate totals and sort
-    h.sum(v => v.value)
-    h.sort((a, b) => d3.ascending(a, b))
+Lastly, we will create another object that converts our raw data into a nested object that can be applied to our hierarchy.
 
-    // 5. Apply the layout to the hierarchy
-    this.layout(h)
-
-    // 6. Assign the hierarchy to our data object
-    this.h = h
+```javascript
+/**
+ * If the nester method, or dataset changes
+ * will generate a root node
+ */
+nestedData() {
+  return {
+    key:    'root',
+    values: this.nester.entries(this.dataset)
   }
 }
 ```
 
-Since computed properties should not change data upon being called, we will watch for when `layout` changes, and once it does, apply the layout to our hierarchy
+### Watchers
+
+We need to observe some of these computed properties in order to recalculate everything
+
+When the layout property changes, we can apply it to our hierarchy.
 
 ```javascript
-watch: {
-    layout() {
-      if(!this.h) return
-      this.layout(this.h)
-    }
-  }
+/**
+ * When layout method changes,
+ * apply to the hierarchy
+ * @type {Vue.WatchHandler<d3.PackLayout<population.Country>}
+ */
+layout() {
+  this.layout(this.h)
+}
 ```
 
-We can see the values being changed whenever we change the width and height of our component!
+Finally, when `nestedData` changes, we need to recreate our hierarchy.
 
-Let's render it
+We must summarize and sort the values before we run the layout on it, and then observe the heirarchy _after_ it's been mutated by the layout.
+
+```javascript
+/**
+ * When our nestedData changes,
+ * updates h, and applys a new layout
+ */
+nestedData(val) {
+  // * Add Hierarchy to nested data
+  const h = d3.hierarchy(val, v => v.values)
+
+  // ! Calculate Totals and sort
+  h.sum(v => v.value)
+  h.sort((a, b) => d3.ascending(a.value, b.value))
+
+  /**
+   * We must assign properties to hierarchy
+   * before we pass it on to vue, so that they are observed
+   */
+  this.layout(h)
+
+  /** Finally pass it to Vue for observing */
+  this.h = h
+}
+```
+
+At this point, everything is observed, and will calculate things in an order that just works. Now we just need to render it.
+
+In our SVG, let's add a circle for each descendant. We will bind `x`, `y`, and `r` for size and positioning, as well as a tooltip to show the key and value of each node.
 
 ```html
-<svg width="100%" height="100%">
-  <circle
-    v-for="(node, index) in nodes"
-    :key="index"
-    :cx="node.x"
-    :cy="node.y"
-    :r="node.r"
-    stroke="white"
-    stroke-width="2"
-  />
-</svg>
-```
-
-We can use scales to represent other visual variables such as color.
-
-Since scales are also methods, we can assign a scale as a computed property. We can pass two colors as well as the extent of the world population to construct a color scale
-
-```javascript
-data: () => ({
-  colors: {
-    small: 'black',
-    large: 'white'
-  }
-}),
-computed: {
-  colorScale() {
-    return d3.scaleSqrt()
-    .domain([0, this.h.value])
-    .range([
-      this.colors.small,
-      this.colors.large
-    ])
-  }
-}
-```
-
-By passing a value (population) to this scale, it will give us a corresponding color.
-
-We can use this in the template itself, by binding the color value to an attribute
-
-```html
+<!-- Render every descendant of our hierarchy -->
 <circle
-  v-for="(node, index) in nodes"
+  v-for="(item, index) in h.descendants()"
   :key="index"
-  :cx="node.x"
-  :cy="node.y"
-  :r="node.r"
-  stroke="white"
-  stroke-width="2"
-  :fill="colorScale(node.value)"
-/>
+  :r="item.r"
+  :cx="item.x"
+  :cy="item.y"
+>
+  <!-- Tooltip -->
+  <title>
+    {{ item.data.key }}: {{ item.value }}
+  </title>
+</circle>
 ```
+
+We can now change the width, height, padding of the layout, as well as the raw data and the grouping order.
+
+Just for kicks, we can animate everything
+
+```css
+circle {
+  transition: all 300ms ease;
+}
+```
+
+Keep in mind that even though we are using SVG elements, this concept can also be used in regular dom content by applying a dynamic style to each node.

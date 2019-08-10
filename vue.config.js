@@ -18,11 +18,11 @@ module.exports = {
   filenameHashing:     true,
   productionSourceMap: false,
   runtimeCompiler:     true,
-  lintOnSave:          true,
+  lintOnSave:          'error',
 
   configureWebpack: config => {
     /**
-     * Copy datasets directory into build
+     * * Copy datasets and static directory into build
      */
     const CopyWebpackPlugin = require('copy-webpack-plugin')
     config.plugins.push(
@@ -40,6 +40,13 @@ module.exports = {
       ])
     )
 
+    /*
+       ___              __         __  _             ____       __
+      / _ \_______  ___/ /_ ______/ /_(_)__  ___    / __ \___  / /_ __
+     / ___/ __/ _ \/ _  / // / __/ __/ / _ \/ _ \  / /_/ / _ \/ / // /
+    /_/  /_/  \___/\_,_/\_,_/\__/\__/_/\___/_//_/  \____/_//_/_/\_, /
+                                                               /___/
+    */
     if (process.env.NODE_ENV === 'production') {
       const CompressionPlugin = require('compression-webpack-plugin')
       config.plugins.push(new CompressionPlugin())
@@ -59,9 +66,9 @@ module.exports = {
         })
       )
 
-      const UsusedPlugin = require('unused-webpack-plugin')
+      const UnusedPlugin = require('unused-webpack-plugin')
       config.plugins.push(
-        new UsusedPlugin({
+        new UnusedPlugin({
           directories: [resolve('src'), resolve('static')],
           exclude:     ['unused']
         })
@@ -74,7 +81,7 @@ module.exports = {
    */
   chainWebpack: config => {
     /**
-     * Markdown File Configuration
+     * * Markdown File Configuration
      */
     config.module
       .rule('markdown')
