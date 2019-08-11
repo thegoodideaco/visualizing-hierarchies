@@ -5,24 +5,18 @@
     </header>
     <div>
       <div class="flex items-center justify-center">
-        <my-component />
+        <slot>
+          <!-- Component -->
+          put something here
+        </slot>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import MyComponent from './ShapesComponent.vue'
-import SliderVue from '@/components/inputs/Slider.vue'
 export default {
-  components: {
-    MyComponent,
-    // eslint-disable-next-line vue/no-unused-components
-    OptionSlider: SliderVue
-  },
-  data: () => ({
-    test: 5
-  })
+
 }
 </script>
 

@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import ForceComponent from './ForceComponent.vue'
+import ForceComponent from './ForceComponentBasic.vue'
 export default {
   components: {
     ForceComponent
