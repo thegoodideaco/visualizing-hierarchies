@@ -1,6 +1,6 @@
 # Reactivity
 
-User Interfaces for the most part, visually display data objects.
+User Interfaces for the most part, visually displays data objects.
 
 They are the visual representation of structured information.
 

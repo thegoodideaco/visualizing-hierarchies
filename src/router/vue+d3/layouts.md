@@ -12,7 +12,7 @@ Because of the way layouts are applied, we have to be careful about where we pla
 
 For example, when we run a layout, it mutates the hierarchy object by assigning various positioning values to each node.
 
-Therefore the hierarchy object should be observed as as a data property so it can be observed.
+Therefore the hierarchy object should be observed as as a data property, and not a computed one.
 
 ## The setup
 
