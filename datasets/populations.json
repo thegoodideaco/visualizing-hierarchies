@@ -48,12 +48,6 @@
     "value": 13452
   },
   {
-    "key": "Antarctica",
-    "region": "",
-    "subregion": "",
-    "value": -1
-  },
-  {
     "key": "Antigua and Barbuda",
     "region": "Americas",
     "subregion": "Caribbean",
@@ -94,12 +88,6 @@
     "region": "Asia",
     "subregion": "Western Asia",
     "value": 9235100
-  },
-  {
-    "key": "Bahamas",
-    "region": "Americas",
-    "subregion": "Caribbean",
-    "value": -1
   },
   {
     "key": "Bahrain",
@@ -162,12 +150,6 @@
     "value": 10027254
   },
   {
-    "key": "Bonaire",
-    "region": "Americas",
-    "subregion": "Caribbean",
-    "value": -1
-  },
-  {
     "key": "Bosnia and Herzegovina",
     "region": "Europe",
     "subregion": "Southern Europe",
@@ -180,22 +162,10 @@
     "value": 2024904
   },
   {
-    "key": "Bouvet Island",
-    "region": "",
-    "subregion": "",
-    "value": -1
-  },
-  {
     "key": "Brazil",
     "region": "Americas",
     "subregion": "South America",
     "value": 201032714
-  },
-  {
-    "key": "British Indian Ocean Territory",
-    "region": "Africa",
-    "subregion": "Eastern Africa",
-    "value": -1
   },
   {
     "key": "British Virgin Islands",
@@ -328,12 +298,6 @@
     "region": "Americas",
     "subregion": "Central America",
     "value": 4667096
-  },
-  {
-    "key": "Côte d'Ivoire",
-    "region": "Africa",
-    "subregion": "Western Africa",
-    "value": -1
   },
   {
     "key": "Croatia",
@@ -474,28 +438,10 @@
     "value": 268270
   },
   {
-    "key": "French Southern and Antarctic Lands",
-    "region": "",
-    "subregion": "",
-    "value": -1
-  },
-  {
     "key": "Gabon",
     "region": "Africa",
     "subregion": "Middle Africa",
     "value": 1672000
-  },
-  {
-    "key": "Gambia",
-    "region": "Africa",
-    "subregion": "Western Africa",
-    "value": -1
-  },
-  {
-    "key": "Georgia",
-    "region": "Asia",
-    "subregion": "Western Asia",
-    "value": -1
   },
   {
     "key": "Germany",
@@ -582,12 +528,6 @@
     "value": 10413211
   },
   {
-    "key": "Heard Island and McDonald Islands",
-    "region": "",
-    "subregion": "",
-    "value": -1
-  },
-  {
     "key": "Vatican City",
     "region": "Europe",
     "subregion": "Southern Europe",
@@ -640,12 +580,6 @@
     "region": "Asia",
     "subregion": "Western Asia",
     "value": 34035000
-  },
-  {
-    "key": "Ireland",
-    "region": "Europe",
-    "subregion": "Northern Europe",
-    "value": -1
   },
   {
     "key": "Isle of Man",
@@ -774,18 +708,6 @@
     "value": 537000
   },
   {
-    "key": "Macau",
-    "region": "Asia",
-    "subregion": "Eastern Asia",
-    "value": -1
-  },
-  {
-    "key": "Macedonia",
-    "region": "Europe",
-    "subregion": "Southern Europe",
-    "value": -1
-  },
-  {
     "key": "Madagascar",
     "region": "Africa",
     "subregion": "Eastern Africa",
@@ -858,12 +780,6 @@
     "value": 118395054
   },
   {
-    "key": "Micronesia",
-    "region": "Oceania",
-    "subregion": "Micronesia",
-    "value": -1
-  },
-  {
     "key": "Moldova",
     "region": "Europe",
     "subregion": "Eastern Europe",
@@ -904,12 +820,6 @@
     "region": "Africa",
     "subregion": "Eastern Africa",
     "value": 23700715
-  },
-  {
-    "key": "Myanmar",
-    "region": "Asia",
-    "subregion": "South-Eastern Asia",
-    "value": -1
   },
   {
     "key": "Namibia",
@@ -1014,12 +924,6 @@
     "value": 20901
   },
   {
-    "key": "Palestine",
-    "region": "Asia",
-    "subregion": "Western Asia",
-    "value": -1
-  },
-  {
     "key": "Panama",
     "region": "Americas",
     "subregion": "Central America",
@@ -1116,12 +1020,6 @@
     "value": 8938
   },
   {
-    "key": "Saint Helena",
-    "region": "Africa",
-    "subregion": "Western Africa",
-    "value": -1
-  },
-  {
     "key": "Saint Kitts and Nevis",
     "region": "Americas",
     "subregion": "Caribbean",
@@ -1132,12 +1030,6 @@
     "region": "Americas",
     "subregion": "Caribbean",
     "value": 166526
-  },
-  {
-    "key": "Saint Martin",
-    "region": "Americas",
-    "subregion": "Caribbean",
-    "value": -1
   },
   {
     "key": "Saint Pierre and Miquelon",
@@ -1242,12 +1134,6 @@
     "value": 52981991
   },
   {
-    "key": "South Georgia",
-    "region": "Americas",
-    "subregion": "South America",
-    "value": -1
-  },
-  {
     "key": "South Korea",
     "region": "Asia",
     "subregion": "Eastern Asia",
@@ -1338,12 +1224,6 @@
     "value": 65926261
   },
   {
-    "key": "Timor-Leste",
-    "region": "Asia",
-    "subregion": "South-Eastern Asia",
-    "value": -1
-  },
-  {
     "key": "Togo",
     "region": "Africa",
     "subregion": "Western Africa",
@@ -1426,12 +1306,6 @@
     "region": "Americas",
     "subregion": "Northern America",
     "value": 317101000
-  },
-  {
-    "key": "United States Minor Outlying Islands",
-    "region": "Americas",
-    "subregion": "Northern America",
-    "value": -1
   },
   {
     "key": "United States Virgin Islands",
