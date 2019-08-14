@@ -1,2 +1,2 @@
 export const intro = () => import('./views/Intro.vue')
-export const Resources = () => import('./views/Resources.vue')
+export const Questions = () => import('./views/Questions.vue')

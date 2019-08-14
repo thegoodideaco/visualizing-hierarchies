@@ -14,7 +14,7 @@ export default {
   data: () => ({
     items: [
       {
-        url: '/static/images/ender.gif'
+        url: '/static/images/thanks.png'
       }
     ],
     index: 0

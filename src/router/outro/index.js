@@ -13,19 +13,20 @@ export const config = {
   },
   children: [
     {
+      path:      '/outro/resources',
+      component: components.Questions,
+      meta:      {
+        title: 'Questions'
+      }
+    },
+    {
       path:      '/outro/thanks',
       component: components.intro,
       meta:      {
         title: 'Thank You!'
       }
-    },
-    {
-      path:      '/outro/resources',
-      component: components.Resources,
-      meta:      {
-        title: 'Resources'
-      }
     }
+
   ]
 }
 

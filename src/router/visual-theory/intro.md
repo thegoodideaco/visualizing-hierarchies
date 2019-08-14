@@ -1,8 +1,10 @@
 # Order from Chaos
 
-We as Human Beings, don't like chaos. The moment our minds are presented with uncertainty, or disconnect, we immediately try to make sense of it.
+We as human beings, don't like chaos. The moment our minds are presented with uncertainty, or disconnect, we immediately try to make sense of it.
 
-Our Human behavior surrounds this notion that everything must have order. We are pattern seekers, and it is simply our way of understanding our environment to the best of our ability.
+Our human behavior surrounds this notion that everything must have order.
+
+We are pattern seekers, and it is simply our way of understanding our environment to the best of our ability.
 
 ## Input
 
