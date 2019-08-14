@@ -15,20 +15,27 @@ export default {
     index:  0,
     images: [
       {
-        url:   '/static/images/chaos2.gif',
-        title: 'This is Annoying'
+        url: '/static/images/chaos2.gif'
       },
       {
         url:   '/static/images/chaos1.gif',
         title: 'Typical Human Reaction'
       },
       {
-        url:   'https://media.giphy.com/media/GR81UZYyhN3Ww/giphy.gif',
+        url:   '/static/images/headache.gif',
+        title: 'Also acceptable'
+      },
+      {
+        url:   '/static/images/nice1.gif',
         title: 'that\'s better'
       },
       {
-        url:   'https://media3.giphy.com/media/3osxYzUOBRWEg5S5q0/source.gif',
+        url:   '/static/images/nice2.gif',
         title: 'that\'s also better'
+      },
+      {
+        url:   '/static/images/memory.jpg',
+        title: 'the flow of data'
       },
       {
         url:   '/static/images/sense-bandwidth.jpg',

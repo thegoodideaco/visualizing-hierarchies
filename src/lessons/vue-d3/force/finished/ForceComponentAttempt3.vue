@@ -30,14 +30,16 @@ export default {
       h:          d3.hierarchy({}),
       groupOrder: ['region', 'subregion'],
       dataset:    [],
-      simulation: d3
-        .forceSimulation()
-        .force('x', d3.forceX())
-        .force('y', d3.forceY())
+      simulation: d3.forceSimulation()
+        // .force('center', d3.forceCenter())
         .force('collide', d3.forceCollide())
-        .force('links', d3.forceLink())
-        .alpha(10)
-        .alphaDecay(0.02)
+        .force('x', d3.forceX())
+        .force('y', d3.forceY()),
+      simulationOptions: {
+        alpha:      0.9,
+        alphaDecay: 0.02,
+        radius:     10
+      }
     }
   },
   computed: {
@@ -70,6 +72,13 @@ export default {
         key:    'root',
         values: this.nester.entries(this.dataset)
       }
+    },
+
+    center() {
+      return [
+        this.width / 2,
+        this.height / 2
+      ]
     }
   },
   watch: {
@@ -104,10 +113,34 @@ export default {
     },
 
     h(val) {
-      this.simulation
-        .nodes(val.descendants())
+      this.simulation.nodes(val.descendants())
         .alpha(0.9)
         .restart()
+    },
+
+    center([x, y]) {
+      /** @type {d3.ForceX} */
+      const fx = this.simulation.force('x')
+      /** @type {d3.ForceY} */
+      const fy = this.simulation.force('y')
+
+      fx.x(x)
+      fy.y(y)
+    },
+
+    simulationOptions: {
+      handler() {
+        /** @type {d3.ForceCollide} */
+        const col = this.simulation.force('collide')
+        col.radius(this.simulationOptions.radius)
+
+        this.simulation
+          .alpha(this.simulationOptions.alpha)
+          .alphaDecay(this.simulationOptions.alphaDecay)
+          .restart()
+      },
+      deep:      true,
+      immediate: true
     }
   },
   async mounted() {

@@ -11,6 +11,8 @@
         <img alt="D3"
              src="@/assets/d3-logo.svg">
       </div>
+
+      <lesson-timer />
     </div>
 
     <router-navigator class="uppercase text-2xl overflow-auto" />
@@ -19,9 +21,11 @@
 
 <script>
 import RouterNavigatorVue from './RouterNavigator.vue'
+import LessonTimerVue from './LessonTimer.vue'
 export default {
   components: {
-    RouterNavigator: RouterNavigatorVue
+    RouterNavigator: RouterNavigatorVue,
+    LessonTimer:     LessonTimerVue
   }
 }
 </script>

@@ -18,28 +18,27 @@ export default {
         url: '/static/images/pragnanz.png'
       },
       {
-        url:
-          'https://designforgeeks.com/wp-content/uploads/2018/08/Two-groups-of-blue-dots-exemplifying-the-Gestalt-principle-of-Proximity.png',
+        url:   '/static/images/laws/proximity2.png',
         title: 'Law of Proximity'
       },
       {
-        url:   'https://miro.medium.com/max/1400/1*iQgs-ITePo_itl3dfQcFIw.png',
+        url:   '/static/images/laws/similarity.png',
         title: 'Law of Similarity'
       },
       {
-        url:   'https://miro.medium.com/max/700/1*LxCr2o4bLGzzZpYp3tPtFw.png',
+        url:   '/static/images/laws/closure.png',
         title: 'Law of Closure'
       },
       {
-        url:   'https://uxmisfit.com/wp-content/uploads/2019/04/symmetry.jpg',
+        url:   '/static/images/laws/symmetry.jpg',
         title: 'Law of Symmetry'
       },
       {
-        url:   'https://miro.medium.com/max/1400/1*idl16iEtKFaMKbIuxn-GaA.png',
+        url:   '/static/images/laws/common-fate.png',
         title: 'Law of Common Fate'
       },
       {
-        url:   'https://miro.medium.com/max/700/1*qiXDOZnWm_NFprHEcDEp8w.png',
+        url:   '/static/images/laws/continuity.png',
         title: 'Law of Continuity'
       }
     ]
