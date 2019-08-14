@@ -48,7 +48,7 @@ export default {
     this.startTimer()
   },
   mounted() {
-    this.$on('hook:beforeDestroy', clearInterval(this.$data.$timer))
+    this.$on('hook:beforeDestroy', () => clearInterval(this.$options.$timer))
   },
   methods: {
     startTimer() {
