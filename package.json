@@ -26,8 +26,8 @@
     "vue": "^2.6.10",
     "vue-axios": "^2.1.4",
     "vue-resize": "^0.4.5",
-    "vue-router": "^3.1.1",
-    "vue-slider-component": "^3.0.34",
+    "vue-router": "^3.1.2",
+    "vue-slider-component": "^3.0.38",
     "vuedraggable": "^2.23.0",
     "vuex": "^3.1.1",
     "webfontloader": "^1.6.28"
@@ -52,7 +52,7 @@
     "node-sass": "^4.12.0",
     "raw-loader": "^3.1.0",
     "sass-loader": "^7.2.0",
-    "tailwindcss": "^1.1.1",
+    "tailwindcss": "^1.1.2",
     "terser-webpack-plugin": "^1.4.1",
     "unused-webpack-plugin": "^2.3.1",
     "vue-template-compiler": "^2.6.10"
