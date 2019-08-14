@@ -10,7 +10,7 @@ This is particularly interesting in respect to Design and UX, as most of these p
 
 ## Structured Design
 
-It seems apparant that this approach of grouping and categorizing is in alot of what we do, even outside of our visual perception... We order groups of information based on a rating of importance.
+It seems apparent that this approach of grouping and categorizing is in alot of what we do, even outside of our visual perception... We order groups of information based on a rating of importance.
 
 We use this format logically, as well as visually perceiving the world around us.
 
@@ -18,20 +18,14 @@ We use this format logically, as well as visually perceiving the world around us
 
 Or `Reading Gravity` is the way in which we interpret a page design.
 
-There's a couple ways that we _read_ a site design.
-
 #### Z Pattern
 
 Most Users will look from top left to top right, bottom left to bottom right. This creates a `Z` pattern of importance.
 
 Used for alot of landing pages, simplistic designs. This is shown in the `Gutenberg Diagram`
 
-#### F Pattern
-
-This describes that users will look at the page title, moving inward towards more detailed information that mostly consists of readable text. Usually applied to users with a genuine interest in the content of the page.
-
 #### Consistent Behavior
 
-More patterns emerge as time goes on, giving us more insight to what makes a pleasant experiences based on our behavior in visualizing content.
+More patterns emerge as time goes on, giving us more insight to what makes a pleasant experience based on our behavior in visualizing content.
 
-There is a common theme to this. We seem to perceive the whole first, before diving into the details, regardless of the layout. We analyze the design as a whole to determine which parts we should focus on, before actually shifting focus.
+There is a common theme to this. We seem to quickly perceive everything first, before diving into the details, regardless of the layout. We analyze the design as a whole to determine which parts we should focus on, before actually shifting focus.

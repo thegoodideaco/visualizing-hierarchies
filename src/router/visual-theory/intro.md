@@ -18,4 +18,10 @@ When we see something, new info gets passed into short-term memory while the old
 
 This is known as `Miller's Law`, which states that the average mind can only keep 7 ± 2 items in it's working (short-term) memory.
 
+### Speed
+
 The [Bandwidth of our senses](https://medium.com/@hasanoviz/visualization-principles-a8c6e46ddc5f) compares the amount of information each of our senses _perceive_ per second.
+
+Our sense of sight gives us the most amount of data to _perceive_ within the shortest amount of time.
+
+Keeping this in mind, it can help us determine what visual displays would have the most impact given the insight that's desired.

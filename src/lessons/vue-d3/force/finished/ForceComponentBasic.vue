@@ -70,6 +70,13 @@ export default {
         key:    'root',
         values: this.nester.entries(this.dataset)
       }
+    },
+
+    center() {
+      return [
+        this.width * 0.5,
+        this.height * 0.5
+      ]
     }
   },
   watch: {
@@ -108,6 +115,12 @@ export default {
         .nodes(val.descendants())
         .alpha(0.9)
         .restart()
+    },
+    center: {
+      handler() {
+        this.simulation.alpha(0.9).restart()
+      },
+      deep: true
     }
   },
   async mounted() {
@@ -121,6 +134,7 @@ export default {
     this.updateSize()
 
     this.simulation.force('x').x(() => this.center[0])
+    this.simulation.force('y').y(() => this.center[1])
 
     // 2. Load the raw data
     const data = await d3.json('/datasets/populations.json')

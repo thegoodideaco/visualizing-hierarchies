@@ -17,7 +17,10 @@ export default {
         url: '/static/images/thanks.gif'
       }
     ],
-    index: 0
+    index: 0,
+    links: {
+
+    }
   })
 }
 </script>

@@ -17,13 +17,6 @@ export default {
         url: '/static/images/hello.gif'
       },
       {
-        url:   '/static/images/history-of-life.png',
-        title: 'History of Life / Juan Martinez'
-      },
-      {
-        url: '/static/images/starburst2.gif'
-      },
-      {
         url:   '/static/images/excited1.gif',
         title: 'Let\'s do this!'
       }
