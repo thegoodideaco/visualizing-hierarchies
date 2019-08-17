@@ -34,7 +34,7 @@ import { rgb, color } from 'd3-color'
 import { interpolateRgb } from 'd3-interpolate'
 import { scaleSequential } from 'd3-scale'
 
-const particleCountHD = 300
+const particleCountHD = 1300
 
 const particleCount = 500
 const particleCountSD = 300

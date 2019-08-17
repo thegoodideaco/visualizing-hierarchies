@@ -1,8 +1,12 @@
 <template>
   <div>
     <small>Time Left</small>
-    <h4>
+    <h4 v-if="!timeFinished">
       {{ timeDisplay }}
+    </h4>
+    <h4 v-else
+        class="text-red-500 blink">
+      00:00:00
     </h4>
   </div>
 </template>
@@ -13,14 +17,19 @@ import { timeFormat } from 'd3'
 export default {
   timer: 0,
 
-  data() {
+  data: () => {
     return {
-      end:       Date.parse('8/14/2019 20:45:00'),
+      end: Date.parse('8/18/2019 17:45:00'),
+
+      /** @type {number} */
       current:   0,
       formatter: null
     }
   },
   computed: {
+    timeFinished() {
+      return this.current < 0
+    },
     timeDisplay() {
       const s = (this.current / 1000)
       const m = (s / 60)
@@ -63,6 +72,3 @@ export default {
   }
 }
 </script>
-
-<style>
-</style>

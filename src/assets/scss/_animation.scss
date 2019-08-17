@@ -1,0 +1,21 @@
+@keyframes blink {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+  }
+  50% {
+    visibility: visible;
+    opacity: 1;
+  }
+  100% {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+.blink {
+  animation-fill-mode: both;
+  animation-name: blink;
+  animation-duration: 500ms;
+  animation-iteration-count: infinite;
+}

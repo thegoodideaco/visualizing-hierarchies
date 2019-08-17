@@ -48,6 +48,23 @@ export const config = {
       }
     },
 
+    // ! Layouts
+    {
+      path:      '/vue-d3/radial-layouts',
+      component: components.Layouts,
+      meta:      {
+        title:  'Radial Layouts',
+        readme: LayoutsReadme
+      }
+    },
+    {
+      path:      '/vue-d3/radial-layouts/finished',
+      component: components.finished.Layouts,
+      meta:      {
+        readme: LayoutsReadme
+      }
+    },
+
     // ! Force
     {
       path:      '/vue-d3/force',
