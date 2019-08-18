@@ -2,6 +2,10 @@
 
 `D3` provides multiple layouts for use with displaying hierarchies.
 
+These include `Cluster`, `Tree`, `Treemap`, `Partition`, and `Pack`
+
+Treemap and Pack both have a nested display, meaning they do not show links connecting nodes. Instead, they represent the hierarchy by fitting their descendants within the same space.
+
 We can use these to create a number of layouts like the ones shown in the [examples](/#/intro/examples)
 
 They expect a hierarchy instance to be passed, and they simply assign more properties to each node for position and size.
@@ -26,11 +30,13 @@ We'll add a SVG to our template, and make it fill the entire area
 </svg>
 ```
 
-In our script, let's setup the basic structure.
+---
 
 ### The Data
 
 We need to assign some properties to our data object
+
+In our script, let's setup the basic structure.
 
 ```javascript
 data: () => ({
@@ -42,6 +48,8 @@ data: () => ({
   dataset: []
 });
 ```
+
+---
 
 ### Methods
 
@@ -62,6 +70,8 @@ methods: {
 }
 ```
 
+---
+
 ### Mounting
 
 When this component is mounted, we simply load our dataset in, as well as initialize our width and height
@@ -78,6 +88,8 @@ async mounted() {
   this.dataset = Object.freeze(data)
 }
 ```
+
+---
 
 ### Computed
 
@@ -132,6 +144,8 @@ nestedData() {
 }
 ```
 
+---
+
 ### Watchers
 
 We need to observe some of these computed properties in order to recalculate everything
@@ -149,9 +163,11 @@ layout() {
 }
 ```
 
+---
+
 Finally, when `nestedData` changes, we need to recreate our hierarchy.
 
-We must summarize and sort the values before we run the layout on it, and then observe the heirarchy _after_ it's been mutated by the layout.
+We must also summarize and sort the values before we run the layout on it, and then observe the hierarchy _after_ it's been mutated by the layout.
 
 ```javascript
 /**
@@ -177,7 +193,13 @@ nestedData(val) {
 }
 ```
 
-At this point, everything is observed, and will calculate things in an order that just works. Now we just need to render it.
+> At this point, everything is observed, and will calculate things in an order that just works.
+>
+> Now we just need to render it.
+
+---
+
+### Visualizing the layout
 
 In our SVG, let's add a circle for each descendant. We will bind `x`, `y`, and `r` for size and positioning, as well as a tooltip to show the key and value of each node.
 
@@ -197,14 +219,89 @@ In our SVG, let's add a circle for each descendant. We will bind `x`, `y`, and `
 </circle>
 ```
 
-We can now change the width, height, padding of the layout, as well as the raw data and the grouping order.
+We can now change the width, height, padding of the layout,
+as well as the raw data and the grouping order, and Vue will automatically render the changes.
+
+---
 
 Just for kicks, we can animate everything
 
-```css
+```scss
 circle {
   transition: all 300ms ease;
 }
 ```
 
 Keep in mind that even though we are using SVG elements, this concept can also be used in regular dom content by applying a dynamic style to each node.
+
+---
+
+### Rendering Links
+
+In the `Pack` layout, we do not display links, because the hierarchy is displayed in a nested fashion.
+
+Let's use a `Cluster` layout to visualize our hierarchy.
+
+Since the logic involved for reactive layouts is exactly the same, we only need to change the layout we are currently using!
+
+First, let's set the radius of each circle to be 5px, since the new layout will not include that value:
+
+```html
+<!-- Render every descendant of our hierarchy -->
+<circle
+  v-for="(item, index) in h.descendants()"
+  :key="index"
+  r="5"
+  :cx="item.x"
+  :cy="item.y"
+>
+  <!-- Tooltip -->
+  <title>
+    {{ item.data.key }}: {{ item.value }}
+  </title>
+</circle>
+```
+
+Next, we'll replace the `Pack` layout, with a `Cluster`, and remove the padding property
+
+```javascript
+/**
+ * if width, height or padding changes
+ * this will change, triggering our watcher
+ * to apply changes to our nodes
+ * @returns {d3.PackLayout<population.Country>}
+ */
+layout() {
+  return d3.cluster()
+    .size([this.width, this.height])
+}
+```
+
+We should now see our circles resemble a tree like display! This is because the `x` and `y` properties are both used in `Pack` and `Cluster` layouts.
+
+We need to visualize the links, so let's create a line generator as a computed property.
+
+```javascript
+/**
+ * Creates a path string out of an array of points.
+ * @returns {d3.Path}
+ */
+lineGen() {
+  return d3.line()
+    .x(node => node.x)
+    .y(node => node.y)
+}
+```
+
+In the template, we will create a path for each link in our hierarchy by calling our line generator.
+
+```html
+<!-- Render every link -->
+<path
+  v-for="(link, index) in h.links()"
+  :key="`link${index}`"
+  :d="lineGen([link.source, link.target])"
+/>
+```
+
+We should now see a **dendrogram**, or in other words, a `Cluster`! 🎉

@@ -88,6 +88,10 @@
     padding: 10px 15px;
     font-style: oblique;
 
+    p:last-child {
+      margin: 0;
+    }
+
     > blockquote {
       margin-left: 5px;
       margin-top: 10px;
@@ -131,7 +135,8 @@
   }
 
   hr {
-    border: 1px dashed rgba(255, 255, 255, 0.19);
+    border: 1px solid rgba(#fff, 0.5);
+    margin: 2rem 0;
   }
 
   p {

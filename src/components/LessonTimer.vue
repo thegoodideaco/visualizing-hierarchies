@@ -1,9 +1,13 @@
 <template>
   <div>
     <small>Time Left</small>
+
+    <!-- Time Display -->
     <h4 v-if="!timeFinished">
       {{ timeDisplay }}
     </h4>
+
+    <!-- Timed out display -->
     <h4 v-else
         class="text-red-500 blink">
       00:00:00
@@ -19,7 +23,7 @@ export default {
 
   data: () => {
     return {
-      end: Date.parse('8/18/2019 17:45:00'),
+      end: Date.parse('8/18/2019 17:45:00 GMT-0400'),
 
       /** @type {number} */
       current:   0,

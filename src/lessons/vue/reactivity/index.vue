@@ -1,5 +1,7 @@
 <template>
-  <reactivity-component />
+  <div class="component-container">
+    <reactivity-component />
+  </div>
 </template>
 
 <script>

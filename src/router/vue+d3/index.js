@@ -1,6 +1,7 @@
 import ShapesReadme from './shapes.md'
 import LayoutsReadme from './layouts.md'
-import ForceReadme from './force.md'
+import RadialLayoutsReadme from './radial-layouts.md'
+// import ForceReadme from './force.md'
 import * as components from './asyncComponents'
 import { SideNavLayout } from '@/layouts/componentViews'
 
@@ -48,39 +49,39 @@ export const config = {
       }
     },
 
-    // ! Layouts
+    // ! Radial Layouts
     {
       path:      '/vue-d3/radial-layouts',
-      component: components.Layouts,
+      component: components.RadialLayouts,
       meta:      {
         title:  'Radial Layouts',
-        readme: LayoutsReadme
+        readme: RadialLayoutsReadme
       }
     },
     {
       path:      '/vue-d3/radial-layouts/finished',
-      component: components.finished.Layouts,
+      component: components.finished.RadialLayouts,
       meta:      {
-        readme: LayoutsReadme
-      }
-    },
-
-    // ! Force
-    {
-      path:      '/vue-d3/force',
-      component: components.Force,
-      meta:      {
-        title:  'Force',
-        readme: ForceReadme
-      }
-    },
-    {
-      path:      '/vue-d3/force/finished',
-      component: components.finished.Force,
-      meta:      {
-        readme: ForceReadme
+        readme: RadialLayoutsReadme
       }
     }
+
+    // ! Force
+    // {
+    //   path:      '/vue-d3/force',
+    //   component: components.Force,
+    //   meta:      {
+    //     title:  'Force',
+    //     readme: ForceReadme
+    //   }
+    // },
+    // {
+    //   path:      '/vue-d3/force/finished',
+    //   component: components.finished.Force,
+    //   meta:      {
+    //     readme: ForceReadme
+    //   }
+    // }
   ]
 }
 

@@ -1,3 +1,9 @@
 .gpu {
   transform: translateZ(0);
 }
+
+.hide-below {
+  + * {
+    display: none;
+  }
+}

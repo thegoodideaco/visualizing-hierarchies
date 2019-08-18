@@ -19,7 +19,7 @@
     </div>
 
     <!-- Content Entry -->
-    <div class="grid">
+    <div class="grid content">
       <slot>
         <!-- <transition
           mode="in-out"
@@ -37,10 +37,8 @@ import SideNavVue from '../components/SideNav.vue'
 export default {
   components: {
     MarkdownViewer: () =>
-      import(
-        /* webpackChunkName: "MarkdownViewer" */
-        '../components/MarkdownDisplay.vue'
-      ),
+      import(/* webpackChunkName: "MarkdownViewer" */
+        '../components/MarkdownDisplay.vue'),
     SideNav: SideNavVue
   },
   props: {
@@ -116,5 +114,16 @@ export default {
   display: grid;
   overflow: auto;
   position: relative;
+}
+
+.content {
+  /deep/ svg {
+    circle,
+    path {
+      fill: transparent;
+      stroke: #fff;
+      stroke-width: 1px;
+    }
+  }
 }
 </style>

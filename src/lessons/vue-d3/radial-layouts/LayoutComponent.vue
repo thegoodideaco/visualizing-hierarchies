@@ -1,17 +1,23 @@
 <template>
-  <div>
+  <div class="grid">
     <resize-observer @notify="updateSize()" />
-    <svg width="100%"
+
+    <!-- Remove this button
+   http://localhost:8080/#/vue-d3/radial-layouts -->
+    <open-button class="self-center" />
+
+    <svg v-if="$children.length === 1"
+         width="100%"
          height="100%"
          class="relative">
-
       <!-- Links -->
-      <path v-for="(link, index) in h.links()"
-            :key="`link${index}`"
-            :d="lineGen([link.source, link.target])"
-            stroke="white"
-            stroke-width="1"
-            fill="none" />
+      <path
+        v-for="(link, index) in h.links()"
+        :key="`link${index}`"
+        :d="lineGen([link.source, link.target])"
+        stroke="white"
+        stroke-width="1"
+        fill="none" />
 
       <!-- Render every descendant of our hierarchy -->
       <circle
@@ -35,34 +41,20 @@ export default {
   data: () => ({
     width:      100,
     height:     100,
-    padding:    2,
     h:          d3.hierarchy({}),
     groupOrder: ['region', 'subregion'],
     dataset:    []
   }),
   computed: {
     layout() {
-      // Showing a tree
-      return d3.tree()
-        .size([
-          this.width,
-          this.height
-        ])
-    },
-
-    /**
-     * Center point of the element
-     * @returns {{x: number, y: number}}
-     */
-    center() {
-      return {
-        x: this.width * 0.5,
-        y: this.height * 0.5
-      }
+      // Showing a cluster
+      return d3.cluster()
+        .size([this.width, this.height])
     },
 
     lineGen() {
-      return d3.line()
+      return d3
+        .line()
         .x(v => v.x)
         .y(v => v.y)
     },
@@ -131,3 +123,9 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.grid {
+  display: grid;
+}
+</style>

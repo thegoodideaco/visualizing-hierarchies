@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import LayoutComponent from './LayoutComponentBasic.vue'
+import LayoutComponent from './LayoutCluster.vue'
 export default {
   components: {
     LayoutComponent

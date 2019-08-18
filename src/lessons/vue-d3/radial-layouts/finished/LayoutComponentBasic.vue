@@ -4,21 +4,24 @@
     <resize-observer @notify="updateSize()" />
 
     <!-- svg container -->
-    <svg width="100%"
+    <svg v-if="dataset.length"
+         width="100%"
          height="100%">
 
+      <!-- Render every link -->
+      <path v-for="(link, index) in h.links()"
+            :key="`link${index}`"
+            :d="lineGen([link.source, link.target])" />
+
       <!-- Render every descendant of our hierarchy -->
-      <circle v-for="(item, index) in h.descendants()"
-              :key="index"
-              :r="item.r"
-              :cx="item.x"
-              :cy="item.y">
-
+      <circle
+        v-for="(item, index) in h.descendants()"
+        :key="index"
+        r="5"
+        :cx="center.x + toX(item)"
+        :cy="center.y + toY(item)">
         <!-- Tooltip -->
-        <title>
-          {{ item.data.key }}: {{ item.value }}
-        </title>
-
+        <title>{{ item.data.key }}: {{ item.value }}</title>
       </circle>
     </svg>
   </div>
@@ -41,15 +44,43 @@ export default {
   computed: {
 
     /**
+     * The radius of our layout
+     * @return {number}
+     */
+    radius() {
+      return Math.min(this.width, this.height) * 0.5
+    },
+
+    /**
+     * The center point of our content
+     * @returns {{x: number, y: number}}
+     */
+    center() {
+      return {
+        x: this.width * 0.5,
+        y: this.height * 0.5
+      }
+    },
+
+    /**
      * if width, height or padding changes
      * this will change, triggering our watcher
      * to apply changes to our nodes
-     * @returns {d3.PackLayout<population.Country>}
+     * @returns {d3.ClusterLayout<population.Country>}
      */
     layout() {
-      return d3.pack()
-        .size([this.width, this.height])
-        .padding(this.padding)
+      return d3.cluster()
+        .size([Math.PI * 2, this.radius])
+    },
+
+    /**
+     * Creates a path string out of an array of points.
+     * @returns {d3.Path}
+     */
+    lineGen() {
+      return d3.line()
+        .x(node => this.center.x + (Math.cos(node.x) * node.y))
+        .y(node => this.center.y + (Math.sin(node.x) * node.y))
     },
 
     /**
@@ -130,13 +161,28 @@ export default {
       const { width, height } = this.$el.getBoundingClientRect()
       this.width = width
       this.height = height
+    },
+
+    /**
+     * The x position of a radial point
+     */
+    toX(point) {
+      return Math.cos(point.x) * point.y
+    },
+
+    /**
+     * The y position of a radial point
+     */
+    toY(point) {
+      return Math.sin(point.x) * point.y
     }
   }
 }
 </script>
 
-<style scoped>
-circle {
+<style scoped lang="scss">
+circle, path {
   transition: all 300ms ease;
 }
+
 </style>

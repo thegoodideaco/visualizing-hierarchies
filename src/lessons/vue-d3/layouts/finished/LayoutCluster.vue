@@ -6,6 +6,12 @@
     <!-- svg container -->
     <svg width="100%"
          height="100%">
+
+      <!-- Render every link -->
+      <path v-for="(link, index) in h.links()"
+            :key="`link${index}`"
+            :d="lineGen([link.source, link.target])" />
+
       <!-- Render every descendant of our hierarchy -->
       <circle
         v-for="(item, index) in h.descendants()"
@@ -23,30 +29,40 @@
 <script>
 import * as d3 from 'd3'
 export default {
-  data() {
-    return {
-      width:      0,
-      height:     0,
-      h:          d3.hierarchy({}),
-      groupOrder: ['region', 'subregion'],
-      dataset:    [],
-      simulation: d3
-        .forceSimulation()
-        .force('x', d3.forceX())
-        .force('y', d3.forceY())
-        .force('collide', d3.forceCollide())
-        .force('links', d3.forceLink())
-        .alpha(10)
-        .alphaDecay(0.02),
-      forceSettings: {
-        x: {
-          strength: 0.5,
-          x:        () => this.center
-        }
-      }
-    }
-  },
+  data: () => ({
+    width:      0,
+    height:     0,
+    padding:    2,
+    h:          d3.hierarchy({}),
+    groupOrder: [
+      'region',
+      'subregion'
+    ],
+    dataset: []
+  }),
   computed: {
+
+    /**
+     * if width, height or padding changes
+     * this will change, triggering our watcher
+     * to apply changes to our nodes
+     * @returns {d3.PackLayout<population.Country>}
+     */
+    layout() {
+      return d3.cluster()
+        .size([this.width, this.height])
+    },
+
+    /**
+     * Creates a path string out of an array of points.
+     * @returns {d3.Path}
+     */
+    lineGen() {
+      return d3.line()
+        .x(node => node.x)
+        .y(node => node.y)
+    },
+
     /**
      * if the group order is changed
      * this will change, triggering the
@@ -57,11 +73,7 @@ export default {
       const n = d3.nest()
 
       this.groupOrder.forEach(v => {
-        if (typeof v === 'function') {
-          n.key(v)
-        } else {
-          n.key(node => node[v])
-        }
+        n.key(node => node[v])
       })
 
       return n
@@ -76,22 +88,12 @@ export default {
         key:    'root',
         values: this.nester.entries(this.dataset)
       }
-    },
-
-    /**
-     * @returns {{x: number, y: number}}
-     */
-    center() {
-      return [
-        this.width * 0.5,
-        this.height * 0.5
-      ]
     }
   },
   watch: {
     /**
      * When our nestedData changes,
-     * updates h, and applies a new layout
+     * updates h, and applys a new layout
      */
     nestedData(val) {
       // * Add Hierarchy to nested data
@@ -102,63 +104,27 @@ export default {
       h.sort((a, b) => d3.ascending(a.value, b.value))
 
       /**
-       * TODO: Remove this
-       * We must assign properties to hierarchy
-       * before we pass it on to vue, so that they are observed
-       */
-      h.each(n =>
-        Object.assign(n, {
-          x: NaN,
-          y: NaN
-        })
-      )
-      // this.layout(h)
-      this.simulation.nodes(h.descendants())
+         * We must assign properties to hierarchy
+         * before we pass it on to vue, so that they are observed
+         */
+      this.layout(h)
 
       /** Finally pass it to Vue for observing */
       this.h = h
     },
 
-    h(val) {
-      this.simulation
-        .nodes(val.descendants())
-        .alpha(0.9)
-        .restart()
-    },
-    center: {
-      handler() {
-        this.simulation.alpha(0.9).restart()
-      }
-    },
-    forceSettings: {
-      handler() {
-        const {
-          x: {
-            x,
-            strength
-          }
-        } = this.forceSettings
-
-        this.simulation.force('x')
-          .x(x)
-          .strength(strength)
-
-        this.simulation.alpha(0.9).restart()
-      }
+    /**
+     * When layout method changes,
+     * apply to the hierarchy
+     * @type {Vue.WatchHandler<d3.PackLayout<population.Country>}
+     */
+    layout() {
+      this.layout(this.h)
     }
   },
   async mounted() {
-    window.myComponent = this
-    this.$once('hook:beforeDestroy', () => {
-      this.simulation.stop()
-      delete window.myComponent
-    })
-
     // 1. Assign Sizes
     this.updateSize()
-
-    this.simulation.force('x').x(() => this.center[0])
-    this.simulation.force('y').y(() => this.center[1])
 
     // 2. Load the raw data
     const data = await d3.json('/datasets/populations.json')
@@ -179,3 +145,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+circle, path {
+  transition: all 300ms ease;
+}
+</style>
