@@ -53,6 +53,20 @@ if (process.env.NODE_ENV === 'development') {
       }
     }
   })
+} else {
+  /**
+   * ^ Adding to production as well
+   */
+  Object.assign(window, {
+    dev: {
+      d3:          require('d3'),
+      _:           require('lodash'),
+      SuffixTree:  require('./utils/suffix-tree').default,
+      html2canvas: require('html2canvas'),
+      store,
+      Vue
+    }
+  })
 }
 
 Vue.use(VueResize)

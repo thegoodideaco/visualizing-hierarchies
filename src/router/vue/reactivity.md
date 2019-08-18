@@ -115,7 +115,7 @@ When `c` changes, we will set `reduced` to be the same value, and then continuou
       subtract() {
         this.reduced -= 0.1
         if (this.reduced > 0.001) {
-          requestAnimationFrame(this.divide)
+          requestAnimationFrame(this.subtract)
         } else {
           this.reduced = 0
         }

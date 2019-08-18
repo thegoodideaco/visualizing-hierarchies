@@ -1,4 +1,4 @@
-# visualizing-hierarchies
+# Visualizing Hierarchies
 
 ## Prerequisites
 

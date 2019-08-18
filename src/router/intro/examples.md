@@ -4,7 +4,7 @@ So what can we visualize that has meaning?
 
 Let's take a look at some of the layouts D3 provides
 
-## Denrograms
+## Dendrograms
 
 Dendrograms are node-link diagrams that place leaf nodes of the tree at the same depth.
 

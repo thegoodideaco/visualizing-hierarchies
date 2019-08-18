@@ -112,4 +112,4 @@ Now we have a nice radial version of our cluster dendrogram! 🎈
 
 `D3` does offer radial variants of it's generators, such as `lineRadial` or `pointRadial` which do the same job.
 
-However, if you get a good understanding of how these are converted, you can take advantage with other approaches.
+However, if you have a good understanding of how these are converted, you can take advantage with other approaches.

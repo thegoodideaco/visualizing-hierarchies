@@ -113,7 +113,7 @@ export default {
   watch: {
     /**
      * When our nestedData changes,
-     * updates h, and applys a new layout
+     * updates h, and applies a new layout
      */
     nestedData(val) {
       // * Add Hierarchy to nested data
