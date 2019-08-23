@@ -12,7 +12,7 @@ hierarchies are `unidirected` trees that follow specific rules:
 >
 > All nodes must have an edge
 >
-> Must be acylic
+> Must be [acylic](https://www.youtube.com/watch?v=Y4hlrkidWQo)
 >
 > Each node can only have 1 parent
 

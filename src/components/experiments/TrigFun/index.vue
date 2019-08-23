@@ -1,51 +1,209 @@
 <template>
-  <div>trig is fun {{ width }} x {{ height }}</div>
+  <div class="relative p-32 h-full w-full">
+    <div ref="container"
+         class="relative">
+      <svg width="100%"
+           height="100%">
+        <!-- content -->
+
+        <!-- bottom ticks -->
+        <g :transform="`translate(55 ${height})`"
+           class="ticks">
+          <tick-display :count="12"
+                        :scale="invertedDateScale"
+                        position="bottom">
+            <template v-slot="item">
+              <text @click="selectItem(item)">{{ item | asMonth }}</text>
+            </template>
+          </tick-display>
+        </g>
+
+        <!-- left ticks -->
+        <g transform="translate(55 0)"
+           class="ticks">
+          <tick-display :count="5"
+                        :scale="invertedMoneyScale"
+                        position="left">
+            <template v-slot="item">
+              <text @click="selectItem(item)">{{ item.value | asMoney }}</text>
+            </template>
+          </tick-display>
+        </g>
+
+        <!-- Fill -->
+        <g transform="translate(55 0)">
+
+          <path
+            :d="fillGen(dataset)"
+            fill="green"
+            stroke="#fff" />
+
+          <!-- Points -->
+          <g v-for="(item, index) in dataset.slice(1)"
+             :key="`c${index}`"
+             :transform="`translate(${dateScale(item.date)} ${moneyScale(item.value)})`">
+
+            <circle
+              r="5" />
+
+            <text transform="translate(0 -45)"
+                  class="centered">
+              {{ item.value | asMoney }}
+            </text>
+          </g>
+        </g>
+      </svg>
+    </div>
+  </div>
 </template>
 
 <script>
 import * as d3 from 'd3'
+import D3AxisVue from '../FormulaOne/D3Axis.vue'
+
 export default {
+  filters: {
+    asMonth(node) {
+      const monthFormat = d3.timeFormat('%b')
+      return monthFormat(Date.parse(node.value))
+    },
+    asMoney(value) {
+      const f = d3.format('$,.2s')
+      return f(value)
+    }
+  },
+  components: {
+    TickDisplay: D3AxisVue
+  },
   data: () => ({
     width:  100,
     height: 100
+    // dateScale: null
   }),
-  mounted() {
-    const { width, height } = this.$el.getBoundingClientRect()
+  computed: {
 
-    Object.assign(this, {
-      width,
-      height
-    })
+    dataset() {
+      return this.createRandomData()
+    },
+
+    /** @returns {d3.ScaleTime} */
+    dateScale() {
+      return d3.scaleTime()
+        .domain([
+          Date.parse('jan 1, 2019'),
+          Date.parse('Dec 29, 2019')
+        ]).range([0, this.width])
+    },
+    invertedDateScale() {
+      const c = d3.scaleTime()
+        .nice()
+        .domain([
+          Date.parse('jan 1, 2019'),
+          Date.parse('Dec 29, 2019')
+        ]).range([this.width, 0])
+
+      return c
+    },
+    moneyScale() {
+      const e  = d3.extent(this.dataset, d => d.value)
+      e[1] += Math.abs(e[1] - e[0]) * 0.25
+
+      // e.reverse()
+
+      return d3.scaleLinear()
+        .domain(e)
+        .nice()
+        .range([this.height, 0])
+    },
+    invertedMoneyScale() {
+      const e  = d3.extent(this.dataset, d => d.value)
+      e[1] += Math.abs(e[1] - e[0]) * 0.25
+
+      // e.reverse()
+
+      return d3.scaleLinear()
+        .domain(e)
+        .nice()
+        .range([0, this.height])
+    },
+    fillGen() {
+      return d3.area()
+        .x(v => this.dateScale(v.date))
+        .y1(v => this.moneyScale(v.value))
+        .y0(this.height)
+        .curve(d3.curveMonotoneX)
+    }
+  },
+  // beforeMount() {
+  //   this.dateScale = d3.scaleTime()
+  //     .domain([
+  //       Date.parse('jan 1, 2019'),
+  //       Date.parse('Dec 29, 2019')
+  //     ])
+  // },
+  mounted() {
+    this.updateSize()
+
+    // this.dateScale
+    //   .range([0, this.width])
   },
   methods: {
-    /**
-     * @returns {d3.HierarchyCircularNode}
-     */
-    createRandomHierarchy(amount = 300) {
-      const nodes = [
-        {
-          index:       0,
-          parentIndex: ''
-        }
-      ]
-      for (let i = 1; i < amount; i++) {
-        nodes.push({
-          index:       i,
-          parentIndex: Math.ceil(Math.sqrt(i)) - 1
-        })
-      }
+    updateSize() {
+      const { width, height } = (this.$refs.container || this.$el).getBoundingClientRect()
 
-      console.log(nodes)
+      Object.assign(this, {
+        width,
+        height
+      })
+    },
+    createRandomData() {
+      const dates = this.dateScale.ticks(12)
 
-      const strat = d3
-        .stratify()
-        .id(n => n.index)
-        .parentId(n => n.parentIndex)
+      const amounts = dates.map(() => Math.random() * 20000)
 
-      return strat(nodes)
+      return dates.map((v, i) => ({
+        date:  v,
+        value: amounts[i]
+      }))
+    },
+    selectItem(node) {
+      console.log(node)
     }
   }
 }
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+.ticks {
+  text {
+    text-transform: uppercase;
+    font-size: 10px;
+  }
+}
+
+svg {
+  overflow: visible;
+  position: relative;
+}
+
+circle {
+  fill: #fff;
+  stroke: #fff;
+  stroke-width: 2px;
+}
+
+text.centered {
+  text-anchor: middle;
+  fill: #fff;
+  font-size: 11px;
+  font-weight: bold;
+  stroke: rgba(#000, .5);
+  stroke-width: 1px;
+  paint-order: stroke fill;
+}
+
+.container {
+  width: 800px;
+  height: 116px;
+}
+</style>
