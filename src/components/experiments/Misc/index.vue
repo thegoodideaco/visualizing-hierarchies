@@ -1,58 +1,66 @@
 <template>
   <div class="relative p-32 h-full w-full">
-    <div ref="container"
-         class="relative">
-      <svg width="100%"
-           height="100%">
-        <!-- content -->
+    <div
+      class="main-container relative h-full">
+      <!-- Misc fill chart -->
+      <div ref="container">
+        <svg width="100%"
+             height="100%">
+          <!-- content -->
 
-        <!-- bottom ticks -->
-        <g :transform="`translate(55 ${height})`"
-           class="ticks">
-          <tick-display :count="12"
-                        :scale="invertedDateScale"
-                        position="bottom">
-            <template v-slot="item">
-              <text @click="selectItem(item)">{{ item | asMonth }}</text>
-            </template>
-          </tick-display>
-        </g>
-
-        <!-- left ticks -->
-        <g transform="translate(55 0)"
-           class="ticks">
-          <tick-display :count="5"
-                        :scale="invertedMoneyScale"
-                        position="left">
-            <template v-slot="item">
-              <text @click="selectItem(item)">{{ item.value | asMoney }}</text>
-            </template>
-          </tick-display>
-        </g>
-
-        <!-- Fill -->
-        <g transform="translate(55 0)">
-
-          <path
-            :d="fillGen(dataset)"
-            fill="green"
-            stroke="#fff" />
-
-          <!-- Points -->
-          <g v-for="(item, index) in dataset.slice(1)"
-             :key="`c${index}`"
-             :transform="`translate(${dateScale(item.date)} ${moneyScale(item.value)})`">
-
-            <circle
-              r="5" />
-
-            <text transform="translate(0 -45)"
-                  class="centered">
-              {{ item.value | asMoney }}
-            </text>
+          <!-- bottom ticks -->
+          <g :transform="`translate(55 ${height})`"
+             class="ticks">
+            <tick-display :count="12"
+                          :scale="invertedDateScale"
+                          position="bottom">
+              <template v-slot="item">
+                <text @click="selectItem(item)">{{ item | asMonth }}</text>
+              </template>
+            </tick-display>
           </g>
-        </g>
-      </svg>
+
+          <!-- left ticks -->
+          <g transform="translate(55 0)"
+             class="ticks">
+            <tick-display :count="5"
+                          :scale="invertedMoneyScale"
+                          position="left">
+              <template v-slot="item">
+                <text @click="selectItem(item)">{{ item.value | asMoney }}</text>
+              </template>
+            </tick-display>
+          </g>
+
+          <!-- Fill -->
+          <g transform="translate(55 0)">
+
+            <path
+              :d="fillGen(dataset)"
+              fill="green"
+              stroke="#fff" />
+
+            <!-- Points -->
+            <g v-for="(item, index) in dataset.slice(1)"
+               :key="`c${index}`"
+               :transform="`translate(${dateScale(item.date)} ${moneyScale(item.value)})`">
+
+              <circle
+                r="5" />
+
+              <text transform="translate(0 -45)"
+                    class="centered">
+                {{ item.value | asMoney }}
+              </text>
+            </g>
+          </g>
+        </svg>
+      </div>
+
+      <!-- Wavy Water -->
+      <div class="wavy">
+        <wavy-water />
+      </div>
     </div>
   </div>
 </template>
@@ -60,6 +68,7 @@
 <script>
 import * as d3 from 'd3'
 import D3AxisVue from '../FormulaOne/D3Axis.vue'
+import WavyWaterVue from './WavyWater.vue'
 
 export default {
   filters: {
@@ -73,7 +82,8 @@ export default {
     }
   },
   components: {
-    TickDisplay: D3AxisVue
+    TickDisplay: D3AxisVue,
+    WavyWater:   WavyWaterVue
   },
   data: () => ({
     width:  100,
@@ -202,8 +212,15 @@ text.centered {
   paint-order: stroke fill;
 }
 
-.container {
-  width: 800px;
-  height: 116px;
+.main-container {
+  display: grid;
+  grid: 1fr 1fr / 1fr;
+  row-gap: 3rem;
+
+  > * {
+    position: relative;
+    border: 2px solid #fff;
+    // padding: 10px;
+  }
 }
 </style>

@@ -59,19 +59,18 @@ export default new Router({
           meta: {
             title: 'Formula One'
           }
+        },
+        {
+          path:       '/xp/misc',
+          components: {
+            default:  () => import('@/components/experiments/Misc'),
+            controls: () =>
+              import('@/components/demos/enron-emails/Controls.vue')
+          },
+          meta: {
+            title: 'Miscellaneous'
+          }
         }
-        // ? Unfinished
-        // {
-        //   path:       '/xp/trig',
-        //   components: {
-        //     default:  () => import('@/components/experiments/TrigFun'),
-        //     controls: () =>
-        //       import('@/components/demos/enron-emails/Controls.vue')
-        //   },
-        //   meta: {
-        //     title: 'Trigonometry'
-        //   }
-        // }
       ]
     },
     {
