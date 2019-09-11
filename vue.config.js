@@ -49,19 +49,27 @@ module.exports = {
     */
     if (process.env.NODE_ENV === 'production') {
       const CompressionPlugin = require('compression-webpack-plugin')
-      config.plugins.push(new CompressionPlugin())
+      config.plugins.push(new CompressionPlugin({
+        compressionOptions: {
+
+        }
+      }))
 
       const TerserPlugin = require('terser-webpack-plugin')
       config.optimization.minimizer.push(
         new TerserPlugin({
+          parallel:      4,
           terserOptions: {
             compress: {
-              // drop_console:  true,
+              drop_console:  true,
               dead_code:     true,
               drop_debugger: true,
               unused:        true,
-              passes:        4
-            }
+              passes:        16
+            },
+            mangle:   true,
+            safari10: true
+
           }
         })
       )
@@ -73,6 +81,13 @@ module.exports = {
           exclude:     ['unused']
         })
       )
+
+      // const PurgecssPlugin = require('purgecss-webpack-plugin')
+      // config.plugins.push(
+      //   new PurgecssPlugin({
+      //     paths: [resolve('src')]
+      //   })
+      // )
     }
   },
 

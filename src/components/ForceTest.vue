@@ -1,13 +1,12 @@
 <template>
-  <div
-    v-once
-    class="fill"
-    @contextmenu.prevent="() => false"
-    @mousewheel="test"
-    @mousedown="dragged"
-    @touchstart="dragged"
-    @touchend="dragended"
-    @mouseup="dragended">
+  <div v-once
+       class="fill"
+       @contextmenu.prevent
+       @mousedown="dragged"
+       @mouseup="dragended"
+       @mousewheel="test"
+       @touchend="dragended"
+       @touchstart="dragged">
     <!-- Render Canvas -->
     <canvas ref="canvas" />
   </div>
@@ -34,7 +33,7 @@ import { rgb, color } from 'd3-color'
 import { interpolateRgb } from 'd3-interpolate'
 import { scaleSequential } from 'd3-scale'
 
-const particleCountHD = 1300
+const particleCountHD = 1500
 
 const particleCount = 500
 const particleCountSD = 300
@@ -66,6 +65,7 @@ export default {
     },
 
     /**
+     * Getter and setter for the renderer
      * @type {Vue.ComputedOptions<PIXI.Application>}
      */
     pixiRender: {
@@ -177,6 +177,13 @@ export default {
         16
       )
 
+      /**
+       * lkjslskdjfslfsjd
+       * dsfdfsddsfd
+       */
+
+      // ghjgjhg
+
       if (this.roots.includes(i)) {
         spr.tint = 0xffffff
         spr.alpha = 0.1
@@ -230,8 +237,10 @@ export default {
           .strength(2)
       )
 
-      // .force('x', forceX())
-      // .force('y', forceY())
+    // .force('x', forceX())
+    // .force('y', forceY())
+
+    // hello
       .on('tick', this.ticked)
       .alphaDecay(0)
       .alpha(0.229)

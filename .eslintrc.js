@@ -11,8 +11,7 @@ module.exports = {
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'new-cap': 'warn',
-    'vue/return-in-computed-property': 'off',
-    'vue/no-side-effects-in-computed-properties': 'off',
+    'no-mixed-spaces-and-tabs': 'error',
     'func-call-spacing': 2,
     'no-multi-spaces': [
       'error',
@@ -24,24 +23,6 @@ module.exports = {
         }
       }
     ],
-    'vue/max-attributes-per-line': [
-      'error',
-      {
-        singleline: 1,
-        multiline: {
-          max: 1,
-          allowFirstLine: true
-        }
-      }
-    ],
-    'vue/html-closing-bracket-newline': [
-      'error',
-      {
-        singleline: 'never',
-        multiline: 'never'
-      }
-    ],
-    'no-mixed-spaces-and-tabs': 'error',
     'key-spacing': [
       'error',
       {
@@ -113,6 +94,27 @@ module.exports = {
       2,
       {
         skipBlankLines: false
+      }
+    ],
+
+    // ^ Vue rules
+    'vue/return-in-computed-property': 'off',
+    'vue/no-side-effects-in-computed-properties': 'off',
+    'vue/max-attributes-per-line': [
+      'error',
+      {
+        singleline: 1,
+        multiline: {
+          max: 1,
+          allowFirstLine: true
+        }
+      }
+    ],
+    'vue/html-closing-bracket-newline': [
+      'error',
+      {
+        singleline: 'never',
+        multiline: 'never'
       }
     ],
     'vue/attributes-order': 'error',
