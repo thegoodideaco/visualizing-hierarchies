@@ -86,7 +86,7 @@ export default {
       })
     }
   },
-  destroyed() {
+  beforeDestroy() {
     this.simulation.stop()
     this.simulation = null
 

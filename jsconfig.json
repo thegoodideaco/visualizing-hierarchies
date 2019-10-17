@@ -31,6 +31,5 @@
   "exclude": [
     "dist",
     "datasets"
-  ],
-  "typeAcquisition": {"enable": true}
+  ]
 }
