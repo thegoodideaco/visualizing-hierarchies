@@ -22,10 +22,6 @@ export default {
         title: 'Typical Human Reaction'
       },
       {
-        url:   '/static/images/headache.gif',
-        title: 'Also acceptable'
-      },
-      {
         url:   '/static/images/nice1.gif',
         title: 'that\'s better'
       },

@@ -1,18 +1,7 @@
 # Hello Everyone!
 
-> My name is `Jon Snyder`. To quickly sum myself up...
->
-> Loved to design, discovered programming, loved it too
->
-> Learned Flash, combined both of my passions, best feeling ever
->
-> Flash died, felt lost, learned Javascript and Haxe
->
-> Got married, got motivated, became a workaholic
->
-> Now I'm 34, made an awesome family, moved to Florida
->
-> And currently a dev and designer at [ONE Discovery](http://onediscovery.com)
+> My name is `Jon Snyder`.
+> Let's do this!
 
 ## Why this workshop?
 
@@ -20,7 +9,7 @@ Over the last couple of years, I've developed this somewhat unhealthy obsession 
 
 As time went by, I started to realize how much UX Laws and dataviz had in common, and it was all I thought about.
 
-The awesome people at VueDC gave me an opportunity to share my perspective on this, so here we are!
+I hope to pass on my excitement so that you too can see and explore the possibilities.
 
 ## About this Workshop
 
