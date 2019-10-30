@@ -20,10 +20,6 @@ export default {
       {
         url:   '/static/images/gestalt1.webp',
         title: 'This is your brain making sense of random stuff'
-      },
-      {
-        url:   '/static/images/reading-gravity.jpg',
-        title: 'The Gutenberg Diagram'
       }
     ],
     index: 0

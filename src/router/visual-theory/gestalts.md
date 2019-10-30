@@ -14,16 +14,6 @@ It seems apparent that this approach of grouping and categorizing is in alot of 
 
 We use this format logically, as well as visually perceiving the world around us.
 
-### Reading Patterns
-
-Or `Reading Gravity` is the way in which we interpret a page design.
-
-#### Z Pattern
-
-Most Users will look from top left to top right, bottom left to bottom right. This creates a `Z` pattern of importance.
-
-Used for alot of landing pages, simplistic designs. This is shown in the `Gutenberg Diagram`
-
 #### Consistent Behavior
 
 More patterns emerge as time goes on, giving us more insight to what makes a pleasant experience based on our behavior in visualizing content.

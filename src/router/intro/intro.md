@@ -1,7 +1,7 @@
 # Hello Everyone!
 
 > My name is `Jon Snyder`.
-> Let's do this!
+> Let's make some dataviz!
 
 ## Why this workshop?
 
