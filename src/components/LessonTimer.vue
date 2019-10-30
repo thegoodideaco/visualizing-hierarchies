@@ -23,7 +23,7 @@ export default {
 
   data: () => {
     return {
-      end: Date.parse('10/30/2019 17:45:00 GMT-0400'),
+      end: Date.parse('10/30/2019 20:45:00 GMT-0400'),
 
       /** @type {number} */
       current:   0,
