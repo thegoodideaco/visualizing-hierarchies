@@ -39,19 +39,24 @@
 import * as d3 from 'd3'
 export default {
   data: () => ({
-    width:      100,
-    height:     100,
+    width:  100,
+    height: 100,
+
+    /** @type {d3.HierarchyPointNode<any>} */
     h:          d3.hierarchy({}),
     groupOrder: ['region', 'subregion'],
     dataset:    []
   }),
   computed: {
+
+    /** @type {() => d3.ClusterLayout<d3.HierarchyPointNode>} */
     layout() {
       // Showing a cluster
       return d3.cluster()
         .size([this.width, this.height])
     },
 
+    /** @type {() => d3.Line<d3.HierarchyPointNode>} */
     lineGen() {
       return d3
         .line()
@@ -59,6 +64,7 @@ export default {
         .y(v => v.y)
     },
 
+    /** @type {() => d3.Nest<d3.HierarchyPointNode, any>} */
     nester() {
       const n = d3.nest()
 
@@ -72,6 +78,7 @@ export default {
     /**
      * If the nester method, or dataset changes
      * will generate a root node
+     * @type {() => d3.NestedObject}
      */
     nestedData() {
       return {
@@ -115,6 +122,10 @@ export default {
     this.dataset = Object.freeze(data)
   },
   methods: {
+
+    /**
+     * @type {() => void}
+     */
     updateSize() {
       const { width, height } = this.$el.getBoundingClientRect()
       this.width = width

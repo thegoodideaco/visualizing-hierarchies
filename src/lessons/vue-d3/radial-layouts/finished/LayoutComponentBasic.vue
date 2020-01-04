@@ -53,7 +53,7 @@ export default {
 
     /**
      * The center point of our content
-     * @returns {{x: number, y: number}}
+     * @type  {() => {x: number, y: number}}
      */
     center() {
       return {
