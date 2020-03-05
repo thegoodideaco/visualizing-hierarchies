@@ -1,5 +1,7 @@
 # Visualizing Hierarchies
 
+[Watch the video](https://www.youtube.com/watch?v=GuecoTcqmVE)
+
 ## Prerequisites
 
 You will need to have [Node](https://nodejs.org) on your machine in order to run this workshop.
