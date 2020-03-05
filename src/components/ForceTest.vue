@@ -1,12 +1,13 @@
 <template>
-  <div v-once
-       class="fill"
-       @contextmenu.prevent
-       @mousedown="dragged"
-       @mouseup="dragended"
-       @mousewheel="test"
-       @touchend="dragended"
-       @touchstart="dragged">
+  <div
+    v-once
+    class="fill"
+    @contextmenu.prevent
+    @mousedown="dragged"
+    @mouseup="dragended"
+    @mousewheel="test"
+    @touchend="dragended"
+    @touchstart="dragged">
     <!-- Render Canvas -->
     <canvas ref="canvas" />
   </div>
@@ -14,11 +15,8 @@
 
 <script>
 // import { Graphics} from 'pixi.js'
-import Application from 'pixi.js/lib/core/Application'
-import * as utils from 'pixi.js/lib/core/utils'
-import * as particles from 'pixi.js/lib/particles'
-import Graphics from 'pixi.js/lib/core/graphics/Graphics'
-import Sprite from 'pixi.js/lib/core/sprites/Sprite'
+import * as pixi from 'pixi.js'
+
 import { range } from 'd3-array'
 import {
   forceSimulation,
@@ -33,7 +31,7 @@ import { rgb, color } from 'd3-color'
 import { interpolateRgb } from 'd3-interpolate'
 import { scaleSequential } from 'd3-scale'
 
-const particleCountHD = 800
+const particleCountHD = 4000
 
 const particleCount = 500
 const particleCountSD = 300
@@ -103,15 +101,15 @@ export default {
     const options = {
       antialias:             true,
       preserveDrawingBuffer: true,
-      roundPixels:           true,
       powerPreference:       'high-performance',
       resolution:            window.devicePixelRatio,
       transparent:           true,
       forceFXAA:             true
     }
-    utils.skipHello()
+    pixi.utils.skipHello()
+    pixi.settings.ROUND_PIXELS = true
 
-    this.pixiRender = new Application({
+    this.pixiRender = new pixi.Application({
       view: this.$refs.canvas,
       width,
       height,
@@ -123,7 +121,7 @@ export default {
       height
     })
 
-    const container = new particles.ParticleContainer(
+    const container = new pixi.ParticleContainer(
       10000,
       {
         vertices: false,
@@ -141,15 +139,15 @@ export default {
     container.interactive = false
     container.interactiveChildren = false
 
-    const particleAmount = utils.isMobile.phone
+    const particleAmount = pixi.utils.isMobile.phone
       ? particleCountSD
-      : utils.isMobile.tablet
+      : pixi.utils.isMobile.tablet
         ? particleCount
         : particleCountHD
 
     this.roots = range(~~Math.sqrt(particleAmount))
 
-    this.linkRender = new Graphics()
+    this.linkRender = new pixi.Graphics()
 
     this.pixiRender.stage.addChild(this.linkRender)
     this.pixiRender.stage.addChild(container)
@@ -161,7 +159,7 @@ export default {
     this.nodes = range(particleAmount).map((k, i) => {
       /** @type {PIXI.Sprite} */
       // eslint-disable-next-line new-cap
-      const spr = new Sprite.fromImage('/test.png')
+      const spr = new pixi.Sprite.from('/test.png')
 
       container.addChild(spr)
 
@@ -248,7 +246,9 @@ export default {
 
     window.addEventListener('resize', this.onResize)
     this.$el.addEventListener('mousemove', this.updateMouse)
-    this.$el.addEventListener('touchmove', this.updateTouch)
+    this.$el.addEventListener('touchmove', this.updateTouch, {
+      passive: true
+    })
   },
 
   methods: {
