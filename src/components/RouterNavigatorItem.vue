@@ -67,7 +67,7 @@ export default {
     /** @param {MouseEvent} ev */
     onClick(ev) {
       let url = this.routeItem.path
-      if (ev.ctrlKey) url += '/finished'
+      if (ev.ctrlKey || ev.metaKey) url += '/finished'
 
       const res = this.$router.match(url)
 
