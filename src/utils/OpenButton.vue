@@ -1,7 +1,8 @@
 <template>
   <div class="component-container">
-    <button class="open-btn rounded-lg"
-            @click.self="openInEditor($parent)">
+    <button
+      class="open-btn rounded-lg"
+      @click.self="openInEditor($parent)">
       Open
     </button>
   </div>

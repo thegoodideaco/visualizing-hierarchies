@@ -4,8 +4,9 @@
     <resize-observer @notify="updateSize()" />
 
     <!-- svg container -->
-    <svg width="100%"
-         height="100%">
+    <svg
+      width="100%"
+      height="100%">
       <!-- Render every descendant of our hierarchy -->
       <circle
         v-for="(item, index) in h.descendants()"

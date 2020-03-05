@@ -1,8 +1,9 @@
 <template>
   <sidenav-layout :readme="readme">
     <div class="about h-full">
-      <image-slider :items="images"
-                    :active-index.sync="curIndex" />
+      <image-slider
+        :items="images"
+        :active-index.sync="curIndex" />
     </div>
   </sidenav-layout>
 </template>

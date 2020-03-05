@@ -1,14 +1,16 @@
 <template>
-  <svg width="100%"
-       height="100%"
-       @mousemove="onMove">
+  <svg
+    width="100%"
+    height="100%"
+    @mousemove="onMove">
 
-    <circle v-for="(point, index) in points"
-            :key="index"
-            r="5"
-            :cx="point.x"
-            :cy="point.y"
-            fill="#fff" />
+    <circle
+      v-for="(point, index) in points"
+      :key="index"
+      r="5"
+      :cx="point.x"
+      :cy="point.y"
+      fill="#fff" />
   </svg>
 </template>
 

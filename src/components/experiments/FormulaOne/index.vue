@@ -17,19 +17,23 @@
 
     <!-- Side -->
     <aside class="f1__sidebar">
-      <date-scanner :dataset="test.races"
-                    @filter="dateRange = $event" />
+      <date-scanner
+        :dataset="test.races"
+        @filter="dateRange = $event" />
     </aside>
 
     <!-- Force Graph -->
     <div class="f1__content">
-      <transition mode="out-in"
-                  name="fade">
-        <force-graph v-if="dateRange"
-                     :dataset="filteredDrivers" />
+      <transition
+        mode="out-in"
+        name="fade">
+        <force-graph
+          v-if="dateRange"
+          :dataset="filteredDrivers" />
 
-        <div v-else
-             class="info">
+        <div
+          v-else
+          class="info">
           <div class="p-32 bg-blue-800 m-auto">
             <h1>Visualizing Racer Winnings</h1>
             <h2>Please select a range of time</h2>

@@ -2,8 +2,9 @@
   <div class="h-full grid">
     <!-- <image-slider :items="items"
     :active-index.sync="index" />-->
-    <markdown-viewer :value="readme"
-                     class="h-full text-2xl w-full" />
+    <markdown-viewer
+      :value="readme"
+      class="h-full text-2xl w-full" />
   </div>
 </template>
 

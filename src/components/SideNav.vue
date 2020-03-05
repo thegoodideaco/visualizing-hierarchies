@@ -1,15 +1,18 @@
 <template>
   <aside class="side-nav p-4">
-    <div class="text-center cursor-pointer"
-         @click.once="$router.push('/')">
+    <div
+      class="text-center cursor-pointer"
+      @click.once="$router.push('/')">
       <h3>Visualizing Hierarchies</h3>
       <h5>With Vue.js and D3.js</h5>
 
       <div class="logos">
-        <img alt="Vue"
-             src="@/assets/vue-logo.svg">
-        <img alt="D3"
-             src="@/assets/d3-logo.svg">
+        <img
+          alt="Vue"
+          src="@/assets/vue-logo.svg">
+        <img
+          alt="D3"
+          src="@/assets/d3-logo.svg">
       </div>
 
       <lesson-timer />

@@ -1,6 +1,7 @@
 <template>
-  <svg width="100%"
-       height="100%">
+  <svg
+    width="100%"
+    height="100%">
     <circle
       v-for="(item, index) in dataset"
       :key="index"

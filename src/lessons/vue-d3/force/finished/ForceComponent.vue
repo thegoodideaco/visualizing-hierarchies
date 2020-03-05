@@ -1,6 +1,7 @@
 <template>
-  <svg height="100%"
-       width="100%">
+  <svg
+    height="100%"
+    width="100%">
     <!-- Links -->
     <path
       v-for="(item, index) in h.links()"

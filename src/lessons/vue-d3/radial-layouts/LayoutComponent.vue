@@ -6,10 +6,11 @@
    http://localhost:8080/#/vue-d3/radial-layouts -->
     <open-button class="self-center" />
 
-    <svg v-if="$children.length === 1"
-         width="100%"
-         height="100%"
-         class="relative">
+    <svg
+      v-if="$children.length === 1"
+      width="100%"
+      height="100%"
+      class="relative">
       <!-- Links -->
       <path
         v-for="(link, index) in h.links()"

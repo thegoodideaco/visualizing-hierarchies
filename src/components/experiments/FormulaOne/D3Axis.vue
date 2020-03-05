@@ -1,14 +1,17 @@
 <template>
-  <g class="scale-ticks"
-     :class="[position]">
+  <g
+    class="scale-ticks"
+    :class="[position]">
     <!-- Tick instance -->
-    <g v-for="(item, index) in ticks"
-       :key="index"
-       :transform="item.transform">
+    <g
+      v-for="(item, index) in ticks"
+      :key="index"
+      :transform="item.transform">
       <!-- Tick Line -->
-      <line v-bind="item.lineTransform"
-            stroke="#fff"
-            stroke-width="2" />
+      <line
+        v-bind="item.lineTransform"
+        stroke="#fff"
+        stroke-width="2" />
 
       <!-- Text -->
       <g v-bind="item.textTransform">

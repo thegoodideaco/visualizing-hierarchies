@@ -1,9 +1,10 @@
 <template>
   <div class="md-viewer">
     <div class="h-full pr-2">
-      <div ref="scroller"
-           class="hljs dark h-full overflow-auto"
-           v-html="markdown()" />
+      <div
+        ref="scroller"
+        class="hljs dark h-full overflow-auto"
+        v-html="markdown()" />
     </div>
   </div>
 </template>

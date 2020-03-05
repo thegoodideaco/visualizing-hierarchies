@@ -15,8 +15,9 @@
     </svg>-->
 
     <!-- HTML Version -->
-    <div v-if="h"
-         class="html-version">
+    <div
+      v-if="h"
+      class="html-version">
       <div
         v-for="node in nodes"
         :key="node.data.key"

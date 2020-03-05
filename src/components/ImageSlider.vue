@@ -1,8 +1,10 @@
 <template>
-  <div class="image-slider"
-       :class="{ fullscreen }">
-    <div v-if="items"
-         class="image-slider__inner">
+  <div
+    class="image-slider"
+    :class="{ fullscreen }">
+    <div
+      v-if="items"
+      class="image-slider__inner">
       <keep-alive>
         <!-- If Image -->
         <div
@@ -10,8 +12,9 @@
           :key="activeIndex"
           class="image-slider__image"
           :class="{ 'no-title': !activeItem.title }">
-          <transition appear
-                      name="zoom">
+          <transition
+            appear
+            name="zoom">
             <!-- Image / will be applied as a background for auto fitting once loaded -->
             <img
               v-if="!loaded"

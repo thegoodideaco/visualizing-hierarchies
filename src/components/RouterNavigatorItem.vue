@@ -19,12 +19,14 @@
       {{ routeItem.meta.title }}
     </div>
 
-    <ul v-if="subItems"
-        class="mb-2">
+    <ul
+      v-if="subItems"
+      class="mb-2">
       <!-- Recursive Component -->
-      <router-navigator-item v-for="(item, index) in subItems"
-                             :key="index"
-                             :route-item="item" />
+      <router-navigator-item
+        v-for="(item, index) in subItems"
+        :key="index"
+        :route-item="item" />
     </ul>
   </li>
 </template>

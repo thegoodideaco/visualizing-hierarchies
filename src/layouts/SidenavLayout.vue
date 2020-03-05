@@ -9,8 +9,9 @@
     <side-nav class="overflow-hidden" />
 
     <!-- Markdown -->
-    <div v-if="$route.meta.readme"
-         class="overflow-auto grid">
+    <div
+      v-if="$route.meta.readme"
+      class="overflow-auto grid">
       <markdown-viewer
         ref="readme"
         :value="readme()"

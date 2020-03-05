@@ -4,16 +4,19 @@
       class="main-container relative h-full">
       <!-- Misc fill chart -->
       <div ref="container">
-        <svg width="100%"
-             height="100%">
+        <svg
+          width="100%"
+          height="100%">
           <!-- content -->
 
           <!-- bottom ticks -->
-          <g :transform="`translate(55 ${height})`"
-             class="ticks">
-            <tick-display :count="12"
-                          :scale="invertedDateScale"
-                          position="bottom">
+          <g
+            :transform="`translate(55 ${height})`"
+            class="ticks">
+            <tick-display
+              :count="12"
+              :scale="invertedDateScale"
+              position="bottom">
               <template v-slot="item">
                 <text @click="selectItem(item)">{{ item | asMonth }}</text>
               </template>
@@ -21,11 +24,13 @@
           </g>
 
           <!-- left ticks -->
-          <g transform="translate(55 0)"
-             class="ticks">
-            <tick-display :count="5"
-                          :scale="invertedMoneyScale"
-                          position="left">
+          <g
+            transform="translate(55 0)"
+            class="ticks">
+            <tick-display
+              :count="5"
+              :scale="invertedMoneyScale"
+              position="left">
               <template v-slot="item">
                 <text @click="selectItem(item)">{{ item.value | asMoney }}</text>
               </template>
@@ -41,15 +46,17 @@
               stroke="#fff" />
 
             <!-- Points -->
-            <g v-for="(item, index) in dataset.slice(1)"
-               :key="`c${index}`"
-               :transform="`translate(${dateScale(item.date)} ${moneyScale(item.value)})`">
+            <g
+              v-for="(item, index) in dataset.slice(1)"
+              :key="`c${index}`"
+              :transform="`translate(${dateScale(item.date)} ${moneyScale(item.value)})`">
 
               <circle
                 r="5" />
 
-              <text transform="translate(0 -45)"
-                    class="centered">
+              <text
+                transform="translate(0 -45)"
+                class="centered">
                 {{ item.value | asMoney }}
               </text>
             </g>

@@ -1,6 +1,7 @@
 <template>
-  <div class="overflow-hidden"
-       @mousemove="updateMouse">
+  <div
+    class="overflow-hidden"
+    @mousemove="updateMouse">
     <!-- {{ mouseAngle }} -->
     <svg class="w-full h-full">
       <g v-if="hierarchy">

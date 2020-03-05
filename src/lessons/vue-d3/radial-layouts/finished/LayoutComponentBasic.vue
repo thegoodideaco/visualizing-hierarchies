@@ -4,14 +4,16 @@
     <resize-observer @notify="updateSize()" />
 
     <!-- svg container -->
-    <svg v-if="dataset.length"
-         width="100%"
-         height="100%">
+    <svg
+      v-if="dataset.length"
+      width="100%"
+      height="100%">
 
       <!-- Render every link -->
-      <path v-for="(link, index) in h.links()"
-            :key="`link${index}`"
-            :d="lineGen([link.source, link.target])" />
+      <path
+        v-for="(link, index) in h.links()"
+        :key="`link${index}`"
+        :d="lineGen([link.source, link.target])" />
 
       <!-- Render every descendant of our hierarchy -->
       <circle

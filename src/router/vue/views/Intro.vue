@@ -1,7 +1,8 @@
 <template>
   <div>
-    <image-slider :active-index.sync="index"
-                  :items="items" />
+    <image-slider
+      :active-index.sync="index"
+      :items="items" />
   </div>
 </template>
 

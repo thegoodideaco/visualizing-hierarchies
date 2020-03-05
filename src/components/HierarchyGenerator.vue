@@ -9,8 +9,9 @@
         <option disabled>
           Select a Group
         </option>
-        <option v-for="(item, index) in selectGroups"
-                :key="index">
+        <option
+          v-for="(item, index) in selectGroups"
+          :key="index">
           <span class="p-2">{{ item.name }}</span>
         </option>
       </select>
@@ -18,9 +19,10 @@
 
     <div class="list select-none">
       <!-- Show enabled groups -->
-      <draggable v-model="pickedGroups"
-                 v-bind="dragOptions"
-                 handle=".handle">
+      <draggable
+        v-model="pickedGroups"
+        v-bind="dragOptions"
+        handle=".handle">
         <div
           v-for="(item, index) in pickedGroups"
           :key="index"

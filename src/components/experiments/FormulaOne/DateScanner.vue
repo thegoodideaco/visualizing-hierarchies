@@ -1,11 +1,13 @@
 <template>
-  <svg class="date-scanner"
-       width="100%"
-       height="100%">
+  <svg
+    class="date-scanner"
+    width="100%"
+    height="100%">
     <!-- Brush -->
-    <date-brush :height="height"
-                :domain="domain"
-                @input="filterDates" />
+    <date-brush
+      :height="height"
+      :domain="domain"
+      @input="filterDates" />
 
     <!-- Ticks -->
     <tick-display

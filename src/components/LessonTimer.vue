@@ -8,8 +8,9 @@
     </h4>
 
     <!-- Timed out display -->
-    <h4 v-else
-        class="text-red-500 blink">
+    <h4
+      v-else
+      class="text-red-500 blink">
       00:00:00
     </h4>
   </div>

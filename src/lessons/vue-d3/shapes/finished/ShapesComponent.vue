@@ -5,10 +5,11 @@
     @click="addPoint"
     @contextmenu.prevent="points = []">
     <!-- Path -->
-    <path fill="none"
-          stroke="white"
-          stroke-width="5"
-          :d="definition(points)" />
+    <path
+      fill="none"
+      stroke="white"
+      stroke-width="5"
+      :d="definition(points)" />
 
     <!-- Circles -->
     <circle

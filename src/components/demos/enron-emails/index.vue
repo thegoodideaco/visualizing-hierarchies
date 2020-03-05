@@ -1,11 +1,13 @@
 <template>
   <div>
     <div class="inner">
-      <div v-if="h.leaves().length"
-           class="visual p-5">
-        <svg ref="svg"
-             height="100%"
-             width="100%">
+      <div
+        v-if="h.leaves().length"
+        class="visual p-5">
+        <svg
+          ref="svg"
+          height="100%"
+          width="100%">
           <g :transform="size | centered | asTransform">
             <path
               v-for="(link, index) in h.links()"

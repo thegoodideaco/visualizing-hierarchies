@@ -1,6 +1,7 @@
 <template>
-  <div id="app"
-       class="h-full font-sans">
+  <div
+    id="app"
+    class="h-full font-sans">
     <router-view :key="$route.name === 'index' ? 'intro' : 'content'" />
   </div>
 </template>

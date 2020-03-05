@@ -1,6 +1,7 @@
 <template>
-  <div class="circle"
-       :style="styles" />
+  <div
+    class="circle"
+    :style="styles" />
 </template>
 
 <script>
