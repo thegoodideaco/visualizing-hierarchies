@@ -79,7 +79,7 @@ export default {
           },
           {
             name: 'Type',
-            key:  item => item['Type']
+            key:  item => item.Type
           },
           {
             name: 'Rating',

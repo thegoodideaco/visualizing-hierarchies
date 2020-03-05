@@ -247,7 +247,7 @@ export default {
         y: y - this.height * 0.5
       }
 
-      let rad = Math.atan2(offset.y, offset.x) + Math.PI * 0.5
+      const rad = Math.atan2(offset.y, offset.x) + Math.PI * 0.5
       // rad =
 
       return ((rad > 0 ? rad : rad + Math.PI * 2) * 180) / Math.PI

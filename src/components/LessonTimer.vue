@@ -40,7 +40,7 @@ export default {
       const h = (m / 60)
       const d = (h / 24)
 
-      let all = [
+      const all = [
         s % 60,
         m % 60,
         h % 24,
