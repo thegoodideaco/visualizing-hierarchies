@@ -149,7 +149,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-/deep/ rect.selection {
+::v-deep rect.selection {
   fill: rgba(#fff, 0.5);
   fill-opacity: 1;
   stroke-width: 0;

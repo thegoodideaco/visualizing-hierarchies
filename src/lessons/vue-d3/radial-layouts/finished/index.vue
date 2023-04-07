@@ -19,7 +19,7 @@ export default {
   grid: 1fr / 1fr;
   overflow: hidden;
 
-  /deep/ circle {
+  ::v-deep circle {
     stroke: #fff;
     stroke-width: 1;
   }

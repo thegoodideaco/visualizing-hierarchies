@@ -30,7 +30,7 @@ export default {
   justify-items: center;
 }
 
-/deep/ .hljs {
+::v-deep .hljs {
   pre {
     font-size: 2rem;
 

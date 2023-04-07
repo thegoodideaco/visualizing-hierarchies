@@ -20,7 +20,7 @@ module.exports = {
   runtimeCompiler:     true,
   lintOnSave:          true,
 
-  configureWebpack: config => {
+  configureWebpack: (config) => {
     /**
      * * Copy datasets and static directory into build
      */
@@ -49,11 +49,11 @@ module.exports = {
     */
     if (process.env.NODE_ENV === 'production') {
       const CompressionPlugin = require('compression-webpack-plugin')
-      config.plugins.push(new CompressionPlugin({
-        compressionOptions: {
-
-        }
-      }))
+      config.plugins.push(
+        new CompressionPlugin({
+          compressionOptions: {}
+        })
+      )
 
       const TerserPlugin = require('terser-webpack-plugin')
       config.optimization.minimizer.push(
@@ -69,7 +69,6 @@ module.exports = {
             },
             mangle:   true,
             safari10: true
-
           }
         })
       )
@@ -94,7 +93,7 @@ module.exports = {
   /**
    * @type {ChainWebpack}
    */
-  chainWebpack: config => {
+  chainWebpack: (config) => {
     /**
      * * Markdown File Configuration
      */
@@ -104,5 +103,9 @@ module.exports = {
       .use('raw-loader')
       .loader('raw-loader')
       .end()
+  },
+
+  devServer: {
+    disableHostCheck: true
   }
 }

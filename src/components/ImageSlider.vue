@@ -1,20 +1,16 @@
 <template>
-  <div
-    class="image-slider"
-    :class="{ fullscreen }">
-    <div
-      v-if="items"
-      class="image-slider__inner">
-      <keep-alive>
-        <!-- If Image -->
+  <div class="image-slider"
+       :class="{ fullscreen }">
+    <div v-if="items"
+         class="image-slider__inner">
+      <!-- If Image -->
+      <template v-if="!isComponent">
         <div
-          v-if="!isComponent"
           :key="activeIndex"
           class="image-slider__image"
           :class="{ 'no-title': !activeItem.title }">
-          <transition
-            appear
-            name="zoom">
+          <transition appear
+                      name="zoom">
             <!-- Image / will be applied as a background for auto fitting once loaded -->
             <img
               v-if="!loaded"
@@ -47,15 +43,18 @@
             {{ activeItem.title }}
           </h4>
         </div>
+      </template>
+
+      <template v-else>
         <!-- If Component -->
         <component
           :is="activeItem"
-          v-else
           :key="'_' + activeIndex"
           class="image-slider__component"
           @hook:mounted="loaded = true" />
-        <!-- </transition> -->
-      </keep-alive>
+      </template>
+
+      <!-- </transition> -->
     </div>
   </div>
 </template>
@@ -66,7 +65,7 @@
  */
 export default {
   filters: {
-    asStyle: url => ({
+    asStyle: (url) => ({
       backgroundImage: `url(${
         url.startsWith('http') ? url : encodeURIComponent(url)
       })`

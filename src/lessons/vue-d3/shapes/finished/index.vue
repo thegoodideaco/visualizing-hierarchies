@@ -2,19 +2,16 @@
   <div class="grid-tools">
     <header>
       <!-- Option Area -->
-      <option-slider
-        v-model="bundle"
-        :min="0"
-        :max="1" />
+      <option-slider v-model="bundle"
+                     :min="0"
+                     :max="1" />
 
-      <select
-        id="sel"
-        v-model="curveType"
-        name="sel">
-        <option
-          v-for="curve in curves"
-          :key="curve"
-          :value="curve">
+      <select id="sel"
+              v-model="curveType"
+              name="sel">
+        <option v-for="curve in curves"
+                :key="curve"
+                :value="curve">
           {{ curve }}
         </option>
       </select>
@@ -72,7 +69,7 @@ export default {
     display: grid;
   }
 
-  /deep/ circle {
+  ::v-deep circle {
     fill: green;
     stroke: #fff;
     stroke-width: 3;

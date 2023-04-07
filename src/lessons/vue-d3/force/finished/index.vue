@@ -14,7 +14,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-/deep/ svg {
+::v-deep svg {
   circle {
     stroke: #fff;
     // fill: transparent;

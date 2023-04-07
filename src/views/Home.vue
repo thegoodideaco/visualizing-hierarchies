@@ -10,13 +10,16 @@
         <h5>With Vue.js and D3.js</h5>
 
         <div class="logos mb-16">
-          <img src="@/assets/vue-logo.svg">
-          <img src="@/assets/d3-logo.svg">
+          <img src="@/assets/vue-logo.svg" />
+          <img src="@/assets/d3-logo.svg" />
         </div>
+
+        wtf...
 
         <router-link
           class="text-white p-5 bg-transparent border-2 border-white rounded-lg pointer-events-auto"
-          to="/intro">
+          to="/intro"
+        >
           Start
         </router-link>
       </div>
@@ -25,14 +28,14 @@
 </template>
 
 <script>
-import BlankLayoutVue from '@/layouts/BlankLayout.vue'
-import { ForceDemo } from '@/components/demos/asyncDemos'
+import BlankLayoutVue from "@/layouts/BlankLayout.vue";
+import { ForceDemo } from "@/components/demos/asyncDemos";
 export default {
   components: {
-    Layout:    BlankLayoutVue,
-    ForceDemo: ForceDemo
-  }
-}
+    Layout: BlankLayoutVue,
+    ForceDemo: ForceDemo,
+  },
+};
 </script>
 
 <style scoped lang="scss">

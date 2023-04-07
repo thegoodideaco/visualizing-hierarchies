@@ -94,7 +94,7 @@ svg {
   overflow: visible;
 }
 
-/deep/ .overlay {
+::v-deep .overlay {
   fill: rgba(#000, 0.5);
   stroke: rgba(#fff, 0.5);
   stroke-width: 1px;

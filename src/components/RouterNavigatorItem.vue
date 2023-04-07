@@ -128,7 +128,7 @@ export default {
     }
   }
 
-  /deep/ .nav__item {
+  ::v-deepv .nav__item {
     font-size: 0.7em;
 
     .nav__item__title {

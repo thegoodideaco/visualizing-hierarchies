@@ -14,7 +14,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-/deep/ input {
+::v-deep input {
   padding: 0.5rem;
   color: #000;
   display: block;

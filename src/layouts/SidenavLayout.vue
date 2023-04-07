@@ -118,7 +118,7 @@ export default {
 }
 
 .content {
-  /deep/ svg {
+  ::v-deep svg {
     circle,
     path {
       fill: transparent;
